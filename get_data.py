@@ -10,7 +10,7 @@ import subprocess
 
 def get_fixture_data() -> list[dict[str, str | int]]:
     """Fetches fixture data from the API and returns a list of dictionaries."""
-    base_url = "https://api.aerialfantasy.co/graphql"
+    base_url = "https://api.fantasynwsl.com/graphql"
     query = """
         {
             clubs {
@@ -95,7 +95,7 @@ def filter_fixtures(fixtures_data):
 
 def get_player_data() -> list[dict[str, int | str | float]]:
     """Fetches the player details from the API and returns a list of dictionaries."""
-    base_url = "https://api.aerialfantasy.co/graphql"
+    base_url = "https://api.fantasynwsl.com/graphql"
     query = """
         {
             players {
@@ -112,8 +112,25 @@ def get_player_data() -> list[dict[str, int | str | float]]:
                 selected
                 performanceV2 {
                     games {
-                        game {id, scheduledAt, stage {id}, home{score}, away{score}}
-                        points
+                        game {
+                            id
+                            scheduledAt
+                            stage {id}
+                            home {
+                                score
+                                party {
+                                    __typename
+                                    ... on Club { id shortName name }
+                                }
+                            }
+                            away {
+                                score
+                                party {
+                                    __typename
+                                    ... on Club { id shortName name }
+                                }
+                            }
+                        }                        points
                         contributions {
                             contribution
                             quantity
@@ -138,16 +155,14 @@ def get_player_data() -> list[dict[str, int | str | float]]:
 
 
 # --- TEAM NAME EXTRACTION ---
-def extract_teams_from_game_id(game_id):
+def extract_teams_from_game(game):
     """
-    Extracts home and away team codes from game ID.
-    First 3 characters = home team, last 3 = away team.
+    Extracts home and away team IDs directly from the game object.
+    This is safer than guessing from the game ID string.
     """
-    if len(game_id) >= 6:
-        home_team = game_id[:3].upper()
-        away_team = game_id[-3:].upper()
-        return home_team, away_team
-    return "", ""
+    home_team = game.get("home", {}).get("party", {}).get("id", "")
+    away_team = game.get("away", {}).get("party", {}).get("id", "")
+    return home_team.upper(), away_team.upper()
 
 
 def get_wsl_team_code(team_name):
@@ -205,9 +220,7 @@ def create_gw_tooltip(game_data, player_team_code):
         date_str = "Date Unknown"
 
     # 2. Extract team codes from game ID
-    game_id = game.get("id", "")
-    # Assume extract_teams_from_game_id is defined elsewhere
-    home_team, away_team = extract_teams_from_game_id(game_id)
+    home_team, away_team = extract_teams_from_game(game)
 
     # 3. Determine opponent and location
     if player_team_code == home_team:
@@ -416,14 +429,14 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
     # 2. Determine max gameweeks from all players
     all_gameweek_numbers = set()
     for player in api_players:
-        for performance in player.get("performanceV2", []):
-            for game_data in performance.get("games", []):
-                try:
-                    gw = game_data["game"]["stage"]["id"]
-                    all_gameweek_numbers.add(int(gw))
-                except (KeyError, ValueError):
-                    continue
-
+        performance = player.get("performanceV2", {}) or {}
+        for game_data in performance.get("games", []):
+            try:
+                gw = game_data["game"]["stage"]["id"]
+                all_gameweek_numbers.add(int(gw))
+            except (KeyError, ValueError, TypeError):
+                continue
+                
     if not all_gameweek_numbers:
         final_gameweeks = []
     else:
@@ -474,10 +487,10 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         # Collect all games
         all_games = []
-        for performance in player.get("performanceV2", []):
-            for game_data in performance.get("games", []):
-                all_games.append(game_data)
-
+        performance = player.get("performanceV2", {}) or {}
+        for game_data in performance.get("games", []):
+            all_games.append(game_data)
+            
         # Sort games by gameweek (most recent first)
         sorted_games = sorted(
             all_games,
