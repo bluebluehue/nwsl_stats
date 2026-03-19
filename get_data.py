@@ -652,13 +652,7 @@ def commit_changes_to_git():
         print(f"An unexpected error occurred during Git operations: {e}")
 
 
-# Schedule the transformation to every 3 hours
-schedule.every(1).hour.do(transform_data)
+print("Started")
 
-print('Started')
-
-# Execute the transformation when the script is run
 if __name__ == "__main__":
-    while True:
-        schedule.run_pending()
-        time.sleep(5)
+    transform_data()
