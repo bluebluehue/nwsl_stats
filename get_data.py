@@ -428,8 +428,8 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
     # 2. Determine max gameweeks from all players
     all_gameweek_numbers = set()
-    for player in api_players:
-        performance = player.get("performanceV2", {}) or {}
+for player in api_players:
+    for performance in player.get("performanceV2", []):
         for game_data in performance.get("games", []):
             try:
                 gw = game_data["game"]["stage"]["id"]
@@ -486,11 +486,11 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         total_points = 0  # Will calculate by summing all game points
 
         # Collect all games
-        all_games = []
-        performance = player.get("performanceV2", {}) or {}
-        for game_data in performance.get("games", []):
-            all_games.append(game_data)
-            
+all_games = []
+for performance in player.get("performanceV2", []):
+    for game_data in performance.get("games", []):
+        all_games.append(game_data)
+        
         # Sort games by gameweek (most recent first)
         sorted_games = sorted(
             all_games,
