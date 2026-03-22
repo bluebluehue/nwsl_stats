@@ -802,6 +802,8 @@
 
             </div>
         </div>
+        <div id="delta-reference-note" class="text-sm text-gray-600 mb-3">
+        </div>
         <div class="dt-container">
             <p id="loading-message" class="text-center text-xl p-8 text-gray-600">
                 Loading data...
@@ -940,6 +942,41 @@
             const RECENT_GAMES_COUNT = 4;
             let dataTableInstance = null;
             let uniqueClubs = [];
+            let selectedDeltaField = 'Selected Percentage Change 1W';
+
+            function formatDisplayDate(isoDateString) {
+                if (!isoDateString) return null;
+            
+                const d = new Date(isoDateString + 'T00:00:00');
+                if (isNaN(d)) return isoDateString;
+            
+                return d.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                });
+            }
+            
+            function updateDeltaReferenceNote(metadata) {
+                const $note = $('#delta-reference-note');
+            
+                if (selectedDeltaField === 'Selected Percentage Change 1W') {
+                    $note.html('<span class="font-medium">Delta mode:</span> Last 7 Days');
+                    return;
+                }
+            
+                if (selectedDeltaField === 'Selected Percentage Change Since Last Global Price Change') {
+                    const formattedDate = formatDisplayDate(metadata.last_global_price_change_date);
+                    if (formattedDate) {
+                        $note.html(`<span class="font-medium">Delta mode:</span> Since Last Price Change <span class="text-gray-500">(reference date: ${formattedDate})</span>`);
+                    } else {
+                        $note.html('<span class="font-medium">Delta mode:</span> Since Last Price Change');
+                    }
+                    return;
+                }
+            
+                $note.text('');
+            }
 
             // --- Tab Switching Logic (Tailwind version of Bootstrap tabs) ---
             window.switchTab = function (tabName) {
@@ -1859,6 +1896,18 @@
                     }
                 });
 
+                $('#delta-mode-filter').on('change', function () {
+                    selectedDeltaField = $(this).val();
+                
+                    if (window.transformedMetadataForUI) {
+                        updateDeltaReferenceNote(window.transformedMetadataForUI);
+                    }
+                
+                    if (dataTableInstance) {
+                        dataTableInstance.rows().invalidate().draw(false);
+                    }
+                });
+
                 $('#club-dropdown-toggle').on('click', function (e) {
                     e.stopPropagation();
                     toggleClubDropdown();
@@ -1897,7 +1946,10 @@
                          throw new Error(`Transformed data network response was not ok: ${transformedResponse.statusText}`);
                     }
                     
-                    const playerData = await transformedResponse.json();
+                    const transformedPayload = await transformedResponse.json();
+                    const playerData = transformedPayload.players || [];
+                    const transformedMetadata = transformedPayload.metadata || {};
+                    window.transformedMetadataForUI = transformedMetadata;
                     
                     try {
                         let historyObject = {};
@@ -1945,6 +1997,7 @@
                     }
 
                     initializeTable(playerData);
+                    updateDeltaReferenceNote(transformedMetadata);
 
                 } catch (error) {
                     console.error('Error loading data:', error);
