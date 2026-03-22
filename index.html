@@ -793,6 +793,17 @@
                 </div>
 
                 <div class="flex items-center space-x-2 w-full sm:w-auto">
+                    <label for="delta-mode-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                        Delta Mode:
+                    </label>
+                    <select id="delta-mode-filter"
+                        class="w-full sm:w-48 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                        <option value="Selected Percentage Change 1W">Last 7 Days</option>
+                        <option value="Selected Percentage Change Since Last Global Price Change">Since Last Price Change</option>
+                    </select>
+                </div>
+                
+                <div class="flex items-center space-x-2 w-full sm:w-auto">
                     <input type="checkbox" id="visionary-filter"
                         class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
                     <label for="visionary-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
@@ -804,6 +815,7 @@
         </div>
         <div id="delta-reference-note" class="text-sm text-gray-600 mb-3">
         </div>
+        <div id="delta-reference-note" class="text-sm text-gray-600 mb-3"></div>
         <div class="dt-container">
             <p id="loading-message" class="text-center text-xl p-8 text-gray-600">
                 Loading data...
@@ -1061,7 +1073,7 @@
                     { "label": "Total Points (P)", "key": "Total Points", "unit": "" },
                     { "label": "Points Per Game (PG)", "key": "Points Per Game", "unit": "", "calc": true }, 
                     { "label": "Selection Rate (S%)", "key": "Selected Percentage", "unit": "%", "raw_unit": true },
-                    { "label": "1W Selection Change", "key": "Selected Percentage Change 1W", "unit": "", "raw_unit": true, "delta": true },
+                    { "label": "Selection Change", "key": "Ownership Delta", "unit": "", "raw_unit": true, "delta": true },
                     { "label": "Goals Scored", "key": "Total Goals", "unit": "" },
                     { "label": "Assists", "key": "Total Assists", "unit": "" },
                     { "label": "Clean Sheets (CS)", "key": "Total Clean Sheet", "unit": "" },
@@ -1077,10 +1089,11 @@
                         const totalPoints = player["Total Points"];
                         const gamesPlayed = player["Total Games Played"];
                         displayValue = gamesPlayed > 0 ? safeToFixed(totalPoints / gamesPlayed, 1) : '-';
+                    } else if (stat.key === "Ownership Delta") {
+                        displayValue = player[selectedDeltaField];
                     } else if (player[stat.key] !== undefined && player[stat.key] !== null) {
                         displayValue = player[stat.key];
                     }
-
                     if (stat.delta) {
                         displayValue = formatOwnershipDelta(displayValue);
                     } else if (typeof displayValue === 'number' && !stat.raw_unit) {
@@ -1297,6 +1310,40 @@
                 return parseFloat(data).toFixed(decimals);
             }
 
+            function formatDisplayDate(isoDateString) {
+                if (!isoDateString) return null;
+            
+                const d = new Date(isoDateString + 'T00:00:00');
+                if (isNaN(d)) return isoDateString;
+            
+                return d.toLocaleDateString('en-GB', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                });
+            }
+            
+            function updateDeltaReferenceNote(metadata) {
+                const $note = $('#delta-reference-note');
+            
+                if (selectedDeltaField === 'Selected Percentage Change 1W') {
+                    $note.html('<span class="font-medium">Delta mode:</span> Last 7 Days');
+                    return;
+                }
+            
+                if (selectedDeltaField === 'Selected Percentage Change Since Last Global Price Change') {
+                    const formattedDate = formatDisplayDate(metadata.last_global_price_change_date);
+                    if (formattedDate) {
+                        $note.html(`<span class="font-medium">Delta mode:</span> Since Last Price Change <span class="text-gray-500">(reference date: ${formattedDate})</span>`);
+                    } else {
+                        $note.html('<span class="font-medium">Delta mode:</span> Since Last Price Change');
+                    }
+                    return;
+                }
+            
+                $note.text('');
+            }
+            
             function formatOwnershipDelta(data) {
                 if (data === null || data === undefined || data === '' || data === '-') {
                     return '-';
@@ -1409,38 +1456,41 @@
                     className: 'dt-center'
                 },
 
-                "Selected Percentage Change 1W": {
+                "Ownership Delta": {
+                    data: null,
                     defaultContent: '-',
-                    abbr: 'ΔS% 1W',
-                    full: 'Change in selection percentage versus one week earlier',
+                    abbr: 'ΔS%',
+                    full: 'Change in selection percentage for the chosen delta mode',
                     type: 'num',
                     render: function (data, type, row) {
+                        const value = row[selectedDeltaField];
+                
                         if (type === 'sort' || type === 'type') {
-                            if (data === null || data === undefined || data === '' || data === '-') {
+                            if (value === null || value === undefined || value === '' || value === '-') {
                                 return -9999;
                             }
-                            const num = parseFloat(data);
+                            const num = parseFloat(value);
                             return isNaN(num) ? -9999 : num;
                         }
                 
                         if (type === 'display') {
-                            const formatted = formatOwnershipDelta(data);
+                            const formatted = formatOwnershipDelta(value);
                 
                             if (formatted === '-') {
                                 return '<div style="padding-left: 8px; padding-right: 8px;">-</div>';
                             }
                 
                             let colorClass = 'text-gray-700';
-                            if (parseFloat(data) > 0) {
+                            if (parseFloat(value) > 0) {
                                 colorClass = 'text-green-600 font-semibold';
-                            } else if (parseFloat(data) < 0) {
+                            } else if (parseFloat(value) < 0) {
                                 colorClass = 'text-red-600 font-semibold';
                             }
                 
                             return `<div class="${colorClass}" style="padding-left: 8px; padding-right: 8px;">${formatted}</div>`;
                         }
                 
-                        return data;
+                        return value;
                     },
                     className: 'dt-center'
                 },
@@ -1895,6 +1945,17 @@
                         dataTableInstance.draw();
                     }
                 });
+                $('#delta-mode-filter').on('change', function () {
+                    selectedDeltaField = $(this).val();
+                
+                    if (window.transformedMetadataForUI) {
+                        updateDeltaReferenceNote(window.transformedMetadataForUI);
+                    }
+                
+                    if (dataTableInstance) {
+                        dataTableInstance.rows().invalidate().draw(false);
+                    }
+                });
 
                 $('#delta-mode-filter').on('change', function () {
                     selectedDeltaField = $(this).val();
@@ -1998,7 +2059,7 @@
 
                     initializeTable(playerData);
                     updateDeltaReferenceNote(transformedMetadata);
-
+                    
                 } catch (error) {
                     console.error('Error loading data:', error);
                     $('#loading-message').text('Failed to load player data. Check console for error details.');
