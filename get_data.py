@@ -2,7 +2,7 @@ import time
 import requests
 import json
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta
 import schedule
 import os
 import subprocess
@@ -348,7 +348,53 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
     return all_players_with_fixtures
 
+def load_history_data(history_file="player_history.json"):
+    """
+    Loads historical player data from JSON file.
+    """
+    if os.path.exists(history_file) and os.path.getsize(history_file) > 0:
+        try:
+            with open(history_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print(f"Warning: {history_file} is corrupted or empty.")
+            return {}
+    return {}
 
+def get_selected_percentage_delta_1w(player_name, current_selected_percentage, history_data):
+    """
+    Returns the change in selected percentage compared with the closest
+    available record from 7 days ago or earlier.
+
+    Example:
+    current = 12.4
+    one week ago = 10.1
+    delta = +2.3
+    """
+    player_history = history_data.get(player_name, {})
+    if not player_history:
+        return None
+
+    target_date = (datetime.now() - timedelta(days=7)).date()
+
+    valid_entries = []
+    for date_str, stats in player_history.items():
+        try:
+            entry_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+            selected_pct = stats.get("Selected Percentage")
+            if selected_pct is not None and entry_date <= target_date:
+                valid_entries.append((entry_date, selected_pct))
+        except (ValueError, TypeError):
+            continue
+
+    if not valid_entries:
+        return None
+
+    # Use the most recent entry on or before the target date
+    best_date, previous_selected_percentage = max(valid_entries, key=lambda x: x[0])
+
+    return round(current_selected_percentage - previous_selected_percentage, 1)
+    
 # --- NEW FUNCTION FOR HISTORY FILE ---
 def update_player_history(final_player_list, history_file="player_history.json"):
     """
@@ -425,6 +471,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         return
 
     print(f"Loaded {len(api_players)} players from API.")
+    history_data = load_history_data(history_file)
 
     # 2. Determine max gameweeks from all players
     all_gameweek_numbers = set()
@@ -476,6 +523,11 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         position = get_position_code(player.get("position", ""))
         value = player.get("price", 0) / 10.0  # API returns in tenths
         selected_percentage = player.get("selected", 0) * 100  # Convert to percentage
+        ownership_delta_1w = get_selected_percentage_delta_1w(
+            name,
+            selected_percentage,
+            history_data
+        )
 
         # Initialize stats
         gw_data_map = {}
@@ -557,6 +609,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Visionary": visionary,
             "Total Points": total_points,
             "Selected Percentage": round(selected_percentage, 1),
+            "Selected Percentage Change 1W": ownership_delta_1w,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
