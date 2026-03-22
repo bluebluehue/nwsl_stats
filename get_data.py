@@ -746,11 +746,21 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         filtered_fixtures = filter_fixtures(fixtures)
         combined_data = combine_player_and_fixture_data(final_output, filtered_fixtures)
 
-        # 7. Save main output
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(combined_data, f, indent=4, ensure_ascii=False)
-        print(f"Data saved to {output_file}")
+    output_payload = {
+        "metadata": {
+            "last_global_price_change_date": (
+                last_global_price_change_date.isoformat()
+                if last_global_price_change_date else None
+            )
+        },
+        "players": combined_data
+    }
 
+    # 7. Save main output
+        with open(output_file, "w", encoding="utf-8") as f:
+            json.dump(output_payload, f, indent=4, ensure_ascii=False)
+        print(f"Data saved to {output_file}")
+        
         print("Data refresh complete.")
     except Exception as e:
         print("Unable to get fixture data")
