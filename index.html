@@ -1019,18 +1019,18 @@
                     const newsHtml = `<div class="text-sm font-semibold text-red-600 mb-1">${playerNews}</div>`;
                     newsContainerEl.html(newsHtml);
                 }
-
+                
                 const statKeys = [
                     { "label": "Total Points (P)", "key": "Total Points", "unit": "" },
                     { "label": "Points Per Game (PG)", "key": "Points Per Game", "unit": "", "calc": true }, 
-                    { "label": "Selection Rate (S%)", "key": "Selected Percentage", "unit": "%", "raw_unit": true }, 
+                    { "label": "Selection Rate (S%)", "key": "Selected Percentage", "unit": "%", "raw_unit": true },
+                    { "label": "1W Selection Change", "key": "Selected Percentage Change 1W", "unit": "", "raw_unit": true, "delta": true },
                     { "label": "Goals Scored", "key": "Total Goals", "unit": "" },
                     { "label": "Assists", "key": "Total Assists", "unit": "" },
                     { "label": "Clean Sheets (CS)", "key": "Total Clean Sheet", "unit": "" },
                     { "label": "Points Last 4 GWs (P4)", "key": "Total Over 4 Gameweeks", "unit": "" },
                     { "label": "Points/M Last 4 GWs (PM4)", "key": "Points Per Million Over 4 Gameweeks", "unit": "", "raw_unit": true }, 
                 ];
-
                 let detailsHTML = '';
 
                 statKeys.forEach(stat => {
@@ -1044,12 +1044,14 @@
                         displayValue = player[stat.key];
                     }
 
-                    if (typeof displayValue === 'number' && !stat.raw_unit) {
+                    if (stat.delta) {
+                        displayValue = formatOwnershipDelta(displayValue);
+                    } else if (typeof displayValue === 'number' && !stat.raw_unit) {
                         displayValue = safeToFixed(displayValue, 0); 
                     } else if (typeof displayValue === 'number' && (stat.key === 'Selected Percentage' || stat.key === 'Points Per Million Over 4 Gameweeks')) {
                         displayValue = safeToFixed(displayValue, 1);
                     }
-
+                    
                     detailsHTML += `
                     <div class="flex flex-col p-1 bg-gray-50 rounded-lg shadow-sm border border-gray-200">
                         <span class="text-xs font-medium text-gray-500 uppercase tracking-wider">${stat.label}</span>
@@ -1258,6 +1260,22 @@
                 return parseFloat(data).toFixed(decimals);
             }
 
+            function formatOwnershipDelta(data) {
+                if (data === null || data === undefined || data === '' || data === '-') {
+                    return '-';
+                }
+            
+                const num = parseFloat(data);
+                if (isNaN(num) || !isFinite(num)) {
+                    return '-';
+                }
+            
+                if (num > 0) {
+                    return `+${num.toFixed(1)}`;
+                }
+                return num.toFixed(1);
+            }
+            
             // --- Mapped column definitions for STATIC data (No Change) ---
             const STATIC_COLUMN_MAP = {
                 "Name": {
@@ -1351,6 +1369,41 @@
                         return data;
                     },
 
+                    className: 'dt-center'
+                },
+
+                "Selected Percentage Change 1W": {
+                    abbr: 'ΔS% 1W',
+                    full: 'Change in selection percentage versus one week earlier',
+                    type: 'num',
+                    render: function (data, type, row) {
+                        if (type === 'sort' || type === 'type') {
+                            if (data === null || data === undefined || data === '' || data === '-') {
+                                return -9999;
+                            }
+                            const num = parseFloat(data);
+                            return isNaN(num) ? -9999 : num;
+                        }
+                
+                        if (type === 'display') {
+                            const formatted = formatOwnershipDelta(data);
+                
+                            if (formatted === '-') {
+                                return '<div style="padding-left: 8px; padding-right: 8px;">-</div>';
+                            }
+                
+                            let colorClass = 'text-gray-700';
+                            if (parseFloat(data) > 0) {
+                                colorClass = 'text-green-600 font-semibold';
+                            } else if (parseFloat(data) < 0) {
+                                colorClass = 'text-red-600 font-semibold';
+                            }
+                
+                            return `<div class="${colorClass}" style="padding-left: 8px; padding-right: 8px;">${formatted}</div>`;
+                        }
+                
+                        return data;
+                    },
                     className: 'dt-center'
                 },
 
