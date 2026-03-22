@@ -421,6 +421,7 @@ def get_last_global_price_change_date(history_data, min_changes=4):
     )
     return best_date
 
+
 def get_selected_percentage_delta_1w(player_name, current_selected_percentage, history_data):
     """
     Returns the change in selected percentage compared with the closest
@@ -450,12 +451,11 @@ def get_selected_percentage_delta_1w(player_name, current_selected_percentage, h
     if not valid_entries:
         return None
 
-    # Use the most recent entry on or before the target date
     best_date, previous_selected_percentage = max(valid_entries, key=lambda x: x[0])
-
     return round(current_selected_percentage - previous_selected_percentage, 1)
 
-    def get_selected_percentage_delta_since_date(player_name, current_selected_percentage, history_data, target_date):
+
+def get_selected_percentage_delta_since_date(player_name, current_selected_percentage, history_data, target_date):
     """
     Returns the change in selected percentage compared with the most recent
     available record on or before target_date.
