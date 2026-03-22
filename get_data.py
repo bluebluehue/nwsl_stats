@@ -361,6 +361,66 @@ def load_history_data(history_file="player_history.json"):
             return {}
     return {}
 
+def get_last_global_price_change_date(history_data, min_changes=4):
+    """
+    Finds the most recent date that appears to be a global price-change event,
+    defined as a date where at least `min_changes` players changed in value
+    compared to their previous recorded date.
+
+    If no such date exists, falls back to the most recent date where any player changed.
+
+    Returns:
+        datetime.date | None
+    """
+    change_counts_by_date = defaultdict(int)
+
+    for player_name, player_history in history_data.items():
+        if not isinstance(player_history, dict):
+            continue
+
+        dated_entries = []
+        for date_str, stats in player_history.items():
+            try:
+                entry_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+                value = stats.get("Value")
+                if value is not None:
+                    dated_entries.append((entry_date, value))
+            except (ValueError, TypeError):
+                continue
+
+        dated_entries.sort(key=lambda x: x[0])
+
+        for i in range(1, len(dated_entries)):
+            prev_date, prev_value = dated_entries[i - 1]
+            curr_date, curr_value = dated_entries[i]
+
+            if prev_value != curr_value:
+                change_counts_by_date[curr_date] += 1
+
+    if not change_counts_by_date:
+        return None
+
+    qualifying_dates = [
+        date for date, count in change_counts_by_date.items()
+        if count >= min_changes
+    ]
+
+    if qualifying_dates:
+        best_date = max(qualifying_dates)
+        print(
+            f"Inferred last global price change date: {best_date} "
+            f"({change_counts_by_date[best_date]} players changed, threshold={min_changes})"
+        )
+        return best_date
+
+    best_date = max(change_counts_by_date.keys())
+    print(
+        f"No date met threshold={min_changes}. "
+        f"Falling back to most recent price change date: {best_date} "
+        f"({change_counts_by_date[best_date]} players changed)"
+    )
+    return best_date
+
 def get_selected_percentage_delta_1w(player_name, current_selected_percentage, history_data):
     """
     Returns the change in selected percentage compared with the closest
@@ -394,7 +454,35 @@ def get_selected_percentage_delta_1w(player_name, current_selected_percentage, h
     best_date, previous_selected_percentage = max(valid_entries, key=lambda x: x[0])
 
     return round(current_selected_percentage - previous_selected_percentage, 1)
-    
+
+    def get_selected_percentage_delta_since_date(player_name, current_selected_percentage, history_data, target_date):
+    """
+    Returns the change in selected percentage compared with the most recent
+    available record on or before target_date.
+    """
+    if target_date is None:
+        return None
+
+    player_history = history_data.get(player_name, {})
+    if not player_history:
+        return None
+
+    valid_entries = []
+    for date_str, stats in player_history.items():
+        try:
+            entry_date = datetime.strptime(date_str, "%Y-%m-%d").date()
+            selected_pct = stats.get("Selected Percentage")
+            if selected_pct is not None and entry_date <= target_date:
+                valid_entries.append((entry_date, selected_pct))
+        except (ValueError, TypeError):
+            continue
+
+    if not valid_entries:
+        return None
+
+    best_date, previous_selected_percentage = max(valid_entries, key=lambda x: x[0])
+    return round(current_selected_percentage - previous_selected_percentage, 1)
+
 # --- NEW FUNCTION FOR HISTORY FILE ---
 def update_player_history(final_player_list, history_file="player_history.json"):
     """
@@ -472,6 +560,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
     print(f"Loaded {len(api_players)} players from API.")
     history_data = load_history_data(history_file)
+    last_global_price_change_date = get_last_global_price_change_date(history_data, min_changes=4)
 
     # 2. Determine max gameweeks from all players
     all_gameweek_numbers = set()
@@ -527,6 +616,12 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             name,
             selected_percentage,
             history_data
+        )
+        ownership_delta_since_last_price_change = get_selected_percentage_delta_since_date(
+            name,
+            selected_percentage,
+            history_data,
+            last_global_price_change_date
         )
 
         # Initialize stats
@@ -610,6 +705,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Total Points": total_points,
             "Selected Percentage": round(selected_percentage, 1),
             "Selected Percentage Change 1W": ownership_delta_1w,
+            "Selected Percentage Change Since Last Global Price Change": ownership_delta_since_last_price_change,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
@@ -655,8 +751,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             json.dump(combined_data, f, indent=4, ensure_ascii=False)
         print(f"Data saved to {output_file}")
 
-        # 8. Commit main output to Git (history file is not committed by default)
-        commit_changes_to_git()
+        print("Data refresh complete.")
     except Exception as e:
         print("Unable to get fixture data")
         fixtures = []
