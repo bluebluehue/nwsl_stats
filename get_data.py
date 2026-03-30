@@ -90,6 +90,7 @@ def filter_fixtures(fixtures_data):
                 upcoming_games.append(simplified_fixture)
 
         club_fixtures_map[club_id] = upcoming_games
+        print(f"DEBUG fixture count for {club_id}: {len(upcoming_games)}")
 
     print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
     return club_fixtures_map
@@ -345,6 +346,12 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
         # Retrieve the upcoming fixtures list for this player's club
         upcoming_fixtures = fixtures_map.get(club_id, [])
+        
+        if len(all_players_with_fixtures) < 10:
+            print(
+                f"DEBUG combine result for {player.get('Name')}: "
+                f"club_id='{club_id}', upcoming_count={len(upcoming_fixtures)}"
+            )
 
         # Attach the fixtures data
         player['upcoming_fixtures'] = upcoming_fixtures
