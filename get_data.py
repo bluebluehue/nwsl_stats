@@ -466,7 +466,7 @@ def get_next_gameweek_fixtures(player):
         print(f"DEBUG no upcoming_fixtures for {player.get('Name')}")
         return []
 
-    next_gw = fixtures[0].get("game_week")
+    next_gw = str(fixtures[0].get("game_week"))
     print(
         f"DEBUG raw upcoming_fixtures for {player.get('Name')}: "
         f"{len(fixtures)} total, next_gw={next_gw}"
@@ -475,8 +475,11 @@ def get_next_gameweek_fixtures(player):
     if next_gw is None:
         return []
 
-    return [f for f in fixtures if f.get("game_week") == next_gw]
-
+    return [
+        f for f in fixtures
+        if str(f.get("game_week")) == next_gw
+    ]
+    
 def combine_fixture_scores(scores):
     """
     Combine one or more fixture scores into a single 1-5 score.
