@@ -16,6 +16,7 @@ def get_fixture_data() -> list[dict[str, str | int]]:
             clubs {
                 id
                 name
+                shortName
                 games {
                     id
                     scheduledAt
@@ -46,10 +47,10 @@ def process_game(game):
     """
     home_name = game.get('home', {}).get('party', {}).get('name')
     home_short_name = game.get('home', {}).get('party', {}).get('shortName')
-    home_id = game.get('home', {}).get('party', {}).get('id')
+    home_id = game.get('home', {}).get('party', {}).get('shortName')
     away_name = game.get('away', {}).get('party', {}).get('name')
     away_short_name = game.get('away', {}).get('party', {}).get('shortName')
-    away_id = game.get('away', {}).get('party', {}).get('id')
+    away_id = game.get('away', {}).get('party', {}).get('shortName')
     stage_id = game.get('stage', {}).get('id')
 
     # --- Date/Time Transformation ---
@@ -77,7 +78,7 @@ def filter_fixtures(fixtures_data):
     club_fixtures_map = {}
 
     for club in fixtures_data.get('clubs', []):
-        club_id = club.get('id').upper()
+        club_id = club.get('shortName', '').upper()
 
         upcoming_games = []
         for game in club.get('games', []):
@@ -861,7 +862,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         if not name:
             continue
 
-        club = player.get("club", {}).get("id", "").upper()
+        club = player.get("club", {}).get("shortName", "").upper()
         nationality = player.get("nationality", "")
         news = player.get("news", "")
         visionary = player.get("visionaryNextStage", "")
