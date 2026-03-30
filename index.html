@@ -810,6 +810,13 @@
                         Visionaries Only
                     </label>
                 </div>
+                <div class="flex items-center space-x-2 w-full sm:w-auto">
+                    <input type="checkbox" id="hot-pick-filter"
+                        class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                    <label for="hot-pick-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                        Hot Picks Only
+                    </label>
+                </div>
 
             </div>
         </div>
@@ -1387,13 +1394,21 @@
 
                             const nameSpan = `<span class="${classString}">${data}</span>`;
 
+                            const hotPickIcon = row["Hot Pick"] === true
+                                ? `<span class="ml-1" title="Hot Pick">🔥</span>`
+                                : '';
+                            
                             if (isVisionary) {
                                 finalContent = `<div class="flex items-center">
                                                 ${nameSpan}
-                                                ${VISIONARY_SVG_SMALL}   
+                                                ${VISIONARY_SVG_SMALL}
+                                                ${hotPickIcon}
                                             </div>`;
                             } else {
-                                finalContent = nameSpan;
+                                finalContent = `<div class="flex items-center">
+                                                ${nameSpan}
+                                                ${hotPickIcon}
+                                            </div>`;
                             }
 
                             if (hasNews) {
@@ -1784,6 +1799,12 @@
                     if (visionaryChecked && !isVisionary) {
                         return false;
                     }
+                    const hotPickChecked = $('#hot-pick-filter').is(':checked');
+                    const isHotPick = rowData["Hot Pick"] === true;
+            
+                    if (hotPickChecked && !isHotPick) {
+                        return false;
+                    }
 
                     return true;
                 }
@@ -1975,6 +1996,13 @@
                         dataTableInstance.draw();
                     }
                 });
+
+                $('#hot-pick-filter').on('change', function () {
+                    if (dataTableInstance) {
+                        dataTableInstance.draw();
+                    }
+                });
+                
                 $('#max-value-filter, #position-filter').on('keyup change', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
