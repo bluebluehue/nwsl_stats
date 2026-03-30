@@ -514,11 +514,21 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
         home_team = fixture.get("home_id")
         away_team = fixture.get("away_id")
 
+        # DEBUG
+        print(
+            f"Scoring fixture for {player.get('Name')}: "
+            f"player_team={player_team}, home_team={home_team}, away_team={away_team}"
+        )
+
         if player_team == home_team:
             opponent_team = away_team
         elif player_team == away_team:
             opponent_team = home_team
         else:
+            print(
+                f"WARNING: no team match for {player.get('Name')} | "
+                f"player_team={player_team}, home_team={home_team}, away_team={away_team}"
+            )
             continue
 
         fixture_score = score_single_fixture(
@@ -529,6 +539,10 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
             all_defense_values
         )
         scores.append(fixture_score)
+
+    if not scores:
+        print(f"WARNING: no fixture scores generated for {player.get('Name')}")
+        return None
 
     return combine_fixture_scores(scores)
 
