@@ -504,7 +504,6 @@ def combine_fixture_scores(scores):
     combined_score = max(1, min(5, combined_score))
     return int(round(combined_score))
 
-
 def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values):
     """
     Compute a player's next fixture score (1-5), accounting for doubles in the next gameweek.
@@ -519,19 +518,18 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     if not next_gw_fixtures:
         return None
 
-    player_team = player.get("Club")
+    player_team = str(player.get("Club", "")).strip().upper()
     player_position = player.get("Position")
 
     scores = []
 
     for fixture in next_gw_fixtures:
-        home_team = fixture.get("home_id")
-        away_team = fixture.get("away_id")
+        home_team = str(fixture.get("home_id", "")).strip().upper()
+        away_team = str(fixture.get("away_id", "")).strip().upper()
 
-        # DEBUG
         print(
-            f"Scoring fixture for {player.get('Name')}: "
-            f"player_team={player_team}, home_team={home_team}, away_team={away_team}"
+            f"DEBUG scoring {player.get('Name')}: "
+            f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
         )
 
         if player_team == home_team:
@@ -540,8 +538,8 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
             opponent_team = home_team
         else:
             print(
-                f"WARNING: no team match for {player.get('Name')} | "
-                f"player_team={player_team}, home_team={home_team}, away_team={away_team}"
+                f"WARNING no team match for {player.get('Name')}: "
+                f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
             )
             continue
 
@@ -555,7 +553,7 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
         scores.append(fixture_score)
 
     if not scores:
-        print(f"WARNING: no fixture scores generated for {player.get('Name')}")
+        print(f"WARNING no fixture scores generated for {player.get('Name')}")
         return None
 
     return combine_fixture_scores(scores)
