@@ -74,33 +74,70 @@ def process_game(game):
 
 
 def filter_fixtures(fixtures_data):
-    # Filter Fixtures into a map (Club ID -> [Upcoming Fixtures])
+    """
+    Builds a map of {club_id: [upcoming fixtures]}.
+
+    DEBUG VERSION:
+    - Prints how many raw games each club has
+    - Prints sample game data (first 3 per club)
+    - Prints how many games pass the "future date" filter
+    """
+
     club_fixtures_map = {}
 
     for club in fixtures_data.get('clubs', []):
+        # We are now using shortName consistently as the club key
         club_id = club.get('shortName', '').upper()
 
-        upcoming_games = []
-        for game in club.get('games', []):
+        # --- DEBUG: how many total games the API is returning for this club ---
+        raw_games = club.get('games', [])
+        print(f"DEBUG raw games for {club_id}: {len(raw_games)}")
 
-            # Filter: Keep only games that haven't started
+        upcoming_games = []
+
+        for i, game in enumerate(raw_games):
+
+            # --- DEBUG: print the first few raw games so we can inspect fields ---
+            if i < 3:
+                print(
+                    f"DEBUG raw game for {club_id}: "
+                    f"scheduledAt={game.get('scheduledAt')}, "
+                    f"hasStarted={game.get('hasStarted')}, "
+                    f"stage={game.get('stage', {}).get('id')}"
+                )
+
             scheduled_at_str = game.get('scheduledAt')
-            
+
+            # Skip if no date exists (defensive guard)
+            if not scheduled_at_str:
+                continue
+
             try:
-                game_date = datetime.fromisoformat(scheduled_at_str.replace('Z', '+00:00'))
-                now = datetime.now(datetime.UTC)
-            
+                # Parse API timestamp into datetime
+                game_date = datetime.fromisoformat(
+                    scheduled_at_str.replace('Z', '+00:00')
+                )
+
+                # Use same timezone as parsed game_date (avoids timezone bugs)
+                now = datetime.now(game_date.tzinfo)
+
+                # --- CORE FILTER: only include FUTURE games ---
                 if game_date > now:
                     simplified_fixture = process_game(game)
                     upcoming_games.append(simplified_fixture)
-            
+
             except Exception as e:
                 print(f"DEBUG skipping game due to date parse issue: {e}")
 
+        # Store fixtures for this club
         club_fixtures_map[club_id] = upcoming_games
+
+        # --- DEBUG: how many survived filtering ---
         print(f"DEBUG fixture count for {club_id}: {len(upcoming_games)}")
 
+    # --- DEBUG: confirm keys look correct ---
     print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
+
     return club_fixtures_map
 
 def get_player_data() -> list[dict[str, int | str | float]]:
