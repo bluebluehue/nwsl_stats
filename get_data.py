@@ -84,10 +84,18 @@ def filter_fixtures(fixtures_data):
         for game in club.get('games', []):
 
             # Filter: Keep only games that haven't started
-            if game.get('hasStarted') is False:
-                # Transform the game object into the desired, simplified format
-                simplified_fixture = process_game(game)
-                upcoming_games.append(simplified_fixture)
+            scheduled_at_str = game.get('scheduledAt')
+            
+            try:
+                game_date = datetime.fromisoformat(scheduled_at_str.replace('Z', '+00:00'))
+                now = datetime.now(datetime.UTC)
+            
+                if game_date > now:
+                    simplified_fixture = process_game(game)
+                    upcoming_games.append(simplified_fixture)
+            
+            except Exception as e:
+                print(f"DEBUG skipping game due to date parse issue: {e}")
 
         club_fixtures_map[club_id] = upcoming_games
         print(f"DEBUG fixture count for {club_id}: {len(upcoming_games)}")
