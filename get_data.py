@@ -348,6 +348,190 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
     return all_players_with_fixtures
 
+def build_team_fixture_strength(players):
+    """
+    Builds simple team-level attack and defense strength scores from existing player data.
+
+    attack_strength:
+        based on team goals scored by players
+
+    defense_weakness:
+        based on goals conceded points lost (stored as negative points in Total Conceeded),
+        converted to a positive weakness number
+    """
+    team_totals = defaultdict(lambda: {
+        "goals_scored": 0,
+        "goals_conceded_points_lost": 0,
+        "player_count": 0
+    })
+
+    for player in players:
+        team = player.get("Club")
+        if not team:
+            continue
+
+        team_totals[team]["goals_scored"] += player.get("Total Goals", 0)
+        team_totals[team]["goals_conceded_points_lost"] += abs(player.get("Total Conceeded", 0))
+        team_totals[team]["player_count"] += 1
+
+    team_strength = {}
+
+    for team, stats in team_totals.items():
+        player_count = stats["player_count"] or 1
+
+        attack_strength = stats["goals_scored"] / player_count
+        defense_weakness = stats["goals_conceded_points_lost"] / player_count
+
+        team_strength[team] = {
+            "attack_strength": attack_strength,
+            "defense_weakness": defense_weakness
+        }
+
+    return team_strength
+
+
+def rank_to_fixture_score(value, all_values, reverse=False):
+    """
+    Convert a raw value into a 1-5 bucket.
+    1 = easiest / most favorable
+    5 = hardest / least favorable
+
+    reverse=False:
+        lower raw values become easier (1), higher become harder (5)
+
+    reverse=True:
+        higher raw values become easier (1), lower become harder (5)
+    """
+    if not all_values:
+        return 3
+
+    sorted_vals = sorted(set(all_values), reverse=reverse)
+
+    if len(sorted_vals) == 1:
+        return 3
+
+    try:
+        rank = sorted_vals.index(value)
+    except ValueError:
+        return 3
+
+    percentile = rank / (len(sorted_vals) - 1)
+
+    if percentile <= 0.2:
+        return 1
+    elif percentile <= 0.4:
+        return 2
+    elif percentile <= 0.6:
+        return 3
+    elif percentile <= 0.8:
+        return 4
+    else:
+        return 5
+
+
+def score_single_fixture(player_position, opponent_team, team_strength, all_attack_values, all_defense_values):
+    """
+    Score one fixture from 1-5.
+    Lower = better.
+
+    For attackers (MID/FOR):
+        weaker opponent defense = easier fixture
+
+    For defenders (DEF/GK):
+        weaker opponent attack = easier fixture
+    """
+    opponent_stats = team_strength.get(opponent_team)
+    if not opponent_stats:
+        return 3
+
+    if player_position in ["MID", "FOR"]:
+        # lower defense_weakness should actually be stronger defense,
+        # higher defense_weakness means weaker defense and therefore easier for attackers
+        value = opponent_stats["defense_weakness"]
+        return rank_to_fixture_score(value, all_defense_values, reverse=True)
+
+    if player_position in ["DEF", "GK"]:
+        value = opponent_stats["attack_strength"]
+        return rank_to_fixture_score(value, all_attack_values, reverse=False)
+
+    return 3
+
+
+def get_next_gameweek_fixtures(player):
+    """
+    Return all fixtures that belong to the player's next upcoming gameweek.
+    """
+    fixtures = player.get("upcoming_fixtures", [])
+    if not fixtures:
+        return []
+
+    next_gw = fixtures[0].get("game_week")
+    if next_gw is None:
+        return []
+
+    return [f for f in fixtures if f.get("game_week") == next_gw]
+
+
+def combine_fixture_scores(scores):
+    """
+    Combine one or more fixture scores into a single 1-5 score.
+    Lower = better.
+
+    For doubles:
+    - convert each score to goodness
+    - average goodness
+    - convert back to difficulty
+    - apply a small bonus for multiple fixtures
+    """
+    if not scores:
+        return None
+
+    goodness_values = [6 - s for s in scores]  # 1->5 goodness, 5->1 goodness
+    avg_goodness = sum(goodness_values) / len(goodness_values)
+    combined_score = 6 - avg_goodness
+
+    if len(scores) > 1:
+        combined_score -= 0.5
+
+    combined_score = max(1, min(5, combined_score))
+    return int(round(combined_score))
+
+
+def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values):
+    """
+    Compute a player's next fixture score (1-5), accounting for doubles in the next gameweek.
+    """
+    next_gw_fixtures = get_next_gameweek_fixtures(player)
+    if not next_gw_fixtures:
+        return None
+
+    player_team = player.get("Club")
+    player_position = player.get("Position")
+
+    scores = []
+
+    for fixture in next_gw_fixtures:
+        home_team = fixture.get("home_id")
+        away_team = fixture.get("away_id")
+
+        if player_team == home_team:
+            opponent_team = away_team
+        elif player_team == away_team:
+            opponent_team = home_team
+        else:
+            continue
+
+        fixture_score = score_single_fixture(
+            player_position,
+            opponent_team,
+            team_strength,
+            all_attack_values,
+            all_defense_values
+        )
+        scores.append(fixture_score)
+
+    return combine_fixture_scores(scores)
+
 def load_history_data(history_file="player_history.json"):
     """
     Loads historical player data from JSON file.
@@ -807,6 +991,20 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         filtered_fixtures = filter_fixtures(fixtures)
         combined_data = combine_player_and_fixture_data(final_output, filtered_fixtures)
+
+        # Build team strength model from existing player/team data
+        team_strength = build_team_fixture_strength(final_output)
+        all_attack_values = [v["attack_strength"] for v in team_strength.values()]
+        all_defense_values = [v["defense_weakness"] for v in team_strength.values()]
+
+        # Add next fixture score for each player
+        for player in combined_data:
+            player["Next Fixture Score"] = get_next_fixture_score(
+                player,
+                team_strength,
+                all_attack_values,
+                all_defense_values
+            )
 
         output_payload = {
             "metadata": {
