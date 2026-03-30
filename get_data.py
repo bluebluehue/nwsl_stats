@@ -517,6 +517,17 @@ def get_recommendation(
         return "Cold"
 
     return "Steady"
+
+def is_hot_pick(recent_points):
+    """
+    Returns True if the player scored more than 4 points
+    in at least 3 of their last 4 gameweeks.
+    """
+    if not recent_points:
+        return False
+
+    qualifying_games = sum(1 for pts in recent_points if pts > 4)
+    return qualifying_games >= 3
     
 # --- NEW FUNCTION FOR HISTORY FILE ---
 def update_player_history(final_player_list, history_file="player_history.json"):
@@ -663,6 +674,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         gw_data_map = {}
         gw_points_total_4gw = 0
         gw_games_played_4gw = 0
+        recent_points = []
         overall_stats = defaultdict(int)
         overall_games_played = 0
         total_points = 0  # Will calculate by summing all game points
@@ -702,6 +714,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             if i < recent_games_count:
                 gw_points_total_4gw += points
                 gw_games_played_4gw += 1
+                recent_points.append(points)
 
             overall_games_played += 1
 
@@ -728,6 +741,8 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             gw_points_total_4gw / recent_games_count if recent_games_count > 0 else 0.0
         )
 
+        hot_pick = is_hot_pick(recent_points)
+
         recommendation = get_recommendation(
             position=position,
             value=value,
@@ -752,6 +767,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Selected Percentage Change 1W": ownership_delta_1w,
             "Selected Percentage Change Since Last Global Price Change": ownership_delta_since_last_price_change,
             "Recommendation": recommendation,
+            "Hot Pick": hot_pick,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
