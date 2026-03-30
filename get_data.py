@@ -456,6 +456,48 @@ def get_selected_percentage_delta_1w(player_name, current_selected_percentage, h
 
 
 def get_selected_percentage_delta_since_date(player_name, current_selected_percentage, history_data, target_date):
+    def get_recommendation(
+        position,
+        value,
+        selected_percentage,
+        ownership_delta,
+        ppg_4gw,
+        ppm_4gw,
+        news
+    ):
+        """
+        Returns a simple recommendation label based on form, ownership trend,
+        value, and any news flag.
+        """
+    
+        has_news = bool(news and str(news).strip())
+    
+        # 1. Hard avoid: player has a news flag and weak recent form
+        if has_news and ppg_4gw < 2.0:
+            return "Avoid"
+    
+        # 2. Strong form + rising ownership
+        if ppg_4gw >= 4.0 and ownership_delta is not None and ownership_delta >= 1.0:
+            return "Hot Pick"
+    
+        # 3. Strong form + still low ownership
+        if ppg_4gw >= 4.0 and selected_percentage < 10.0:
+            return "Differential"
+    
+        # 4. Good recent value, especially useful for cheaper players
+        if ppm_4gw >= 0.8 and value <= 7.0:
+            return "Value Pick"
+    
+        # 5. Ownership rising, but recent form not strong enough
+        if ownership_delta is not None and ownership_delta >= 2.0 and ppg_4gw < 4.0:
+            return "Bandwagon"
+    
+        # 6. Weak recent form and not gaining traction
+        if ppg_4gw < 2.0 and (ownership_delta is None or ownership_delta <= 0):
+            return "Cold"
+    
+        return "Steady"
+    
     """
     Returns the change in selected percentage compared with the most recent
     available record on or before target_date.
@@ -693,6 +735,16 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             gw_points_total_4gw / recent_games_count if recent_games_count > 0 else 0.0
         )
 
+        recommendation = get_recommendation(
+            position=position,
+            value=value,
+            selected_percentage=selected_percentage,
+            ownership_delta=ownership_delta_1w,
+            ppg_4gw=ppg_4gw,
+            ppm_4gw=ppm_4gw,
+            news=news
+        )
+
         # Assemble final player object
         final_player = {
             "Name": name,
@@ -706,6 +758,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Selected Percentage": round(selected_percentage, 1),
             "Selected Percentage Change 1W": ownership_delta_1w,
             "Selected Percentage Change Since Last Global Price Change": ownership_delta_since_last_price_change,
+            "Recommendation": recommendation,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
