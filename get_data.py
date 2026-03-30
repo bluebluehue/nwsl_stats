@@ -2,7 +2,7 @@ import time
 import requests
 import json
 from collections import defaultdict
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import schedule
 import os
 import subprocess
@@ -89,7 +89,7 @@ def filter_fixtures(games_data):
     """
     club_fixtures_map = defaultdict(list)
 
-    now = datetime.now(datetime.UTC)
+    now = datetime.now(timezone.utc)
 
     print(f"DEBUG raw total games from API: {len(games_data)}")
 
