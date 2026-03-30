@@ -8,28 +8,37 @@ import os
 import subprocess
 
 
-def get_fixture_data() -> list[dict[str, str | int]]:
-    """Fetches fixture data from the API and returns a list of dictionaries."""
+def get_fixture_data() -> list[dict]:
+    """Fetches all games from the API and returns the games list."""
     base_url = "https://api.fantasynwsl.com/graphql"
     query = """
         {
-            clubs {
+            games {
                 id
-                name
-                shortName
-                games {
-                    id
-                    scheduledAt
-                    hasStarted
-                    stage { id }
-                    home { party { __typename
-                        ... on Club { name, shortName, id}
+                scheduledAt
+                hasStarted
+                stage { id }
+                home {
+                    party {
+                        __typename
+                        ... on Club {
+                            id
+                            name
+                            shortName
+                        }
                     }
+                    score
+                }
+                away {
+                    party {
+                        __typename
+                        ... on Club {
+                            id
+                            name
+                            shortName
+                        }
                     }
-                    away { party { __typename
-                        ... on Club { name, shortName, id}
-                    }
-                    }
+                    score
                 }
             }
         }
@@ -38,7 +47,7 @@ def get_fixture_data() -> list[dict[str, str | int]]:
     res = requests.post(base_url, json={"query": query})
     res.raise_for_status()
     data = res.json()
-    return data["data"]
+    return data["data"]["games"]
 
 
 def process_game(game):
@@ -47,10 +56,10 @@ def process_game(game):
     """
     home_name = game.get('home', {}).get('party', {}).get('name')
     home_short_name = game.get('home', {}).get('party', {}).get('shortName')
-    home_id = game.get('home', {}).get('party', {}).get('shortName')
+    home_id = game.get('home', {}).get('party', {}).get('id')
     away_name = game.get('away', {}).get('party', {}).get('name')
     away_short_name = game.get('away', {}).get('party', {}).get('shortName')
-    away_id = game.get('away', {}).get('party', {}).get('shortName')
+    away_id = game.get('away', {}).get('party', {}).get('id')
     stage_id = game.get('stage', {}).get('id')
 
     # --- Date/Time Transformation ---
@@ -73,72 +82,56 @@ def process_game(game):
     }
 
 
-def filter_fixtures(fixtures_data):
+def filter_fixtures(games_data):
     """
-    Builds a map of {club_id: [upcoming fixtures]}.
-
-    DEBUG VERSION:
-    - Prints how many raw games each club has
-    - Prints sample game data (first 3 per club)
-    - Prints how many games pass the "future date" filter
+    Build a map of {club_id: [upcoming_fixtures]} from top-level games data.
+    Uses club id codes like was, por, la, etc.
     """
+    club_fixtures_map = defaultdict(list)
 
-    club_fixtures_map = {}
+    now = datetime.now(datetime.UTC)
 
-    for club in fixtures_data.get('clubs', []):
-        # We are now using shortName consistently as the club key
-        club_id = club.get('shortName', '').upper()
+    print(f"DEBUG raw total games from API: {len(games_data)}")
 
-        # --- DEBUG: how many total games the API is returning for this club ---
-        raw_games = club.get('games', [])
-        print(f"DEBUG raw games for {club_id}: {len(raw_games)}")
+    for i, game in enumerate(games_data):
+        if i < 5:
+            print(
+                f"DEBUG raw top-level game: "
+                f"id={game.get('id')}, "
+                f"scheduledAt={game.get('scheduledAt')}, "
+                f"hasStarted={game.get('hasStarted')}, "
+                f"stage={game.get('stage', {}).get('id')}"
+            )
 
-        upcoming_games = []
+        scheduled_at_str = game.get("scheduledAt")
+        if not scheduled_at_str:
+            continue
 
-        for i, game in enumerate(raw_games):
+        try:
+            game_date = datetime.fromisoformat(scheduled_at_str.replace("Z", "+00:00"))
+        except Exception as e:
+            print(f"DEBUG skipping game due to date parse issue: {e}")
+            continue
 
-            # --- DEBUG: print the first few raw games so we can inspect fields ---
-            if i < 3:
-                print(
-                    f"DEBUG raw game for {club_id}: "
-                    f"scheduledAt={game.get('scheduledAt')}, "
-                    f"hasStarted={game.get('hasStarted')}, "
-                    f"stage={game.get('stage', {}).get('id')}"
-                )
+        if game_date <= now:
+            continue
 
-            scheduled_at_str = game.get('scheduledAt')
+        simplified_fixture = process_game(game)
 
-            # Skip if no date exists (defensive guard)
-            if not scheduled_at_str:
-                continue
+        home_id = simplified_fixture.get("home_id", "").upper()
+        away_id = simplified_fixture.get("away_id", "").upper()
 
-            try:
-                # Parse API timestamp into datetime
-                game_date = datetime.fromisoformat(
-                    scheduled_at_str.replace('Z', '+00:00')
-                )
+        if home_id:
+            club_fixtures_map[home_id].append(simplified_fixture)
+        if away_id:
+            club_fixtures_map[away_id].append(simplified_fixture)
 
-                # Use same timezone as parsed game_date (avoids timezone bugs)
-                now = datetime.now(game_date.tzinfo)
+    for club_id in list(club_fixtures_map.keys())[:20]:
+        print(f"DEBUG fixture count for {club_id}: {len(club_fixtures_map[club_id])}")
 
-                # --- CORE FILTER: only include FUTURE games ---
-                if game_date > now:
-                    simplified_fixture = process_game(game)
-                    upcoming_games.append(simplified_fixture)
-
-            except Exception as e:
-                print(f"DEBUG skipping game due to date parse issue: {e}")
-
-        # Store fixtures for this club
-        club_fixtures_map[club_id] = upcoming_games
-
-        # --- DEBUG: how many survived filtering ---
-        print(f"DEBUG fixture count for {club_id}: {len(upcoming_games)}")
-
-    # --- DEBUG: confirm keys look correct ---
     print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
 
-    return club_fixtures_map
+    return dict(club_fixtures_map)
 
 def get_player_data() -> list[dict[str, int | str | float]]:
     """Fetches the player details from the API and returns a list of dictionaries."""
@@ -920,7 +913,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         if not name:
             continue
 
-        club = player.get("club", {}).get("shortName", "").upper()
+        club = player.get("club", {}).get("id", "").upper()
         if len(final_output) < 10:
             print(f"DEBUG player club for {name}: '{club}'")
         nationality = player.get("nationality", "")
