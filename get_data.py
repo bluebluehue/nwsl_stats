@@ -456,21 +456,26 @@ def score_single_fixture(player_position, opponent_team, team_strength, all_atta
 
     return 3
 
-
 def get_next_gameweek_fixtures(player):
     """
     Return all fixtures that belong to the player's next upcoming gameweek.
     """
     fixtures = player.get("upcoming_fixtures", [])
+
     if not fixtures:
+        print(f"DEBUG no upcoming_fixtures for {player.get('Name')}")
         return []
 
     next_gw = fixtures[0].get("game_week")
+    print(
+        f"DEBUG raw upcoming_fixtures for {player.get('Name')}: "
+        f"{len(fixtures)} total, next_gw={next_gw}"
+    )
+
     if next_gw is None:
         return []
 
     return [f for f in fixtures if f.get("game_week") == next_gw]
-
 
 def combine_fixture_scores(scores):
     """
@@ -502,6 +507,12 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     Compute a player's next fixture score (1-5), accounting for doubles in the next gameweek.
     """
     next_gw_fixtures = get_next_gameweek_fixtures(player)
+
+    print(
+        f"DEBUG next fixtures for {player.get('Name')}: "
+        f"{len(next_gw_fixtures)} fixtures"
+    )
+
     if not next_gw_fixtures:
         return None
 
