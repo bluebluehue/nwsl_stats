@@ -91,8 +91,8 @@ def filter_fixtures(fixtures_data):
 
         club_fixtures_map[club_id] = upcoming_games
 
+    print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
     return club_fixtures_map
-
 
 def get_player_data() -> list[dict[str, int | str | float]]:
     """Fetches the player details from the API and returns a list of dictionaries."""
@@ -336,6 +336,12 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
         # NOTE: The player dicts inside final_output still have the 'Club' key
         # since it was transformed but not removed yet.
         club_id = player.get('Club', '').upper()
+
+        if len(all_players_with_fixtures) < 10:
+            print(
+                f"DEBUG combine lookup for {player.get('Name')}: "
+                f"club_id='{club_id}', fixture_keys_sample={list(fixtures_map.keys())[:10]}"
+            )
 
         # Retrieve the upcoming fixtures list for this player's club
         upcoming_fixtures = fixtures_map.get(club_id, [])
@@ -863,6 +869,8 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             continue
 
         club = player.get("club", {}).get("shortName", "").upper()
+        if len(final_output) < 10:
+            print(f"DEBUG player club for {name}: '{club}'")
         nationality = player.get("nationality", "")
         news = player.get("news", "")
         visionary = player.get("visionaryNextStage", "")
