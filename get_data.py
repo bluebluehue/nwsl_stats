@@ -526,7 +526,7 @@ def is_hot_pick(recent_points):
     if not recent_points:
         return False
 
-    qualifying_games = sum(1 for pts in recent_points if pts > 4)
+    qualifying_games = sum(1 for pts in recent_points if pts >= 4)
     return qualifying_games >= 3
     
 # --- NEW FUNCTION FOR HISTORY FILE ---
