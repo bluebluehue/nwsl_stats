@@ -400,47 +400,97 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
     return all_players_with_fixtures
 
-def build_team_fixture_strength(players):
+def build_team_fixture_strength_from_games(games_data, recent_match_limit=4):
     """
-    Builds simple team-level attack and defense strength scores from existing player data.
+    Build recent team attack/defense strength using actual game scores
+    from the last N completed matches.
 
-    attack_strength:
+        attack_strength:
         based on team goals scored by players
 
     defense_weakness:
         based on goals conceded points lost (stored as negative points in Total Conceeded),
         converted to a positive weakness number
-    """
-    team_totals = defaultdict(lambda: {
-        "goals_scored": 0,
-        "goals_conceded_points_lost": 0,
-        "player_count": 0
-    })
 
-    for player in players:
-        team = player.get("Club")
-        if not team:
+    Returns:
+        {
+            "LA": {
+                "recent_attack_strength": 1.75,
+                "recent_defensive_strength": 0.75
+            },
+            ...
+        }
+    """
+    team_games = defaultdict(list)
+
+    for game in games_data:
+        home = game.get("home", {})
+        away = game.get("away", {})
+
+        home_party = home.get("party", {}) or {}
+        away_party = away.get("party", {}) or {}
+
+        home_id = str(home_party.get("id", "")).upper()
+        away_id = str(away_party.get("id", "")).upper()
+
+        home_score = home.get("score")
+        away_score = away.get("score")
+
+        scheduled_at = game.get("scheduledAt")
+        has_started = game.get("hasStarted")
+
+        if not home_id or not away_id:
             continue
 
-        team_totals[team]["goals_scored"] += player.get("Total Goals", 0)
-        team_totals[team]["goals_conceded_points_lost"] += abs(player.get("Total Conceeded", 0))
-        team_totals[team]["player_count"] += 1
+        if home_score is None or away_score is None:
+            continue
+
+        if has_started is not True:
+            continue
+
+        try:
+            game_date = datetime.fromisoformat(scheduled_at.replace("Z", "+00:00"))
+        except Exception:
+            continue
+
+        team_games[home_id].append({
+            "date": game_date,
+            "goals_for": home_score,
+            "goals_against": away_score
+        })
+
+        team_games[away_id].append({
+            "date": game_date,
+            "goals_for": away_score,
+            "goals_against": home_score
+        })
 
     team_strength = {}
 
-    for team, stats in team_totals.items():
-        player_count = stats["player_count"] or 1
+    for team_id, matches in team_games.items():
+        matches_sorted = sorted(matches, key=lambda m: m["date"], reverse=True)
+        recent_matches = matches_sorted[:recent_match_limit]
 
-        attack_strength = stats["goals_scored"] / player_count
-        defense_weakness = stats["goals_conceded_points_lost"] / player_count
+        if not recent_matches:
+            team_strength[team_id] = {
+                "recent_attack_strength": 0.0,
+                "recent_defensive_strength": 0.0
+            }
+            continue
 
-        team_strength[team] = {
-            "attack_strength": attack_strength,
-            "defense_weakness": defense_weakness
+        avg_goals_for = sum(m["goals_for"] for m in recent_matches) / len(recent_matches)
+        avg_goals_against = sum(m["goals_against"] for m in recent_matches) / len(recent_matches)
+
+        # Higher is better for both metrics
+        recent_attack_strength = avg_goals_for
+        recent_defensive_strength = max(0.0, 5.0 - avg_goals_against)
+
+        team_strength[team_id] = {
+            "recent_attack_strength": round(recent_attack_strength, 3),
+            "recent_defensive_strength": round(recent_defensive_strength, 3)
         }
 
     return team_strength
-
 
 def rank_to_fixture_score(value, all_values, reverse=False):
     """
@@ -480,31 +530,55 @@ def rank_to_fixture_score(value, all_values, reverse=False):
     else:
         return 5
 
-
-def score_single_fixture(player_position, opponent_team, team_strength, all_attack_values, all_defense_values):
+def score_single_fixture(
+    player_position,
+    player_team,
+    opponent_team,
+    team_strength,
+    all_attacker_values,
+    all_defender_values
+):
     """
     Score one fixture from 1-5.
     Lower = better.
 
-    For attackers (MID/FOR):
-        weaker opponent defense = easier fixture
+    Attackers:
+        mostly opponent defensive weakness, lightly own team attack
 
-    For defenders (DEF/GK):
-        weaker opponent attack = easier fixture
+    Defenders/GK:
+        mostly opponent attacking threat, lightly own team defense
     """
     opponent_stats = team_strength.get(opponent_team)
-    if not opponent_stats:
+    own_stats = team_strength.get(player_team)
+
+    if not opponent_stats or not own_stats:
         return 3
 
     if player_position in ["MID", "FOR"]:
-        # lower defense_weakness should actually be stronger defense,
-        # higher defense_weakness means weaker defense and therefore easier for attackers
-        value = opponent_stats["defense_weakness"]
-        return rank_to_fixture_score(value, all_defense_values, reverse=True)
+        # Higher = more favorable for attackers
+        opponent_def_weakness = 5.0 - opponent_stats["recent_defensive_strength"]
+        own_attack = own_stats["recent_attack_strength"]
+
+        attacker_opportunity = (0.7 * opponent_def_weakness) + (0.3 * own_attack)
+
+        return rank_to_fixture_score(
+            attacker_opportunity,
+            all_attacker_values,
+            reverse=True
+        )
 
     if player_position in ["DEF", "GK"]:
-        value = opponent_stats["attack_strength"]
-        return rank_to_fixture_score(value, all_attack_values, reverse=False)
+        # Higher = more favorable for defenders
+        opponent_attack_threat = opponent_stats["recent_attack_strength"]
+        own_def_strength = own_stats["recent_defensive_strength"]
+
+        defender_opportunity = (0.7 * (5.0 - opponent_attack_threat)) + (0.3 * own_def_strength)
+
+        return rank_to_fixture_score(
+            defender_opportunity,
+            all_defender_values,
+            reverse=True
+        )
 
     return 3
 
@@ -597,6 +671,7 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
 
         fixture_score = score_single_fixture(
             player_position,
+            player_team,
             opponent_team,
             team_strength,
             all_attack_values,
@@ -1072,10 +1147,31 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         filtered_fixtures = filter_fixtures(fixtures)
         combined_data = combine_player_and_fixture_data(final_output, filtered_fixtures)
 
-        # Build team strength model from existing player/team data
-        team_strength = build_team_fixture_strength(final_output)
-        all_attack_values = [v["attack_strength"] for v in team_strength.values()]
-        all_defense_values = [v["defense_weakness"] for v in team_strength.values()]
+        # Build recent team strength model from completed games
+        team_strength = build_team_fixture_strength_from_games(fixtures)
+
+        all_attack_values = []
+        all_defense_values = []
+
+        for team_id, stats in team_strength.items():
+            opponent_def_weakness = 5.0 - stats["recent_defensive_strength"]
+            own_attack = stats["recent_attack_strength"]
+            attacker_opportunity = (0.7 * opponent_def_weakness) + (0.3 * own_attack)
+            all_attack_values.append(attacker_opportunity)
+
+            opponent_attack_threat = stats["recent_attack_strength"]
+            own_def_strength = stats["recent_defensive_strength"]
+            defender_opportunity = (0.7 * (5.0 - opponent_attack_threat)) + (0.3 * own_def_strength)
+            all_defense_values.append(defender_opportunity)
+
+        print("DEBUG team strength sample:")
+        for team_id, stats in list(team_strength.items())[:8]:
+            print(
+                f"{team_id}: "
+                f"attack={stats['recent_attack_strength']}, "
+                f"defense={stats['recent_defensive_strength']}"
+            )
+
 
         # Add next fixture score for each player
         for player in combined_data:
