@@ -734,115 +734,154 @@
                 <i class="fa-solid fa-circle-question mr-2"></i> Show Key / Glossary
             </button>
 
-            <div
-                class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto md:justify-end items-end md:items-center">
+            <div class="flex flex-col w-full md:w-auto md:items-end space-y-2">
 
-                <div class="relative w-full sm:w-auto">
-                    <button id="club-dropdown-toggle"
-                        class="w-full sm:w-36 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 flex justify-between items-center"
-                        aria-expanded="false" aria-haspopup="true">
-                        <span id="club-display-text">Clubs (All)</span>
-                        <svg class="h-5 w-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                            fill="currentColor" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-
-                    <div id="club-dropdown-menu"
-                        class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden transform origin-top-right">
-                        <div class="py-1" role="menu" aria-orientation="vertical"
-                            aria-labelledby="club-dropdown-toggle">
-                            <div class="flex justify-between p-2 border-b border-gray-200">
-                                <button id="select-all-clubs"
-                                    class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 focus:outline-none">Select
-                                    All</button>
-                                <button id="unselect-all-clubs"
-                                    class="text-xs font-semibold text-red-600 hover:text-red-800 focus:outline-none">Unselect
-                                    All</button>
-                            </div>
-                            <div id="club-filter-list" class="p-2 space-y-1">
-                                <p class="text-center text-xs text-gray-500">No clubs loaded...</p>
+                <!-- Row 1 -->
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto md:justify-end items-end md:items-center">
+            
+                    <div class="relative w-full sm:w-auto">
+                        <button id="club-dropdown-toggle"
+                            class="w-full sm:w-36 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 flex justify-between items-center"
+                            aria-expanded="false" aria-haspopup="true">
+                            <span id="club-display-text">Clubs (All)</span>
+                            <svg class="h-5 w-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+            
+                        <div id="club-dropdown-menu"
+                            class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden transform origin-top-right">
+                            <div class="py-1" role="menu" aria-orientation="vertical"
+                                aria-labelledby="club-dropdown-toggle">
+                                <div class="flex justify-between p-2 border-b border-gray-200">
+                                    <button id="select-all-clubs"
+                                        class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 focus:outline-none">Select
+                                        All</button>
+                                    <button id="unselect-all-clubs"
+                                        class="text-xs font-semibold text-red-600 hover:text-red-800 focus:outline-none">Unselect
+                                        All</button>
+                                </div>
+                                <div id="club-filter-list" class="p-2 space-y-1">
+                                    <p class="text-center text-xs text-gray-500">No clubs loaded...</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <label for="position-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
-                        Positon Filter:
-                    </label>
-                    <select id="position-filter"
-                        class="w-full sm:w-36 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        <option value="">All</option>
-                        <option value="GK">Goalkeepers</option>
-                        <option value="DEF">Defenders</option>
-                        <option value="MID">Midfielders</option>
-                        <option value="FOR">Forwards</option>
-                    </select>
-                </div>
-
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <label for="max-value-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
-                        Max Value:
-                    </label>
-                    <input type="number" step="0.1" id="max-value-filter"
-                        class="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-                        placeholder="e.g. 7.5">
-                </div>
-
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <label for="delta-mode-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
-                        Delta Mode:
-                    </label>
-                    <select id="delta-mode-filter"
-                        class="w-full sm:w-48 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
-                        <option value="Selected Percentage Change 1W">Last 7 Days</option>
-                        <option value="Selected Percentage Change Since Last Global Price Change">Since Last Price Change</option>
-                    </select>
-                </div>
-                
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <input type="checkbox" id="visionary-filter"
-                        class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                    <label for="visionary-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
-                        Visionaries Only
-                    </label>
-                </div>
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <input type="checkbox" id="hot-pick-filter"
-                        class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                    <label for="hot-pick-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
-                        Hot Picks Only
-                    </label>
-                </div>
-                <div class="flex items-center space-x-2 w-full sm:w-auto">
-                    <span class="text-sm font-medium text-gray-700 whitespace-nowrap">Fixture Score:</span>
-                    <div class="flex items-center space-x-2">
-                        <label class="flex items-center space-x-1 text-sm text-gray-700">
-                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="1" checked>
-                            <span>1</span>
+            
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="position-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Positon Filter:
                         </label>
-                        <label class="flex items-center space-x-1 text-sm text-gray-700">
-                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="2" checked>
-                            <span>2</span>
+                        <select id="position-filter"
+                            class="w-full sm:w-36 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                            <option value="">All</option>
+                            <option value="GK">Goalkeepers</option>
+                            <option value="DEF">Defenders</option>
+                            <option value="MID">Midfielders</option>
+                            <option value="FOR">Forwards</option>
+                        </select>
+                    </div>
+            
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="max-value-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Max Value:
                         </label>
-                        <label class="flex items-center space-x-1 text-sm text-gray-700">
-                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="3" checked>
-                            <span>3</span>
+                        <input type="number" step="0.1" id="max-value-filter"
+                            class="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                            placeholder="e.g. 7.5">
+                    </div>
+            
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="delta-mode-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Delta Mode:
                         </label>
-                        <label class="flex items-center space-x-1 text-sm text-gray-700">
-                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="4" checked>
-                            <span>4</span>
+                        <select id="delta-mode-filter"
+                            class="w-full sm:w-48 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                            <option value="Selected Percentage Change 1W">Last 7 Days</option>
+                            <option value="Selected Percentage Change Since Last Global Price Change">Since Last Price Change</option>
+                        </select>
+                    </div>
+            
+                    <div class="relative w-full sm:w-auto">
+                        <button id="fixture-score-dropdown-toggle"
+                            class="w-full sm:w-40 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 flex justify-between items-center"
+                            aria-expanded="false" aria-haspopup="true">
+                            <span id="fixture-score-display-text">Fixture Score (All)</span>
+                            <svg class="h-5 w-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+            
+                        <div id="fixture-score-dropdown-menu"
+                            class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden transform origin-top-right">
+                            <div class="py-1" role="menu" aria-orientation="vertical"
+                                aria-labelledby="fixture-score-dropdown-toggle">
+                                <div class="flex justify-between p-2 border-b border-gray-200">
+                                    <button id="select-all-fixture-scores"
+                                        class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 focus:outline-none">Select All</button>
+                                    <button id="unselect-all-fixture-scores"
+                                        class="text-xs font-semibold text-red-600 hover:text-red-800 focus:outline-none">Unselect All</button>
+                                </div>
+                                <div id="fixture-score-filter-list" class="p-2 space-y-1">
+                                    <div class="flex items-center">
+                                        <input id="fixture-score-1" name="fixture-score-filter" type="checkbox" value="1" checked
+                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
+                                        <label for="fixture-score-1" class="ml-3 text-sm text-gray-700">1</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="fixture-score-2" name="fixture-score-filter" type="checkbox" value="2" checked
+                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
+                                        <label for="fixture-score-2" class="ml-3 text-sm text-gray-700">2</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="fixture-score-3" name="fixture-score-filter" type="checkbox" value="3" checked
+                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
+                                        <label for="fixture-score-3" class="ml-3 text-sm text-gray-700">3</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="fixture-score-4" name="fixture-score-filter" type="checkbox" value="4" checked
+                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
+                                        <label for="fixture-score-4" class="ml-3 text-sm text-gray-700">4</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input id="fixture-score-5" name="fixture-score-filter" type="checkbox" value="5" checked
+                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
+                                        <label for="fixture-score-5" class="ml-3 text-sm text-gray-700">5</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            
+                <!-- Row 2 -->
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto md:justify-end items-end md:items-center">
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <input type="checkbox" id="visionary-filter"
+                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <label for="visionary-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Visionaries Only
                         </label>
-                        <label class="flex items-center space-x-1 text-sm text-gray-700">
-                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="5" checked>
-                            <span>5</span>
+                    </div>
+            
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <input type="checkbox" id="hot-pick-filter"
+                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <label for="hot-pick-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Hot Picks Only
                         </label>
                     </div>
                 </div>
+            
             </div>
+            
         </div>
         <div id="delta-reference-note" class="text-sm text-gray-600 mb-3">
         </div>
@@ -1759,9 +1798,30 @@
                 $('#club-display-text').text(text);
             }
 
+            function updateFixtureScoreDisplayText() {
+                const selectedCount = $('#fixture-score-filter-list input[type="checkbox"]:checked').length;
+                const totalCount = $('#fixture-score-filter-list input[type="checkbox"]').length;
+            
+                let text = "Fixture Score (None)";
+                if (selectedCount === totalCount) {
+                    text = "Fixture Score (All)";
+                } else if (selectedCount > 0) {
+                    text = `Fixture Score (${selectedCount}/${totalCount})`;
+                }
+            
+                $('#fixture-score-display-text').text(text);
+            }
+
             function toggleClubDropdown() {
                 $('#club-dropdown-menu').toggleClass('hidden');
                 $('#club-dropdown-toggle').attr('aria-expanded', function (_, attr) {
+                    return attr === 'true' ? 'false' : 'true';
+                });
+            }
+
+            function toggleFixtureScoreDropdown() {
+                $('#fixture-score-dropdown-menu').toggleClass('hidden');
+                $('#fixture-score-dropdown-toggle').attr('aria-expanded', function (_, attr) {
                     return attr === 'true' ? 'false' : 'true';
                 });
             }
@@ -1881,6 +1941,7 @@
                 $('#myTable').removeClass('hidden');
 
                 populateClubFilters(data);
+                updateFixtureScoreDisplayText();
 
                 let columns = [];
                 let headerRow = '<tr>';
@@ -2039,11 +2100,17 @@
                     }
                 });
 
-                $('.fixture-score-filter').on('change', function () {
+                $('#fixture-score-filter-list').on('change', '.fixture-score-filter', function () {
+                    updateFixtureScoreDisplayText();
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
                 });
+                
+                $('#select-all-fixture-scores, #unselect-all-fixture-scores').on('click', function () {
+                    const isSelectAll = this.id === 'select-all-fixture-scores';
+                    $('#fixture-score-filter-list input[type="checkbox"]').prop('checked', isSelectAll).trigger('change');
+                });      
                 
                 $('#max-value-filter, #position-filter').on('keyup change', function () {
                     if (dataTableInstance) {
@@ -2079,10 +2146,24 @@
                     toggleClubDropdown();
                 });
 
+                $('#fixture-score-dropdown-toggle').on('click', function (e) {
+                    e.stopPropagation();
+                    toggleFixtureScoreDropdown();
+                });
+
                 $(document).on('click', function (e) {
-                    if (!$('#club-dropdown-menu').hasClass('hidden') && !$(e.target).closest('#club-dropdown-menu').length && !$(e.target).is('#club-dropdown-toggle')) {
+                    if (!$('#club-dropdown-menu').hasClass('hidden') &&
+                        !$(e.target).closest('#club-dropdown-menu').length &&
+                        !$(e.target).closest('#club-dropdown-toggle').length) {
                         $('#club-dropdown-menu').addClass('hidden');
                         $('#club-dropdown-toggle').attr('aria-expanded', 'false');
+                    }
+                
+                    if (!$('#fixture-score-dropdown-menu').hasClass('hidden') &&
+                        !$(e.target).closest('#fixture-score-dropdown-menu').length &&
+                        !$(e.target).closest('#fixture-score-dropdown-toggle').length) {
+                        $('#fixture-score-dropdown-menu').addClass('hidden');
+                        $('#fixture-score-dropdown-toggle').attr('aria-expanded', 'false');
                     }
                 });
 
