@@ -817,7 +817,31 @@
                         Hot Picks Only
                     </label>
                 </div>
-
+                <div class="flex items-center space-x-2 w-full sm:w-auto">
+                    <span class="text-sm font-medium text-gray-700 whitespace-nowrap">Fixture Score:</span>
+                    <div class="flex items-center space-x-2">
+                        <label class="flex items-center space-x-1 text-sm text-gray-700">
+                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="1" checked>
+                            <span>1</span>
+                        </label>
+                        <label class="flex items-center space-x-1 text-sm text-gray-700">
+                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="2" checked>
+                            <span>2</span>
+                        </label>
+                        <label class="flex items-center space-x-1 text-sm text-gray-700">
+                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="3" checked>
+                            <span>3</span>
+                        </label>
+                        <label class="flex items-center space-x-1 text-sm text-gray-700">
+                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="4" checked>
+                            <span>4</span>
+                        </label>
+                        <label class="flex items-center space-x-1 text-sm text-gray-700">
+                            <input type="checkbox" class="fixture-score-filter h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500" value="5" checked>
+                            <span>5</span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="delta-reference-note" class="text-sm text-gray-600 mb-3">
@@ -1800,12 +1824,24 @@
                         return false;
                     }
                     const hotPickChecked = $('#hot-pick-filter').is(':checked');
-                    const isHotPick = rowData["Hot Pick"] === true;
+                    const isHotPick = rowData["Hot Pick"] === true || rowData["Hot Pick"] === "true";
             
                     if (hotPickChecked && !isHotPick) {
                         return false;
                     }
-
+            
+                    const selectedFixtureScores = $('.fixture-score-filter:checked').map(function () {
+                        return parseInt(this.value, 10);
+                    }).get();
+            
+                    const playerFixtureScore = parseInt(rowData["Next Fixture Score"], 10);
+            
+                    if (selectedFixtureScores.length > 0) {
+                        if (isNaN(playerFixtureScore) || !selectedFixtureScores.includes(playerFixtureScore)) {
+                            return false;
+                        }
+                    }
+            
                     return true;
                 }
             );
@@ -1998,6 +2034,12 @@
                 });
 
                 $('#hot-pick-filter').on('change', function () {
+                    if (dataTableInstance) {
+                        dataTableInstance.draw();
+                    }
+                });
+
+                $('.fixture-score-filter').on('change', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
