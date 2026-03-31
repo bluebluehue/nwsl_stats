@@ -1081,6 +1081,7 @@
                     { "label": "Points Per Game (PG)", "key": "Points Per Game", "unit": "", "calc": true }, 
                     { "label": "Selection Rate (S%)", "key": "Selected Percentage", "unit": "%", "raw_unit": true },
                     { "label": "Selection Change", "key": "Ownership Delta", "unit": "", "raw_unit": true, "delta": true },
+                    { "label": "Next Fixture Score", "key": "Next Fixture Score", "unit": "", "raw_unit": true },
                     <!-- { "label": "Recommendation", "key": "Recommendation", "unit": "", "raw_unit": true }, -->
                     { "label": "Goals Scored", "key": "Total Goals", "unit": "" },
                     { "label": "Assists", "key": "Total Assists", "unit": "" },
@@ -1436,6 +1437,39 @@
                         return data;
                     }
                 },
+                "Next Fixture Score": {
+                    abbr: 'Fix',
+                    full: 'Next gameweek fixture score (1 easiest, 5 hardest)',
+                    type: 'num',
+                    render: function (data, type, row) {
+                        if (type !== 'display') {
+                            return data === null || data === undefined ? 999 : data;
+                        }
+                
+                        if (data === null || data === undefined) {
+                            return '<span class="text-gray-400">-</span>';
+                        }
+                
+                        let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[28px] text-center';
+                
+                        if (data === 1) {
+                            classes += ' bg-green-600 text-white';
+                        } else if (data === 2) {
+                            classes += ' bg-green-200 text-green-900';
+                        } else if (data === 3) {
+                            classes += ' bg-gray-200 text-gray-800';
+                        } else if (data === 4) {
+                            classes += ' bg-red-200 text-red-900';
+                        } else if (data === 5) {
+                            classes += ' bg-red-600 text-white';
+                        } else {
+                            classes += ' bg-gray-100 text-gray-500';
+                        }
+                
+                        return `<span class="${classes}">${data}</span>`;
+                    },
+                    className: 'dt-center'
+                },               
                 "Position": {
                     abbr: 'Pos',
                     full: 'Player Position',
