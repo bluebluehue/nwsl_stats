@@ -1170,7 +1170,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             all_defense_values.append(defender_opportunity)
 
         print("DEBUG team strength sample:")
-        for team_id, stats in list(team_strength.items())[:8]:
+        for team_id, stats in list(team_strength.items())[:16]:
             print(
                 f"{team_id}: "
                 f"attack={stats['recent_attack_strength']}, "
