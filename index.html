@@ -1509,31 +1509,39 @@
                         const rating = row["Next Fixture Rating"];
                         const scoreBucket = row["Next Fixture Score"];
                 
+                        const numericRating = (rating === null || rating === undefined || rating === "")
+                            ? null
+                            : parseFloat(rating);
+                
+                        const numericBucket = (scoreBucket === null || scoreBucket === undefined || scoreBucket === "")
+                            ? null
+                            : parseInt(scoreBucket, 10);
+                
                         if (type !== 'display') {
-                            return rating === null || rating === undefined ? 999 : rating;
+                            return numericRating === null || isNaN(numericRating) ? 999 : numericRating;
                         }
                 
-                        if (rating === null || rating === undefined) {
+                        if (numericRating === null || isNaN(numericRating)) {
                             return '<span class="text-gray-400">-</span>';
                         }
                 
                         let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[48px] text-center';
                 
-                        if (scoreBucket === 1) {
+                        if (numericBucket === 1) {
                             classes += ' bg-green-600 text-white';
-                        } else if (scoreBucket === 2) {
+                        } else if (numericBucket === 2) {
                             classes += ' bg-green-200 text-green-900';
-                        } else if (scoreBucket === 3) {
+                        } else if (numericBucket === 3) {
                             classes += ' bg-gray-200 text-gray-800';
-                        } else if (scoreBucket === 4) {
+                        } else if (numericBucket === 4) {
                             classes += ' bg-red-200 text-red-900';
-                        } else if (scoreBucket === 5) {
+                        } else if (numericBucket === 5) {
                             classes += ' bg-red-600 text-white';
                         } else {
                             classes += ' bg-gray-100 text-gray-500';
                         }
                 
-                        return `<span class="${classes}">${parseFloat(rating).toFixed(2)}</span>`;
+                        return `<span class="${classes}">${numericRating.toFixed(2)}</span>`;
                     },
                     className: 'dt-center'
                 },
