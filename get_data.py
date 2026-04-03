@@ -497,9 +497,9 @@ def build_team_fixture_strength_from_games(games_data, recent_match_limit=4):
 
     return team_strength
 
-def rank_to_fixture_score(value, all_values, reverse=False):
+def rank_to_fixture_rating(value, all_values, reverse=False):
     """
-    Convert a raw value into a 1-5 bucket.
+    Convert a raw value into a continuous 1-5 rating.
     1 = easiest / most favorable
     5 = hardest / least favorable
 
@@ -510,30 +510,23 @@ def rank_to_fixture_score(value, all_values, reverse=False):
         higher raw values become easier (1), lower become harder (5)
     """
     if not all_values:
-        return 3
+        return 3.0
 
     sorted_vals = sorted(set(all_values), reverse=reverse)
 
     if len(sorted_vals) == 1:
-        return 3
+        return 3.0
 
     try:
         rank = sorted_vals.index(value)
     except ValueError:
-        return 3
+        return 3.0
 
     percentile = rank / (len(sorted_vals) - 1)
 
-    if percentile <= 0.2:
-        return 1
-    elif percentile <= 0.4:
-        return 2
-    elif percentile <= 0.6:
-        return 3
-    elif percentile <= 0.8:
-        return 4
-    else:
-        return 5
+    # Continuous 1-5 scale instead of buckets
+    rating = 1 + (percentile * 4)
+    return round(rating, 2)
 
 def score_single_fixture(
     player_position,
@@ -566,12 +559,12 @@ def score_single_fixture(
 
         attacker_opportunity = (0.7 * opponent_def_weakness) + (0.3 * own_attack)
 
-        return rank_to_fixture_score(
+        return rank_to_fixture_rating(
             attacker_opportunity,
             all_attacker_values,
             reverse=True
         )
-
+        
     if player_position in ["DEF", "GK"]:
         # Higher = more favorable for defenders
         opponent_attack_threat = opponent_stats["recent_attack_strength"]
@@ -579,7 +572,7 @@ def score_single_fixture(
 
         defender_opportunity = (0.7 * (5.0 - opponent_attack_threat)) + (0.3 * own_def_strength)
 
-        return rank_to_fixture_score(
+        return rank_to_fixture_rating(
             defender_opportunity,
             all_defender_values,
             reverse=True
@@ -625,16 +618,14 @@ def combine_fixture_scores(scores):
     if not scores:
         return None, None
 
-    goodness_values = [6 - s for s in scores]
-    avg_goodness = sum(goodness_values) / len(goodness_values)
-    combined_score = 6 - avg_goodness
+    avg_rating = sum(scores) / len(scores)
 
     if len(scores) > 1:
-        combined_score -= 0.5
+        avg_rating -= 0.5
 
-    combined_score = max(1, min(5, combined_score))
-    raw_rating = round(combined_score, 2)
-    display_score = int(round(combined_score))
+    avg_rating = max(1, min(5, avg_rating))
+    raw_rating = round(avg_rating, 2)
+    display_score = int(round(avg_rating))
 
     return raw_rating, display_score
 
