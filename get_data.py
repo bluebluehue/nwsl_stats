@@ -7,6 +7,7 @@ import schedule
 import os
 import subprocess
 
+DEBUG = False
 
 def get_fixture_data() -> list[dict]:
     """Fetches all games from the API and returns the games list."""
@@ -91,10 +92,11 @@ def filter_fixtures(games_data):
 
     now = datetime.now(timezone.utc)
 
-    print(f"DEBUG raw total games from API: {len(games_data)}")
-
+    if DEBUG:
+        print(f"DEBUG raw total games from API: {len(games_data)}")
+        
     for i, game in enumerate(games_data):
-        if i < 5:
+        if DEBUG and i < 5:
             print(
                 f"DEBUG raw top-level game: "
                 f"id={game.get('id')}, "
@@ -110,7 +112,8 @@ def filter_fixtures(games_data):
         try:
             game_date = datetime.fromisoformat(scheduled_at_str.replace("Z", "+00:00"))
         except Exception as e:
-            print(f"DEBUG skipping game due to date parse issue: {e}")
+            if DEBUG:
+                print(f"DEBUG skipping game due to date parse issue: {e}")
             continue
 
         if game_date <= now:
@@ -126,10 +129,11 @@ def filter_fixtures(games_data):
         if away_id:
             club_fixtures_map[away_id].append(simplified_fixture)
 
-    for club_id in list(club_fixtures_map.keys())[:20]:
-        print(f"DEBUG fixture count for {club_id}: {len(club_fixtures_map[club_id])}")
+    if DEBUG:
+        for club_id in list(club_fixtures_map.keys())[:20]:
+            print(f"DEBUG fixture count for {club_id}: {len(club_fixtures_map[club_id])}")
 
-    print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
+        print("DEBUG fixture map keys:", list(club_fixtures_map.keys())[:20])
 
     return dict(club_fixtures_map)
 
@@ -376,7 +380,7 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
         # since it was transformed but not removed yet.
         club_id = player.get('Club', '').upper()
 
-        if len(all_players_with_fixtures) < 10:
+        if DEBUG and len(all_players_with_fixtures) < 10:
             print(
                 f"DEBUG combine lookup for {player.get('Name')}: "
                 f"club_id='{club_id}', fixture_keys_sample={list(fixtures_map.keys())[:10]}"
@@ -385,7 +389,7 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
         # Retrieve the upcoming fixtures list for this player's club
         upcoming_fixtures = fixtures_map.get(club_id, [])
         
-        if len(all_players_with_fixtures) < 10:
+        if DEBUG and len(all_players_with_fixtures) < 10:
             print(
                 f"DEBUG combine result for {player.get('Name')}: "
                 f"club_id='{club_id}', upcoming_count={len(upcoming_fixtures)}"
@@ -497,37 +501,6 @@ def build_team_fixture_strength_from_games(games_data, recent_match_limit=4):
 
     return team_strength
 
-def rank_to_fixture_rating(value, all_values, reverse=False):
-    """
-    Convert a raw value into a continuous 1-5 rating.
-    1 = easiest / most favorable
-    5 = hardest / least favorable
-
-    reverse=False:
-        lower raw values become easier (1), higher become harder (5)
-
-    reverse=True:
-        higher raw values become easier (1), lower become harder (5)
-    """
-    if not all_values:
-        return 3.0
-
-    sorted_vals = sorted(set(all_values), reverse=reverse)
-
-    if len(sorted_vals) == 1:
-        return 3.0
-
-    try:
-        rank = sorted_vals.index(value)
-    except ValueError:
-        return 3.0
-
-    percentile = rank / (len(sorted_vals) - 1)
-
-    # Continuous 1-5 scale instead of buckets
-    rating = 1 + (percentile ** 1.5 * 4)
-    return round(rating, 2)
-
 def score_single_fixture(
     player_position,
     player_team,
@@ -611,14 +584,16 @@ def get_next_gameweek_fixtures(player):
     fixtures = player.get("upcoming_fixtures", [])
 
     if not fixtures:
-        print(f"DEBUG no upcoming_fixtures for {player.get('Name')}")
+        if DEBUG:
+            print(f"DEBUG no upcoming_fixtures for {player.get('Name')}")
         return []
 
     next_gw = str(fixtures[0].get("game_week"))
-    print(
-        f"DEBUG raw upcoming_fixtures for {player.get('Name')}: "
-        f"{len(fixtures)} total, next_gw={next_gw}"
-    )
+    if DEBUG:
+        print(
+            f"DEBUG raw upcoming_fixtures for {player.get('Name')}: "
+            f"{len(fixtures)} total, next_gw={next_gw}"
+        )
 
     if next_gw is None:
         return []
@@ -659,10 +634,11 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     """
     next_gw_fixtures = get_next_gameweek_fixtures(player)
 
-    print(
-        f"DEBUG next fixtures for {player.get('Name')}: "
-        f"{len(next_gw_fixtures)} fixtures"
-    )
+    if DEBUG:
+        print(
+            f"DEBUG next fixtures for {player.get('Name')}: "
+            f"{len(next_gw_fixtures)} fixtures"
+        )
 
     if not next_gw_fixtures:
         return None, None
@@ -676,10 +652,11 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
         home_team = str(fixture.get("home_id", "")).strip().upper()
         away_team = str(fixture.get("away_id", "")).strip().upper()
 
-        print(
-            f"DEBUG scoring {player.get('Name')}: "
-            f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
-        )
+        if DEBUG:
+            print(
+                f"DEBUG scoring {player.get('Name')}: "
+                f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
+            )
 
         if player_team == home_team:
             opponent_team = away_team
@@ -1012,7 +989,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             continue
 
         club = player.get("club", {}).get("id", "").upper()
-        if len(final_output) < 10:
+        if DEBUG and len(final_output) < 10:
             print(f"DEBUG player club for {name}: '{club}'")
         nationality = player.get("nationality", "")
         news = player.get("news", "")
