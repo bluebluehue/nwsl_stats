@@ -623,9 +623,9 @@ def combine_fixture_scores(scores):
     - apply a small bonus for multiple fixtures
     """
     if not scores:
-        return None
+        return None, None
 
-    goodness_values = [6 - s for s in scores]  # 1->5 goodness, 5->1 goodness
+    goodness_values = [6 - s for s in scores]
     avg_goodness = sum(goodness_values) / len(goodness_values)
     combined_score = 6 - avg_goodness
 
@@ -633,7 +633,10 @@ def combine_fixture_scores(scores):
         combined_score -= 0.5
 
     combined_score = max(1, min(5, combined_score))
-    return int(round(combined_score))
+    raw_rating = round(combined_score, 2)
+    display_score = int(round(combined_score))
+
+    return raw_rating, display_score
 
 def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values):
     """
@@ -686,10 +689,10 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
 
     if not scores:
         print(f"WARNING no fixture scores generated for {player.get('Name')}")
-        return None
+        return None, None
 
     return combine_fixture_scores(scores)
-
+    
 def load_history_data(history_file="player_history.json"):
     """
     Loads historical player data from JSON file.
@@ -1180,13 +1183,16 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         # Add next fixture score for each player
         for player in combined_data:
-            player["Next Fixture Score"] = get_next_fixture_score(
+            next_fixture_rating, next_fixture_score = get_next_fixture_score(
                 player,
                 team_strength,
                 all_attack_values,
                 all_defense_values
             )
 
+            player["Next Fixture Rating"] = next_fixture_rating
+            player["Next Fixture Score"] = next_fixture_score
+            
         output_payload = {
             "metadata": {
                 "last_global_price_change_date": (
