@@ -525,7 +525,7 @@ def rank_to_fixture_rating(value, all_values, reverse=False):
     percentile = rank / (len(sorted_vals) - 1)
 
     # Continuous 1-5 scale instead of buckets
-    rating = 1 + (percentile * 4)
+    rating = 1 + (percentile ** 1.5 * 4)
     return round(rating, 2)
 
 def score_single_fixture(
@@ -557,7 +557,7 @@ def score_single_fixture(
         opponent_def_weakness = 5.0 - opponent_stats["recent_defensive_strength"]
         own_attack = own_stats["recent_attack_strength"]
 
-        attacker_opportunity = (0.7 * opponent_def_weakness) + (0.3 * own_attack)
+        attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack)
 
         return rank_to_fixture_rating(
             attacker_opportunity,
@@ -570,7 +570,7 @@ def score_single_fixture(
         opponent_attack_threat = opponent_stats["recent_attack_strength"]
         own_def_strength = own_stats["recent_defensive_strength"]
 
-        defender_opportunity = (0.7 * (5.0 - opponent_attack_threat)) + (0.3 * own_def_strength)
+        defender_opportunity = (0.8 * (5.0 - opponent_attack_threat)) + (0.2 * own_def_strength)
 
         return rank_to_fixture_rating(
             defender_opportunity,
@@ -1155,12 +1155,12 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         for team_id, stats in team_strength.items():
             opponent_def_weakness = 5.0 - stats["recent_defensive_strength"]
             own_attack = stats["recent_attack_strength"]
-            attacker_opportunity = (0.7 * opponent_def_weakness) + (0.3 * own_attack)
+            attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack)
             all_attack_values.append(attacker_opportunity)
 
             opponent_attack_threat = stats["recent_attack_strength"]
             own_def_strength = stats["recent_defensive_strength"]
-            defender_opportunity = (0.7 * (5.0 - opponent_attack_threat)) + (0.3 * own_def_strength)
+            defender_opportunity = (0.8 * (5.0 - opponent_attack_threat)) + (0.2 * own_def_strength)
             all_defense_values.append(defender_opportunity)
 
         print("DEBUG team strength sample:")
