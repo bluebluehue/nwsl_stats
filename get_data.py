@@ -559,10 +559,10 @@ def score_single_fixture(
 
         attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack)
 
-        return rank_to_fixture_rating(
+        return scale_to_fixture_rating(
             attacker_opportunity,
             all_attacker_values,
-            reverse=True
+            higher_is_better=True
         )
         
     if player_position in ["DEF", "GK"]:
@@ -572,13 +572,37 @@ def score_single_fixture(
 
         defender_opportunity = (0.8 * (5.0 - opponent_attack_threat)) + (0.2 * own_def_strength)
 
-        return rank_to_fixture_rating(
+        return scale_to_fixture_rating(
             defender_opportunity,
             all_defender_values,
-            reverse=True
+            higher_is_better=True
         )
 
     return 3
+
+def scale_to_fixture_rating(value, all_values, higher_is_better=True):
+    """
+    Convert a raw opportunity value into a continuous 1-5 fixture rating.
+    Lower = easier / better.
+    """
+    if not all_values:
+        return 3.0
+
+    min_val = min(all_values)
+    max_val = max(all_values)
+
+    if max_val == min_val:
+        return 3.0
+
+    normalized = (value - min_val) / (max_val - min_val)
+
+    if higher_is_better:
+        # best value -> 1, worst -> 5
+        rating = 5 - (normalized * 4)
+    else:
+        rating = 1 + (normalized * 4)
+
+    return round(max(1, min(5, rating)), 2)
 
 def get_next_gameweek_fixtures(player):
     """
@@ -641,7 +665,7 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     )
 
     if not next_gw_fixtures:
-        return None
+        return None, None
 
     player_team = str(player.get("Club", "")).strip().upper()
     player_position = player.get("Position")
