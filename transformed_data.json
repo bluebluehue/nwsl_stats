@@ -4349,7 +4349,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.2,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -5334,30 +5334,30 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 5,
+            "Total Points": 7,
             "Selected Percentage": 6.1,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 5,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 1.0,
-            "Points Per Million Over 4 Gameweeks": 1.0,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 7,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 1.4,
+            "Points Per Million Over 4 Gameweeks": 1.4,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
             "Total Yellow Cards": 0,
-            "Total Saves": 0,
+            "Total Saves": 1,
             "Total Own Goals": 0,
             "Total Conceeded": -1,
             "Total Clean Sheet": 0,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -5372,19 +5372,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)\nSaves (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -5672,8 +5664,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Emmie Allen",
@@ -5715,17 +5707,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -6012,8 +5993,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Kelli Hubly",
@@ -6058,17 +6039,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -6355,8 +6325,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Caprice Dydasco",
@@ -6398,17 +6368,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -6695,8 +6654,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Emily Menges",
@@ -6738,17 +6697,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -7035,8 +6983,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Abby Dahlkemper",
@@ -7078,17 +7026,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -7375,8 +7312,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Alyssa Malonson",
@@ -7418,17 +7355,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -7715,8 +7641,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Kiki Pickett",
@@ -8097,17 +8023,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -8394,8 +8309,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Hannah Bebar",
@@ -8405,18 +8320,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 6,
+            "Total Points": 7,
             "Selected Percentage": 2.1,
             "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 6,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.5,
-            "Points Per Million": 1.3,
-            "Points Per Million Over 4 Gameweeks": 1.3,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 7,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 1.6,
+            "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -8428,7 +8343,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -8443,19 +8358,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -8743,8 +8650,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Taylor Huff",
@@ -8754,18 +8661,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 6,
+            "Total Points": 7,
             "Selected Percentage": 2.6,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 6,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 1.5,
-            "Points Per Million": 0.8,
-            "Points Per Million Over 4 Gameweeks": 0.8,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 7,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 0.9,
+            "Points Per Million Over 4 Gameweeks": 0.9,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 1,
@@ -8777,7 +8684,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 2,
             "1": {
                 "points": 2,
@@ -8789,19 +8696,11 @@
             },
             "3": "-",
             "4": "-",
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -9089,8 +8988,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Jamie Shepherd",
@@ -9132,17 +9031,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -9429,8 +9317,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Joelle Anderson",
@@ -9481,17 +9369,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -9778,8 +9655,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Dorian Bailey",
@@ -9792,7 +9669,7 @@
             "Total Points": 7,
             "Selected Percentage": 1.4,
             "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 1,
@@ -9824,17 +9701,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -10121,8 +9987,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Karlie Lema",
@@ -10173,17 +10039,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -10470,8 +10325,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Racheal Kundananji",
@@ -10516,17 +10371,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -10813,8 +10657,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Tess Boade",
@@ -10859,17 +10703,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -11156,8 +10989,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Caroline Conti",
@@ -11205,17 +11038,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -11502,8 +11324,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Rachel Hill",
@@ -12167,7 +11989,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -17399,9 +17221,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 14,
-            "Selected Percentage": 5.3,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": -2.5,
+            "Selected Percentage": 5.4,
+            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change Since Last Global Price Change": -2.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -19024,8 +18846,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Shelby Hogan",
@@ -19342,8 +19164,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Ann-Katrin Berger",
@@ -19675,8 +19497,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Lilly Reale",
@@ -19687,9 +19509,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 22.1,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 2.3,
+            "Selected Percentage": 22.2,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": 2.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -20008,8 +19830,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Bruna Santos Nhaia",
@@ -20326,8 +20148,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Emily Sonnett",
@@ -20659,8 +20481,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Nealy Martin",
@@ -21330,8 +21152,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Mandy Freeman",
@@ -21648,8 +21470,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Jess Carter",
@@ -21981,8 +21803,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Sofia Cook",
@@ -22311,8 +22133,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Jaelin Howell",
@@ -22644,8 +22466,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Taryn Torres",
@@ -22962,8 +22784,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Rose Lavelle",
@@ -23295,8 +23117,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Sarah Schupansky",
@@ -23625,8 +23447,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Gabrielle Jordão Portilho",
@@ -24279,8 +24101,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Esther González",
@@ -24612,8 +24434,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Ella Stevens",
@@ -25280,8 +25102,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Cece Kizer",
@@ -25931,8 +25753,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Abby Smith",
@@ -25943,9 +25765,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 27,
-            "Selected Percentage": 10.0,
-            "Selected Percentage Change 1W": 3.1,
-            "Selected Percentage Change Since Last Global Price Change": 5.6,
+            "Selected Percentage": 10.1,
+            "Selected Percentage Change 1W": 3.2,
+            "Selected Percentage Change Since Last Global Price Change": 5.7,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -26618,7 +26440,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -26947,7 +26769,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -29625,8 +29447,8 @@
             "Visionary": true,
             "Total Points": 9,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -30963,9 +30785,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 35,
-            "Selected Percentage": 6.1,
-            "Selected Percentage Change 1W": 1.1,
-            "Selected Percentage Change Since Last Global Price Change": 5.3,
+            "Selected Percentage": 6.2,
+            "Selected Percentage Change 1W": 1.2,
+            "Selected Percentage Change Since Last Global Price Change": 5.4,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -31966,9 +31788,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 15.2,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 1.5,
+            "Selected Percentage": 15.3,
+            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change Since Last Global Price Change": 1.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -32637,8 +32459,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Avoid",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -35900,7 +35722,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -36563,7 +36385,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -36574,18 +36396,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 10,
+            "Total Points": 11,
             "Selected Percentage": 19.8,
             "Selected Percentage Change 1W": -0.8,
             "Selected Percentage Change Since Last Global Price Change": -1.5,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 10,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 2.5,
-            "Points Per Million": 1.3,
-            "Points Per Million Over 4 Gameweeks": 1.3,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 11,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 1.5,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -36597,7 +36419,7 @@
             "Total Bonus Points": 4,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 5,
@@ -36612,19 +36434,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -36912,8 +36726,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Vanessa DiBernardo",
@@ -37230,7 +37044,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -37554,7 +37368,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -37566,9 +37380,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 23,
-            "Selected Percentage": 4.1,
-            "Selected Percentage Change 1W": -0.6,
-            "Selected Percentage Change Since Last Global Price Change": -1.0,
+            "Selected Percentage": 4.2,
+            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.9,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -37887,7 +37701,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -38220,7 +38034,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -38538,7 +38352,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -38550,9 +38364,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 4,
-            "Selected Percentage": 7.3,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": -5.5,
+            "Selected Percentage": 7.4,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": -5.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 1,
@@ -38859,7 +38673,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -39533,7 +39347,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -39544,18 +39358,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 25,
+            "Total Points": 26,
             "Selected Percentage": 21.6,
             "Selected Percentage Change 1W": 3.3,
             "Selected Percentage Change Since Last Global Price Change": 9.6,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 25,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 6.2,
-            "Points Per Million": 6.2,
-            "Points Per Million Over 4 Gameweeks": 6.2,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 26,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 6.5,
+            "Points Per Million": 6.5,
+            "Points Per Million Over 4 Gameweeks": 6.5,
             "Total Goals": 2,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -39567,7 +39381,7 @@
             "Total Bonus Points": 4,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 2,
             "1": {
                 "points": 11,
@@ -39582,19 +39396,11 @@
                 "points": 12,
                 "tooltip": "28 Mar (A) NC W 1-3\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -39882,8 +39688,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Casey Murphy",
@@ -40552,18 +40358,18 @@
             "Nationality": "Canada",
             "News": null,
             "Visionary": true,
-            "Total Points": 5,
+            "Total Points": 6,
             "Selected Percentage": 0.8,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 5,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 1.2,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 6,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.5,
+            "Points Per Million": 1.5,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -40575,7 +40381,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -40590,19 +40396,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -40890,8 +40688,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Kaleigh Kurtz",
@@ -41235,9 +41033,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 16,
-            "Selected Percentage": 3.2,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 1.0,
+            "Selected Percentage": 3.3,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": 1.1,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -42252,9 +42050,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 18,
-            "Selected Percentage": 4.8,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.3,
+            "Selected Percentage": 4.9,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -42592,18 +42390,18 @@
             "Nationality": "Canada",
             "News": null,
             "Visionary": true,
-            "Total Points": 8,
+            "Total Points": 9,
             "Selected Percentage": 1.8,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 8,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 2.0,
-            "Points Per Million Over 4 Gameweeks": 2.0,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 9,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Million": 2.2,
+            "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 0,
             "Total Assists": 1,
             "Total Red Cards": 0,
@@ -42615,7 +42413,7 @@
             "Total Bonus Points": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -42630,19 +42428,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) NC W 1-3\nAssist (+3pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -42930,8 +42720,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Maycee Bell",
@@ -45618,8 +45408,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Ashley Sanchez",
@@ -45630,9 +45420,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 29,
-            "Selected Percentage": 21.3,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": 8.0,
+            "Selected Percentage": 21.4,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": 8.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -46971,8 +46761,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -49594,9 +49384,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 12.8,
-            "Selected Percentage Change 1W": 0.4,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 12.9,
+            "Selected Percentage Change 1W": 0.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -50246,8 +50036,8 @@
             "Visionary": true,
             "Total Points": 2,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -55187,9 +54977,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 23,
-            "Selected Percentage": 8.6,
-            "Selected Percentage Change 1W": 2.2,
-            "Selected Percentage Change Since Last Global Price Change": 5.3,
+            "Selected Percentage": 8.7,
+            "Selected Percentage Change 1W": 2.3,
+            "Selected Percentage Change Since Last Global Price Change": 5.4,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -58136,7 +57926,7 @@
             "Visionary": true,
             "Total Points": 2,
             "Selected Percentage": 0.4,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -70108,8 +69898,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Trinity Byars",
@@ -71758,7 +71548,7 @@
             "Visionary": true,
             "Total Points": 16,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -73084,8 +72874,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.4,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -76028,7 +75818,7 @@
             "Total Points": 8,
             "Selected Percentage": 2.9,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -80589,7 +80379,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -81590,18 +81380,18 @@
             "Nationality": "Scotland",
             "News": null,
             "Visionary": false,
-            "Total Points": 12,
+            "Total Points": 13,
             "Selected Percentage": 6.9,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 12,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 11,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 2.7,
-            "Points Per Million Over 4 Gameweeks": 2.7,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 2.9,
+            "Points Per Million Over 4 Gameweeks": 2.4,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -81613,7 +81403,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -81631,19 +81421,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -81920,8 +81702,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Aubrey Kingsbury",
@@ -81933,7 +81715,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.4,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Avoid",
             "Hot Pick": false,
@@ -81963,17 +81745,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -82249,8 +82020,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Kaylie Collins",
@@ -82292,17 +82063,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -82578,8 +82338,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Casey Krueger",
@@ -82621,17 +82381,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -82907,8 +82656,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Kate Wiesner",
@@ -82918,18 +82667,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 7,
+            "Total Points": 8,
             "Selected Percentage": 1.9,
             "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 7,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 1.3,
-            "Points Per Million Over 4 Gameweeks": 1.3,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 8,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 1.5,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -82941,7 +82690,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 1,
             "1": "-",
             "2": "-",
@@ -82953,19 +82702,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -83242,8 +82983,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Tara Rudd",
@@ -83253,18 +82994,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
+            "Total Points": 12,
             "Selected Percentage": 15.1,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 11,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 10,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 1.4,
-            "Points Per Million Over 4 Gameweeks": 1.4,
+            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Million": 1.5,
+            "Points Per Million Over 4 Gameweeks": 1.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -83276,7 +83017,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -83294,19 +83035,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -83583,8 +83316,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Gabrielle Carle",
@@ -83632,17 +83365,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -83918,8 +83640,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Esme Morgan",
@@ -83929,18 +83651,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": false,
-            "Total Points": 12,
+            "Total Points": 13,
             "Selected Percentage": 12.0,
             "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 12,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 11,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 1.6,
-            "Points Per Million Over 4 Gameweeks": 1.6,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 1.7,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -83952,7 +83674,7 @@
             "Total Bonus Points": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -83970,19 +83692,11 @@
                 "points": 7,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -84259,8 +83973,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Narumi Miura",
@@ -84910,7 +84624,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -84921,18 +84635,18 @@
             "Nationality": "Colombia",
             "News": null,
             "Visionary": false,
-            "Total Points": 13,
+            "Total Points": 14,
             "Selected Percentage": 6.7,
             "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 13,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 12,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.2,
-            "Points Per Million": 1.6,
-            "Points Per Million Over 4 Gameweeks": 1.6,
+            "Points Per Game Over 4 Gameweeks": 3.0,
+            "Points Per Million": 1.8,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -84944,7 +84658,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -84962,19 +84676,11 @@
                 "points": 3,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -85251,8 +84957,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Andi Sullivan",
@@ -85297,17 +85003,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -85583,8 +85278,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Courtney Brown",
@@ -85924,18 +85619,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 8,
+            "Total Points": 9,
             "Selected Percentage": 10.5,
             "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
-            "Recommendation": "Steady",
+            "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 8,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 7,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 1.1,
-            "Points Per Million Over 4 Gameweeks": 1.1,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 1.2,
+            "Points Per Million Over 4 Gameweeks": 0.9,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -85947,7 +85642,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -85965,19 +85660,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -86254,8 +85941,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Paige Metayer",
@@ -86265,18 +85952,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 2,
+            "Total Points": 3,
             "Selected Percentage": 0.5,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 2,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 0.5,
-            "Points Per Million": 0.3,
-            "Points Per Million Over 4 Gameweeks": 0.3,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 3,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Million": 0.5,
+            "Points Per Million Over 4 Gameweeks": 0.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -86288,7 +85975,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 0,
             "1": {
                 "points": 1,
@@ -86300,19 +85987,11 @@
                 "tooltip": "25 Mar (H) UTA D 1-1\n1 min (+1pt)"
             },
             "4": "-",
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -86589,8 +86268,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Chloe Ricketts",
@@ -86964,17 +86643,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -87250,8 +86918,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Trinity Rodman",
@@ -87261,18 +86929,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 9,
+            "Total Points": 10,
             "Selected Percentage": 23.1,
             "Selected Percentage Change 1W": -0.7,
             "Selected Percentage Change Since Last Global Price Change": -2.0,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 9,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 8,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.2,
-            "Points Per Million": 0.9,
-            "Points Per Million Over 4 Gameweeks": 0.9,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 1.0,
+            "Points Per Million Over 4 Gameweeks": 0.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -87284,7 +86952,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -87302,19 +86970,11 @@
                 "points": 3,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -87591,8 +87251,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Makenna Morris",
@@ -87933,7 +87593,7 @@
             "Visionary": false,
             "Total Points": 17,
             "Selected Percentage": 4.0,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 1.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -88264,18 +87924,18 @@
             "Nationality": "Côte d'Ivoire",
             "News": null,
             "Visionary": false,
-            "Total Points": 17,
+            "Total Points": 18,
             "Selected Percentage": 4.8,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.9,
             "Recommendation": "Differential",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 17,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 16,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.2,
-            "Points Per Million": 1.6,
-            "Points Per Million Over 4 Gameweeks": 1.6,
+            "Points Per Game Over 4 Gameweeks": 4.0,
+            "Points Per Million": 1.7,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -88287,7 +87947,7 @@
             "Total Bonus Points": 4,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
@@ -88305,19 +87965,11 @@
                 "points": 1,
                 "tooltip": "28 Mar (A) DEN D 0-0\n1 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -88594,8 +88246,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Ashley Hatch",
@@ -88637,17 +88289,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -88923,8 +88564,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Adriana Leon",
@@ -89252,18 +88893,18 @@
             "Nationality": "Mexico",
             "News": null,
             "Visionary": false,
-            "Total Points": 17,
+            "Total Points": 18,
             "Selected Percentage": 3.9,
             "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Differential",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 17,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 16,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.2,
-            "Points Per Million": 2.8,
-            "Points Per Million Over 4 Gameweeks": 2.8,
+            "Points Per Game Over 4 Gameweeks": 4.0,
+            "Points Per Million": 3.0,
+            "Points Per Million Over 4 Gameweeks": 2.7,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -89275,7 +88916,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -89293,19 +88934,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -89582,8 +89215,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Aria Nagai",
@@ -92262,17 +91895,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -92548,8 +92170,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Avery Kalitta",
@@ -94943,17 +94565,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -95240,8 +94851,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Kathrin Hendrich",
@@ -96215,8 +95826,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Josefine Hasbo",
@@ -98513,17 +98124,17 @@
             "Nationality": "Italy",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
+            "Total Points": 12,
             "Selected Percentage": 5.5,
             "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 4,
+            "Total Games Played": 5,
             "Total Over 4 Gameweeks": 11,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 1.3,
+            "Points Per Million": 1.4,
             "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 1,
             "Total Assists": 0,
@@ -98536,7 +98147,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 1,
@@ -98554,19 +98165,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) DEN D 0-0\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -98843,8 +98446,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Katie Stengel",
@@ -99176,8 +98779,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Jacqueline Ovalle",
@@ -100160,9 +99763,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 38,
-            "Selected Percentage": 19.2,
-            "Selected Percentage Change 1W": 8.5,
-            "Selected Percentage Change Since Last Global Price Change": 16.1,
+            "Selected Percentage": 19.3,
+            "Selected Percentage Change 1W": 8.6,
+            "Selected Percentage Change Since Last Global Price Change": 16.2,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -100536,17 +100139,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -100822,8 +100414,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Faith Nguyen",
@@ -102167,18 +101759,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": true,
-            "Total Points": 4,
+            "Total Points": 5,
             "Selected Percentage": 1.9,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 4,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.0,
-            "Points Per Million": 1.0,
-            "Points Per Million Over 4 Gameweeks": 1.0,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 5,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.2,
+            "Points Per Million": 1.2,
+            "Points Per Million Over 4 Gameweeks": 1.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -102190,7 +101782,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 1,
             "1": {
                 "points": 1,
@@ -102205,19 +101797,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -102505,8 +102089,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Heather Gilchrist",
@@ -102548,17 +102132,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -102845,8 +102418,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Keira Barry",
@@ -102856,18 +102429,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": true,
-            "Total Points": 5,
+            "Total Points": 6,
             "Selected Percentage": 0.7,
             "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 5,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 1.1,
-            "Points Per Million Over 4 Gameweeks": 1.1,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 6,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.5,
+            "Points Per Million": 1.3,
+            "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -102879,7 +102452,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 0,
             "1": {
                 "points": 0,
@@ -102894,19 +102467,11 @@
                 "points": 4,
                 "tooltip": "28 Mar (A) NC W 1-3\nGoal (+4pts)\n1 min (+1pt)\nYellow Card (-1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -103194,8 +102759,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Andressa Karolaine Freire Gomes Ferreira",
@@ -109556,8 +109121,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.4,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -113804,8 +113369,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -114109,8 +113674,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Talia Sommer",
@@ -114430,8 +113995,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Andrea Kitahata",
@@ -114754,8 +114319,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Jordynn Dudley",
@@ -115087,8 +114652,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Caroline DeLisle",
@@ -116102,7 +115667,7 @@
             "Visionary": true,
             "Total Points": 12,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -118728,7 +118293,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -119055,7 +118620,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -120399,7 +119964,7 @@
             "Visionary": true,
             "Total Points": 12,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -123038,7 +122603,7 @@
             "Total Points": 4,
             "Selected Percentage": 0.6,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -127319,7 +126884,7 @@
             "Visionary": true,
             "Total Points": 9,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -129641,17 +129206,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -129927,8 +129481,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Lucia Di Guglielmo",
@@ -129938,18 +129492,18 @@
             "Nationality": "Italy",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
+            "Total Points": 12,
             "Selected Percentage": 6.5,
             "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": 2.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 11,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 10,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 2.8,
-            "Points Per Million Over 4 Gameweeks": 2.8,
+            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Million": 3.0,
+            "Points Per Million Over 4 Gameweeks": 2.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -129961,7 +129515,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
@@ -129979,19 +129533,11 @@
                 "points": 6,
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
@@ -130268,8 +129814,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Élisabeth Tsé",
@@ -130317,17 +129863,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -130603,8 +130138,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 4.11,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 1.78,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Molly Skurcenski",
@@ -130646,17 +130181,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -130932,8 +130456,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Tamara Paranaguá do Carmo",
@@ -130981,17 +130505,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -131267,8 +130780,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Claudia Martínez",
@@ -131322,17 +130835,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "00:00",
                     "game_week": "6",
@@ -131608,8 +131110,8 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.73,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 2.2,
+            "Next Fixture Score": 2
         },
         {
             "Name": "Cristiana Girelli",
@@ -131619,18 +131121,18 @@
             "Nationality": "",
             "News": null,
             "Visionary": false,
-            "Total Points": 10,
+            "Total Points": 11,
             "Selected Percentage": 2.9,
             "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 10,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 2.5,
-            "Points Per Million": 1.7,
-            "Points Per Million Over 4 Gameweeks": 1.7,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 11,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 1.8,
+            "Points Per Million Over 4 Gameweeks": 1.8,
             "Total Goals": 0,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -131642,7 +131144,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 2,
             "1": "-",
             "2": {
@@ -131654,19 +131156,11 @@
                 "points": 5,
                 "tooltip": "28 Mar (A) NC W 1-3\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -131954,8 +131448,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 3.3,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.5,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Bárbara Olivieri",
@@ -133249,8 +132743,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Kiana Palacios",
@@ -133593,18 +133087,18 @@
             "Nationality": "Argentina",
             "News": null,
             "Visionary": true,
-            "Total Points": 2,
+            "Total Points": 3,
             "Selected Percentage": 0.5,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 1,
-            "Total Over 4 Gameweeks": 2,
-            "Games Played Over 4 Gameweeks": 1,
-            "Points Per Game Over 4 Gameweeks": 0.5,
-            "Points Per Million": 0.4,
-            "Points Per Million Over 4 Gameweeks": 0.4,
+            "Total Games Played": 2,
+            "Total Over 4 Gameweeks": 3,
+            "Games Played Over 4 Gameweeks": 2,
+            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Million": 0.6,
+            "Points Per Million Over 4 Gameweeks": 0.6,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -133616,7 +133110,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 1,
+            "Total 1 min Appearances": 2,
             "Total 60 min Appearances": 1,
             "1": "-",
             "2": "-",
@@ -133625,19 +133119,11 @@
                 "points": 2,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
-                {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
                 {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
@@ -133925,8 +133411,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Cate Hardin",
@@ -134270,7 +133756,7 @@
             "Visionary": true,
             "Total Points": 1,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -135865,7 +135351,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
@@ -135878,8 +135364,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -136553,17 +136039,6 @@
             "5": "-",
             "upcoming_fixtures": [
                 {
-                    "game_date": "5 Apr",
-                    "kick_off_time": "21:00",
-                    "game_week": "5",
-                    "home_id": "BAY",
-                    "home_name": "Bay FC",
-                    "home_short_name": "Bay FC",
-                    "away_id": "WAS",
-                    "away_name": "Washington Spirit",
-                    "away_short_name": "Washington Spirit"
-                },
-                {
                     "game_date": "25 Apr",
                     "kick_off_time": "17:00",
                     "game_week": "6",
@@ -136850,8 +136325,8 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 2.19,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 1.11,
+            "Next Fixture Score": 1
         },
         {
             "Name": "Kalea  Eichenberger",
@@ -137818,8 +137293,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 2.93,
-            "Next Fixture Score": 3
+            "Next Fixture Rating": 3.6,
+            "Next Fixture Score": 4
         },
         {
             "Name": "Natalie Mitchell",
@@ -137831,8 +137306,8 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -141029,7 +140504,7 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 3.8,
+            "Next Fixture Rating": 4.2,
             "Next Fixture Score": 4
         },
         {
