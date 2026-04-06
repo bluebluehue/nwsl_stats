@@ -1009,9 +1009,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 6,
-            "Selected Percentage": 13.1,
-            "Selected Percentage Change 1W": -0.6,
-            "Selected Percentage Change Since Last Global Price Change": -1.7,
+            "Selected Percentage": 13.0,
+            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change Since Last Global Price Change": -1.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -1351,7 +1351,7 @@
             "Visionary": false,
             "Total Points": 21,
             "Selected Percentage": 6.6,
-            "Selected Percentage Change 1W": 0.5,
+            "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Differential",
             "Hot Pick": true,
@@ -1684,7 +1684,7 @@
             "Visionary": false,
             "Total Points": 7,
             "Selected Percentage": 10.7,
-            "Selected Percentage Change 1W": -1.0,
+            "Selected Percentage Change 1W": -0.7,
             "Selected Percentage Change Since Last Global Price Change": -5.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -2021,9 +2021,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 13.8,
-            "Selected Percentage Change 1W": 1.0,
-            "Selected Percentage Change Since Last Global Price Change": 4.5,
+            "Selected Percentage": 13.7,
+            "Selected Percentage Change 1W": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": 4.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -2354,9 +2354,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 26,
-            "Selected Percentage": 47.4,
-            "Selected Percentage Change 1W": 1.6,
-            "Selected Percentage Change Since Last Global Price Change": 5.8,
+            "Selected Percentage": 47.6,
+            "Selected Percentage Change 1W": 1.5,
+            "Selected Percentage Change Since Last Global Price Change": 6.0,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -2696,7 +2696,7 @@
             "Visionary": false,
             "Total Points": 4,
             "Selected Percentage": 2.6,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -3036,9 +3036,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 22,
-            "Selected Percentage": 9.1,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": 2.2,
+            "Selected Percentage": 9.2,
+            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change Since Last Global Price Change": 2.3,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -3378,7 +3378,7 @@
             "Visionary": false,
             "Total Points": 3,
             "Selected Percentage": 1.9,
-            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -1.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -5007,7 +5007,7 @@
             "Visionary": false,
             "Total Points": 0,
             "Selected Percentage": 4.6,
-            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -2.8,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -5334,31 +5334,31 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 7,
-            "Selected Percentage": 6.1,
+            "Total Points": 9,
+            "Selected Percentage": 6.0,
             "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -1.4,
+            "Selected Percentage Change Since Last Global Price Change": -1.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 7,
+            "Total Over 4 Gameweeks": 9,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 1.4,
-            "Points Per Million Over 4 Gameweeks": 1.4,
+            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Million": 1.8,
+            "Points Per Million Over 4 Gameweeks": 1.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
             "Total Yellow Cards": 0,
-            "Total Saves": 1,
+            "Total Saves": 3,
             "Total Own Goals": 0,
-            "Total Conceeded": -1,
+            "Total Conceeded": -2,
             "Total Clean Sheet": 0,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -5373,8 +5373,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 2,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)\nSaves (+1pt)"
+                "points": 4,
+                "tooltip": "5 Apr (H) WAS L 0-2\nSaves x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -5664,7 +5664,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -5993,7 +5993,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -6006,7 +6006,7 @@
             "Visionary": false,
             "Total Points": 1,
             "Selected Percentage": 3.3,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -1.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -6325,7 +6325,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -6654,7 +6654,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -6983,7 +6983,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -7312,7 +7312,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -7641,7 +7641,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -7653,9 +7653,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 4,
-            "Selected Percentage": 3.1,
-            "Selected Percentage Change 1W": -0.3,
-            "Selected Percentage Change Since Last Global Price Change": -1.2,
+            "Selected Percentage": 3.0,
+            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change Since Last Global Price Change": -1.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -7982,18 +7982,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 3,
+            "Total Points": 4,
             "Selected Percentage": 2.3,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.7,
-            "Recommendation": "Cold",
+            "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 3,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 0.8,
-            "Points Per Million": 0.8,
-            "Points Per Million Over 4 Gameweeks": 0.8,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 4,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.0,
+            "Points Per Million": 1.0,
+            "Points Per Million Over 4 Gameweeks": 1.0,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -8005,7 +8005,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 2,
             "1": {
                 "points": 2,
@@ -8020,7 +8020,10 @@
                 "points": 1,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -8309,7 +8312,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -8320,18 +8323,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 7,
+            "Total Points": 8,
             "Selected Percentage": 2.1,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 7,
+            "Total Over 4 Gameweeks": 8,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 1.6,
-            "Points Per Million Over 4 Gameweeks": 1.6,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 1.8,
+            "Points Per Million Over 4 Gameweeks": 1.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -8344,7 +8347,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -8359,8 +8362,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -8661,18 +8664,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 7,
+            "Total Points": 8,
             "Selected Percentage": 2.6,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -1.1,
-            "Recommendation": "Cold",
+            "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 7,
+            "Total Over 4 Gameweeks": 8,
             "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 0.9,
-            "Points Per Million Over 4 Gameweeks": 0.9,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 1.0,
+            "Points Per Million Over 4 Gameweeks": 1.0,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 1,
@@ -8685,7 +8688,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 3,
-            "Total 60 min Appearances": 2,
+            "Total 60 min Appearances": 3,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -8697,8 +8700,8 @@
             "3": "-",
             "4": "-",
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -9001,7 +9004,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -9666,18 +9669,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 7,
+            "Total Points": 8,
             "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 1,
-            "Total Over 4 Gameweeks": 7,
-            "Games Played Over 4 Gameweeks": 1,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 1.4,
-            "Points Per Million Over 4 Gameweeks": 1.4,
+            "Total Games Played": 2,
+            "Total Over 4 Gameweeks": 8,
+            "Games Played Over 4 Gameweeks": 2,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 1.6,
+            "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -9689,7 +9692,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 1,
+            "Total 1 min Appearances": 2,
             "Total 60 min Appearances": 1,
             "1": "-",
             "2": "-",
@@ -9698,7 +9701,10 @@
                 "points": 7,
                 "tooltip": "28 Mar (A) NC W 1-3\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -9998,18 +10004,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 3,
+            "Total Points": 4,
             "Selected Percentage": 1.1,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 3,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 0.8,
-            "Points Per Million": 0.4,
-            "Points Per Million Over 4 Gameweeks": 0.4,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 4,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.0,
+            "Points Per Million": 0.5,
+            "Points Per Million Over 4 Gameweeks": 0.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -10021,7 +10027,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 1,
             "1": {
                 "points": 2,
@@ -10036,7 +10042,10 @@
                 "points": 0,
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\nYellow Card (-1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -10338,7 +10347,7 @@
             "Visionary": false,
             "Total Points": 1,
             "Selected Percentage": 3.9,
-            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -4.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -11000,18 +11009,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 2,
+            "Total Points": 3,
             "Selected Percentage": 0.5,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 2,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 0.5,
-            "Points Per Million": 0.3,
-            "Points Per Million Over 4 Gameweeks": 0.3,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 3,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Million": 0.4,
+            "Points Per Million Over 4 Gameweeks": 0.4,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -11023,7 +11032,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 0,
             "1": {
                 "points": 1,
@@ -11035,7 +11044,10 @@
             },
             "3": "-",
             "4": "-",
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -12002,7 +12014,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -12320,7 +12332,7 @@
             "Visionary": false,
             "Total Points": 6,
             "Selected Percentage": 8.0,
-            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -1.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -12650,7 +12662,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -12968,7 +12980,7 @@
             "Visionary": false,
             "Total Points": 6,
             "Selected Percentage": 10.9,
-            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change 1W": -0.7,
             "Selected Percentage Change Since Last Global Price Change": -3.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -13936,9 +13948,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 18,
-            "Selected Percentage": 2.8,
+            "Selected Percentage": 2.9,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 1.4,
+            "Selected Percentage Change Since Last Global Price Change": 1.5,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -14270,7 +14282,7 @@
             "Visionary": false,
             "Total Points": 9,
             "Selected Percentage": 4.1,
-            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -1.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -14603,7 +14615,7 @@
             "Visionary": true,
             "Total Points": 11,
             "Selected Percentage": 1.3,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -14932,9 +14944,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 8,
-            "Selected Percentage": 7.7,
+            "Selected Percentage": 7.6,
             "Selected Percentage Change 1W": -1.1,
-            "Selected Percentage Change Since Last Global Price Change": -5.2,
+            "Selected Percentage Change Since Last Global Price Change": -5.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -15266,7 +15278,7 @@
             "Visionary": true,
             "Total Points": 2,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -15923,7 +15935,7 @@
             "Visionary": false,
             "Total Points": 11,
             "Selected Percentage": 2.2,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -16255,9 +16267,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 0,
-            "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": -2.1,
+            "Selected Percentage": 3.4,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": -2.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -16903,9 +16915,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 0,
-            "Selected Percentage": 7.4,
-            "Selected Percentage Change 1W": -1.2,
-            "Selected Percentage Change Since Last Global Price Change": -4.3,
+            "Selected Percentage": 7.3,
+            "Selected Percentage Change 1W": -1.1,
+            "Selected Percentage Change Since Last Global Price Change": -4.4,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -18205,9 +18217,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 2,
-            "Selected Percentage": 1.6,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.8,
+            "Selected Percentage": 1.5,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.9,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -19176,9 +19188,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 26,
-            "Selected Percentage": 33.4,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 2.8,
+            "Selected Percentage": 33.3,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 2.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -19509,9 +19521,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 22.2,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": 2.4,
+            "Selected Percentage": 22.1,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": 2.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -20160,9 +20172,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 20,
-            "Selected Percentage": 30.4,
+            "Selected Percentage": 30.3,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": 0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -20493,9 +20505,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 10,
-            "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": -1.2,
+            "Selected Percentage": 3.4,
+            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change Since Last Global Price Change": -1.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -20834,9 +20846,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 3,
-            "Selected Percentage": 13.1,
-            "Selected Percentage Change 1W": -0.9,
-            "Selected Percentage Change Since Last Global Price Change": -2.3,
+            "Selected Percentage": 13.0,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": -2.4,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -22133,8 +22145,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Jaelin Howell",
@@ -22466,8 +22478,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Taryn Torres",
@@ -22784,8 +22796,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Rose Lavelle",
@@ -22797,7 +22809,7 @@
             "Visionary": false,
             "Total Points": 12,
             "Selected Percentage": 23.4,
-            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -23117,8 +23129,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Sarah Schupansky",
@@ -23447,8 +23459,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Gabrielle Jordão Portilho",
@@ -23460,7 +23472,7 @@
             "Visionary": true,
             "Total Points": 7,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -24101,8 +24113,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Esther González",
@@ -24113,9 +24125,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 12,
-            "Selected Percentage": 19.1,
-            "Selected Percentage Change 1W": -2.4,
-            "Selected Percentage Change Since Last Global Price Change": -4.2,
+            "Selected Percentage": 19.0,
+            "Selected Percentage Change 1W": -2.2,
+            "Selected Percentage Change Since Last Global Price Change": -4.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -24434,8 +24446,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Ella Stevens",
@@ -24447,7 +24459,7 @@
             "Visionary": false,
             "Total Points": 2,
             "Selected Percentage": 5.7,
-            "Selected Percentage Change 1W": -1.3,
+            "Selected Percentage Change 1W": -1.1,
             "Selected Percentage Change Since Last Global Price Change": -5.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -25102,8 +25114,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Cece Kizer",
@@ -25114,9 +25126,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 17,
-            "Selected Percentage": 2.1,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.1,
+            "Selected Percentage": 2.2,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -25753,8 +25765,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Abby Smith",
@@ -25765,9 +25777,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 27,
-            "Selected Percentage": 10.1,
-            "Selected Percentage Change 1W": 3.2,
-            "Selected Percentage Change Since Last Global Price Change": 5.7,
+            "Selected Percentage": 10.3,
+            "Selected Percentage Change 1W": 2.5,
+            "Selected Percentage Change Since Last Global Price Change": 5.9,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -26098,9 +26110,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 18,
-            "Selected Percentage": 11.4,
+            "Selected Percentage": 11.5,
             "Selected Percentage Change 1W": 0.6,
-            "Selected Percentage Change Since Last Global Price Change": 4.4,
+            "Selected Percentage Change Since Last Global Price Change": 4.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -27767,9 +27779,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 5.3,
+            "Selected Percentage": 5.2,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.5,
+            "Selected Percentage Change Since Last Global Price Change": 0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -28109,7 +28121,7 @@
             "Visionary": true,
             "Total Points": 11,
             "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -28776,9 +28788,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 22,
-            "Selected Percentage": 2.5,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": 1.1,
+            "Selected Percentage": 2.6,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 1.2,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -29446,9 +29458,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 9,
-            "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 0.3,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -29785,7 +29797,7 @@
             "Visionary": false,
             "Total Points": 9,
             "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -30118,7 +30130,7 @@
             "Visionary": true,
             "Total Points": 4,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -30456,7 +30468,7 @@
             "Visionary": false,
             "Total Points": 3,
             "Selected Percentage": 2.2,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -1.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -30785,9 +30797,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 35,
-            "Selected Percentage": 6.2,
-            "Selected Percentage Change 1W": 1.2,
-            "Selected Percentage Change Since Last Global Price Change": 5.4,
+            "Selected Percentage": 6.5,
+            "Selected Percentage Change 1W": 1.5,
+            "Selected Percentage Change Since Last Global Price Change": 5.7,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -31455,9 +31467,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 14,
-            "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 0.9,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -31788,9 +31800,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 15.3,
-            "Selected Percentage Change 1W": 0.6,
-            "Selected Percentage Change Since Last Global Price Change": 1.6,
+            "Selected Percentage": 15.2,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 1.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -32764,8 +32776,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Lorena da Silva Leite",
@@ -32777,7 +32789,7 @@
             "Visionary": false,
             "Total Points": 10,
             "Selected Percentage": 14.8,
-            "Selected Percentage Change 1W": -2.0,
+            "Selected Percentage Change 1W": -1.6,
             "Selected Percentage Change Since Last Global Price Change": -5.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -33097,8 +33109,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Katie Scott",
@@ -33427,8 +33439,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Ellie Wheeler",
@@ -33440,7 +33452,7 @@
             "Visionary": true,
             "Total Points": 4,
             "Selected Percentage": 1.8,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -33757,8 +33769,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Elizabeth Ball",
@@ -34084,8 +34096,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Alana Cook",
@@ -34402,8 +34414,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Izzy Rodriguez",
@@ -34414,9 +34426,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 15,
-            "Selected Percentage": 15.7,
-            "Selected Percentage Change 1W": -1.8,
-            "Selected Percentage Change Since Last Global Price Change": -3.4,
+            "Selected Percentage": 15.6,
+            "Selected Percentage Change 1W": -1.5,
+            "Selected Percentage Change Since Last Global Price Change": -3.5,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -34735,8 +34747,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Gabrielle Robinson",
@@ -35065,8 +35077,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Kayla Sharples",
@@ -35078,7 +35090,7 @@
             "Visionary": false,
             "Total Points": 9,
             "Selected Percentage": 6.4,
-            "Selected Percentage Change 1W": -1.1,
+            "Selected Percentage Change 1W": -0.9,
             "Selected Percentage Change Since Last Global Price Change": -2.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -35398,8 +35410,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Rocky Rodríguez",
@@ -35410,9 +35422,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 2,
-            "Selected Percentage": 1.2,
+            "Selected Percentage": 1.1,
             "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -36068,7 +36080,7 @@
             "Visionary": false,
             "Total Points": 7,
             "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -36396,18 +36408,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
-            "Selected Percentage": 19.8,
-            "Selected Percentage Change 1W": -0.8,
-            "Selected Percentage Change Since Last Global Price Change": -1.5,
+            "Total Points": 12,
+            "Selected Percentage": 19.5,
+            "Selected Percentage Change 1W": -0.9,
+            "Selected Percentage Change Since Last Global Price Change": -1.8,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 11,
+            "Total Over 4 Gameweeks": 12,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 1.5,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 3.0,
+            "Points Per Million": 1.6,
+            "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -36420,7 +36432,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 5,
                 "tooltip": "14 Mar (H) DEN W 2-1\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
@@ -36435,8 +36447,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -37057,7 +37069,7 @@
             "Visionary": true,
             "Total Points": 3,
             "Selected Percentage": 0.2,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -38364,9 +38376,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 4,
-            "Selected Percentage": 7.4,
-            "Selected Percentage Change 1W": 0.4,
-            "Selected Percentage Change Since Last Global Price Change": -5.4,
+            "Selected Percentage": 7.5,
+            "Selected Percentage Change 1W": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": -5.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 1,
@@ -38686,7 +38698,7 @@
             "Visionary": false,
             "Total Points": 7,
             "Selected Percentage": 3.1,
-            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -1.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -39026,9 +39038,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 14,
-            "Selected Percentage": 1.8,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 1.9,
+            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -39358,18 +39370,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 26,
-            "Selected Percentage": 21.6,
-            "Selected Percentage Change 1W": 3.3,
-            "Selected Percentage Change Since Last Global Price Change": 9.6,
+            "Total Points": 27,
+            "Selected Percentage": 21.7,
+            "Selected Percentage Change 1W": 2.5,
+            "Selected Percentage Change Since Last Global Price Change": 9.7,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 26,
+            "Total Over 4 Gameweeks": 27,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 6.5,
-            "Points Per Million": 6.5,
-            "Points Per Million Over 4 Gameweeks": 6.5,
+            "Points Per Game Over 4 Gameweeks": 6.8,
+            "Points Per Million": 6.8,
+            "Points Per Million Over 4 Gameweeks": 6.8,
             "Total Goals": 2,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -39382,7 +39394,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 2,
+            "Total 60 min Appearances": 3,
             "1": {
                 "points": 11,
                 "tooltip": "14 Mar (H) DEN W 2-1\nGoal (+5pts)\nAssist (+3pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
@@ -39397,8 +39409,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -39701,7 +39713,7 @@
             "Visionary": false,
             "Total Points": 13,
             "Selected Percentage": 5.9,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -40347,8 +40359,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Brooklyn Courtnall",
@@ -40358,31 +40370,31 @@
             "Nationality": "Canada",
             "News": null,
             "Visionary": true,
-            "Total Points": 6,
+            "Total Points": 3,
             "Selected Percentage": 0.8,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
-            "Recommendation": "Value Pick",
+            "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 6,
+            "Total Over 4 Gameweeks": 3,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.5,
-            "Points Per Million": 1.5,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Million": 0.8,
+            "Points Per Million Over 4 Gameweeks": 0.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
-            "Total Yellow Cards": 0,
+            "Total Yellow Cards": 1,
             "Total Saves": 0,
-            "Total Own Goals": 0,
-            "Total Conceeded": -1,
+            "Total Own Goals": 1,
+            "Total Conceeded": -2,
             "Total Clean Sheet": 0,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -40397,8 +40409,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": -2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)\nOwn Goal (-2pts)"
             },
             "upcoming_fixtures": [
                 {
@@ -40688,7 +40700,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -41034,7 +41046,7 @@
             "Visionary": false,
             "Total Points": 16,
             "Selected Percentage": 3.3,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": 1.1,
             "Recommendation": "Differential",
             "Hot Pick": true,
@@ -41375,7 +41387,7 @@
             "Visionary": true,
             "Total Points": 3,
             "Selected Percentage": 1.5,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -42408,13 +42420,13 @@
             "Total Yellow Cards": 1,
             "Total Saves": 0,
             "Total Own Goals": 0,
-            "Total Conceeded": -1,
+            "Total Conceeded": -2,
             "Total Clean Sheet": 0,
             "Total Bonus Points": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -42430,7 +42442,7 @@
             },
             "5": {
                 "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -42720,7 +42732,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -42733,7 +42745,7 @@
             "Visionary": false,
             "Total Points": 11,
             "Selected Percentage": 2.3,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -43074,7 +43086,7 @@
             "Visionary": true,
             "Total Points": 12,
             "Selected Percentage": 0.9,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -43415,7 +43427,7 @@
             "Visionary": true,
             "Total Points": 6,
             "Selected Percentage": 1.7,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -43745,7 +43757,7 @@
             "Visionary": true,
             "Total Points": 8,
             "Selected Percentage": 1.6,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -44085,9 +44097,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 4,
-            "Selected Percentage": 0.5,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.3,
+            "Selected Percentage": 0.4,
+            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -44420,9 +44432,9 @@
             "News": "Asia Cup",
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 9.1,
+            "Selected Percentage": 9.3,
             "Selected Percentage Change 1W": 0.6,
-            "Selected Percentage Change Since Last Global Price Change": -1.4,
+            "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -45096,9 +45108,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 10,
-            "Selected Percentage": 10.4,
-            "Selected Percentage Change 1W": -1.2,
-            "Selected Percentage Change Since Last Global Price Change": -6.3,
+            "Selected Percentage": 10.3,
+            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change Since Last Global Price Change": -6.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -45408,8 +45420,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Ashley Sanchez",
@@ -45420,9 +45432,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 29,
-            "Selected Percentage": 21.4,
-            "Selected Percentage Change 1W": -0.6,
-            "Selected Percentage Change Since Last Global Price Change": 8.1,
+            "Selected Percentage": 21.6,
+            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change Since Last Global Price Change": 8.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -46091,7 +46103,7 @@
             "Visionary": true,
             "Total Points": 1,
             "Selected Percentage": 0.9,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.6,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -47079,7 +47091,7 @@
             "Visionary": false,
             "Total Points": 18,
             "Selected Percentage": 8.1,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -48062,10 +48074,10 @@
             "News": null,
             "Visionary": false,
             "Total Points": 35,
-            "Selected Percentage": 7.5,
-            "Selected Percentage Change 1W": 0.8,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
-            "Recommendation": "Differential",
+            "Selected Percentage": 7.7,
+            "Selected Percentage Change 1W": 1.0,
+            "Selected Percentage Change Since Last Global Price Change": 0.8,
+            "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
             "Total Over 4 Gameweeks": 31,
@@ -48714,7 +48726,7 @@
             "Visionary": false,
             "Total Points": 13,
             "Selected Percentage": 2.4,
-            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -49044,7 +49056,7 @@
             "Visionary": false,
             "Total Points": 11,
             "Selected Percentage": 20.6,
-            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change 1W": -0.6,
             "Selected Percentage Change Since Last Global Price Change": -2.9,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -49384,9 +49396,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 12.9,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 13.0,
+            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -50360,7 +50372,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.3,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -50678,7 +50690,7 @@
             "Visionary": true,
             "Total Points": 10,
             "Selected Percentage": 0.9,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -52007,9 +52019,9 @@
             "Visionary": true,
             "Total Points": 4,
             "Selected Percentage": 0.5,
-            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
-            "Recommendation": "Steady",
+            "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 4,
             "Total Over 4 Gameweeks": 4,
@@ -52675,7 +52687,7 @@
             "Visionary": false,
             "Total Points": 5,
             "Selected Percentage": 2.8,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.9,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -53005,7 +53017,7 @@
             "Visionary": false,
             "Total Points": 21,
             "Selected Percentage": 31.6,
-            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change 1W": 0.8,
             "Selected Percentage Change Since Last Global Price Change": 10.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -53338,7 +53350,7 @@
             "Visionary": true,
             "Total Points": 6,
             "Selected Percentage": 1.7,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -54324,7 +54336,7 @@
             "Visionary": false,
             "Total Points": 9,
             "Selected Percentage": 3.9,
-            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -54647,9 +54659,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 16,
-            "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": 0.6,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 1.5,
+            "Selected Percentage Change 1W": 0.5,
+            "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -54978,7 +54990,7 @@
             "Visionary": false,
             "Total Points": 23,
             "Selected Percentage": 8.7,
-            "Selected Percentage Change 1W": 2.3,
+            "Selected Percentage Change 1W": 1.9,
             "Selected Percentage Change Since Last Global Price Change": 5.4,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
@@ -55311,7 +55323,7 @@
             "Visionary": false,
             "Total Points": 5,
             "Selected Percentage": 5.9,
-            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -1.7,
             "Recommendation": "Avoid",
             "Hot Pick": false,
@@ -55638,7 +55650,7 @@
             "Visionary": false,
             "Total Points": 13,
             "Selected Percentage": 2.7,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -55965,7 +55977,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 0.5,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -56611,9 +56623,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 40,
-            "Selected Percentage": 37.9,
-            "Selected Percentage Change 1W": 4.0,
-            "Selected Percentage Change Since Last Global Price Change": 11.2,
+            "Selected Percentage": 38.3,
+            "Selected Percentage Change 1W": 3.7,
+            "Selected Percentage Change Since Last Global Price Change": 11.6,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -56944,9 +56956,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 16,
-            "Selected Percentage": 4.9,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.1,
+            "Selected Percentage": 4.8,
+            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -57596,7 +57608,7 @@
             "Visionary": true,
             "Total Points": 5,
             "Selected Percentage": 0.7,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -58573,9 +58585,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 23,
-            "Selected Percentage": 8.4,
+            "Selected Percentage": 8.5,
             "Selected Percentage Change 1W": 1.2,
-            "Selected Percentage Change Since Last Global Price Change": 5.7,
+            "Selected Percentage Change Since Last Global Price Change": 5.8,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -58907,7 +58919,7 @@
             "Visionary": false,
             "Total Points": 10,
             "Selected Percentage": 31.9,
-            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": -5.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -59574,9 +59586,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 20,
-            "Selected Percentage": 3.6,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.7,
+            "Selected Percentage": 3.7,
+            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -59908,7 +59920,7 @@
             "Visionary": true,
             "Total Points": 5,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -60241,7 +60253,7 @@
             "Visionary": false,
             "Total Points": 4,
             "Selected Percentage": 3.0,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -60562,7 +60574,7 @@
             "Visionary": false,
             "Total Points": 6,
             "Selected Percentage": 6.5,
-            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -61913,10 +61925,10 @@
             "News": null,
             "Visionary": true,
             "Total Points": 3,
-            "Selected Percentage": 0.5,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
-            "Recommendation": "Cold",
+            "Selected Percentage": 0.6,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 4,
             "Total Over 4 Gameweeks": 3,
@@ -62255,7 +62267,7 @@
             "Visionary": true,
             "Total Points": 3,
             "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -62596,7 +62608,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.7,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.9,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -62925,7 +62937,7 @@
             "Visionary": false,
             "Total Points": 20,
             "Selected Percentage": 5.2,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 1.8,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -64254,7 +64266,7 @@
             "Visionary": false,
             "Total Points": 22,
             "Selected Percentage": 3.1,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -65277,7 +65289,7 @@
             "Visionary": false,
             "Total Points": 18,
             "Selected Percentage": 18.2,
-            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": 1.6,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -65614,9 +65626,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 18,
-            "Selected Percentage": 15.8,
+            "Selected Percentage": 15.7,
             "Selected Percentage Change 1W": -0.6,
-            "Selected Percentage Change Since Last Global Price Change": -4.9,
+            "Selected Percentage Change Since Last Global Price Change": -5.0,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -66265,9 +66277,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 18.6,
-            "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": 0.2,
+            "Selected Percentage": 18.7,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -67586,7 +67598,7 @@
             "Visionary": false,
             "Total Points": 18,
             "Selected Percentage": 7.1,
-            "Selected Percentage Change 1W": 0.7,
+            "Selected Percentage Change 1W": 0.6,
             "Selected Percentage Change Since Last Global Price Change": 1.4,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -68252,7 +68264,7 @@
             "Visionary": false,
             "Total Points": 16,
             "Selected Percentage": 2.2,
-            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -68911,9 +68923,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 29,
-            "Selected Percentage": 10.3,
-            "Selected Percentage Change 1W": 1.9,
-            "Selected Percentage Change Since Last Global Price Change": 2.6,
+            "Selected Percentage": 10.4,
+            "Selected Percentage Change 1W": 1.6,
+            "Selected Percentage Change Since Last Global Price Change": 2.7,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -69245,7 +69257,7 @@
             "Visionary": true,
             "Total Points": 14,
             "Selected Percentage": 1.5,
-            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -69898,8 +69910,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Trinity Byars",
@@ -70228,9 +70240,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 4.8,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage": 4.9,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -70567,7 +70579,7 @@
             "Visionary": false,
             "Total Points": 14,
             "Selected Percentage": 3.4,
-            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change 1W": 0.7,
             "Selected Percentage Change Since Last Global Price Change": 1.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -71215,7 +71227,7 @@
             "Visionary": false,
             "Total Points": 22,
             "Selected Percentage": 22.5,
-            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change 1W": 0.4,
             "Selected Percentage Change Since Last Global Price Change": 0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -71881,8 +71893,8 @@
             "Visionary": true,
             "Total Points": 17,
             "Selected Percentage": 2.0,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -73192,7 +73204,7 @@
             "Visionary": false,
             "Total Points": 0,
             "Selected Percentage": 6.6,
-            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change 1W": -0.6,
             "Selected Percentage Change Since Last Global Price Change": -4.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -73843,7 +73855,7 @@
             "Visionary": false,
             "Total Points": 14,
             "Selected Percentage": 5.5,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -74173,7 +74185,7 @@
             "Visionary": false,
             "Total Points": 17,
             "Selected Percentage": 2.3,
-            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": 0.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -74506,7 +74518,7 @@
             "Visionary": true,
             "Total Points": 16,
             "Selected Percentage": 1.8,
-            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change 1W": 0.5,
             "Selected Percentage Change Since Last Global Price Change": 0.9,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -74838,9 +74850,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 15,
-            "Selected Percentage": 0.7,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.5,
+            "Selected Percentage": 0.6,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -75489,9 +75501,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 5,
-            "Selected Percentage": 10.9,
-            "Selected Percentage Change 1W": -3.6,
-            "Selected Percentage Change Since Last Global Price Change": -8.9,
+            "Selected Percentage": 10.7,
+            "Selected Percentage Change 1W": -3.1,
+            "Selected Percentage Change Since Last Global Price Change": -9.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -76140,9 +76152,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 24,
-            "Selected Percentage": 6.1,
-            "Selected Percentage Change 1W": 1.1,
-            "Selected Percentage Change Since Last Global Price Change": 3.5,
+            "Selected Percentage": 6.2,
+            "Selected Percentage Change 1W": 0.8,
+            "Selected Percentage Change Since Last Global Price Change": 3.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -76807,7 +76819,7 @@
             "Visionary": false,
             "Total Points": 15,
             "Selected Percentage": 3.7,
-            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": 1.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -77140,7 +77152,7 @@
             "Visionary": false,
             "Total Points": 0,
             "Selected Percentage": 4.5,
-            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -2.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -77457,9 +77469,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 20,
-            "Selected Percentage": 7.7,
-            "Selected Percentage Change 1W": 0.7,
-            "Selected Percentage Change Since Last Global Price Change": 3.3,
+            "Selected Percentage": 7.8,
+            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change Since Last Global Price Change": 3.4,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -77787,9 +77799,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 0,
-            "Selected Percentage": 1.3,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -1.2,
+            "Selected Percentage": 1.2,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -1.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -78105,9 +78117,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 4.1,
-            "Selected Percentage Change 1W": -0.3,
-            "Selected Percentage Change Since Last Global Price Change": -0.3,
+            "Selected Percentage": 4.2,
+            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -78438,9 +78450,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 12,
-            "Selected Percentage": 1.1,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.1,
+            "Selected Percentage": 1.2,
+            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -78772,7 +78784,7 @@
             "Visionary": true,
             "Total Points": 10,
             "Selected Percentage": 1.3,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -80058,9 +80070,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 17,
-            "Selected Percentage": 15.4,
+            "Selected Percentage": 15.3,
             "Selected Percentage Change 1W": -0.9,
-            "Selected Percentage Change Since Last Global Price Change": -0.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.6,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -80721,9 +80733,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 22,
-            "Selected Percentage": 6.3,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": 1.1,
+            "Selected Percentage": 6.4,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 1.2,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -81054,9 +81066,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 18,
-            "Selected Percentage": 8.3,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.3,
+            "Selected Percentage": 8.4,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 0.4,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 3,
@@ -81380,18 +81392,18 @@
             "Nationality": "Scotland",
             "News": null,
             "Visionary": false,
-            "Total Points": 13,
+            "Total Points": 18,
             "Selected Percentage": 6.9,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
-            "Recommendation": "Value Pick",
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 11,
+            "Total Over 4 Gameweeks": 16,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 2.9,
-            "Points Per Million Over 4 Gameweeks": 2.4,
+            "Points Per Game Over 4 Gameweeks": 4.0,
+            "Points Per Million": 4.0,
+            "Points Per Million Over 4 Gameweeks": 3.6,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -81399,12 +81411,12 @@
             "Total Saves": 1,
             "Total Own Goals": 0,
             "Total Conceeded": -1,
-            "Total Clean Sheet": 1,
+            "Total Clean Sheet": 2,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -81422,8 +81434,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 6,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -82667,18 +82679,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 8,
+            "Total Points": 13,
             "Selected Percentage": 1.9,
             "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 8,
+            "Total Over 4 Gameweeks": 13,
             "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 1.5,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 3.2,
+            "Points Per Million": 2.4,
+            "Points Per Million Over 4 Gameweeks": 2.4,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -82686,12 +82698,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": 0,
-            "Total Clean Sheet": 1,
+            "Total Clean Sheet": 2,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 3,
-            "Total 60 min Appearances": 1,
+            "Total 60 min Appearances": 2,
             "1": "-",
             "2": "-",
             "3": {
@@ -82703,8 +82715,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 6,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -82994,18 +83006,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 12,
+            "Total Points": 17,
             "Selected Percentage": 15.1,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 10,
+            "Total Over 4 Gameweeks": 15,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.5,
-            "Points Per Million": 1.5,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Points Per Game Over 4 Gameweeks": 3.8,
+            "Points Per Million": 2.1,
+            "Points Per Million Over 4 Gameweeks": 1.9,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -83013,12 +83025,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": -1,
-            "Total Clean Sheet": 1,
+            "Total Clean Sheet": 2,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -83036,8 +83048,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 6,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -83329,7 +83341,7 @@
             "Visionary": false,
             "Total Points": 3,
             "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -0.9,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -83651,18 +83663,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": false,
-            "Total Points": 13,
+            "Total Points": 21,
             "Selected Percentage": 12.0,
-            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 11,
+            "Total Over 4 Gameweeks": 19,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 1.7,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 4.8,
+            "Points Per Million": 2.8,
+            "Points Per Million Over 4 Gameweeks": 2.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -83670,12 +83682,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": -1,
-            "Total Clean Sheet": 1,
-            "Total Bonus Points": 1,
+            "Total Clean Sheet": 2,
+            "Total Bonus Points": 4,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -83693,8 +83705,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 9,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -84303,9 +84315,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 13,
-            "Selected Percentage": 18.8,
-            "Selected Percentage Change 1W": -1.6,
-            "Selected Percentage Change Since Last Global Price Change": -1.6,
+            "Selected Percentage": 18.5,
+            "Selected Percentage Change 1W": -1.7,
+            "Selected Percentage Change Since Last Global Price Change": -1.9,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -84635,18 +84647,18 @@
             "Nationality": "Colombia",
             "News": null,
             "Visionary": false,
-            "Total Points": 14,
+            "Total Points": 18,
             "Selected Percentage": 6.7,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
-            "Recommendation": "Steady",
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 12,
+            "Total Over 4 Gameweeks": 16,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 1.8,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 4.0,
+            "Points Per Million": 2.2,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -84654,12 +84666,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": 0,
-            "Total Clean Sheet": 1,
-            "Total Bonus Points": 0,
+            "Total Clean Sheet": 2,
+            "Total Bonus Points": 2,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -84677,8 +84689,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 5,
+                "tooltip": "5 Apr (A) BAY W 0-2\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -84957,7 +84969,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -84968,18 +84980,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 1,
+            "Total Points": 2,
             "Selected Percentage": 1.5,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 1,
-            "Total Over 4 Gameweeks": 1,
-            "Games Played Over 4 Gameweeks": 1,
-            "Points Per Game Over 4 Gameweeks": 0.2,
-            "Points Per Million": 0.2,
-            "Points Per Million Over 4 Gameweeks": 0.2,
+            "Total Games Played": 2,
+            "Total Over 4 Gameweeks": 2,
+            "Games Played Over 4 Gameweeks": 2,
+            "Points Per Game Over 4 Gameweeks": 0.5,
+            "Points Per Million": 0.4,
+            "Points Per Million Over 4 Gameweeks": 0.4,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -84991,7 +85003,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 1,
+            "Total 1 min Appearances": 2,
             "Total 60 min Appearances": 0,
             "1": "-",
             "2": {
@@ -85000,7 +85012,10 @@
             },
             "3": "-",
             "4": "-",
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -85278,7 +85293,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -85619,18 +85634,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 9,
+            "Total Points": 12,
             "Selected Percentage": 10.5,
             "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
-            "Recommendation": "Cold",
+            "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 7,
+            "Total Over 4 Gameweeks": 10,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 1.2,
-            "Points Per Million Over 4 Gameweeks": 0.9,
+            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Million": 1.6,
+            "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -85638,12 +85653,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": 0,
-            "Total Clean Sheet": 1,
-            "Total Bonus Points": 0,
+            "Total Clean Sheet": 2,
+            "Total Bonus Points": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -85661,8 +85676,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 4,
+                "tooltip": "5 Apr (A) BAY W 0-2\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -85941,7 +85956,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -85989,7 +86004,7 @@
             "4": "-",
             "5": {
                 "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -86268,7 +86283,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -86281,7 +86296,7 @@
             "Visionary": false,
             "Total Points": 1,
             "Selected Percentage": 2.2,
-            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -1.6,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -86918,7 +86933,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -86929,18 +86944,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 10,
-            "Selected Percentage": 23.1,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": -2.0,
+            "Total Points": 12,
+            "Selected Percentage": 22.9,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": -2.2,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 8,
+            "Total Over 4 Gameweeks": 10,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 1.0,
-            "Points Per Million Over 4 Gameweeks": 0.8,
+            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Million": 1.2,
+            "Points Per Million Over 4 Gameweeks": 1.0,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -86948,12 +86963,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": 0,
-            "Total Clean Sheet": 1,
+            "Total Clean Sheet": 2,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -86971,8 +86986,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 3,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -87251,7 +87266,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -87924,18 +87939,18 @@
             "Nationality": "Côte d'Ivoire",
             "News": null,
             "Visionary": false,
-            "Total Points": 18,
+            "Total Points": 19,
             "Selected Percentage": 4.8,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.9,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 16,
+            "Total Over 4 Gameweeks": 17,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.0,
-            "Points Per Million": 1.7,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 4.2,
+            "Points Per Million": 1.8,
+            "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 0,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -87948,7 +87963,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 3,
+            "Total 60 min Appearances": 4,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -87966,8 +87981,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\n1 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -88246,7 +88261,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -88564,7 +88579,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -88893,18 +88908,18 @@
             "Nationality": "Mexico",
             "News": null,
             "Visionary": false,
-            "Total Points": 18,
-            "Selected Percentage": 3.9,
+            "Total Points": 23,
+            "Selected Percentage": 4.0,
             "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Differential",
-            "Hot Pick": false,
+            "Hot Pick": true,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 16,
+            "Total Over 4 Gameweeks": 21,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.0,
-            "Points Per Million": 3.0,
-            "Points Per Million Over 4 Gameweeks": 2.7,
+            "Points Per Game Over 4 Gameweeks": 5.2,
+            "Points Per Million": 3.8,
+            "Points Per Million Over 4 Gameweeks": 3.5,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -88912,12 +88927,12 @@
             "Total Saves": 0,
             "Total Own Goals": 0,
             "Total Conceeded": -1,
-            "Total Clean Sheet": 1,
+            "Total Clean Sheet": 2,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 5,
-            "Total 60 min Appearances": 4,
+            "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
                 "tooltip": "14 Mar (H) POR L 0-1\n1 min (+1pt)\n60 min (+1pt)"
@@ -88935,8 +88950,8 @@
                 "tooltip": "28 Mar (A) DEN D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "points": 6,
+                "tooltip": "5 Apr (A) BAY W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -89883,9 +89898,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 16,
-            "Selected Percentage": 4.6,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": 2.0,
+            "Selected Percentage": 4.5,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": 1.9,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -90211,7 +90226,7 @@
             "Visionary": true,
             "Total Points": 8,
             "Selected Percentage": 1.2,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -90544,7 +90559,7 @@
             "Visionary": false,
             "Total Points": 15,
             "Selected Percentage": 6.6,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -2.5,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -91854,19 +91869,19 @@
             "Nationality": "Nigeria",
             "News": null,
             "Visionary": false,
-            "Total Points": 4,
-            "Selected Percentage": 5.0,
-            "Selected Percentage Change 1W": -0.8,
-            "Selected Percentage Change Since Last Global Price Change": -3.5,
-            "Recommendation": "Cold",
+            "Total Points": 9,
+            "Selected Percentage": 4.9,
+            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change Since Last Global Price Change": -3.6,
+            "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 4,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.0,
-            "Points Per Million": 0.3,
-            "Points Per Million Over 4 Gameweeks": 0.3,
-            "Total Goals": 0,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 9,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Million": 0.8,
+            "Points Per Million Over 4 Gameweeks": 0.8,
+            "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
             "Total Yellow Cards": 0,
@@ -91877,7 +91892,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 1,
             "1": {
                 "points": 2,
@@ -91892,7 +91907,10 @@
                 "points": 1,
                 "tooltip": "28 Mar (A) DEN D 0-0\n1 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 5,
+                "tooltip": "5 Apr (A) BAY W 0-2\nGoal (+4pts)\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -92170,7 +92188,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -92518,7 +92536,7 @@
             "Visionary": false,
             "Total Points": 14,
             "Selected Percentage": 4.2,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -93849,9 +93867,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 11.7,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 6.1,
+            "Selected Percentage": 11.6,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 6.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -94190,9 +94208,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 28,
-            "Selected Percentage": 31.0,
-            "Selected Percentage Change 1W": 6.4,
-            "Selected Percentage Change Since Last Global Price Change": 22.7,
+            "Selected Percentage": 31.3,
+            "Selected Percentage Change 1W": 5.1,
+            "Selected Percentage Change Since Last Global Price Change": 23.0,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -95838,9 +95856,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 5,
-            "Selected Percentage": 2.3,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -1.0,
+            "Selected Percentage": 2.2,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -1.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -97144,9 +97162,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 26,
-            "Selected Percentage": 19.4,
-            "Selected Percentage Change 1W": 2.8,
-            "Selected Percentage Change Since Last Global Price Change": 8.0,
+            "Selected Percentage": 19.6,
+            "Selected Percentage Change 1W": 2.6,
+            "Selected Percentage Change Since Last Global Price Change": 8.2,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -97805,7 +97823,7 @@
             "Visionary": false,
             "Total Points": 2,
             "Selected Percentage": 6.5,
-            "Selected Percentage Change 1W": -1.3,
+            "Selected Percentage Change 1W": -1.2,
             "Selected Percentage Change Since Last Global Price Change": -4.7,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -98125,9 +98143,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 12,
-            "Selected Percentage": 5.5,
+            "Selected Percentage": 5.4,
             "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": 0.2,
+            "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -98167,7 +98185,7 @@
             },
             "5": {
                 "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -98446,7 +98464,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -98459,7 +98477,7 @@
             "Visionary": true,
             "Total Points": 7,
             "Selected Percentage": 1.3,
-            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -98779,8 +98797,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Jacqueline Ovalle",
@@ -98792,7 +98810,7 @@
             "Visionary": false,
             "Total Points": 26,
             "Selected Percentage": 11.0,
-            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change 1W": 0.3,
             "Selected Percentage Change Since Last Global Price Change": 3.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -99763,9 +99781,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 38,
-            "Selected Percentage": 19.3,
-            "Selected Percentage Change 1W": 8.6,
-            "Selected Percentage Change Since Last Global Price Change": 16.2,
+            "Selected Percentage": 19.6,
+            "Selected Percentage Change 1W": 7.0,
+            "Selected Percentage Change Since Last Global Price Change": 16.5,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 5,
@@ -100097,7 +100115,7 @@
             "Visionary": true,
             "Total Points": 9,
             "Selected Percentage": 1.9,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -100414,7 +100432,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -101759,18 +101777,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": true,
-            "Total Points": 5,
+            "Total Points": 6,
             "Selected Percentage": 1.9,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 5,
+            "Total Over 4 Gameweeks": 6,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 1.2,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Points Per Game Over 4 Gameweeks": 1.5,
+            "Points Per Million": 1.5,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -101783,7 +101801,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 1,
+            "Total 60 min Appearances": 2,
             "1": {
                 "points": 1,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)"
@@ -101798,8 +101816,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -102089,7 +102107,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -102418,7 +102436,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -102429,18 +102447,18 @@
             "Nationality": "England",
             "News": null,
             "Visionary": true,
-            "Total Points": 6,
+            "Total Points": 7,
             "Selected Percentage": 0.7,
             "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 6,
+            "Total Over 4 Gameweeks": 7,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.5,
-            "Points Per Million": 1.3,
-            "Points Per Million Over 4 Gameweeks": 1.3,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 1.6,
+            "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -102453,7 +102471,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 4,
-            "Total 60 min Appearances": 0,
+            "Total 60 min Appearances": 1,
             "1": {
                 "points": 0,
                 "tooltip": "14 Mar (H) DEN W 2-1\n1 min (+1pt)\nYellow Card (-1pt)"
@@ -102468,8 +102486,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\nGoal (+4pts)\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -106804,7 +106822,7 @@
             "Visionary": false,
             "Total Points": 10,
             "Selected Percentage": 2.4,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -108134,7 +108152,7 @@
             "Visionary": true,
             "Total Points": 13,
             "Selected Percentage": 1.9,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": 1.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -109768,9 +109786,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 5,
-            "Selected Percentage": 3.5,
-            "Selected Percentage Change 1W": -0.9,
-            "Selected Percentage Change Since Last Global Price Change": -1.8,
+            "Selected Percentage": 3.4,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": -1.9,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -110098,9 +110116,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 4,
-            "Selected Percentage": 6.3,
-            "Selected Percentage Change 1W": -1.2,
-            "Selected Percentage Change Since Last Global Price Change": -2.2,
+            "Selected Percentage": 6.2,
+            "Selected Percentage Change 1W": -1.0,
+            "Selected Percentage Change Since Last Global Price Change": -2.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -112054,9 +112072,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 22,
-            "Selected Percentage": 14.7,
-            "Selected Percentage Change 1W": 1.3,
-            "Selected Percentage Change Since Last Global Price Change": 10.1,
+            "Selected Percentage": 14.8,
+            "Selected Percentage Change 1W": 1.0,
+            "Selected Percentage Change Since Last Global Price Change": 10.2,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -112388,7 +112406,7 @@
             "Visionary": false,
             "Total Points": 18,
             "Selected Percentage": 2.5,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": 1.5,
             "Recommendation": "Differential",
             "Hot Pick": false,
@@ -112720,9 +112738,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 3,
-            "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -1.0,
+            "Selected Percentage": 0.9,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -1.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 3,
@@ -113995,8 +114013,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Andrea Kitahata",
@@ -114319,8 +114337,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Jordynn Dudley",
@@ -114332,7 +114350,7 @@
             "Visionary": false,
             "Total Points": 5,
             "Selected Percentage": 2.0,
-            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -114652,8 +114670,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Caroline DeLisle",
@@ -114993,9 +115011,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 14,
-            "Selected Percentage": 3.6,
+            "Selected Percentage": 3.7,
             "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": 1.8,
+            "Selected Percentage Change Since Last Global Price Change": 1.9,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -115667,7 +115685,7 @@
             "Visionary": true,
             "Total Points": 12,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -116007,9 +116025,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 27,
-            "Selected Percentage": 4.7,
-            "Selected Percentage Change 1W": 0.4,
-            "Selected Percentage Change Since Last Global Price Change": 3.5,
+            "Selected Percentage": 4.8,
+            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change Since Last Global Price Change": 3.6,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 4,
@@ -117021,9 +117039,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 2,
-            "Selected Percentage": 0.3,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 0.2,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 2,
@@ -117333,8 +117351,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Meila Brewer",
@@ -117651,8 +117669,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Kolo Suliafu",
@@ -117969,8 +117987,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Amelia White",
@@ -123246,9 +123264,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 6,
-            "Selected Percentage": 0.7,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.1,
+            "Selected Percentage": 0.6,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -126221,7 +126239,7 @@
             "Visionary": false,
             "Total Points": 17,
             "Selected Percentage": 2.4,
-            "Selected Percentage Change 1W": 1.3,
+            "Selected Percentage Change 1W": 1.0,
             "Selected Percentage Change Since Last Global Price Change": 2.0,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
@@ -126550,10 +126568,10 @@
             "News": null,
             "Visionary": false,
             "Total Points": 20,
-            "Selected Percentage": 3.7,
-            "Selected Percentage Change 1W": 1.0,
-            "Selected Percentage Change Since Last Global Price Change": 2.0,
-            "Recommendation": "Hot Pick",
+            "Selected Percentage": 3.8,
+            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change Since Last Global Price Change": 2.1,
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
             "Total Over 4 Gameweeks": 19,
@@ -127214,7 +127232,7 @@
             "Visionary": false,
             "Total Points": 25,
             "Selected Percentage": 6.7,
-            "Selected Percentage Change 1W": 3.3,
+            "Selected Percentage Change 1W": 2.7,
             "Selected Percentage Change Since Last Global Price Change": 5.1,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
@@ -128845,10 +128863,10 @@
             "News": null,
             "Visionary": true,
             "Total Points": 16,
-            "Selected Percentage": 1.8,
-            "Selected Percentage Change 1W": 1.1,
-            "Selected Percentage Change Since Last Global Price Change": 1.2,
-            "Recommendation": "Hot Pick",
+            "Selected Percentage": 1.7,
+            "Selected Percentage Change 1W": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": 1.1,
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 4,
             "Total Over 4 Gameweeks": 16,
@@ -129493,9 +129511,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 12,
-            "Selected Percentage": 6.5,
-            "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": 2.4,
+            "Selected Percentage": 6.4,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": 2.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -129535,7 +129553,7 @@
             },
             "5": {
                 "points": 1,
-                "tooltip": "5 Apr (A) BAY D 0-0\n1 min (+1pt)"
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -130456,7 +130474,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -130467,18 +130485,18 @@
             "Nationality": "Brazil",
             "News": null,
             "Visionary": true,
-            "Total Points": 2,
+            "Total Points": 3,
             "Selected Percentage": 0.1,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 2,
-            "Total Over 4 Gameweeks": 2,
-            "Games Played Over 4 Gameweeks": 2,
-            "Points Per Game Over 4 Gameweeks": 0.5,
-            "Points Per Million": 0.4,
-            "Points Per Million Over 4 Gameweeks": 0.4,
+            "Total Games Played": 3,
+            "Total Over 4 Gameweeks": 3,
+            "Games Played Over 4 Gameweeks": 3,
+            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Million": 0.6,
+            "Points Per Million Over 4 Gameweeks": 0.6,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Red Cards": 0,
@@ -130490,7 +130508,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 2,
+            "Total 1 min Appearances": 3,
             "Total 60 min Appearances": 0,
             "1": {
                 "points": 1,
@@ -130502,7 +130520,10 @@
             },
             "3": "-",
             "4": "-",
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -130780,7 +130801,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -130791,17 +130812,17 @@
             "Nationality": "Paraguay",
             "News": null,
             "Visionary": true,
-            "Total Points": 4,
-            "Selected Percentage": 0.9,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.4,
+            "Total Points": 5,
+            "Selected Percentage": 0.8,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 4,
+            "Total Games Played": 5,
             "Total Over 4 Gameweeks": 4,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 1.0,
-            "Points Per Million": 0.9,
+            "Points Per Million": 1.1,
             "Points Per Million Over 4 Gameweeks": 0.9,
             "Total Goals": 0,
             "Total Assists": 0,
@@ -130814,7 +130835,7 @@
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 0,
             "1": {
                 "points": 1,
@@ -130832,7 +130853,10 @@
                 "points": 1,
                 "tooltip": "28 Mar (A) DEN D 0-0\n1 min (+1pt)"
             },
-            "5": "-",
+            "5": {
+                "points": 1,
+                "tooltip": "5 Apr (A) BAY W 0-2\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "25 Apr",
@@ -131110,7 +131134,7 @@
                     "away_short_name": "Chicago Stars"
                 }
             ],
-            "Next Fixture Rating": 2.2,
+            "Next Fixture Rating": 2.0,
             "Next Fixture Score": 2
         },
         {
@@ -131121,18 +131145,18 @@
             "Nationality": "",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
-            "Selected Percentage": 2.9,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Total Points": 12,
+            "Selected Percentage": 2.8,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 11,
+            "Total Over 4 Gameweeks": 12,
             "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 1.8,
-            "Points Per Million Over 4 Gameweeks": 1.8,
+            "Points Per Game Over 4 Gameweeks": 3.0,
+            "Points Per Million": 2.0,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 0,
             "Total Assists": 2,
             "Total Red Cards": 0,
@@ -131145,7 +131169,7 @@
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 3,
-            "Total 60 min Appearances": 2,
+            "Total 60 min Appearances": 3,
             "1": "-",
             "2": {
                 "points": 5,
@@ -131157,8 +131181,8 @@
                 "tooltip": "28 Mar (A) NC W 1-3\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "5": {
-                "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "points": 2,
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -131461,7 +131485,7 @@
             "Visionary": false,
             "Total Points": 7,
             "Selected Percentage": 2.1,
-            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -131802,7 +131826,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.6,
-            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -1.0,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -132119,9 +132143,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 0,
-            "Selected Percentage": 7.3,
-            "Selected Percentage Change 1W": -0.9,
-            "Selected Percentage Change Since Last Global Price Change": -4.4,
+            "Selected Percentage": 7.2,
+            "Selected Percentage Change 1W": -0.7,
+            "Selected Percentage Change Since Last Global Price Change": -4.5,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 0,
@@ -132743,8 +132767,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Kiana Palacios",
@@ -133105,13 +133129,13 @@
             "Total Yellow Cards": 0,
             "Total Saves": 0,
             "Total Own Goals": 0,
-            "Total Conceeded": 0,
+            "Total Conceeded": -1,
             "Total Clean Sheet": 0,
             "Total Bonus Points": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
             "Total 1 min Appearances": 2,
-            "Total 60 min Appearances": 1,
+            "Total 60 min Appearances": 2,
             "1": "-",
             "2": "-",
             "3": "-",
@@ -133121,7 +133145,7 @@
             },
             "5": {
                 "points": 1,
-                "tooltip": "5 Apr (H) WAS D 0-0\n1 min (+1pt)"
+                "tooltip": "5 Apr (H) WAS L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -133411,7 +133435,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -134709,8 +134733,8 @@
                     "away_short_name": "KC Current"
                 }
             ],
-            "Next Fixture Rating": 2.33,
-            "Next Fixture Score": 2
+            "Next Fixture Rating": 3.22,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Erin McKinney",
@@ -136009,7 +136033,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -136325,7 +136349,7 @@
                     "away_short_name": "SD Wave"
                 }
             ],
-            "Next Fixture Rating": 1.11,
+            "Next Fixture Rating": 1.33,
             "Next Fixture Score": 1
         },
         {
@@ -137293,8 +137317,8 @@
                     "away_short_name": "Utah Royals"
                 }
             ],
-            "Next Fixture Rating": 3.6,
-            "Next Fixture Score": 4
+            "Next Fixture Rating": 2.8,
+            "Next Fixture Score": 3
         },
         {
             "Name": "Natalie Mitchell",
@@ -140835,7 +140859,7 @@
             "Visionary": true,
             "Total Points": 0,
             "Selected Percentage": 1.5,
-            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change 1W": 0.5,
             "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
