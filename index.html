@@ -79,6 +79,7 @@
             padding: 0.3rem;
             border-radius: 0.3rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            -webkit-overflow-scrolling: touch;
         }
 
         .dataTables_wrapper .dataTables_filter,
@@ -693,6 +694,21 @@
             /* text-indigo-600 */
             border-bottom-color: #4F46E5;
             font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .dt-container {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+        
+            .dataTables_wrapper {
+                overflow-x: auto !important;
+            }
+        
+            .dataTables_scrollBody {
+                overflow-x: auto !important;
+            }
         }
     </style>
 
