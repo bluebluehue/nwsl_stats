@@ -2059,7 +2059,7 @@
                         dataTableInstance.columns.adjust();
                         dataTableInstance.draw(false);
                     }
-                }, 150);
+                }, 200);
 
                 $('#myTable tbody').on('click', 'tr', function () {
                     if (dataTableInstance) {
@@ -2283,11 +2283,12 @@
             // --- END MODIFIED DATA FETCHING FUNCTION ---
 
             fetchData();
+            
             $(window).on('resize orientationchange', function () {
                 if (dataTableInstance) {
                     setTimeout(() => {
                         dataTableInstance.columns.adjust().draw(false);
-                    }, 150);
+                    }, 200);
                 }
             });
         });
