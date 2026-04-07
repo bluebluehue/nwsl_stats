@@ -901,8 +901,6 @@
             </div>
             
         </div>
-        <div id="delta-reference-note" class="text-sm text-gray-600 mb-3">
-        </div>
         <div class="dt-container">
             <p id="loading-message" class="text-center text-xl p-8 text-gray-600">
                 Loading data...
@@ -1042,6 +1040,7 @@
             let dataTableInstance = null;
             let uniqueClubs = [];
             let selectedDeltaField = 'Selected Percentage Change 1W';
+            const isMobileView = window.innerWidth <= 768;
 
             function formatDisplayDate(isoDateString) {
                 if (!isoDateString) return null;
@@ -2033,9 +2032,9 @@
                     columns: columns,
                     paging: true,
                     searching: true,
-                    scrollX: false,
+                    scrollX: isMobileView,
                     order: [[5, 'desc']],
-                    responsive: true,
+                    responsive: !isMobileView,
                     info: true,
 
                     lengthMenu: [
