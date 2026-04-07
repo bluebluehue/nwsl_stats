@@ -2033,6 +2033,7 @@
                     paging: true,
                     searching: true,
                     scrollX: isMobileView,
+                    autoWidth: false,
                     order: [[5, 'desc']],
                     responsive: !isMobileView,
                     info: true,
@@ -2055,9 +2056,10 @@
 
                 setTimeout(() => {
                     if (dataTableInstance) {
-                        dataTableInstance.columns.adjust().draw();
+                        dataTableInstance.columns.adjust();
+                        dataTableInstance.draw(false);
                     }
-                }, 50);
+                }, 150);
 
                 $('#myTable tbody').on('click', 'tr', function () {
                     if (dataTableInstance) {
@@ -2281,6 +2283,13 @@
             // --- END MODIFIED DATA FETCHING FUNCTION ---
 
             fetchData();
+            $(window).on('resize orientationchange', function () {
+                if (dataTableInstance) {
+                    setTimeout(() => {
+                        dataTableInstance.columns.adjust().draw(false);
+                    }, 150);
+                }
+            });
         });
     </script>
     
