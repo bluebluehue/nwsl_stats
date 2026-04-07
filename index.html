@@ -215,10 +215,6 @@
             white-space: nowrap;
         }
 
-        table.dataTable {
-            width: 100% !important;
-        }
-
         /* NEW RULE: Increase right padding on ALL headers to leave space for the sort arrow */
         table.dataTable thead th {
             padding-right: 0.75rem !important;
@@ -700,6 +696,17 @@
             .dt-container {
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch;
+            }
+
+            table.dataTable,
+            #myTable {
+                width: max-content !important;
+                min-width: 100% !important;
+            }
+
+            table.dataTable th,
+            table.dataTable td {
+                white-space: nowrap;
             }
         
             .dataTables_wrapper {
@@ -2032,7 +2039,7 @@
                     columns: columns,
                     paging: true,
                     searching: true,
-                    scrollX: isMobileView,
+                    scrollX: false,
                     autoWidth: false,
                     order: [[5, 'desc']],
                     responsive: !isMobileView,
