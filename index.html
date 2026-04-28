@@ -1835,6 +1835,13 @@
                     className: 'dt-center'
                 },
 
+                "Total Goals + Assists": {
+                    abbr: `G+A`,
+                    full: 'Goals plus assists this season',
+                    type: 'num',
+                    className: 'dt-center font-semibold'
+                },
+
                 "Total Clean Sheet": {
                     abbr: `CS`,
                     full: 'Clean sheets this season',
@@ -1849,6 +1856,13 @@
                     className: 'dt-center'
                 },
 
+                "Total Bonus Games": {
+                    abbr: `B+`,
+                    full: 'Number of games where the player received bonus points',
+                    type: 'num',
+                    className: 'dt-center'
+                },
+                
                 "Total Yellow Cards": {
                     abbr: `<i class="fa-solid fa-square icon-yellow text-base fa-header-icon"></i>`,
                     full: 'Yellow cards this season',
@@ -1886,7 +1900,7 @@
                     className: 'dt-center'
                 },
                 "Total 1 min Appearances": { abbr: 'P1', full: 'Games with at least 1 minute played (1pt)', type: 'num', className: 'dt-center' },
-                "Total 60 min Appearances": { abbr: '60', full: 'Games with at least 60 minutes played (1pt)', type: 'num', className: 'dt-center' }
+                "Total 60 min Appearances": { abbr: '60', full: 'Games with at least 60 minutes played (1pt)', type: 'num', className: 'dt-center border-r-4 border-gray-400' }
             };
 
             const STATIC_KEYS_SET = new Set(Object.keys(STATIC_COLUMN_MAP));
