@@ -692,6 +692,16 @@
             font-weight: 600;
         }
 
+        /* --- MY TEAM / WATCHLIST ROW COLORS --- */
+        
+        .my-team-row td {
+            background-color: #dbeafe !important;
+        }
+        
+        .watchlist-row td {
+            background-color: #fef9c3 !important;
+        }
+
         @media (max-width: 768px) {
             .dt-container {
                 overflow-x: auto !important;
@@ -997,7 +1007,7 @@
     <script src="https://cdn.datatables.net/responsive/3.0.7/js/dataTables.responsive.js"></script>
     <script src="https://cdn.datatables.net/responsive/3.0.7/js/responsive.dataTables.js"></script>
 
-<script>
+<script>    
         // --- GLOBALS FOR CHARTING ---
         const PLAYER_HISTORY_PATH = 'player_history.json'; 
         const TRANSFORMED_DATA_PATH = 'transformed_data.json'; 
@@ -1042,6 +1052,68 @@
         }
 
         $(document).ready(function () {
+
+            const STORAGE_KEYS = {
+                myTeam: 'nwsl_my_team',
+                watchlist: 'nwsl_watchlist'
+            };
+            
+            function getStoredList(key) {
+                return JSON.parse(localStorage.getItem(key) || '[]');
+            }
+            
+            function saveStoredList(key, list) {
+                localStorage.setItem(key, JSON.stringify(list));
+            }
+            
+            function isMyTeamPlayer(name) {
+                return getStoredList(STORAGE_KEYS.myTeam).includes(name);
+            }
+            
+            function isWatchlistPlayer(name) {
+                return getStoredList(STORAGE_KEYS.watchlist).includes(name);
+            }
+            
+            function toggleMyTeam(name) {
+                let myTeam = getStoredList(STORAGE_KEYS.myTeam);
+            
+                if (myTeam.includes(name)) {
+                    myTeam = myTeam.filter(n => n !== name);
+                } else {
+                    myTeam.push(name);
+            
+                    // remove from watchlist if adding to team
+                    let watchlist = getStoredList(STORAGE_KEYS.watchlist)
+                        .filter(n => n !== name);
+            
+                    saveStoredList(STORAGE_KEYS.watchlist, watchlist);
+                }
+            
+                saveStoredList(STORAGE_KEYS.myTeam, myTeam);
+            
+                if (dataTableInstance) {
+                    dataTableInstance.rows().invalidate().draw(false);
+                }
+            }
+            
+            function toggleWatchlist(name) {
+                // don't allow watchlisting if already on team
+                if (isMyTeamPlayer(name)) return;
+            
+                let watchlist = getStoredList(STORAGE_KEYS.watchlist);
+            
+                if (watchlist.includes(name)) {
+                    watchlist = watchlist.filter(n => n !== name);
+                } else {
+                    watchlist.push(name);
+                }
+            
+                saveStoredList(STORAGE_KEYS.watchlist, watchlist);
+            
+                if (dataTableInstance) {
+                    dataTableInstance.rows().invalidate().draw(false);
+                }
+            }
 
             const RECENT_GAMES_COUNT = 4;
             let dataTableInstance = null;
@@ -1484,17 +1556,37 @@
                             const hotPickIcon = row["Hot Pick"] === true
                                 ? `<span class="ml-1" title="Hot Pick">🔥</span>`
                                 : '';
+
+                            const myTeamIcon = isMyTeamPlayer(data)
+                                ? `<span class="ml-1 cursor-pointer" title="Remove from Current Team"
+                                    onclick="event.stopPropagation(); toggleMyTeam('${data.replace(/'/g, "\\'")}')">⭐</span>`
+                                : `<span class="ml-1 opacity-40 hover:opacity-100 cursor-pointer"
+                                    title="Add to Current Team"
+                                    onclick="event.stopPropagation(); toggleMyTeam('${data.replace(/'/g, "\\'")}')">☆</span>`;
                             
+                            const watchlistIcon = isMyTeamPlayer(data)
+                                ? ''
+                                : isWatchlistPlayer(data)
+                                    ? `<span class="ml-1 cursor-pointer" title="Remove from Watchlist"
+                                        onclick="event.stopPropagation(); toggleWatchlist('${data.replace(/'/g, "\\'")}')">👀</span>`
+                                    : `<span class="ml-1 opacity-40 hover:opacity-100 cursor-pointer"
+                                        title="Add to Watchlist"
+                                        onclick="event.stopPropagation(); toggleWatchlist('${data.replace(/'/g, "\\'")}')">⭘</span>`;
+
                             if (isVisionary) {
                                 finalContent = `<div class="flex items-center">
                                                 ${nameSpan}
                                                 ${VISIONARY_SVG_SMALL}
                                                 ${hotPickIcon}
+                                                ${myTeamIcon}
+                                                ${watchlistIcon}
                                             </div>`;
                             } else {
                                 finalContent = `<div class="flex items-center">
                                                 ${nameSpan}
                                                 ${hotPickIcon}
+                                                ${myTeamIcon}
+                                                ${watchlistIcon}
                                             </div>`;
                             }
 
@@ -2044,6 +2136,17 @@
                     order: [[5, 'desc']],
                     responsive: !isMobileView,
                     info: true,
+
+                    rowCallback: function(row, data) {
+                    
+                        $(row).removeClass('my-team-row watchlist-row');
+                    
+                        if (isMyTeamPlayer(data.Name)) {
+                            $(row).addClass('my-team-row');
+                        } else if (isWatchlistPlayer(data.Name)) {
+                            $(row).addClass('watchlist-row');
+                        }
+                    },
 
                     lengthMenu: [
                         [10, 15, 25, 50, 100, -1],
