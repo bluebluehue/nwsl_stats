@@ -910,6 +910,21 @@
                             Hot Picks Only
                         </label>
                     </div>
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <input type="checkbox" id="my-team-filter"
+                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <label for="my-team-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            My Team Only
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <input type="checkbox" id="watchlist-filter"
+                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <label for="watchlist-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Watchlist Only
+                        </label>
+                    </div>
                     <div id="delta-reference-note"
                          class="text-sm text-gray-600 whitespace-nowrap ml-2">
                     </div>
@@ -1074,7 +1089,7 @@
                 return getStoredList(STORAGE_KEYS.watchlist).includes(name);
             }
             
-            function toggleMyTeam(name) {
+            window.toggleMyTeam = function(name) {
                 let myTeam = getStoredList(STORAGE_KEYS.myTeam);
             
                 if (myTeam.includes(name)) {
@@ -1094,9 +1109,9 @@
                 if (dataTableInstance) {
                     dataTableInstance.rows().invalidate().draw(false);
                 }
-            }
+            };
             
-            function toggleWatchlist(name) {
+            window.toggleWatchlist = function(name) {
                 // don't allow watchlisting if already on team
                 if (isMyTeamPlayer(name)) return;
             
@@ -1113,7 +1128,7 @@
                 if (dataTableInstance) {
                     dataTableInstance.rows().invalidate().draw(false);
                 }
-            }
+            };
 
             const RECENT_GAMES_COUNT = 4;
             let dataTableInstance = null;
@@ -2015,6 +2030,22 @@
                     if (hotPickChecked && !isHotPick) {
                         return false;
                     }
+
+                    const myTeamChecked = $('#my-team-filter').is(':checked');
+                    const watchlistChecked = $('#watchlist-filter').is(':checked');
+                    
+                    const isMyTeam = isMyTeamPlayer(rowData.Name);
+                    const isWatchlist = isWatchlistPlayer(rowData.Name);
+                    
+                    if (myTeamChecked && watchlistChecked) {
+                        if (!isMyTeam && !isWatchlist) {
+                            return false;
+                        }
+                    } else if (myTeamChecked && !isMyTeam) {
+                        return false;
+                    } else if (watchlistChecked && !isWatchlist) {
+                        return false;
+                    }
             
                     const selectedFixtureScores = $('.fixture-score-filter:checked').map(function () {
                         return parseInt(this.value, 10);
@@ -2229,6 +2260,12 @@
                 });
                 
                 $('#visionary-filter').on('change', function () {
+                    if (dataTableInstance) {
+                        dataTableInstance.draw();
+                    }
+                });
+
+                $('#my-team-filter, #watchlist-filter').on('change', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
