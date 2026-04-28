@@ -1014,6 +1014,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         gw_points_total_4gw = 0
         gw_games_played_4gw = 0
         recent_points = []
+        bonus_games_count = 0
         overall_stats = defaultdict(int)
         overall_games_played = 0
         total_points = 0  # Will calculate by summing all game points
@@ -1036,6 +1037,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             game = game_data.get("game", {})
             gw = game.get("stage", {}).get("id", "")
             points = game_data.get("points", 0)
+            got_bonus_this_game = False
 
             if not gw:
                 continue
@@ -1060,6 +1062,10 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             # Accumulate contribution stats
             for contrib in game_data.get("contributions", []):
                 contrib_type = contrib["contribution"]
+
+                if contrib_type == "Bonus" and contrib.get("quantity", 0) > 0:
+                    got_bonus_this_game = True
+    
                 target_stat_key = STAT_ACCUMULATORS.get(contrib_type)
 
                 if target_stat_key:
@@ -1072,6 +1078,9 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     else:
                         # For everything else, accumulate the quantity
                         overall_stats[target_stat_key] += contrib.get("quantity", 1)
+
+            if got_bonus_this_game:
+                bonus_games_count += 1
 
         # Calculate derived metrics
         ppm_total = total_points / value if value > 0 else 0.0
@@ -1115,6 +1124,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Points Per Million Over 4 Gameweeks": round(ppm_4gw, 1),
             "Total Goals": overall_stats["Total Goals"],
             "Total Assists": overall_stats["Total Assists"],
+            "Total Goals + Assists": overall_stats["Total Goals"] + overall_stats["Total Assists"],
             "Total Red Cards": overall_stats["Total Red Cards"],
             "Total Yellow Cards": overall_stats["Total Yellow Cards"],
             "Total Saves": overall_stats["Total Saves"],
@@ -1122,6 +1132,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Total Conceeded": overall_stats["Total Conceeded"],
             "Total Clean Sheet": overall_stats["Total Clean Sheet"],
             "Total Bonus Points": overall_stats["Total Bonus Points"],
+            "Total Bonus Games": bonus_games_count,
             "Total Missed Penalties": overall_stats["Total Missed Penalties"],
             "Total Clearances": overall_stats["Total Clearances"],
             "Total 1 min Appearances": overall_stats["Total 1 min Appearances"],
