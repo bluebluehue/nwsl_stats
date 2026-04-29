@@ -620,7 +620,7 @@ def combine_fixture_scores(scores):
     avg_rating = sum(scores) / len(scores)
 
     if len(scores) > 1:
-        avg_rating -= 0.5
+        avg_rating -= 1.0
 
     avg_rating = max(1, min(5, avg_rating))
     raw_rating = round(avg_rating, 2)
