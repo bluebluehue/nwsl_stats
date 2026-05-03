@@ -12559,9 +12559,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 15,
-            "Selected Percentage": 10.2,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -4.0,
+            "Selected Percentage": 10.1,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -4.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 7,
@@ -41426,8 +41426,8 @@
                 "tooltip": "26 Apr (A) HOU W 0-1\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 1,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "points": 2,
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -42057,7 +42057,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) BOS D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -83226,8 +83226,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nGoal (+5pts)\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 7,
-                "tooltip": "29 Apr (H) LOU W 1-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "points": 16,
+                "tooltip": "2 May (A) ORL W 2-4\nAssist x2 (+6pts)\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -92869,9 +92869,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 32,
-            "Selected Percentage": 22.7,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": 11.3,
+            "Selected Percentage": 22.8,
+            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change Since Last Global Price Change": 11.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 7,
@@ -94439,9 +94439,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 26,
-            "Selected Percentage": 9.2,
-            "Selected Percentage Change 1W": -1.9,
-            "Selected Percentage Change Since Last Global Price Change": 1.9,
+            "Selected Percentage": 9.1,
+            "Selected Percentage Change 1W": -2.0,
+            "Selected Percentage Change Since Last Global Price Change": 1.8,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 5,
@@ -123837,8 +123837,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 1,
-                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)"
+                "points": -1,
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
             },
             "upcoming_fixtures": [
                 {
