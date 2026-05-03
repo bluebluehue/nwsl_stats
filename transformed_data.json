@@ -2266,9 +2266,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 29,
-            "Selected Percentage": 50.3,
-            "Selected Percentage Change 1W": 0.8,
-            "Selected Percentage Change Since Last Global Price Change": 8.7,
+            "Selected Percentage": 50.4,
+            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change Since Last Global Price Change": 8.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 6,
@@ -9695,7 +9695,7 @@
             "Visionary": true,
             "Total Points": 4,
             "Selected Percentage": 1.0,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -30565,9 +30565,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 21,
-            "Selected Percentage": 14.3,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 14.2,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 6,
@@ -39452,9 +39452,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 23,
-            "Selected Percentage": 2.9,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": 0.7,
+            "Selected Percentage": 3.0,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 6,
@@ -59018,7 +59018,7 @@
             "Visionary": true,
             "Total Points": 6,
             "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -79229,7 +79229,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -80146,8 +80146,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 0,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
+                "points": 9,
+                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -81382,7 +81382,7 @@
             "6": "-",
             "7": {
                 "points": 1,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -82006,8 +82006,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 1,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "points": 3,
+                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -83226,8 +83226,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nGoal (+5pts)\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 16,
-                "tooltip": "2 May (A) ORL W 2-4\nAssist x2 (+6pts)\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "points": 7,
+                "tooltip": "29 Apr (H) LOU W 1-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -85073,8 +85073,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": 6,
-                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "points": 1,
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -107217,9 +107217,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 28,
-            "Selected Percentage": 16.3,
-            "Selected Percentage Change 1W": 1.4,
-            "Selected Percentage Change Since Last Global Price Change": 11.7,
+            "Selected Percentage": 16.4,
+            "Selected Percentage Change 1W": 1.5,
+            "Selected Percentage Change Since Last Global Price Change": 11.8,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 6,
@@ -123837,8 +123837,8 @@
                 "tooltip": "25 Apr (H) KC W 4-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "7": {
-                "points": -1,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
+                "points": 1,
+                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
