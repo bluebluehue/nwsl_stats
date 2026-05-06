@@ -1674,6 +1674,39 @@
                     },
                     className: 'dt-center'
                 },
+                "Form Rating": {
+                    abbr: 'Form',
+                    full: 'Recent form rating from 0-100, based on last 4 games: recent points, consistency, and bonus involvement',
+                    type: 'num',
+                    render: function (data, type, row) {
+                        if (type !== 'display') {
+                            return data === null || data === undefined ? 0 : data;
+                        }
+                
+                        if (data === null || data === undefined) {
+                            return '<span class="text-gray-400">-</span>';
+                        }
+                
+                        const score = parseInt(data, 10);
+                
+                        let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[42px] text-center';
+                
+                        if (score >= 80) {
+                            classes += ' bg-green-600 text-white';
+                        } else if (score >= 65) {
+                            classes += ' bg-green-200 text-green-900';
+                        } else if (score >= 50) {
+                            classes += ' bg-gray-200 text-gray-800';
+                        } else if (score >= 35) {
+                            classes += ' bg-red-200 text-red-900';
+                        } else {
+                            classes += ' bg-red-600 text-white';
+                        }
+                
+                        return `<span class="${classes}">${score}</span>`;
+                    },
+                    className: 'dt-center'
+                },
                 "Position": {
                     abbr: 'Pos',
                     full: 'Player Position',
