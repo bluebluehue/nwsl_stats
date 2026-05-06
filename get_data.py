@@ -932,9 +932,11 @@ def update_player_history(final_player_list, history_file="player_history.json")
 
         if player_key:
             # Create a dictionary for the player's current stats
+
             today_player_data[player_key] = {
                 "Value": player.get("Value"),
                 "Selected Percentage": player.get("Selected Percentage"),
+                "Form Rating": player.get("Form Rating"),
             }
 
     # 3. Update history data for the current date
@@ -1082,8 +1084,14 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             tooltip_str = create_gw_tooltip(game_data, club)
 
             # Store gameweek data
-            gw_data_map[gw] = {"points": points, "tooltip": tooltip_str}
-
+            # If a player has multiple games in the same gameweek, add the points together
+            # and keep both fixture tooltips.
+            if gw in gw_data_map:
+                gw_data_map[gw]["points"] += points
+                gw_data_map[gw]["tooltip"] += "\n\n---\n\n" + tooltip_str
+            else:
+                gw_data_map[gw] = {"points": points, "tooltip": tooltip_str}
+    
             # Calculate total points by summing all game points
             total_points += points
 
