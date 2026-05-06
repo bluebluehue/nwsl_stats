@@ -1087,17 +1087,6 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             # Calculate total points by summing all game points
             total_points += points
 
-            # Calculate 4GW stats (last 4 games)
-            if i < recent_games_count:
-                gw_points_total_4gw += points
-                gw_games_played_4gw += 1
-                recent_points.append(points)
-            
-                if got_bonus_this_game:
-                    recent_bonus_games += 1
-                
-            overall_games_played += 1
-
             # Accumulate contribution stats
             for contrib in game_data.get("contributions", []):
                 contrib_type = contrib["contribution"]
@@ -1121,6 +1110,17 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             if got_bonus_this_game:
                 bonus_games_count += 1
 
+        # Calculate 4GW stats (last 4 games)
+        if i < recent_games_count:
+            gw_points_total_4gw += points
+            gw_games_played_4gw += 1
+            recent_points.append(points)
+        
+            if got_bonus_this_game:
+                recent_bonus_games += 1
+            
+        overall_games_played += 1
+        
         # Calculate derived metrics
         ppm_total = total_points / value if value > 0 else 0.0
         ppm_4gw = gw_points_total_4gw / value if value > 0 else 0.0
