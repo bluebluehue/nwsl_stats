@@ -855,6 +855,41 @@ def get_recommendation(
 
     return "Steady"
 
+def calculate_form_rating(recent_points, recent_bonus_games):
+    """
+    Returns a 0-100 form rating based on last 4 games.
+
+    Components:
+    - 50% recent points per game
+    - 35% consistency: % of last 4 games with 3+ points
+    - 15% bonus involvement: % of last 4 games with bonus points
+    """
+    if not recent_points:
+        return 0
+
+    games_count = len(recent_points)
+
+    # 1. Recent PPG score
+    # 8+ PPG = 100, 0 PPG = 0
+    recent_ppg = sum(recent_points) / games_count
+    ppg_score = min(100, max(0, (recent_ppg / 8) * 100))
+
+    # 2. Consistency score
+    # 3+ points means a fantasy return above just playing
+    consistency_games = sum(1 for pts in recent_points if pts >= 3)
+    consistency_score = (consistency_games / games_count) * 100
+
+    # 3. Bonus involvement score
+    bonus_score = (recent_bonus_games / games_count) * 100
+
+    form_rating = (
+        0.50 * ppg_score +
+        0.35 * consistency_score +
+        0.15 * bonus_score
+    )
+
+    return round(form_rating)
+
 def is_hot_pick(recent_points):
     """
     Returns True if the player scored more than 4 points
@@ -1014,6 +1049,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         gw_points_total_4gw = 0
         gw_games_played_4gw = 0
         recent_points = []
+        recent_bonus_games = 0
         bonus_games_count = 0
         overall_stats = defaultdict(int)
         overall_games_played = 0
@@ -1056,7 +1092,10 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 gw_points_total_4gw += points
                 gw_games_played_4gw += 1
                 recent_points.append(points)
-
+            
+                if got_bonus_this_game:
+                    recent_bonus_games += 1
+                
             overall_games_played += 1
 
             # Accumulate contribution stats
@@ -1118,6 +1157,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Hot Pick": hot_pick,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
+            "Form Rating": calculate_form_rating(recent_points, recent_bonus_games),
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
             "Points Per Game Over 4 Gameweeks": round(ppg_4gw, 1),
             "Points Per Million": round(ppm_total, 1),
