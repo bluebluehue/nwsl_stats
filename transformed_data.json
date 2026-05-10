@@ -1249,9 +1249,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 22,
-            "Selected Percentage": 7.3,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.9,
+            "Selected Percentage": 7.2,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.8,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 6,
@@ -2555,7 +2555,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -11607,18 +11607,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 10,
+            "Total Points": 11,
             "Selected Percentage": 7.3,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -2.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 6,
+            "Total Games Played": 7,
             "Total Over 4 Gameweeks": 8,
             "Form Rating": 21,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 2.0,
+            "Points Per Million": 2.2,
             "Points Per Million Over 4 Gameweeks": 1.6,
             "Total Goals": 0,
             "Total Assists": 0,
@@ -11633,7 +11633,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 6,
+            "Total 1 min Appearances": 7,
             "Total 60 min Appearances": 6,
             "1": {
                 "points": 0,
@@ -11655,9 +11655,12 @@
             "6": "-",
             "7": {
                 "points": 4,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -12193,19 +12196,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 16,
+            "Total Points": 17,
             "Selected Percentage": 9.7,
             "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -4.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 8,
-            "Total Over 4 Gameweeks": 12,
-            "Form Rating": 31,
+            "Total Games Played": 9,
+            "Total Over 4 Gameweeks": 11,
+            "Form Rating": 30,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 3.2,
-            "Points Per Million Over 4 Gameweeks": 2.4,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 3.4,
+            "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -12219,7 +12222,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 8,
+            "Total 1 min Appearances": 9,
             "Total 60 min Appearances": 8,
             "1": {
                 "points": 0,
@@ -12247,9 +12250,12 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -13396,19 +13402,19 @@
             "Nationality": "Japan",
             "News": null,
             "Visionary": false,
-            "Total Points": 13,
+            "Total Points": 14,
             "Selected Percentage": 3.4,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -2.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 12,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 7,
+            "Form Rating": 11,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 3.2,
-            "Points Per Million Over 4 Gameweeks": 2.0,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 3.5,
+            "Points Per Million Over 4 Gameweeks": 1.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -13422,7 +13428,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 6,
             "1": {
                 "points": 2,
@@ -13449,7 +13455,10 @@
                 "points": 4,
                 "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -14920,19 +14929,19 @@
             "Nationality": "Canada",
             "News": null,
             "Visionary": false,
-            "Total Points": 17,
+            "Total Points": 18,
             "Selected Percentage": 2.0,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 8,
-            "Total Over 4 Gameweeks": 9,
-            "Form Rating": 23,
+            "Total Games Played": 9,
+            "Total Over 4 Gameweeks": 7,
+            "Form Rating": 11,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.2,
-            "Points Per Million": 2.4,
-            "Points Per Million Over 4 Gameweeks": 1.3,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 2.6,
+            "Points Per Million Over 4 Gameweeks": 1.0,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -14946,7 +14955,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 8,
+            "Total 1 min Appearances": 9,
             "Total 60 min Appearances": 8,
             "1": {
                 "points": 2,
@@ -14974,9 +14983,12 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -16177,7 +16189,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -16427,19 +16439,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 11,
+            "Total Points": 12,
             "Selected Percentage": 0.7,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 6,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 21,
+            "Total Games Played": 7,
+            "Total Over 4 Gameweeks": 6,
+            "Form Rating": 9,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 2.8,
-            "Points Per Million Over 4 Gameweeks": 2.0,
+            "Points Per Game Over 4 Gameweeks": 1.5,
+            "Points Per Million": 3.0,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -16453,7 +16465,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 6,
+            "Total 1 min Appearances": 7,
             "Total 60 min Appearances": 4,
             "1": "-",
             "2": "-",
@@ -16475,9 +16487,12 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -16733,19 +16748,19 @@
             "Nationality": "Portugal",
             "News": null,
             "Visionary": true,
-            "Total Points": 13,
+            "Total Points": 14,
             "Selected Percentage": 1.0,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 12,
-            "Form Rating": 28,
+            "Total Games Played": 6,
+            "Total Over 4 Gameweeks": 11,
+            "Form Rating": 26,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 2.4,
-            "Points Per Million Over 4 Gameweeks": 2.2,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 2.5,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Goals + Assists": 1,
@@ -16759,7 +16774,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 5,
+            "Total 1 min Appearances": 6,
             "Total 60 min Appearances": 4,
             "1": "-",
             "2": "-",
@@ -16778,9 +16793,12 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -18257,7 +18275,7 @@
             "6": "-",
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\n1 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -20043,7 +20061,7 @@
             },
             "7": {
                 "points": 12,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -20344,7 +20362,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\n1 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -20648,7 +20666,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 5,
@@ -23028,7 +23046,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -26043,7 +26061,7 @@
             },
             "8": {
                 "points": 5,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -26664,7 +26682,7 @@
             },
             "8": {
                 "points": 8,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -27261,7 +27279,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -27885,7 +27903,7 @@
             },
             "8": {
                 "points": 2,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -28142,18 +28160,18 @@
             "Nationality": "Nigeria",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
+            "Total Points": 12,
             "Selected Percentage": 2.0,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -1.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 7,
+            "Total Games Played": 8,
             "Total Over 4 Gameweeks": 9,
             "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 2.2,
-            "Points Per Million": 2.4,
+            "Points Per Million": 2.7,
             "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 0,
             "Total Assists": 0,
@@ -28168,7 +28186,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 0,
@@ -28195,7 +28213,10 @@
                 "points": 2,
                 "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -29054,19 +29075,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 22,
+            "Total Points": 23,
             "Selected Percentage": 0.8,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 12,
-            "Form Rating": 28,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 11,
+            "Form Rating": 26,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
-            "Points Per Million": 4.0,
-            "Points Per Million Over 4 Gameweeks": 2.2,
+            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Million": 4.2,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 0,
             "Total Assists": 2,
             "Total Goals + Assists": 2,
@@ -29080,7 +29101,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 7,
             "1": {
                 "points": 2,
@@ -29110,7 +29131,10 @@
                 "points": 2,
                 "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -30271,19 +30295,19 @@
             "Nationality": "Brazil",
             "News": null,
             "Visionary": false,
-            "Total Points": 14,
+            "Total Points": 15,
             "Selected Percentage": 11.3,
             "Selected Percentage Change 1W": -0.5,
             "Selected Percentage Change Since Last Global Price Change": -9.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 9,
-            "Form Rating": 32,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 8,
+            "Form Rating": 30,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.2,
-            "Points Per Million": 2.3,
-            "Points Per Million Over 4 Gameweeks": 1.5,
+            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Million": 2.5,
+            "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -30297,7 +30321,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 7,
             "1": {
                 "points": 3,
@@ -30327,7 +30351,10 @@
                 "points": 3,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -31228,18 +31255,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 7,
+            "Total Points": 8,
             "Selected Percentage": 1.1,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 4,
+            "Total Games Played": 5,
             "Total Over 4 Gameweeks": 7,
             "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 1.8,
-            "Points Per Million": 0.9,
+            "Points Per Million": 1.1,
             "Points Per Million Over 4 Gameweeks": 0.9,
             "Total Goals": 0,
             "Total Assists": 0,
@@ -31254,7 +31281,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 1,
@@ -31275,7 +31302,10 @@
                 "points": 4,
                 "tooltip": "2 May (A) NC W 1-2\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -31844,18 +31874,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 17,
+            "Total Points": 18,
             "Selected Percentage": 10.0,
             "Selected Percentage Change 1W": -0.6,
             "Selected Percentage Change Since Last Global Price Change": -9.1,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 7,
+            "Total Games Played": 8,
             "Total Over 4 Gameweeks": 5,
             "Form Rating": 8,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 2.1,
+            "Points Per Million": 2.2,
             "Points Per Million Over 4 Gameweeks": 0.6,
             "Total Goals": 0,
             "Total Assists": 1,
@@ -31870,7 +31900,7 @@
             "Total Bonus Games": 2,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 7,
             "1": {
                 "points": 4,
@@ -31900,7 +31930,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -32484,19 +32517,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 10,
+            "Total Points": 11,
             "Selected Percentage": 4.5,
             "Selected Percentage Change 1W": -0.3,
             "Selected Percentage Change Since Last Global Price Change": -4.2,
             "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 3,
-            "Form Rating": 5,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 4,
+            "Form Rating": 6,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 0.8,
-            "Points Per Million": 1.2,
-            "Points Per Million Over 4 Gameweeks": 0.4,
+            "Points Per Game Over 4 Gameweeks": 1.0,
+            "Points Per Million": 1.4,
+            "Points Per Million Over 4 Gameweeks": 0.5,
             "Total Goals": 0,
             "Total Assists": 1,
             "Total Goals + Assists": 1,
@@ -32510,7 +32543,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 6,
             "1": {
                 "points": 5,
@@ -32540,7 +32573,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -33436,19 +33472,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 11,
-            "Selected Percentage": 3.3,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -1.0,
-            "Recommendation": "Steady",
+            "Total Points": 12,
+            "Selected Percentage": 3.2,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -1.1,
+            "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 6,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 12,
+            "Total Games Played": 7,
+            "Total Over 4 Gameweeks": 7,
+            "Form Rating": 11,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 1.1,
-            "Points Per Million Over 4 Gameweeks": 0.8,
+            "Points Per Game Over 4 Gameweeks": 1.8,
+            "Points Per Million": 1.2,
+            "Points Per Million Over 4 Gameweeks": 0.7,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -33462,7 +33498,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 6,
+            "Total 1 min Appearances": 7,
             "Total 60 min Appearances": 5,
             "1": "-",
             "2": {
@@ -33489,7 +33525,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -34389,19 +34428,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 5,
+            "Total Points": 6,
             "Selected Percentage": 0.2,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
-            "Recommendation": "Value Pick",
+            "Recommendation": "Cold",
             "Hot Pick": false,
-            "Total Games Played": 4,
-            "Total Over 4 Gameweeks": 5,
-            "Form Rating": 8,
+            "Total Games Played": 5,
+            "Total Over 4 Gameweeks": 4,
+            "Form Rating": 6,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.2,
-            "Points Per Million": 0.9,
-            "Points Per Million Over 4 Gameweeks": 0.9,
+            "Points Per Game Over 4 Gameweeks": 1.0,
+            "Points Per Million": 1.1,
+            "Points Per Million Over 4 Gameweeks": 0.7,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -34415,7 +34454,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 4,
+            "Total 1 min Appearances": 5,
             "Total 60 min Appearances": 1,
             "1": {
                 "points": 2,
@@ -34436,7 +34475,10 @@
                 "points": 1,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -35648,19 +35690,19 @@
             "Nationality": "Malawi",
             "News": null,
             "Visionary": false,
-            "Total Points": 8,
+            "Total Points": 9,
             "Selected Percentage": 8.1,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": -4.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 28,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 2.0,
-            "Points Per Million": 0.7,
-            "Points Per Million Over 4 Gameweeks": 0.7,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 9,
+            "Form Rating": 23,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Million": 0.8,
+            "Points Per Million Over 4 Gameweeks": 0.8,
             "Total Goals": 0,
             "Total Assists": 1,
             "Total Goals + Assists": 1,
@@ -35674,7 +35716,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 2,
             "1": "-",
             "2": "-",
@@ -35692,7 +35734,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -36010,7 +36055,7 @@
             },
             "7": {
                 "points": 15,
-                "tooltip": "30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -36271,19 +36316,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 22,
+            "Total Points": 23,
             "Selected Percentage": 2.1,
             "Selected Percentage Change 1W": 0.1,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Differential",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 19,
-            "Form Rating": 51,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 18,
+            "Form Rating": 49,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.8,
-            "Points Per Million": 2.3,
-            "Points Per Million Over 4 Gameweeks": 2.0,
+            "Points Per Game Over 4 Gameweeks": 4.5,
+            "Points Per Million": 2.4,
+            "Points Per Million Over 4 Gameweeks": 1.9,
             "Total Goals": 2,
             "Total Assists": 0,
             "Total Goals + Assists": 2,
@@ -36297,7 +36342,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 4,
             "1": {
                 "points": 1,
@@ -36327,7 +36372,10 @@
                 "points": 7,
                 "tooltip": "2 May (A) NC W 1-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -36970,7 +37018,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 4,
@@ -40718,7 +40766,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "30 Apr (A) BOS D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -41024,7 +41072,7 @@
             },
             "7": {
                 "points": 10,
-                "tooltip": "30 Apr (A) BOS D 2-2\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -41330,7 +41378,7 @@
             },
             "7": {
                 "points": 12,
-                "tooltip": "30 Apr (A) BOS D 2-2\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -41642,7 +41690,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -41945,7 +41993,7 @@
             },
             "7": {
                 "points": 16,
-                "tooltip": "30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nGoal (+5pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nGoal (+5pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 9,
@@ -42246,7 +42294,7 @@
             },
             "7": {
                 "points": 9,
-                "tooltip": "30 Apr (A) BOS D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -43143,7 +43191,7 @@
             },
             "7": {
                 "points": 9,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -50507,7 +50555,7 @@
             },
             "7": {
                 "points": 16,
-                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -52549,9 +52597,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 68,
-            "Selected Percentage": 44.1,
-            "Selected Percentage Change 1W": 1.4,
-            "Selected Percentage Change Since Last Global Price Change": 17.4,
+            "Selected Percentage": 44.2,
+            "Selected Percentage Change 1W": 1.5,
+            "Selected Percentage Change Since Last Global Price Change": 17.5,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 9,
@@ -52602,7 +52650,7 @@
             },
             "7": {
                 "points": 20,
-                "tooltip": "30 Apr (H) SD W 2-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 6,
@@ -52906,7 +52954,7 @@
             },
             "7": {
                 "points": 11,
-                "tooltip": "3 May (A) CHI W 0-2\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -54620,9 +54668,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 28,
-            "Selected Percentage": 37.0,
-            "Selected Percentage Change 1W": 1.8,
-            "Selected Percentage Change Since Last Global Price Change": -0.6,
+            "Selected Percentage": 37.1,
+            "Selected Percentage Change 1W": 1.9,
+            "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 9,
@@ -57114,7 +57162,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -58288,9 +58336,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 24,
-            "Selected Percentage": 3.8,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": 0.4,
+            "Selected Percentage": 3.7,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 7,
@@ -59867,7 +59915,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -60179,7 +60227,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 15,
@@ -60488,7 +60536,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 5,
@@ -63198,7 +63246,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -64101,7 +64149,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 5,
@@ -64352,9 +64400,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 30,
-            "Selected Percentage": 2.8,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.8,
+            "Selected Percentage": 2.7,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 9,
@@ -64694,7 +64742,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -70282,19 +70330,19 @@
             "Nationality": "Canada",
             "News": null,
             "Visionary": false,
-            "Total Points": 19,
+            "Total Points": 20,
             "Selected Percentage": 3.0,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.1,
-            "Recommendation": "Differential",
+            "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 17,
-            "Form Rating": 48,
+            "Total Games Played": 6,
+            "Total Over 4 Gameweeks": 12,
+            "Form Rating": 31,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.2,
-            "Points Per Million": 2.1,
-            "Points Per Million Over 4 Gameweeks": 1.9,
+            "Points Per Game Over 4 Gameweeks": 3.0,
+            "Points Per Million": 2.2,
+            "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 2,
             "Total Assists": 0,
             "Total Goals + Assists": 2,
@@ -70308,7 +70356,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 5,
+            "Total 1 min Appearances": 6,
             "Total 60 min Appearances": 5,
             "1": {
                 "points": 2,
@@ -70327,9 +70375,12 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -74270,19 +74321,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 21,
+            "Total Points": 22,
             "Selected Percentage": 11.6,
             "Selected Percentage Change 1W": -1.1,
             "Selected Percentage Change Since Last Global Price Change": -4.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 11,
-            "Form Rating": 26,
+            "Total Games Played": 8,
+            "Total Over 4 Gameweeks": 10,
+            "Form Rating": 24,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 2.3,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Million": 2.4,
+            "Points Per Million Over 4 Gameweeks": 1.1,
             "Total Goals": 1,
             "Total Assists": 1,
             "Total Goals + Assists": 2,
@@ -74296,7 +74347,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 6,
             "1": {
                 "points": 7,
@@ -74326,7 +74377,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -75577,7 +75631,7 @@
             },
             "7": {
                 "points": 16,
-                "tooltip": "2 May (A) ORL W 2-4\nSavedPenalty (+5pts)\nSaves x2 (+2pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\nSavedPenalty (+5pts)\nSaves x2 (+2pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -77627,9 +77681,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 37,
-            "Selected Percentage": 14.9,
-            "Selected Percentage Change 1W": 0.6,
-            "Selected Percentage Change Since Last Global Price Change": 2.5,
+            "Selected Percentage": 15.0,
+            "Selected Percentage Change 1W": 0.7,
+            "Selected Percentage Change Since Last Global Price Change": 2.6,
             "Recommendation": "Steady",
             "Hot Pick": true,
             "Total Games Played": 8,
@@ -78238,18 +78292,18 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": false,
-            "Total Points": 29,
+            "Total Points": 30,
             "Selected Percentage": 15.0,
             "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": -5.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
-            "Total Games Played": 7,
+            "Total Games Played": 8,
             "Total Over 4 Gameweeks": 19,
             "Form Rating": 42,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 4.8,
-            "Points Per Million": 3.1,
+            "Points Per Million": 3.2,
             "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 2,
             "Total Assists": 1,
@@ -78264,7 +78318,7 @@
             "Total Bonus Games": 1,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 6,
             "1": {
                 "points": 7,
@@ -78294,7 +78348,10 @@
                 "points": 14,
                 "tooltip": "2 May (A) NC W 1-2\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -79536,7 +79593,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -81042,7 +81099,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -82563,7 +82620,7 @@
             },
             "7": {
                 "points": 7,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -85250,7 +85307,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -87998,19 +88055,19 @@
             "Nationality": "Germany",
             "News": null,
             "Visionary": true,
-            "Total Points": 12,
+            "Total Points": 13,
             "Selected Percentage": 0.6,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 11,
-            "Form Rating": 35,
+            "Total Games Played": 6,
+            "Total Over 4 Gameweeks": 9,
+            "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
-            "Points Per Million": 3.0,
-            "Points Per Million Over 4 Gameweeks": 2.8,
+            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Million": 3.2,
+            "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -88024,7 +88081,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 1,
-            "Total 1 min Appearances": 5,
+            "Total 1 min Appearances": 6,
             "Total 60 min Appearances": 4,
             "1": "-",
             "2": "-",
@@ -88045,7 +88102,10 @@
                 "points": 2,
                 "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -88938,7 +88998,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -91077,7 +91137,7 @@
             },
             "7": {
                 "points": 14,
-                "tooltip": "2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -92576,7 +92636,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 12,
@@ -96569,7 +96629,7 @@
             "6": "-",
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -96878,7 +96938,7 @@
             },
             "7": {
                 "points": 5,
-                "tooltip": "3 May (H) DEN W 3-2\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nAssist (+3pts)\n1 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -98099,7 +98159,7 @@
             },
             "7": {
                 "points": 10,
-                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) NC D 2-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 0,
@@ -99599,18 +99659,18 @@
             "Nationality": "Mexico",
             "News": null,
             "Visionary": true,
-            "Total Points": 12,
+            "Total Points": 13,
             "Selected Percentage": 0.2,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 7,
+            "Total Games Played": 8,
             "Total Over 4 Gameweeks": 9,
             "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 2.2,
-            "Points Per Million": 3.0,
+            "Points Per Million": 3.2,
             "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 0,
             "Total Assists": 0,
@@ -99625,7 +99685,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 7,
+            "Total 1 min Appearances": 8,
             "Total 60 min Appearances": 3,
             "1": {
                 "points": 1,
@@ -99652,7 +99712,10 @@
                 "points": 3,
                 "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (A) KC D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -100253,7 +100316,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\nConceded (-1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -100559,7 +100622,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": "-",
             "upcoming_fixtures": [
@@ -106609,7 +106672,7 @@
             },
             "8": {
                 "points": 1,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -106912,7 +106975,7 @@
             },
             "8": {
                 "points": 2,
-                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -107224,7 +107287,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -107536,7 +107599,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -107839,7 +107902,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -108151,7 +108214,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -108408,19 +108471,19 @@
             "Nationality": "USA",
             "News": null,
             "Visionary": true,
-            "Total Points": 4,
+            "Total Points": 5,
             "Selected Percentage": 0.2,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
-            "Total Games Played": 3,
-            "Total Over 4 Gameweeks": 4,
+            "Total Games Played": 4,
+            "Total Over 4 Gameweeks": 5,
             "Form Rating": 8,
-            "Games Played Over 4 Gameweeks": 3,
-            "Points Per Game Over 4 Gameweeks": 1.0,
-            "Points Per Million": 1.0,
-            "Points Per Million Over 4 Gameweeks": 1.0,
+            "Games Played Over 4 Gameweeks": 4,
+            "Points Per Game Over 4 Gameweeks": 1.2,
+            "Points Per Million": 1.2,
+            "Points Per Million Over 4 Gameweeks": 1.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -108434,7 +108497,7 @@
             "Total Bonus Games": 0,
             "Total Missed Penalties": 0,
             "Total Clearances": 0,
-            "Total 1 min Appearances": 3,
+            "Total 1 min Appearances": 4,
             "Total 60 min Appearances": 2,
             "1": "-",
             "2": "-",
@@ -108452,7 +108515,10 @@
                 "points": 2,
                 "tooltip": "2 May (A) NC W 1-2\n1 min (+1pt)\n60 min (+1pt)"
             },
-            "8": "-",
+            "8": {
+                "points": 1,
+                "tooltip": "10 May (H) CHI D 0-0\n1 min (+1pt)"
+            },
             "upcoming_fixtures": [
                 {
                     "game_date": "10 May",
@@ -110872,7 +110938,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -111781,7 +111847,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -112381,7 +112447,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -123519,7 +123585,7 @@
             },
             "8": {
                 "points": 1,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\nConceded (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "upcoming_fixtures": [
                 {
@@ -126787,7 +126853,7 @@
             },
             "7": {
                 "points": 11,
-                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
