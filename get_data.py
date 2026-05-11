@@ -671,9 +671,9 @@ def build_fixture_details_text(fixture_details, raw_rating, display_score):
         opp_att = detail.get("opponent_attack_strength")
 
         if opp_def is not None:
-            lines.append(f"----{opponent} defensive strength: {opp_def:.2f}")
+            lines.append(f"{opponent} defensive strength: {opp_def:.2f}")
         if opp_att is not None:
-            lines.append(f"----{opponent} attacking strength: {opp_att:.2f}")
+            lines.append(f"{opponent} attacking strength: {opp_att:.2f}")
 
     if ratings:
         avg_rating = sum(ratings) / len(ratings)
