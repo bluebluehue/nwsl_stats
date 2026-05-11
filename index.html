@@ -1732,7 +1732,19 @@
                             classes += ' bg-gray-100 text-gray-500';
                         }
                 
-                        return `<span class="${classes}">${numericRating.toFixed(2)}</span>`;
+                        const tooltipText = row["Next Fixture Details"] || "";
+                        const tooltipHtml = tooltipText
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/\n/g, '<br>');
+                        
+                        return `
+                            <div class="custom-tooltip-container">
+                                <span class="${classes}">${numericRating.toFixed(2)}</span>
+                                <span class="custom-tooltip-content">${tooltipHtml}</span>
+                            </div>
+                        `;
                     },
                     className: 'dt-center'
                 },
