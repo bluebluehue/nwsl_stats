@@ -475,6 +475,11 @@ def build_team_fixture_strength_from_games(games_data, recent_match_limit=4):
         matches_sorted = sorted(matches, key=lambda m: m["date"], reverse=True)
         recent_matches = matches_sorted[:recent_match_limit]
 
+        if team_id == "SEA":
+            print("DEBUG SEA recent matches:")
+            for m in recent_matches:
+                print(m)
+
         print(
             f"DEBUG recent matches for {team_id}: "
             f"{[(m['goals_for'], m['goals_against']) for m in recent_matches]}"
