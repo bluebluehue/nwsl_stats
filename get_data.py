@@ -512,46 +512,56 @@ def score_single_fixture(
     """
     Score one fixture from 1-5.
     Lower = better.
-
-    Attackers:
-        mostly opponent defensive weakness, lightly own team attack
-
-    Defenders/GK:
-        mostly opponent attacking threat, lightly own team defense
+    Also returns details for the frontend tooltip.
     """
     opponent_stats = team_strength.get(opponent_team)
     own_stats = team_strength.get(player_team)
 
     if not opponent_stats or not own_stats:
-        return 3
+        return 3.0, {
+            "rating": 3.0,
+            "opponent_attack_strength": None,
+            "opponent_defensive_strength": None,
+            "own_attack_strength": None,
+            "own_defensive_strength": None,
+        }
+
+    opponent_attack_strength = opponent_stats["recent_attack_strength"]
+    opponent_defensive_strength = opponent_stats["recent_defensive_strength"]
+    own_attack_strength = own_stats["recent_attack_strength"]
+    own_defensive_strength = own_stats["recent_defensive_strength"]
 
     if player_position in ["MID", "FOR"]:
-        # Higher = more favorable for attackers
-        opponent_def_weakness = 5.0 - opponent_stats["recent_defensive_strength"]
-        own_attack = own_stats["recent_attack_strength"]
+        # Attackers benefit from weak opponent defense and strong own-team attack.
+        opponent_def_weakness = 5.0 - opponent_defensive_strength
+        attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack_strength)
 
-        attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack)
-
-        return scale_to_fixture_rating(
+        rating = scale_to_fixture_rating(
             attacker_opportunity,
             all_attacker_values,
             higher_is_better=True
         )
-        
-    if player_position in ["DEF", "GK"]:
-        # Higher = more favorable for defenders
-        opponent_attack_threat = opponent_stats["recent_attack_strength"]
-        own_def_strength = own_stats["recent_defensive_strength"]
 
-        defender_opportunity = (0.8 * (5.0 - opponent_attack_threat)) + (0.2 * own_def_strength)
+    elif player_position in ["DEF", "GK"]:
+        # Defenders/GKs benefit from weak opponent attack and strong own-team defense.
+        defender_opportunity = (0.8 * (5.0 - opponent_attack_strength)) + (0.2 * own_defensive_strength)
 
-        return scale_to_fixture_rating(
+        rating = scale_to_fixture_rating(
             defender_opportunity,
             all_defender_values,
             higher_is_better=True
         )
 
-    return 3
+    else:
+        rating = 3.0
+
+    return rating, {
+        "rating": rating,
+        "opponent_attack_strength": opponent_attack_strength,
+        "opponent_defensive_strength": opponent_defensive_strength,
+        "own_attack_strength": own_attack_strength,
+        "own_defensive_strength": own_defensive_strength,
+    }
 
 def scale_to_fixture_rating(value, all_values, higher_is_better=True):
     """
@@ -628,9 +638,71 @@ def combine_fixture_scores(scores):
 
     return raw_rating, display_score
 
+def build_fixture_details_text(fixture_details, raw_rating, display_score):
+    """
+    Build the frontend tooltip text for the Fix column.
+    """
+    if not fixture_details:
+        return ""
+
+    lines = ["Next GW fixtures:"]
+
+    ratings = []
+
+    for detail in fixture_details:
+        opponent = detail.get("opponent_team", "???")
+        location = detail.get("location", "")
+        rating = detail.get("rating")
+
+        if rating is not None:
+            ratings.append(rating)
+            rating_text = f"{rating:.2f}"
+        else:
+            rating_text = "-"
+
+        lines.append(f"vs {opponent} {location}: {rating_text}")
+
+        opp_def = detail.get("opponent_defensive_strength")
+        opp_att = detail.get("opponent_attack_strength")
+
+        if opp_def is not None:
+            lines.append(f"----{opponent} defensive strength: {opp_def:.2f}")
+        if opp_att is not None:
+            lines.append(f"----{opponent} attacking strength: {opp_att:.2f}")
+
+    if ratings:
+        avg_rating = sum(ratings) / len(ratings)
+        lines.append("")
+        lines.append(f"Average fixture rating: {avg_rating:.2f}")
+
+    if len(fixture_details) > 1:
+        lines.append("Double GW bonus: -1.00")
+    else:
+        lines.append("Double GW bonus: 0.00")
+
+    if raw_rating is not None:
+        lines.append(f"Final rating: {raw_rating:.2f}")
+
+    first_detail = fixture_details[0]
+    own_attack = first_detail.get("own_attack_strength")
+    own_def = first_detail.get("own_defensive_strength")
+
+    lines.append("")
+
+    if own_attack is not None:
+        lines.append(f"Own team attacking strength: {own_attack:.2f}")
+    if own_def is not None:
+        lines.append(f"Own team defensive strength: {own_def:.2f}")
+
+    return "\n".join(lines)
+
 def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values):
     """
-    Compute a player's next fixture score (1-5), accounting for doubles in the next gameweek.
+    Compute a player's next fixture score, accounting for doubles in the next gameweek.
+    Returns:
+    - raw fixture rating
+    - display bucket score
+    - tooltip details text
     """
     next_gw_fixtures = get_next_gameweek_fixtures(player)
 
@@ -641,35 +713,33 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
         )
 
     if not next_gw_fixtures:
-        return None, None
+        return None, None, ""
 
     player_team = str(player.get("Club", "")).strip().upper()
     player_position = player.get("Position")
 
     scores = []
+    fixture_details = []
 
     for fixture in next_gw_fixtures:
         home_team = str(fixture.get("home_id", "")).strip().upper()
         away_team = str(fixture.get("away_id", "")).strip().upper()
 
-        if DEBUG:
-            print(
-                f"DEBUG scoring {player.get('Name')}: "
-                f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
-            )
-
         if player_team == home_team:
             opponent_team = away_team
+            location = "(H)"
         elif player_team == away_team:
             opponent_team = home_team
+            location = "(A)"
         else:
-            print(
-                f"WARNING no team match for {player.get('Name')}: "
-                f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
-            )
+            if DEBUG:
+                print(
+                    f"WARNING no team match for {player.get('Name')}: "
+                    f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
+                )
             continue
 
-        fixture_score = score_single_fixture(
+        fixture_score, detail = score_single_fixture(
             player_position,
             player_team,
             opponent_team,
@@ -677,13 +747,24 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
             all_attack_values,
             all_defense_values
         )
+
         scores.append(fixture_score)
 
-    if not scores:
-        print(f"WARNING no fixture scores generated for {player.get('Name')}")
-        return None, None
+        detail["opponent_team"] = opponent_team
+        detail["location"] = location
+        detail["rating"] = fixture_score
 
-    return combine_fixture_scores(scores)
+        fixture_details.append(detail)
+
+    if not scores:
+        if DEBUG:
+            print(f"WARNING no fixture scores generated for {player.get('Name')}")
+        return None, None, ""
+
+    raw_rating, display_score = combine_fixture_scores(scores)
+    details_text = build_fixture_details_text(fixture_details, raw_rating, display_score)
+
+    return raw_rating, display_score, details_text
     
 def load_history_data(history_file="player_history.json"):
     """
@@ -1235,15 +1316,16 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         # Add next fixture score for each player
         for player in combined_data:
-            next_fixture_rating, next_fixture_score = get_next_fixture_score(
+            next_fixture_rating, next_fixture_score, next_fixture_details = get_next_fixture_score(
                 player,
                 team_strength,
                 all_attack_values,
                 all_defense_values
             )
-
+            
             player["Next Fixture Rating"] = next_fixture_rating
             player["Next Fixture Score"] = next_fixture_score
+            player["Next Fixture Details"] = next_fixture_details
             
         output_payload = {
             "metadata": {
