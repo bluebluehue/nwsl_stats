@@ -73,8 +73,9 @@
 
         .dt-container {
             width: 100%;
-            overflow-x: auto;
-            /* CRITICAL for many columns */
+            max-width: 100%;
+            overflow-x: auto !important;
+            overflow-y: visible;
             background: white;
             padding: 0.3rem;
             border-radius: 0.3rem;
@@ -702,6 +703,12 @@
             background-color: #fef9c3 !important;
         }
 
+        #myTable,
+        table.dataTable {
+            width: max-content !important;
+            min-width: 100% !important;
+        }
+
         @media (max-width: 768px) {
             .dt-container {
                 overflow-x: auto !important;
@@ -937,7 +944,7 @@
             <p id="loading-message" class="text-center text-xl p-8 text-gray-600">
                 Loading data...
             </p>
-            <table id="myTable" class="display compact nowrap hidden" cellspacing="0" style="width:100%;"></table>
+            <table id="myTable" class="display compact nowrap hidden" cellspacing="0"></table>
         </div>
 
     </div>
