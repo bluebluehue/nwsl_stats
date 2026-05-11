@@ -717,6 +717,32 @@
             min-width: 100% !important;
         }
 
+        /* --- FREEZE FIRST COLUMN --- */
+
+        #myTable th:first-child,
+        #myTable td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            background: white;
+        }
+        
+        #myTable th:first-child {
+            z-index: 3;
+        }
+
+        #myTable tr.my-team-row td:first-child {
+            background-color: #dbeafe !important;
+        }
+        
+        #myTable tr.watchlist-row td:first-child {
+            background-color: #fef9c3 !important;
+        }
+        
+        #myTable tbody tr:hover td:first-child {
+            background-color: #fef3c7 !important;
+        }
+
         @media (max-width: 768px) {
             .dt-container {
                 overflow-x: auto !important;
