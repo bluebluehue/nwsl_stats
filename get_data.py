@@ -592,6 +592,42 @@ def scale_to_fixture_rating(value, all_values, higher_is_better=True):
 
     return round(max(1, min(5, rating)), 2)
 
+def get_next_global_gameweek(fixtures_map):
+    """
+    Finds the next upcoming gameweek across the whole league.
+    This prevents blank teams from skipping ahead to their next fixture.
+    """
+    upcoming_gws = []
+
+    for fixtures in fixtures_map.values():
+        for fixture in fixtures:
+            gw = fixture.get("game_week")
+            if gw is not None:
+                try:
+                    upcoming_gws.append(int(gw))
+                except (ValueError, TypeError):
+                    continue
+
+    if not upcoming_gws:
+        return None
+
+    return min(upcoming_gws)
+
+def get_fixtures_for_specific_gameweek(player, target_gw):
+    """
+    Return all fixtures for this player in a specific league gameweek.
+    If the player/team blanks that week, returns [].
+    """
+    if target_gw is None:
+        return []
+
+    fixtures = player.get("upcoming_fixtures", [])
+
+    return [
+        f for f in fixtures
+        if str(f.get("game_week")) == str(target_gw)
+    ]
+
 def get_gameweek_fixtures_by_offset(player, gameweek_offset=0):
     """
     Return all fixtures for the player's upcoming gameweek by offset.
@@ -712,7 +748,7 @@ def build_fixture_details_text(fixture_details, raw_rating, display_score):
 
     return "\n".join(lines)
 
-def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values, gameweek_offset=0):
+def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values, target_gw=None):
     """
     Compute a player's next fixture score, accounting for doubles in the next gameweek.
     Returns:
@@ -720,7 +756,7 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     - display bucket score
     - tooltip details text
     """
-    next_gw_fixtures = get_gameweek_fixtures_by_offset(player, gameweek_offset)
+    next_gw_fixtures = get_fixtures_for_specific_gameweek(player, target_gw)
 
     if DEBUG:
         print(
@@ -1304,6 +1340,12 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         filtered_fixtures = filter_fixtures(fixtures)
         combined_data = combine_player_and_fixture_data(final_output, filtered_fixtures)
 
+        next_global_gw = get_next_global_gameweek(filtered_fixtures)
+        following_global_gw = next_global_gw + 1 if next_global_gw is not None else None
+        
+        print(f"Next global GW: {next_global_gw}")
+        print(f"Following global GW: {following_global_gw}")
+
         # Build recent team strength model from completed games
         team_strength = build_team_fixture_strength_from_games(fixtures)
 
@@ -1332,11 +1374,13 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         # Add next fixture score for each player
         for player in combined_data:
+            
             next_fixture_rating, next_fixture_score, next_fixture_details = get_next_fixture_score(
                 player,
                 team_strength,
                 all_attack_values,
-                all_defense_values
+                all_defense_values,
+                target_gw=next_global_gw
             )
             
             player["Next Fixture Rating"] = next_fixture_rating
@@ -1348,7 +1392,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 team_strength,
                 all_attack_values,
                 all_defense_values,
-                gameweek_offset=1
+                target_gw=following_global_gw
             )
             
             player["Following Fixture Rating"] = following_fixture_rating
