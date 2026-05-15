@@ -592,31 +592,42 @@ def scale_to_fixture_rating(value, all_values, higher_is_better=True):
 
     return round(max(1, min(5, rating)), 2)
 
-def get_next_gameweek_fixtures(player):
+def get_gameweek_fixtures_by_offset(player, gameweek_offset=0):
     """
-    Return all fixtures that belong to the player's next upcoming gameweek.
+    Return all fixtures for the player's upcoming gameweek by offset.
+
+    gameweek_offset=0 -> next upcoming gameweek
+    gameweek_offset=1 -> following upcoming gameweek
     """
     fixtures = player.get("upcoming_fixtures", [])
 
     if not fixtures:
-        if DEBUG:
-            print(f"DEBUG no upcoming_fixtures for {player.get('Name')}")
         return []
 
-    next_gw = str(fixtures[0].get("game_week"))
-    if DEBUG:
-        print(
-            f"DEBUG raw upcoming_fixtures for {player.get('Name')}: "
-            f"{len(fixtures)} total, next_gw={next_gw}"
-        )
+    upcoming_gws = []
+    for fixture in fixtures:
+        gw = fixture.get("game_week")
+        if gw is not None:
+            gw = str(gw)
+            if gw not in upcoming_gws:
+                upcoming_gws.append(gw)
 
-    if next_gw is None:
+    if len(upcoming_gws) <= gameweek_offset:
         return []
+
+    target_gw = upcoming_gws[gameweek_offset]
 
     return [
         f for f in fixtures
-        if str(f.get("game_week")) == next_gw
+        if str(f.get("game_week")) == target_gw
     ]
+
+
+def get_next_gameweek_fixtures(player):
+    """
+    Backward-compatible wrapper for the next upcoming gameweek.
+    """
+    return get_gameweek_fixtures_by_offset(player, gameweek_offset=0)
     
 def combine_fixture_scores(scores):
     """
@@ -701,7 +712,7 @@ def build_fixture_details_text(fixture_details, raw_rating, display_score):
 
     return "\n".join(lines)
 
-def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values):
+def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values, gameweek_offset=0):
     """
     Compute a player's next fixture score, accounting for doubles in the next gameweek.
     Returns:
@@ -709,7 +720,7 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
     - display bucket score
     - tooltip details text
     """
-    next_gw_fixtures = get_next_gameweek_fixtures(player)
+    next_gw_fixtures = get_gameweek_fixtures_by_offset(player, gameweek_offset)
 
     if DEBUG:
         print(
@@ -1331,6 +1342,18 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             player["Next Fixture Rating"] = next_fixture_rating
             player["Next Fixture Score"] = next_fixture_score
             player["Next Fixture Details"] = next_fixture_details
+            
+            following_fixture_rating, following_fixture_score, following_fixture_details = get_next_fixture_score(
+                player,
+                team_strength,
+                all_attack_values,
+                all_defense_values,
+                gameweek_offset=1
+            )
+            
+            player["Following Fixture Rating"] = following_fixture_rating
+            player["Following Fixture Score"] = following_fixture_score
+            player["Following Fixture Details"] = following_fixture_details
             
         output_payload = {
             "metadata": {
