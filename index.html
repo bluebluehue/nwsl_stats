@@ -1748,6 +1748,64 @@
                     },
                     className: 'dt-center'
                 },
+                "Following Fixture Score": {
+                    abbr: 'Fix+1',
+                    full: 'Next gameweek fixture rating (lower = easier). Color is based on the 1-5 fixture bucket.',
+                    type: 'num',
+                    render: function (data, type, row) {
+                        const rating = row["Following Fixture Rating"];
+                        const scoreBucket = row["Following Fixture Score"];
+                
+                        const numericRating = (rating === null || rating === undefined || rating === "")
+                            ? null
+                            : parseFloat(rating);
+                
+                        const numericBucket = (scoreBucket === null || scoreBucket === undefined || scoreBucket === "")
+                            ? null
+                            : parseInt(scoreBucket, 10);
+                
+                        if (type !== 'display') {
+                            return numericRating === null || isNaN(numericRating) ? 999 : numericRating;
+                        }
+                
+                        if (numericRating === null || isNaN(numericRating)) {
+                            return '<span class="text-gray-400">-</span>';
+                        }
+                
+                        let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[48px] text-center';
+                
+                        if (numericBucket === 1) {
+                            classes += ' bg-green-600 text-white';
+                        } else if (numericBucket === 2) {
+                            classes += ' bg-green-200 text-green-900';
+                        } else if (numericBucket === 3) {
+                            classes += ' bg-gray-200 text-gray-800';
+                        } else if (numericBucket === 4) {
+                            classes += ' bg-red-200 text-red-900';
+                        } else if (numericBucket === 5) {
+                            classes += ' bg-red-600 text-white';
+                        } else {
+                            classes += ' bg-gray-100 text-gray-500';
+                        }
+                
+                        const tooltipText = row["Following Fixture Details"] || "";
+                        const tooltipHtml = tooltipText
+                            .replace(/&/g, '&amp;')
+                            .replace(/</g, '&lt;')
+                            .replace(/>/g, '&gt;')
+                            .replace(/\n/g, '<br>');
+                        
+                        return `
+                            <div class="custom-tooltip-container">
+                                <span class="${classes}">${numericRating.toFixed(2)}</span>
+                                <span class="custom-tooltip-content">${tooltipHtml}</span>
+                            </div>
+                        `;
+                    },
+                    className: 'dt-center'
+                },
+
+                
                 "Form Rating": {
                     abbr: 'Form',
                     full: 'Recent form rating from 0-100, based on last 4 games: recent points, consistency, and bonus involvement',
