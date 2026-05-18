@@ -2225,14 +2225,16 @@
                     } else if (watchlistChecked && !isWatchlist) {
                         return false;
                     }
-            
+
                     const selectedFixtureScores = $('.fixture-score-filter:checked').map(function () {
                         return parseInt(this.value, 10);
                     }).get();
-            
+                    
+                    const allFixtureScoresSelected = selectedFixtureScores.length === 5;
+                    
                     const playerFixtureScore = parseInt(rowData["Next Fixture Score"], 10);
-            
-                    if (selectedFixtureScores.length > 0) {
+                    
+                    if (!allFixtureScoresSelected) {
                         if (isNaN(playerFixtureScore) || !selectedFixtureScores.includes(playerFixtureScore)) {
                             return false;
                         }
