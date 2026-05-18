@@ -1023,6 +1023,25 @@ def calculate_form_rating(recent_points, recent_bonus_games):
 
     return round(form_rating)
 
+def apply_recent_play_penalty(form_rating, last_played_gw, latest_gw):
+    """
+    Penalize form rating if a player has not appeared recently.
+    """
+    if form_rating == 0:
+        return 0
+
+    if last_played_gw is None or latest_gw is None:
+        return form_rating
+
+    missed_gws = latest_gw - last_played_gw
+
+    if missed_gws <= 1:
+        return form_rating
+    elif missed_gws == 2:
+        return round(form_rating * 0.5)
+    else:
+        return 0
+
 def is_hot_pick(recent_points):
     """
     Returns True if the player scored more than 4 points
@@ -1132,6 +1151,8 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         max_gw = max(all_gameweek_numbers)
         final_gameweeks = [str(gw) for gw in range(1, max_gw + 1)]
 
+    latest_gw = max([int(gw) for gw in final_gameweeks]) if final_gameweeks else None
+
     # 3. Stat accumulation mappings
     STAT_ACCUMULATORS = {
         "CleanSheet": "Total Clean Sheet",
@@ -1185,6 +1206,7 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         gw_games_played_4gw = 0
         recent_points = []
         recent_bonus_games = 0
+        last_played_gw = None
         bonus_games_count = 0
         overall_stats = defaultdict(int)
         overall_games_played = 0
@@ -1209,6 +1231,13 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             gw = game.get("stage", {}).get("id", "")
             points = game_data.get("points", 0)
             got_bonus_this_game = False
+
+            try:
+                gw_int = int(gw)
+                if last_played_gw is None or gw_int > last_played_gw:
+                    last_played_gw = gw_int
+            except (ValueError, TypeError):
+                pass
 
             if not gw:
                 continue
@@ -1299,7 +1328,11 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             "Hot Pick": hot_pick,
             "Total Games Played": overall_games_played,
             "Total Over 4 Gameweeks": gw_points_total_4gw,
-            "Form Rating": calculate_form_rating(recent_points, recent_bonus_games),
+            "Form Rating": apply_recent_play_penalty(
+                calculate_form_rating(recent_points, recent_bonus_games),
+                last_played_gw,
+                latest_gw
+            ),
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
             "Points Per Game Over 4 Gameweeks": round(ppg_4gw, 1),
             "Points Per Million": round(ppm_total, 1),
