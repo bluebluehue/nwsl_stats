@@ -1399,9 +1399,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 27,
-            "Selected Percentage": 9.5,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -6.3,
+            "Selected Percentage": 9.4,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -6.4,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 10,
@@ -1458,7 +1458,7 @@
             },
             "10": {
                 "points": 3,
-                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "11": {
                 "points": 1,
@@ -2312,7 +2312,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -4516,7 +4516,7 @@
             },
             "10": {
                 "points": 6,
-                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) CHI L 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nRed Card (-3pts)"
+                "tooltip": "24 May (H) CHI L 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nRed Card (-3pts)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "11": "-",
             "upcoming_fixtures": [
@@ -5018,7 +5018,7 @@
             "Visionary": false,
             "Total Points": 5,
             "Selected Percentage": 2.7,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -1.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -10343,7 +10343,7 @@
             "6": "-",
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 3,
@@ -11951,7 +11951,7 @@
             "6": "-",
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -16363,7 +16363,7 @@
             "6": "-",
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\n1 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\n1 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -19205,7 +19205,7 @@
             },
             "7": {
                 "points": 14,
-                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": "-",
             "9": "-",
@@ -23378,7 +23378,7 @@
             },
             "8": {
                 "points": 1,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 1,
@@ -23386,7 +23386,7 @@
             },
             "10": {
                 "points": 2,
-                "tooltip": "21 May (H) SD D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) LA W 2-1\n1 min (+1pt)"
+                "tooltip": "24 May (H) LA W 2-1\n1 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\n1 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -25358,7 +25358,7 @@
             },
             "8": {
                 "points": 2,
-                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
+                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
             },
             "9": "-",
             "10": "-",
@@ -27527,7 +27527,7 @@
             },
             "10": {
                 "points": 4,
-                "tooltip": "24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "11": {
                 "points": 7,
@@ -28021,9 +28021,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 14,
-            "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": -1.2,
+            "Selected Percentage": 1.3,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -1.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 9,
@@ -28303,7 +28303,7 @@
             "Visionary": true,
             "Total Points": 28,
             "Selected Percentage": 1.6,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Differential",
             "Hot Pick": true,
@@ -29961,12 +29961,12 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 12,
-            "Total Over 4 Gameweeks": 9,
-            "Form Rating": 23,
+            "Total Over 4 Gameweeks": 14,
+            "Form Rating": 39,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.2,
+            "Points Per Game Over 4 Gameweeks": 3.5,
             "Points Per Million": 5.2,
-            "Points Per Million Over 4 Gameweeks": 1.4,
+            "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -30012,7 +30012,7 @@
             },
             "8": {
                 "points": 7,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 1,
@@ -31690,7 +31690,7 @@
             },
             "10": {
                 "points": 9,
-                "tooltip": "24 May (H) POR W 3-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n\n---\n\n24 May (H) POR W 3-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -34473,7 +34473,7 @@
             },
             "10": {
                 "points": 3,
-                "tooltip": "24 May (H) LA W 2-1\n1 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "21 May (H) SD D 2-2\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) LA W 2-1\n1 min (+1pt)"
             },
             "11": "-",
             "upcoming_fixtures": [
@@ -35314,7 +35314,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "30 Apr (A) BOS D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -37052,7 +37052,7 @@
             },
             "7": {
                 "points": 10,
-                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) BOS D 2-2\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -40947,7 +40947,7 @@
             },
             "8": {
                 "points": 15,
-                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+4pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n13 May (A) BOS L 2-1\nAssist (+3pts)\n1 min (+1pt)"
+                "tooltip": "13 May (A) BOS L 2-1\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+4pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": "-",
             "10": {
@@ -42075,7 +42075,7 @@
             },
             "8": {
                 "points": 2,
-                "tooltip": "9 May (H) NC W 1-0\n1 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)"
+                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\n1 min (+1pt)"
             },
             "9": "-",
             "10": {
@@ -43409,7 +43409,7 @@
             "Visionary": false,
             "Total Points": 40,
             "Selected Percentage": 2.9,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.6,
             "Recommendation": "Differential",
             "Hot Pick": true,
@@ -44839,7 +44839,7 @@
             "Visionary": true,
             "Total Points": 18,
             "Selected Percentage": 1.2,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -45693,7 +45693,7 @@
             },
             "10": {
                 "points": 9,
-                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n21 May (H) BAY W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) BAY W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "11": {
                 "points": 3,
@@ -46497,7 +46497,7 @@
             },
             "7": {
                 "points": 7,
-                "tooltip": "3 May (A) CHI W 0-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -47521,12 +47521,12 @@
             "Recommendation": "Steady",
             "Hot Pick": true,
             "Total Games Played": 11,
-            "Total Over 4 Gameweeks": 28,
-            "Form Rating": 78,
+            "Total Over 4 Gameweeks": 20,
+            "Form Rating": 61,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 7.0,
+            "Points Per Game Over 4 Gameweeks": 5.0,
             "Points Per Million": 7.6,
-            "Points Per Million Over 4 Gameweeks": 2.8,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 5,
             "Total Assists": 4,
             "Total Goals + Assists": 9,
@@ -47568,7 +47568,7 @@
             },
             "7": {
                 "points": 20,
-                "tooltip": "3 May (A) CHI W 0-2\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 6,
@@ -48366,7 +48366,7 @@
             },
             "10": {
                 "points": 5,
-                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) BAY W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) BAY W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -49091,7 +49091,7 @@
             "Visionary": false,
             "Total Points": 51,
             "Selected Percentage": 10.8,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 8.1,
             "Recommendation": "Steady",
             "Hot Pick": false,
@@ -49917,7 +49917,7 @@
             "Visionary": false,
             "Total Points": 33,
             "Selected Percentage": 3.6,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Cold",
             "Hot Pick": false,
@@ -49969,7 +49969,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "3 May (A) CHI W 0-2\nGoal (+4pts)\n1 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\n1 min (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\n1 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nGoal (+4pts)\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -50795,7 +50795,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -54501,7 +54501,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 15,
@@ -56184,7 +56184,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -57225,7 +57225,7 @@
             "Visionary": false,
             "Total Points": 28,
             "Selected Percentage": 2.0,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -57277,7 +57277,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -57832,7 +57832,7 @@
             },
             "10": {
                 "points": 5,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -58372,7 +58372,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -59139,7 +59139,7 @@
             "Visionary": false,
             "Total Points": 25,
             "Selected Percentage": 2.5,
-            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
@@ -64844,9 +64844,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 31,
-            "Selected Percentage": 6.8,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Selected Percentage": 6.7,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 7,
@@ -65119,15 +65119,15 @@
             "Selected Percentage": 7.3,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": 2.9,
-            "Recommendation": "Value Pick",
+            "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 9,
-            "Total Over 4 Gameweeks": 4,
-            "Form Rating": 6,
+            "Total Over 4 Gameweeks": 3,
+            "Form Rating": 5,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.0,
+            "Points Per Game Over 4 Gameweeks": 0.8,
             "Points Per Million": 6.0,
-            "Points Per Million Over 4 Gameweeks": 1.0,
+            "Points Per Million Over 4 Gameweeks": 0.8,
             "Total Goals": 2,
             "Total Assists": 0,
             "Total Goals + Assists": 2,
@@ -65164,7 +65164,7 @@
             "7": "-",
             "8": {
                 "points": 1,
-                "tooltip": "7 May (H) HOU W 2-0\n1 min (+1pt)\n\n---\n\n10 May (A) BAY D 0-0\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "10 May (A) BAY D 0-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (H) HOU W 2-0\n1 min (+1pt)"
             },
             "9": {
                 "points": 1,
@@ -65672,12 +65672,12 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 12,
-            "Total Over 4 Gameweeks": 15,
-            "Form Rating": 57,
+            "Total Over 4 Gameweeks": 14,
+            "Form Rating": 56,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.8,
+            "Points Per Game Over 4 Gameweeks": 3.5,
             "Points Per Million": 9.6,
-            "Points Per Million Over 4 Gameweeks": 3.0,
+            "Points Per Million Over 4 Gameweeks": 2.8,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -65723,7 +65723,7 @@
             },
             "8": {
                 "points": 13,
-                "tooltip": "7 May (H) HOU W 2-0\nClean Sheet (+4pts)\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (A) BAY D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "10 May (A) BAY D 0-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (H) HOU W 2-0\nClean Sheet (+4pts)\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 3,
@@ -72086,15 +72086,15 @@
             "Selected Percentage": 8.6,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": -2.7,
-            "Recommendation": "Differential",
+            "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 11,
-            "Total Over 4 Gameweeks": 17,
-            "Form Rating": 57,
+            "Total Over 4 Gameweeks": 15,
+            "Form Rating": 45,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.2,
+            "Points Per Game Over 4 Gameweeks": 3.8,
             "Points Per Million": 4.4,
-            "Points Per Million Over 4 Gameweeks": 2.3,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Goals + Assists": 1,
@@ -72136,7 +72136,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -77347,7 +77347,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -79857,7 +79857,7 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -86728,11 +86728,11 @@
             },
             "7": {
                 "points": 2,
-                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 4,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -87554,7 +87554,7 @@
             },
             "8": {
                 "points": 1,
-                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": {
                 "points": 2,
@@ -88106,7 +88106,7 @@
             },
             "7": {
                 "points": 6,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 7,
@@ -88928,7 +88928,7 @@
             },
             "7": {
                 "points": 10,
-                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) NC D 2-2\nGoal (+4pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 0,
@@ -89165,15 +89165,15 @@
             "Selected Percentage": 1.9,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -1.6,
-            "Recommendation": "Value Pick",
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 12,
-            "Total Over 4 Gameweeks": 11,
-            "Form Rating": 26,
+            "Total Over 4 Gameweeks": 17,
+            "Form Rating": 44,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Game Over 4 Gameweeks": 4.2,
             "Points Per Million": 5.5,
-            "Points Per Million Over 4 Gameweeks": 1.8,
+            "Points Per Million Over 4 Gameweeks": 2.8,
             "Total Goals": 2,
             "Total Assists": 2,
             "Total Goals + Assists": 4,
@@ -89216,7 +89216,7 @@
             },
             "8": {
                 "points": 10,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 6,
@@ -90815,9 +90815,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 20,
-            "Selected Percentage": 1.4,
-            "Selected Percentage Change 1W": -0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 1.3,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 8,
@@ -90868,7 +90868,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\nConceded (-1pt)"
             },
             "8": "-",
             "9": "-",
@@ -91137,7 +91137,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)"
             },
             "8": "-",
             "9": "-",
@@ -96174,12 +96174,12 @@
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 11,
-            "Total Over 4 Gameweeks": 18,
-            "Form Rating": 49,
+            "Total Over 4 Gameweeks": 21,
+            "Form Rating": 58,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.5,
+            "Points Per Game Over 4 Gameweeks": 5.2,
             "Points Per Million": 8.0,
-            "Points Per Million Over 4 Gameweeks": 4.0,
+            "Points Per Million Over 4 Gameweeks": 4.7,
             "Total Goals": 2,
             "Total Assists": 2,
             "Total Goals + Assists": 4,
@@ -96221,7 +96221,7 @@
             },
             "7": {
                 "points": 13,
-                "tooltip": "30 Apr (A) CHI W 0-2\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n3 May (H) LOU W 1-0\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -97333,7 +97333,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 1,
@@ -97617,7 +97617,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -97900,7 +97900,7 @@
             },
             "10": {
                 "points": 13,
-                "tooltip": "21 May (H) SD D 2-2\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n24 May (H) LA W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) LA W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -98176,7 +98176,7 @@
             },
             "8": {
                 "points": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": "-",
             "10": {
@@ -101427,7 +101427,7 @@
             },
             "7": {
                 "points": 3,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -101984,7 +101984,7 @@
             },
             "7": {
                 "points": 1,
-                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -103060,7 +103060,7 @@
             },
             "8": {
                 "points": 2,
-                "tooltip": "9 May (H) NC W 1-0\n1 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)"
+                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\n1 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -103604,7 +103604,7 @@
             },
             "10": {
                 "points": 8,
-                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) BAY W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) BAY W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -106549,7 +106549,7 @@
             },
             "7": {
                 "points": 4,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -106558,7 +106558,7 @@
             "9": "-",
             "10": {
                 "points": 1,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -106834,7 +106834,7 @@
             },
             "10": {
                 "points": 10,
-                "tooltip": "21 May (A) HOU D 2-2\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 6,
@@ -111439,9 +111439,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 31,
-            "Selected Percentage": 1.8,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 1.9,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 11,
