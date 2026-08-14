@@ -404,193 +404,652 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
     return all_players_with_fixtures
 
-def build_team_fixture_strength_from_games(games_data, recent_match_limit=4):
+# --- FIXTURE MODEL V2: ASA xG + RECENT FORM ---
+ASA_BASE_URL = "https://app.americansocceranalysis.com/api/v1"
+
+# Current NWSL team names in ASA -> Fantasy NWSL club codes.
+# The ASA /teams endpoint contains historical teams too, so matching by current
+# team name is safer than assuming every ASA abbreviation matches Fantasy NWSL.
+ASA_TEAM_NAME_TO_FANTASY_CODE = {
+    "Denver Summit FC": "DEN",
+    "Bay FC": "BAY",
+    "Houston Dash": "HOU",
+    "Boston Legacy FC": "BOS",
+    "Kansas City Current": "KC",
+    "San Diego Wave FC": "SD",
+    "Seattle Reign FC": "SEA",
+    "Chicago Stars FC": "CHI",
+    "Portland Thorns FC": "POR",
+    "Orlando Pride": "ORL",
+    "Washington Spirit": "WAS",
+    "Utah Royals FC": "UTA",
+    "Racing Louisville FC": "LOU",
+    "Angel City FC": "LA",
+    "NJ/NY Gotham FC": "GFC",
+    "North Carolina Courage": "NC",
+}
+
+# Model controls. These are intentionally grouped here so they are easy to tune
+# after we backtest the first working version.
+ASA_SEASON_YEAR = 2026
+RECENT_MATCH_COUNT = 6
+RECENCY_DECAY = 0.82
+
+# Blend season-level strength with recent form.
+SEASON_WEIGHT = 0.65
+RECENT_WEIGHT = 0.35
+
+# Within season/recent components, xG is the backbone and actual goals are
+# included as a smaller reality/finishing component.
+ATTACK_XG_WEIGHT = 0.75
+ATTACK_GOALS_WEIGHT = 0.25
+DEFENSE_XGA_WEIGHT = 0.80
+DEFENSE_GOALS_WEIGHT = 0.20
+
+# Fixed calibration anchors for the 0-100 fixture opportunity scale.
+# These are NOT weekly min/max values, so the best fixture is not automatically 100.
+ATTACK_XG_FLOOR = 0.55
+ATTACK_XG_CEILING = 2.25
+DEFENSE_XG_BEST = 0.55
+DEFENSE_XG_WORST = 2.25
+
+
+def clamp(value, low, high):
+    return max(low, min(high, value))
+
+
+def weighted_average(values, decay=RECENCY_DECAY):
     """
-    Build recent team attack/defense strength using actual game scores
-    from the last N completed matches.
-
-        attack_strength:
-        based on team goals scored by players
-
-    defense_weakness:
-        based on goals conceded points lost (stored as negative points in Total Conceeded),
-        converted to a positive weakness number
-
-    Returns:
-        {
-            "LA": {
-                "recent_attack_strength": 1.75,
-                "recent_defensive_strength": 0.75
-            },
-            ...
-        }
+    Recency-weighted average where the first value is the most recent.
+    Example weights with decay=.82: 1.00, .82, .67, .55, ...
     """
-    team_games = defaultdict(list)
+    if not values:
+        return 0.0
 
-    for game in games_data:
-        home = game.get("home", {})
-        away = game.get("away", {})
+    weights = [decay ** i for i in range(len(values))]
+    total_weight = sum(weights)
 
-        home_party = home.get("party", {}) or {}
-        away_party = away.get("party", {}) or {}
+    if total_weight <= 0:
+        return sum(values) / len(values)
 
-        home_id = str(home_party.get("id", "")).upper()
-        away_id = str(away_party.get("id", "")).upper()
+    return sum(v * w for v, w in zip(values, weights)) / total_weight
 
-        home_score = home.get("score")
-        away_score = away.get("score")
 
+def get_asa_json(path, params=None):
+    """Fetch JSON from the American Soccer Analysis API."""
+    url = f"{ASA_BASE_URL}{path}"
+    response = requests.get(url, params=params or {}, timeout=30)
+    response.raise_for_status()
+    return response.json()
+
+
+def get_asa_team_code_map():
+    """
+    Returns {ASA team_id: Fantasy NWSL club code} for current NWSL teams.
+    """
+    teams = get_asa_json("/nwsl/teams")
+    team_code_map = {}
+
+    for team in teams:
+        team_id = team.get("team_id")
+        team_name = team.get("team_name", "")
+
+        fantasy_code = ASA_TEAM_NAME_TO_FANTASY_CODE.get(team_name)
+
+        if team_id and fantasy_code:
+            team_code_map[team_id] = fantasy_code
+
+    return team_code_map
+
+
+def get_asa_nwsl_xg_games(season_year=ASA_SEASON_YEAR):
+    """
+    Fetch game-level NWSL xG from ASA and keep the requested calendar season.
+    ASA returns historical NWSL records from this endpoint, so we filter locally
+    by date instead of depending on a provider-specific season label.
+    """
+    games = get_asa_json("/nwsl/games/xgoals")
+    season_prefix = f"{season_year}-"
+
+    season_games = [
+        game for game in games
+        if str(game.get("date_time_utc", "")).startswith(season_prefix)
+    ]
+
+    print(
+        f"Loaded {len(season_games)} ASA NWSL xG records for {season_year} "
+        f"({len(games)} historical records available)."
+    )
+
+    return season_games
+
+
+def filter_asa_games_to_fantasy_schedule(
+    asa_games,
+    asa_team_code_map,
+    fantasy_games,
+):
+    """
+    Keep only ASA xG games that correspond to completed Fantasy NWSL fixtures.
+
+    This matters because ASA's NWSL feed can contain matches/stages that are not
+    part of the Fantasy NWSL league schedule. Matching on home team, away team
+    and UTC calendar date keeps the strength model aligned to the exact
+    competition used by the fantasy game.
+    """
+    fantasy_match_keys = set()
+
+    for game in fantasy_games:
+        home = str(
+            game.get("home", {}).get("party", {}).get("id", "")
+        ).upper()
+        away = str(
+            game.get("away", {}).get("party", {}).get("id", "")
+        ).upper()
         scheduled_at = game.get("scheduledAt")
         has_started = game.get("hasStarted")
 
-        if not home_id or not away_id:
-            continue
-
-        if home_score is None or away_score is None:
-            continue
-
-        if has_started is not True:
+        if not home or not away or not scheduled_at or has_started is not True:
             continue
 
         try:
-            game_date = datetime.fromisoformat(scheduled_at.replace("Z", "+00:00"))
+            date_key = datetime.fromisoformat(
+                scheduled_at.replace("Z", "+00:00")
+            ).date().isoformat()
         except Exception:
             continue
 
-        team_games[home_id].append({
+        fantasy_match_keys.add((home, away, date_key))
+
+    matched_games = []
+
+    for game in asa_games:
+        home = asa_team_code_map.get(game.get("home_team_id"))
+        away = asa_team_code_map.get(game.get("away_team_id"))
+
+        if not home or not away:
+            continue
+
+        date_text = str(game.get("date_time_utc", ""))
+        date_key = date_text[:10]
+
+        if (home, away, date_key) in fantasy_match_keys:
+            matched_games.append(game)
+
+    print(
+        f"Matched {len(matched_games)} ASA xG games to "
+        f"{len(fantasy_match_keys)} completed Fantasy NWSL fixtures."
+    )
+
+    if not matched_games:
+        raise ValueError(
+            "No ASA xG games matched the Fantasy NWSL schedule."
+        )
+
+    return matched_games
+
+
+def build_team_strength_v2(asa_games, asa_team_code_map, fantasy_games):
+    """
+    Build team strength from game-level ASA xG.
+
+    For attack:
+      season component = 75% xG/game + 25% goals/game
+      recent component = 75% weighted xG + 25% weighted goals
+      final = 65% season + 35% recent
+
+    For defense, lower allowed values are better:
+      season component = 80% xGA/game + 20% GA/game
+      recent component = 80% weighted xGA + 20% weighted GA
+      final = 65% season + 35% recent
+
+    Returns team metrics plus league averages and a data-derived home advantage.
+    """
+    asa_games = filter_asa_games_to_fantasy_schedule(
+        asa_games,
+        asa_team_code_map,
+        fantasy_games,
+    )
+
+    team_games = defaultdict(list)
+
+    for game in asa_games:
+        home_asa_id = game.get("home_team_id")
+        away_asa_id = game.get("away_team_id")
+
+        home_team = asa_team_code_map.get(home_asa_id)
+        away_team = asa_team_code_map.get(away_asa_id)
+
+        if not home_team or not away_team:
+            continue
+
+        try:
+            game_date = datetime.strptime(
+                str(game.get("date_time_utc", "")).replace(" UTC", ""),
+                "%Y-%m-%d %H:%M:%S",
+            ).replace(tzinfo=timezone.utc)
+
+            home_xg = float(game.get("home_team_xgoals", 0) or 0)
+            away_xg = float(game.get("away_team_xgoals", 0) or 0)
+            home_goals = int(game.get("home_goals", 0) or 0)
+            away_goals = int(game.get("away_goals", 0) or 0)
+        except (ValueError, TypeError):
+            continue
+
+        team_games[home_team].append({
             "date": game_date,
-            "goals_for": home_score,
-            "goals_against": away_score
+            "is_home": True,
+            "xg_for": home_xg,
+            "xg_against": away_xg,
+            "goals_for": home_goals,
+            "goals_against": away_goals,
         })
 
-        team_games[away_id].append({
+        team_games[away_team].append({
             "date": game_date,
-            "goals_for": away_score,
-            "goals_against": home_score
+            "is_home": False,
+            "xg_for": away_xg,
+            "xg_against": home_xg,
+            "goals_for": away_goals,
+            "goals_against": home_goals,
         })
 
     team_strength = {}
 
-    for team_id, matches in team_games.items():
-        matches_sorted = sorted(matches, key=lambda m: m["date"], reverse=True)
-        recent_matches = matches_sorted[:recent_match_limit]
+    all_home_xg = []
+    all_away_xg = []
 
-        if team_id == "SEA":
-            print("DEBUG SEA recent matches:")
-            for m in recent_matches:
-                print(m)
+    for game in asa_games:
+        home_team = asa_team_code_map.get(game.get("home_team_id"))
+        away_team = asa_team_code_map.get(game.get("away_team_id"))
 
-        print(
-            f"DEBUG recent matches for {team_id}: "
-            f"{[(m['goals_for'], m['goals_against']) for m in recent_matches]}"
-        )
-
-        if not recent_matches:
-            team_strength[team_id] = {
-                "recent_attack_strength": 0.0,
-                "recent_defensive_strength": 0.0
-            }
+        if not home_team or not away_team:
             continue
 
-        avg_goals_for = sum(m["goals_for"] for m in recent_matches) / len(recent_matches)
-        avg_goals_against = sum(m["goals_against"] for m in recent_matches) / len(recent_matches)
+        try:
+            all_home_xg.append(float(game.get("home_team_xgoals", 0) or 0))
+            all_away_xg.append(float(game.get("away_team_xgoals", 0) or 0))
+        except (ValueError, TypeError):
+            continue
 
-        # Higher is better for both metrics
-        recent_attack_strength = avg_goals_for
-        recent_defensive_strength = max(0.0, 5.0 - avg_goals_against)
+    for team_id, matches in team_games.items():
+        matches_sorted = sorted(matches, key=lambda m: m["date"], reverse=True)
+
+        games_played = len(matches_sorted)
+        if games_played == 0:
+            continue
+
+        season_xg_pg = sum(m["xg_for"] for m in matches_sorted) / games_played
+        season_xga_pg = sum(m["xg_against"] for m in matches_sorted) / games_played
+        season_gf_pg = sum(m["goals_for"] for m in matches_sorted) / games_played
+        season_ga_pg = sum(m["goals_against"] for m in matches_sorted) / games_played
+
+        recent_matches = matches_sorted[:RECENT_MATCH_COUNT]
+
+        recent_xg = weighted_average([m["xg_for"] for m in recent_matches])
+        recent_xga = weighted_average([m["xg_against"] for m in recent_matches])
+        recent_gf = weighted_average([m["goals_for"] for m in recent_matches])
+        recent_ga = weighted_average([m["goals_against"] for m in recent_matches])
+
+        season_attack = (
+            ATTACK_XG_WEIGHT * season_xg_pg
+            + ATTACK_GOALS_WEIGHT * season_gf_pg
+        )
+        recent_attack = (
+            ATTACK_XG_WEIGHT * recent_xg
+            + ATTACK_GOALS_WEIGHT * recent_gf
+        )
+
+        season_defense_allowed = (
+            DEFENSE_XGA_WEIGHT * season_xga_pg
+            + DEFENSE_GOALS_WEIGHT * season_ga_pg
+        )
+        recent_defense_allowed = (
+            DEFENSE_XGA_WEIGHT * recent_xga
+            + DEFENSE_GOALS_WEIGHT * recent_ga
+        )
+
+        attack_metric = (
+            SEASON_WEIGHT * season_attack
+            + RECENT_WEIGHT * recent_attack
+        )
+        defense_allowed_metric = (
+            SEASON_WEIGHT * season_defense_allowed
+            + RECENT_WEIGHT * recent_defense_allowed
+        )
+
+        clean_sheets = sum(1 for m in matches_sorted if m["goals_against"] == 0)
+        clean_sheet_rate = clean_sheets / games_played
 
         team_strength[team_id] = {
-            "recent_attack_strength": round(recent_attack_strength, 3),
-            "recent_defensive_strength": round(recent_defensive_strength, 3)
+            "games_played": games_played,
+            "season_xg_pg": round(season_xg_pg, 3),
+            "season_xga_pg": round(season_xga_pg, 3),
+            "season_gf_pg": round(season_gf_pg, 3),
+            "season_ga_pg": round(season_ga_pg, 3),
+            "recent_xg": round(recent_xg, 3),
+            "recent_xga": round(recent_xga, 3),
+            "recent_gf": round(recent_gf, 3),
+            "recent_ga": round(recent_ga, 3),
+            "attack_metric": round(attack_metric, 3),
+            "defense_allowed_metric": round(defense_allowed_metric, 3),
+            "clean_sheet_rate": round(clean_sheet_rate, 3),
         }
 
-    return team_strength
+    if not team_strength:
+        raise ValueError("ASA team strength model produced no current-team data.")
+
+    league_avg_attack = (
+        sum(stats["attack_metric"] for stats in team_strength.values())
+        / len(team_strength)
+    )
+    league_avg_defense_allowed = (
+        sum(stats["defense_allowed_metric"] for stats in team_strength.values())
+        / len(team_strength)
+    )
+
+    league_avg_xg = (
+        sum(stats["season_xg_pg"] for stats in team_strength.values())
+        / len(team_strength)
+    )
+
+    avg_home_xg = sum(all_home_xg) / len(all_home_xg) if all_home_xg else league_avg_xg
+    avg_away_xg = sum(all_away_xg) / len(all_away_xg) if all_away_xg else league_avg_xg
+
+    if avg_home_xg > 0 and avg_away_xg > 0:
+        # Symmetric adjustment around 1.0. Capped so a noisy partial season
+        # cannot create an oversized venue effect.
+        home_factor = clamp((avg_home_xg / avg_away_xg) ** 0.5, 0.90, 1.10)
+    else:
+        home_factor = 1.0
+
+    away_factor = 1.0 / home_factor if home_factor else 1.0
+
+    model_context = {
+        "league_avg_attack": league_avg_attack,
+        "league_avg_defense_allowed": league_avg_defense_allowed,
+        "league_avg_xg": league_avg_xg,
+        "avg_home_xg": avg_home_xg,
+        "avg_away_xg": avg_away_xg,
+        "home_factor": home_factor,
+        "away_factor": away_factor,
+    }
+
+    print("Fixture Model v2 team strengths:")
+    for team_id, stats in sorted(
+        team_strength.items(),
+        key=lambda item: item[1]["attack_metric"],
+        reverse=True,
+    ):
+        print(
+            f"{team_id}: "
+            f"xG={stats['season_xg_pg']:.2f}, "
+            f"recent xG={stats['recent_xg']:.2f}, "
+            f"attack={stats['attack_metric']:.2f}, "
+            f"xGA={stats['season_xga_pg']:.2f}, "
+            f"recent xGA={stats['recent_xga']:.2f}, "
+            f"def allowed={stats['defense_allowed_metric']:.2f}"
+        )
+
+    print(
+        f"League xG avg={league_avg_xg:.3f}; "
+        f"home xG avg={avg_home_xg:.3f}; "
+        f"away xG avg={avg_away_xg:.3f}; "
+        f"home factor={home_factor:.3f}; "
+        f"away factor={away_factor:.3f}"
+    )
+
+    return team_strength, model_context
+
+
+def metric_to_strength_score(value, low, high, higher_is_better=True):
+    """
+    Convert a team metric to an explanatory 0-100 strength score.
+    This is for tooltip transparency; fixture opportunity itself is derived
+    from projected xG below.
+    """
+    if high <= low:
+        return 50.0
+
+    normalized = (value - low) / (high - low)
+    normalized = clamp(normalized, 0.0, 1.0)
+
+    if higher_is_better:
+        return round(normalized * 100, 1)
+
+    return round((1.0 - normalized) * 100, 1)
+
+
+def projected_xg_for_fixture(
+    attacking_team,
+    defending_team,
+    attacking_is_home,
+    team_strength,
+    model_context,
+):
+    """
+    Estimate attacking-team xG for one fixture.
+
+    We combine:
+    - own blended attacking production relative to league average
+    - opponent blended defensive allowance relative to league average
+    - league-wide 2026 home/away xG effect
+
+    The geometric mean keeps one extreme component from completely dominating.
+    """
+    attack_stats = team_strength.get(attacking_team)
+    defense_stats = team_strength.get(defending_team)
+
+    if not attack_stats or not defense_stats:
+        return None
+
+    league_attack = model_context["league_avg_attack"]
+    league_def_allowed = model_context["league_avg_defense_allowed"]
+    league_xg = model_context["league_avg_xg"]
+
+    if league_attack <= 0 or league_def_allowed <= 0 or league_xg <= 0:
+        return None
+
+    attack_index = attack_stats["attack_metric"] / league_attack
+    defense_weakness_index = (
+        defense_stats["defense_allowed_metric"] / league_def_allowed
+    )
+
+    matchup_index = max(0.01, attack_index * defense_weakness_index) ** 0.5
+
+    venue_factor = (
+        model_context["home_factor"]
+        if attacking_is_home
+        else model_context["away_factor"]
+    )
+
+    projected_xg = league_xg * matchup_index * venue_factor
+
+    return round(clamp(projected_xg, 0.05, 4.0), 3)
+
+
+def projected_xg_to_attack_score(projected_xg):
+    """
+    Continuous 0-100 attacking fixture opportunity score.
+    Higher = better.
+
+    Fixed anchors mean the best fixture in a week is NOT automatically 100.
+    """
+    if projected_xg is None:
+        return 50.0
+
+    normalized = (
+        (projected_xg - ATTACK_XG_FLOOR)
+        / (ATTACK_XG_CEILING - ATTACK_XG_FLOOR)
+    )
+    return round(clamp(normalized * 100, 0, 100), 1)
+
+
+def projected_xga_to_defense_score(projected_xga):
+    """
+    Continuous 0-100 defensive fixture opportunity score.
+    Higher = better. Lower projected opponent xG is better.
+    """
+    if projected_xga is None:
+        return 50.0
+
+    normalized = (
+        (DEFENSE_XG_WORST - projected_xga)
+        / (DEFENSE_XG_WORST - DEFENSE_XG_BEST)
+    )
+    return round(clamp(normalized * 100, 0, 100), 1)
+
+
+def fixture_score_to_legacy_bucket(score):
+    """
+    Keep the existing 1-5 filter field working:
+      1 = elite
+      2 = favorable
+      3 = neutral
+      4 = difficult
+      5 = very difficult
+
+    The displayed raw fixture rating is now the more granular 0-100 score.
+    """
+    if score is None:
+        return None
+    if score >= 80:
+        return 1
+    if score >= 65:
+        return 2
+    if score >= 45:
+        return 3
+    if score >= 25:
+        return 4
+    return 5
+
 
 def score_single_fixture(
     player_position,
     player_team,
     opponent_team,
+    location,
     team_strength,
-    all_attacker_values,
-    all_defender_values
+    model_context,
 ):
     """
-    Score one fixture from 1-5.
-    Lower = better.
-    Also returns details for the frontend tooltip.
-    """
-    opponent_stats = team_strength.get(opponent_team)
-    own_stats = team_strength.get(player_team)
+    Score one fixture from 0-100. Higher = better.
 
-    if not opponent_stats or not own_stats:
-        return 3.0, {
-            "rating": 3.0,
-            "opponent_attack_strength": None,
-            "opponent_defensive_strength": None,
-            "own_attack_strength": None,
-            "own_defensive_strength": None,
+    FOR:
+      attacking opportunity
+
+    MID:
+      90% attacking opportunity + 10% defensive opportunity,
+      because midfielders also receive a clean-sheet point.
+
+    DEF/GK:
+      defensive/clean-sheet opportunity
+    """
+    own_stats = team_strength.get(player_team)
+    opponent_stats = team_strength.get(opponent_team)
+
+    if not own_stats or not opponent_stats:
+        return 50.0, {
+            "rating": 50.0,
+            "attack_score": None,
+            "defense_score": None,
+            "projected_team_xg": None,
+            "projected_opponent_xg": None,
+            "estimated_clean_sheet_pct": None,
         }
 
-    opponent_attack_strength = opponent_stats["recent_attack_strength"]
-    opponent_defensive_strength = opponent_stats["recent_defensive_strength"]
-    own_attack_strength = own_stats["recent_attack_strength"]
-    own_defensive_strength = own_stats["recent_defensive_strength"]
+    player_is_home = location == "(H)"
 
-    if player_position in ["MID", "FOR"]:
-        # Attackers benefit from weak opponent defense and strong own-team attack.
-        opponent_def_weakness = 5.0 - opponent_defensive_strength
-        attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack_strength)
+    projected_team_xg = projected_xg_for_fixture(
+        player_team,
+        opponent_team,
+        player_is_home,
+        team_strength,
+        model_context,
+    )
 
-        rating = scale_to_fixture_rating(
-            attacker_opportunity,
-            all_attacker_values,
-            higher_is_better=True
-        )
+    projected_opponent_xg = projected_xg_for_fixture(
+        opponent_team,
+        player_team,
+        not player_is_home,
+        team_strength,
+        model_context,
+    )
 
+    attack_score = projected_xg_to_attack_score(projected_team_xg)
+    defense_score = projected_xga_to_defense_score(projected_opponent_xg)
+
+    # Poisson approximation: P(0 goals) = e^-lambda.
+    estimated_clean_sheet_pct = (
+        round((2.718281828459045 ** (-projected_opponent_xg)) * 100, 1)
+        if projected_opponent_xg is not None
+        else None
+    )
+
+    if player_position == "FOR":
+        rating = attack_score
+    elif player_position == "MID":
+        rating = (0.90 * attack_score) + (0.10 * defense_score)
     elif player_position in ["DEF", "GK"]:
-        # Defenders/GKs benefit from weak opponent attack and strong own-team defense.
-        defender_opportunity = (0.8 * (5.0 - opponent_attack_strength)) + (0.2 * own_defensive_strength)
-
-        rating = scale_to_fixture_rating(
-            defender_opportunity,
-            all_defender_values,
-            higher_is_better=True
-        )
-
+        rating = defense_score
     else:
-        rating = 3.0
+        rating = 50.0
 
-    return rating, {
-        "rating": rating,
-        "opponent_attack_strength": opponent_attack_strength,
-        "opponent_defensive_strength": opponent_defensive_strength,
+    # Explanatory strength scores for tooltip.
+    attack_values = [s["attack_metric"] for s in team_strength.values()]
+    defense_values = [s["defense_allowed_metric"] for s in team_strength.values()]
+
+    attack_low = min(attack_values)
+    attack_high = max(attack_values)
+    defense_low = min(defense_values)
+    defense_high = max(defense_values)
+
+    own_attack_strength = metric_to_strength_score(
+        own_stats["attack_metric"],
+        attack_low,
+        attack_high,
+        higher_is_better=True,
+    )
+    own_defensive_strength = metric_to_strength_score(
+        own_stats["defense_allowed_metric"],
+        defense_low,
+        defense_high,
+        higher_is_better=False,
+    )
+    opponent_attack_strength = metric_to_strength_score(
+        opponent_stats["attack_metric"],
+        attack_low,
+        attack_high,
+        higher_is_better=True,
+    )
+    opponent_defensive_strength = metric_to_strength_score(
+        opponent_stats["defense_allowed_metric"],
+        defense_low,
+        defense_high,
+        higher_is_better=False,
+    )
+
+    return round(clamp(rating, 0, 100), 1), {
+        "rating": round(clamp(rating, 0, 100), 1),
+        "attack_score": attack_score,
+        "defense_score": defense_score,
+        "projected_team_xg": projected_team_xg,
+        "projected_opponent_xg": projected_opponent_xg,
+        "estimated_clean_sheet_pct": estimated_clean_sheet_pct,
         "own_attack_strength": own_attack_strength,
         "own_defensive_strength": own_defensive_strength,
+        "opponent_attack_strength": opponent_attack_strength,
+        "opponent_defensive_strength": opponent_defensive_strength,
+        "own_season_xg_pg": own_stats["season_xg_pg"],
+        "own_recent_xg": own_stats["recent_xg"],
+        "own_season_xga_pg": own_stats["season_xga_pg"],
+        "own_recent_xga": own_stats["recent_xga"],
+        "opponent_season_xg_pg": opponent_stats["season_xg_pg"],
+        "opponent_recent_xg": opponent_stats["recent_xg"],
+        "opponent_season_xga_pg": opponent_stats["season_xga_pg"],
+        "opponent_recent_xga": opponent_stats["recent_xga"],
     }
 
-def scale_to_fixture_rating(value, all_values, higher_is_better=True):
-    """
-    Convert a raw opportunity value into a continuous 1-5 fixture rating.
-    Lower = easier / better.
-    """
-    if not all_values:
-        return 3.0
-
-    min_val = min(all_values)
-    max_val = max(all_values)
-
-    if max_val == min_val:
-        return 3.0
-
-    normalized = (value - min_val) / (max_val - min_val)
-
-    if higher_is_better:
-        # best value -> 1, worst -> 5
-        rating = 5 - (normalized * 4)
-    else:
-        rating = 1 + (normalized * 4)
-
-    return round(max(1, min(5, rating)), 2)
 
 def get_next_global_gameweek(fixtures_map):
     """
@@ -613,6 +1072,7 @@ def get_next_global_gameweek(fixtures_map):
 
     return min(upcoming_gws)
 
+
 def get_fixtures_for_specific_gameweek(player, target_gw):
     """
     Return all fixtures for this player in a specific league gameweek.
@@ -627,6 +1087,7 @@ def get_fixtures_for_specific_gameweek(player, target_gw):
         f for f in fixtures
         if str(f.get("game_week")) == str(target_gw)
     ]
+
 
 def get_gameweek_fixtures_by_offset(player, gameweek_offset=0):
     """
@@ -664,41 +1125,45 @@ def get_next_gameweek_fixtures(player):
     Backward-compatible wrapper for the next upcoming gameweek.
     """
     return get_gameweek_fixtures_by_offset(player, gameweek_offset=0)
-    
+
+
 def combine_fixture_scores(scores):
     """
-    Combine one or more fixture scores into a single 1-5 score.
-    Lower = better.
+    Combine one or more 0-100 fixture opportunity scores.
 
-    For doubles:
-    - convert each score to goodness
-    - average goodness
-    - convert back to difficulty
-    - apply a small bonus for multiple fixtures
+    For a single fixture, return that fixture's score.
+
+    For DGWs/TGWs, volume matters. We use:
+        combined = average_score * sqrt(number_of_fixtures)
+
+    This gives a meaningful boost for multiple games without making two poor
+    fixtures automatically better than one elite fixture.
     """
     if not scores:
         return None, None
 
-    avg_rating = sum(scores) / len(scores)
+    avg_score = sum(scores) / len(scores)
+    fixture_count = len(scores)
 
-    if len(scores) > 1:
-        avg_rating -= 1.0
+    if fixture_count > 1:
+        combined_score = avg_score * (fixture_count ** 0.5)
+    else:
+        combined_score = avg_score
 
-    avg_rating = max(1, min(5, avg_rating))
-    raw_rating = round(avg_rating, 2)
-    display_score = int(round(avg_rating))
+    combined_score = round(clamp(combined_score, 0, 100), 1)
+    display_bucket = fixture_score_to_legacy_bucket(combined_score)
 
-    return raw_rating, display_score
+    return combined_score, display_bucket
+
 
 def build_fixture_details_text(fixture_details, raw_rating, display_score):
     """
-    Build the frontend tooltip text for the Fix column.
+    Build transparent tooltip text for the 0-100 Fixture Model v2.
     """
     if not fixture_details:
         return ""
 
     lines = ["Next GW fixtures:"]
-
     ratings = []
 
     for detail in fixture_details:
@@ -708,53 +1173,112 @@ def build_fixture_details_text(fixture_details, raw_rating, display_score):
 
         if rating is not None:
             ratings.append(rating)
-            rating_text = f"{rating:.2f}"
+            lines.append(f"vs {opponent} {location}: {rating:.1f}/100")
         else:
-            rating_text = "-"
+            lines.append(f"vs {opponent} {location}: -")
 
-        lines.append(f"vs {opponent} {location}: {rating_text}")
+        attack_score = detail.get("attack_score")
+        defense_score = detail.get("defense_score")
+        projected_team_xg = detail.get("projected_team_xg")
+        projected_opponent_xg = detail.get("projected_opponent_xg")
+        clean_sheet_pct = detail.get("estimated_clean_sheet_pct")
 
-        opp_def = detail.get("opponent_defensive_strength")
+        if attack_score is not None:
+            lines.append(f"  Attack opportunity: {attack_score:.1f}/100")
+        if defense_score is not None:
+            lines.append(f"  Defense opportunity: {defense_score:.1f}/100")
+        if projected_team_xg is not None:
+            lines.append(f"  Projected team xG: {projected_team_xg:.2f}")
+        if projected_opponent_xg is not None:
+            lines.append(f"  Projected opponent xG: {projected_opponent_xg:.2f}")
+        if clean_sheet_pct is not None:
+            lines.append(f"  Est. clean-sheet chance: {clean_sheet_pct:.1f}%")
+
         opp_att = detail.get("opponent_attack_strength")
+        opp_def = detail.get("opponent_defensive_strength")
 
-        if opp_def is not None:
-            lines.append(f"{opponent} defensive strength: {opp_def:.2f}")
         if opp_att is not None:
-            lines.append(f"{opponent} attacking strength: {opp_att:.2f}")
+            lines.append(f"  {opponent} attack strength: {opp_att:.1f}/100")
+        if opp_def is not None:
+            lines.append(f"  {opponent} defense strength: {opp_def:.1f}/100")
+
+        opp_season_xg = detail.get("opponent_season_xg_pg")
+        opp_recent_xg = detail.get("opponent_recent_xg")
+        opp_season_xga = detail.get("opponent_season_xga_pg")
+        opp_recent_xga = detail.get("opponent_recent_xga")
+
+        if opp_season_xg is not None and opp_recent_xg is not None:
+            lines.append(
+                f"  {opponent} xG/game: {opp_season_xg:.2f} season, "
+                f"{opp_recent_xg:.2f} weighted recent"
+            )
+        if opp_season_xga is not None and opp_recent_xga is not None:
+            lines.append(
+                f"  {opponent} xGA/game: {opp_season_xga:.2f} season, "
+                f"{opp_recent_xga:.2f} weighted recent"
+            )
 
     if ratings:
         avg_rating = sum(ratings) / len(ratings)
         lines.append("")
-        lines.append(f"Average fixture rating: {avg_rating:.2f}")
+        lines.append(f"Average fixture opportunity: {avg_rating:.1f}/100")
 
-    if len(fixture_details) > 1:
-        lines.append("Double GW bonus: -1.00")
-    else:
-        lines.append("Double GW bonus: 0.00")
+        if len(ratings) > 1:
+            volume_bonus = (raw_rating or avg_rating) - avg_rating
+            lines.append(
+                f"{len(ratings)}-fixture volume bonus: +{max(0, volume_bonus):.1f}"
+            )
+        else:
+            lines.append("Fixture volume bonus: +0.0")
 
     if raw_rating is not None:
-        lines.append(f"Final rating: {raw_rating:.2f}")
+        lines.append(f"Final GW fixture score: {raw_rating:.1f}/100")
 
     first_detail = fixture_details[0]
-    own_attack = first_detail.get("own_attack_strength")
-    own_def = first_detail.get("own_defensive_strength")
 
     lines.append("")
 
+    own_attack = first_detail.get("own_attack_strength")
+    own_def = first_detail.get("own_defensive_strength")
+
     if own_attack is not None:
-        lines.append(f"Own team attacking strength: {own_attack:.2f}")
+        lines.append(f"Own team attack strength: {own_attack:.1f}/100")
     if own_def is not None:
-        lines.append(f"Own team defensive strength: {own_def:.2f}")
+        lines.append(f"Own team defense strength: {own_def:.1f}/100")
+
+    own_season_xg = first_detail.get("own_season_xg_pg")
+    own_recent_xg = first_detail.get("own_recent_xg")
+    own_season_xga = first_detail.get("own_season_xga_pg")
+    own_recent_xga = first_detail.get("own_recent_xga")
+
+    if own_season_xg is not None and own_recent_xg is not None:
+        lines.append(
+            f"Own xG/game: {own_season_xg:.2f} season, "
+            f"{own_recent_xg:.2f} weighted recent"
+        )
+
+    if own_season_xga is not None and own_recent_xga is not None:
+        lines.append(
+            f"Own xGA/game: {own_season_xga:.2f} season, "
+            f"{own_recent_xga:.2f} weighted recent"
+        )
 
     return "\n".join(lines)
 
-def get_next_fixture_score(player, team_strength, all_attack_values, all_defense_values, target_gw=None):
+
+def get_next_fixture_score(
+    player,
+    team_strength,
+    model_context,
+    target_gw=None,
+):
     """
-    Compute a player's next fixture score, accounting for doubles in the next gameweek.
+    Compute a player's gameweek fixture opportunity.
+
     Returns:
-    - raw fixture rating
-    - display bucket score
-    - tooltip details text
+    - raw 0-100 opportunity score (higher = better)
+    - legacy 1-5 bucket used by the existing Fixture Score filter
+    - detailed tooltip text
     """
     next_gw_fixtures = get_fixtures_for_specific_gameweek(player, target_gw)
 
@@ -787,7 +1311,8 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
             if DEBUG:
                 print(
                     f"WARNING no team match for {player.get('Name')}: "
-                    f"player_team='{player_team}', home_team='{home_team}', away_team='{away_team}'"
+                    f"player_team='{player_team}', "
+                    f"home_team='{home_team}', away_team='{away_team}'"
                 )
             continue
 
@@ -795,9 +1320,9 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
             player_position,
             player_team,
             opponent_team,
+            location,
             team_strength,
-            all_attack_values,
-            all_defense_values
+            model_context,
         )
 
         scores.append(fixture_score)
@@ -814,10 +1339,15 @@ def get_next_fixture_score(player, team_strength, all_attack_values, all_defense
         return None, None, ""
 
     raw_rating, display_score = combine_fixture_scores(scores)
-    details_text = build_fixture_details_text(fixture_details, raw_rating, display_score)
+    details_text = build_fixture_details_text(
+        fixture_details,
+        raw_rating,
+        display_score,
+    )
 
     return raw_rating, display_score, details_text
-    
+
+
 def load_history_data(history_file="player_history.json"):
     """
     Loads historical player data from JSON file.
@@ -1379,65 +1909,62 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         print(f"Next global GW: {next_global_gw}")
         print(f"Following global GW: {following_global_gw}")
 
-        # Build recent team strength model from completed games
-        team_strength = build_team_fixture_strength_from_games(fixtures)
+        # Build Fixture Model v2 from American Soccer Analysis game-level xG.
+        # Fantasy NWSL remains the source of truth for players, fixtures and gameweeks.
+        print("Fetching American Soccer Analysis NWSL xG data...")
+        asa_team_code_map = get_asa_team_code_map()
+        asa_xg_games = get_asa_nwsl_xg_games(ASA_SEASON_YEAR)
 
-        all_attack_values = []
-        all_defense_values = []
+        team_strength, fixture_model_context = build_team_strength_v2(
+            asa_xg_games,
+            asa_team_code_map,
+            fixtures,
+        )
 
-        for team_id, stats in team_strength.items():
-            opponent_def_weakness = 5.0 - stats["recent_defensive_strength"]
-            own_attack = stats["recent_attack_strength"]
-            attacker_opportunity = (0.8 * opponent_def_weakness) + (0.2 * own_attack)
-            all_attack_values.append(attacker_opportunity)
-
-            opponent_attack_threat = stats["recent_attack_strength"]
-            own_def_strength = stats["recent_defensive_strength"]
-            defender_opportunity = (0.8 * (5.0 - opponent_attack_threat)) + (0.2 * own_def_strength)
-            all_defense_values.append(defender_opportunity)
-
-        print("DEBUG team strength sample:")
-        for team_id, stats in list(team_strength.items())[:16]:
-            print(
-                f"{team_id}: "
-                f"attack={stats['recent_attack_strength']}, "
-                f"defense={stats['recent_defensive_strength']}"
-            )
-
-
-        # Add next fixture score for each player
+        # Add next and following gameweek fixture scores for each player.
+        # "Rating" is now a granular 0-100 opportunity score (higher = better).
+        # "Score" remains a 1-5 bucket so the existing Fixture Score filter
+        # can continue to function until/unless the frontend is changed.
         for player in combined_data:
-            
+
             next_fixture_rating, next_fixture_score, next_fixture_details = get_next_fixture_score(
                 player,
                 team_strength,
-                all_attack_values,
-                all_defense_values,
-                target_gw=next_global_gw
+                fixture_model_context,
+                target_gw=next_global_gw,
             )
-            
+
             player["Next Fixture Rating"] = next_fixture_rating
             player["Next Fixture Score"] = next_fixture_score
             player["Next Fixture Details"] = next_fixture_details
-            
+
             following_fixture_rating, following_fixture_score, following_fixture_details = get_next_fixture_score(
                 player,
                 team_strength,
-                all_attack_values,
-                all_defense_values,
-                target_gw=following_global_gw
+                fixture_model_context,
+                target_gw=following_global_gw,
             )
-            
+
             player["Following Fixture Rating"] = following_fixture_rating
             player["Following Fixture Score"] = following_fixture_score
             player["Following Fixture Details"] = following_fixture_details
-            
+
         output_payload = {
             "metadata": {
                 "last_global_price_change_date": (
                     last_global_price_change_date.isoformat()
                     if last_global_price_change_date else None
-                )
+                ),
+                "fixture_model": {
+                    "version": "v2-asa-xg",
+                    "season_year": ASA_SEASON_YEAR,
+                    "recent_match_count": RECENT_MATCH_COUNT,
+                    "season_weight": SEASON_WEIGHT,
+                    "recent_weight": RECENT_WEIGHT,
+                    "home_factor": round(fixture_model_context["home_factor"], 4),
+                    "away_factor": round(fixture_model_context["away_factor"], 4),
+                    "league_avg_xg": round(fixture_model_context["league_avg_xg"], 4),
+                },
             },
             "players": combined_data
         }
