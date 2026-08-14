@@ -803,10 +803,22 @@
         <div
             class="flex flex-col md:flex-row justify-between items-end md:items-center mb-4 space-y-2 md:space-y-0 md:space-x-4">
 
-            <button id="show-key-button"
-                class="w-full md:w-auto px-3 py-2 bg-indigo-600 text-white border border-indigo-700 rounded-md shadow-lg text-sm font-medium hover:bg-indigo-700 transition duration-150">
-                <i class="fa-solid fa-circle-question mr-2"></i> Show Key / Glossary
-            </button>
+            <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+                <button id="show-key-button"
+                    class="w-full md:w-auto px-3 py-2 bg-indigo-600 text-white border border-indigo-700 rounded-md shadow-lg text-sm font-medium hover:bg-indigo-700 transition duration-150">
+                    <i class="fa-solid fa-circle-question mr-2"></i> Show Key / Glossary
+                </button>
+
+                <button id="export-current-button"
+                    class="w-full md:w-auto px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded-md shadow-sm text-sm font-medium hover:bg-gray-50 transition duration-150">
+                    <i class="fa-solid fa-file-csv mr-2"></i> Export Current View
+                </button>
+
+                <button id="export-all-button"
+                    class="w-full md:w-auto px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded-md shadow-sm text-sm font-medium hover:bg-gray-50 transition duration-150">
+                    <i class="fa-solid fa-download mr-2"></i> Export All Players
+                </button>
+            </div>
 
             <div class="flex flex-col w-full md:w-auto md:items-end space-y-2">
 
@@ -1159,6 +1171,7 @@
 
             const RECENT_GAMES_COUNT = 4;
             let dataTableInstance = null;
+            let fullPlayerData = [];
             let uniqueClubs = [];
             let selectedDeltaField = 'Selected Percentage Change 1W';
             const isMobileView = window.innerWidth <= 768;
@@ -1244,6 +1257,102 @@
             };
 
             $('#show-key-button').on('click', () => showModal('glossary'));
+
+            function csvEscape(value) {
+                if (value === null || value === undefined) return '';
+
+                let text;
+                if (typeof value === 'object') {
+                    if (Object.prototype.hasOwnProperty.call(value, 'points')) {
+                        text = value.points === null || value.points === undefined ? '' : String(value.points);
+                    } else {
+                        text = JSON.stringify(value);
+                    }
+                } else {
+                    text = String(value);
+                }
+
+                if (/[",\n\r]/.test(text)) {
+                    return '"' + text.replace(/"/g, '""') + '"';
+                }
+                return text;
+            }
+
+            function getExportColumns(rows) {
+                const preferred = [
+                    'Name', 'Club', 'Position', 'Value', 'Form Rating',
+                    'Total Points', 'Points Per Game', 'Selected Percentage',
+                    'Selected Percentage Change 1W',
+                    'Selected Percentage Change Since Last Global Price Change',
+                    'Next Fixture Rating', 'Following Fixture Rating',
+                    'Next Fixture Score', 'Following Fixture Score',
+                    'Next Fixture Rating Tooltip', 'Following Fixture Rating Tooltip',
+                    'Total Goals', 'Total Assists', 'Total Clean Sheet',
+                    'Total Games Played', 'Total Over 4 Gameweeks',
+                    'Points Per Million Over 4 Gameweeks', 'Recommendation'
+                ];
+
+                const allKeys = new Set();
+                rows.forEach(row => Object.keys(row || {}).forEach(key => allKeys.add(key)));
+
+                const gameweekKeys = Array.from(allKeys)
+                    .filter(key => /^\d+$/.test(key))
+                    .sort((a, b) => Number(b) - Number(a));
+
+                const remaining = Array.from(allKeys)
+                    .filter(key => !preferred.includes(key) && !gameweekKeys.includes(key))
+                    .sort((a, b) => a.localeCompare(b));
+
+                return [
+                    ...preferred.filter(key => allKeys.has(key)),
+                    ...gameweekKeys,
+                    ...remaining
+                ];
+            }
+
+            function downloadPlayersCsv(rows, filename) {
+                if (!rows || rows.length === 0) {
+                    alert('There are no players to export with the current selection.');
+                    return;
+                }
+
+                const columns = getExportColumns(rows);
+                const lines = [columns.map(csvEscape).join(',')];
+
+                rows.forEach(row => {
+                    lines.push(columns.map(column => csvEscape(row[column])).join(','));
+                });
+
+                const csv = '\uFEFF' + lines.join('\r\n');
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            }
+
+            $('#export-current-button').on('click', function () {
+                if (!dataTableInstance) return;
+
+                // DataTables returns exactly the rows surviving the active filters/search,
+                // in the table's current sort order, across all pagination pages.
+                const rows = dataTableInstance
+                    .rows({ search: 'applied', order: 'applied' })
+                    .data()
+                    .toArray();
+
+                const date = new Date().toISOString().slice(0, 10);
+                downloadPlayersCsv(rows, `nwsl-current-view-${date}.csv`);
+            });
+
+            $('#export-all-button').on('click', function () {
+                const date = new Date().toISOString().slice(0, 10);
+                downloadPlayersCsv(fullPlayerData, `nwsl-all-players-${date}.csv`);
+            });
             // --- END GLOBAL MODAL FUNCTIONS ---
 
             // --- PLAYER DETAILS FUNCTION ---
@@ -2516,6 +2625,7 @@
                         playerHistoryData = {}; 
                     }
 
+                    fullPlayerData = playerData.slice();
                     initializeTable(playerData);
                     updateDeltaReferenceNote(transformedMetadata);
                     
