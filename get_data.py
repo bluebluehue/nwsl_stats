@@ -532,12 +532,12 @@ def filter_asa_games_to_fantasy_schedule(
     """
     Keep only ASA xG games that correspond to completed Fantasy NWSL fixtures.
 
-    This matters because ASA's NWSL feed can contain matches/stages that are not
-    part of the Fantasy NWSL league schedule. Matching on home team, away team
-    and UTC calendar date keeps the strength model aligned to the exact
-    competition used by the fantasy game.
+    Matching is based on home team, away team and UTC calendar date.
+    Also prints diagnostics for any completed Fantasy fixtures that do not
+    match ASA, plus any ASA league games that do not match Fantasy.
     """
     fantasy_match_keys = set()
+    fantasy_game_lookup = {}
 
     for game in fantasy_games:
         home = str(
@@ -559,9 +559,13 @@ def filter_asa_games_to_fantasy_schedule(
         except Exception:
             continue
 
-        fantasy_match_keys.add((home, away, date_key))
+        key = (home, away, date_key)
+        fantasy_match_keys.add(key)
+        fantasy_game_lookup[key] = game
 
     matched_games = []
+    matched_keys = set()
+    asa_game_lookup = {}
 
     for game in asa_games:
         home = asa_team_code_map.get(game.get("home_team_id"))
@@ -573,13 +577,69 @@ def filter_asa_games_to_fantasy_schedule(
         date_text = str(game.get("date_time_utc", ""))
         date_key = date_text[:10]
 
-        if (home, away, date_key) in fantasy_match_keys:
+        key = (home, away, date_key)
+        asa_game_lookup[key] = game
+
+        if key in fantasy_match_keys:
             matched_games.append(game)
+            matched_keys.add(key)
 
     print(
         f"Matched {len(matched_games)} ASA xG games to "
         f"{len(fantasy_match_keys)} completed Fantasy NWSL fixtures."
     )
+
+    # ---------------------------------------------------------
+    # DIAGNOSTIC: Fantasy fixtures with no matching ASA xG game
+    # ---------------------------------------------------------
+    unmatched_fantasy = sorted(
+        fantasy_match_keys - matched_keys,
+        key=lambda x: x[2],
+    )
+
+    if unmatched_fantasy:
+        print()
+        print("=== UNMATCHED COMPLETED FANTASY FIXTURES ===")
+
+        for home, away, date_key in unmatched_fantasy:
+            game = fantasy_game_lookup.get((home, away, date_key), {})
+
+            home_score = game.get("home", {}).get("score")
+            away_score = game.get("away", {}).get("score")
+            stage = game.get("stage", {}).get("id")
+
+            print(
+                f"{date_key} | GW {stage} | "
+                f"{home} {home_score} - {away_score} {away}"
+            )
+    else:
+        print("All completed Fantasy fixtures matched ASA xG data.")
+
+    # ---------------------------------------------------------
+    # DIAGNOSTIC: ASA games with no matching Fantasy fixture
+    # ---------------------------------------------------------
+    unmatched_asa = sorted(
+        set(asa_game_lookup.keys()) - fantasy_match_keys,
+        key=lambda x: x[2],
+    )
+
+    if unmatched_asa:
+        print()
+        print("=== ASA GAMES NOT IN COMPLETED FANTASY SCHEDULE ===")
+
+        for home, away, date_key in unmatched_asa:
+            game = asa_game_lookup[(home, away, date_key)]
+
+            home_goals = game.get("home_goals")
+            away_goals = game.get("away_goals")
+            stage_name = game.get("stage_name", "")
+
+            print(
+                f"{date_key} | {home} {home_goals} - "
+                f"{away_goals} {away} | {stage_name}"
+            )
+
+    print()
 
     if not matched_games:
         raise ValueError(
