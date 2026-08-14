@@ -869,65 +869,11 @@
                             <option value="Selected Percentage Change Since Last Global Price Change">Since Last Price Change</option>
                         </select>
                     </div>
-            
-                    <div class="relative w-full sm:w-auto">
-                        <button id="fixture-score-dropdown-toggle"
-                            class="w-full sm:w-56 px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 flex justify-between items-center whitespace-nowrap"
-                            aria-expanded="false" aria-haspopup="true">
-                            <span id="fixture-score-display-text">Fixture Score (All)</span>
-                            <svg class="h-5 w-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
-            
-                        <div id="fixture-score-dropdown-menu"
-                            class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 hidden transform origin-top-right">
-                            <div class="py-1" role="menu" aria-orientation="vertical"
-                                aria-labelledby="fixture-score-dropdown-toggle">
-                                <div class="flex justify-between p-2 border-b border-gray-200">
-                                    <button id="select-all-fixture-scores"
-                                        class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 focus:outline-none">Select All</button>
-                                    <button id="unselect-all-fixture-scores"
-                                        class="text-xs font-semibold text-red-600 hover:text-red-800 focus:outline-none">Unselect All</button>
-                                </div>
-                                <div id="fixture-score-filter-list" class="p-2 space-y-1">
-                                    <div class="flex items-center">
-                                        <input id="fixture-score-1" name="fixture-score-filter" type="checkbox" value="1" checked
-                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
-                                        <label for="fixture-score-1" class="ml-3 text-sm text-gray-700">1</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fixture-score-2" name="fixture-score-filter" type="checkbox" value="2" checked
-                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
-                                        <label for="fixture-score-2" class="ml-3 text-sm text-gray-700">2</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fixture-score-3" name="fixture-score-filter" type="checkbox" value="3" checked
-                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
-                                        <label for="fixture-score-3" class="ml-3 text-sm text-gray-700">3</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fixture-score-4" name="fixture-score-filter" type="checkbox" value="4" checked
-                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
-                                        <label for="fixture-score-4" class="ml-3 text-sm text-gray-700">4</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fixture-score-5" name="fixture-score-filter" type="checkbox" value="5" checked
-                                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 fixture-score-filter">
-                                        <label for="fixture-score-5" class="ml-3 text-sm text-gray-700">5</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            
+
                 </div>
-            
-                <!-- Row 2 -->
-                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto md:justify-end items-end md:items-center">
+
+                <!-- Row 2: numeric thresholds -->
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto md:justify-end items-end md:items-center">
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <label for="max-value-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
                             Max Value:
@@ -936,6 +882,37 @@
                             class="w-full sm:w-24 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
                             placeholder="e.g. 7.5">
                     </div>
+
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="min-fixture-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Min Fix:
+                        </label>
+                        <input type="number" min="0" max="100" step="1" id="min-fixture-filter"
+                            class="w-full sm:w-20 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                            placeholder="e.g. 75">
+                    </div>
+
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="min-following-fixture-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Min Fix+1:
+                        </label>
+                        <input type="number" min="0" max="100" step="1" id="min-following-fixture-filter"
+                            class="w-full sm:w-20 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                            placeholder="e.g. 70">
+                    </div>
+
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="min-form-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Min Form:
+                        </label>
+                        <input type="number" min="0" max="100" step="1" id="min-form-filter"
+                            class="w-full sm:w-20 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                            placeholder="e.g. 80">
+                    </div>
+                </div>
+
+                <!-- Row 3: toggles -->
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 w-full md:w-auto md:justify-end items-end md:items-center">
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <input type="checkbox" id="visionary-filter"
                             class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
@@ -943,7 +920,7 @@
                             Visionaries Only
                         </label>
                     </div>
-            
+
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <input type="checkbox" id="hot-pick-filter"
                             class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
@@ -951,6 +928,16 @@
                             Hot Picks Only
                         </label>
                     </div>
+
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <input type="checkbox" id="recently-active-filter"
+                            class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
+                        <label for="recently-active-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap"
+                            title="Hide players who have not appeared in either of the two most recent gameweeks in the data.">
+                            Played in Last 2 GWs
+                        </label>
+                    </div>
+
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <input type="checkbox" id="my-team-filter"
                             class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
@@ -958,7 +945,7 @@
                             My Team Only
                         </label>
                     </div>
-                    
+
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <input type="checkbox" id="watchlist-filter"
                             class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
@@ -966,9 +953,8 @@
                             Watchlist Only
                         </label>
                     </div>
-                    <div id="delta-reference-note"
-                         class="text-sm text-gray-600 whitespace-nowrap ml-2">
-                    </div>
+
+                    <div id="delta-reference-note" class="text-sm text-gray-600 whitespace-nowrap ml-2"></div>
                 </div>
             
             </div>
@@ -1295,7 +1281,7 @@
                     { "label": "Points Per Game (PG)", "key": "Points Per Game", "unit": "", "calc": true }, 
                     { "label": "Selection Rate (S%)", "key": "Selected Percentage", "unit": "%", "raw_unit": true },
                     { "label": "Selection Change", "key": "Ownership Delta", "unit": "", "raw_unit": true, "delta": true },
-                    { "label": "Next Fixture Rating", "key": "Next Fixture Rating", "unit": "", "raw_unit": true },
+                    { "label": "Next Fixture Score (0-100)", "key": "Next Fixture Rating", "unit": "", "raw_unit": true },
                     <!-- { "label": "Recommendation", "key": "Recommendation", "unit": "", "raw_unit": true }, -->
                     { "label": "Goals Scored", "key": "Total Goals", "unit": "" },
                     { "label": "Assists", "key": "Total Assists", "unit": "" },
@@ -1694,54 +1680,46 @@
                 },
                 "Next Fixture Score": {
                     abbr: 'Fix',
-                    full: 'Next gameweek fixture rating (lower = easier). Color is based on the 1-5 fixture bucket.',
+                    full: 'Next gameweek fixture opportunity from 0-100 (higher = better). Uses ASA xG, recent form, opponent strength, venue, and gameweek volume.',
                     type: 'num',
                     render: function (data, type, row) {
                         const rating = row["Next Fixture Rating"];
-                        const scoreBucket = row["Next Fixture Score"];
-                
                         const numericRating = (rating === null || rating === undefined || rating === "")
                             ? null
                             : parseFloat(rating);
-                
-                        const numericBucket = (scoreBucket === null || scoreBucket === undefined || scoreBucket === "")
-                            ? null
-                            : parseInt(scoreBucket, 10);
-                
+
                         if (type !== 'display') {
-                            return numericRating === null || isNaN(numericRating) ? 999 : numericRating;
+                            return numericRating === null || isNaN(numericRating) ? -1 : numericRating;
                         }
-                
+
                         if (numericRating === null || isNaN(numericRating)) {
                             return '<span class="text-gray-400">-</span>';
                         }
-                
+
                         let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[48px] text-center';
-                
-                        if (numericBucket === 1) {
+
+                        if (numericRating >= 80) {
                             classes += ' bg-green-600 text-white';
-                        } else if (numericBucket === 2) {
+                        } else if (numericRating >= 65) {
                             classes += ' bg-green-200 text-green-900';
-                        } else if (numericBucket === 3) {
+                        } else if (numericRating >= 45) {
                             classes += ' bg-gray-200 text-gray-800';
-                        } else if (numericBucket === 4) {
+                        } else if (numericRating >= 25) {
                             classes += ' bg-red-200 text-red-900';
-                        } else if (numericBucket === 5) {
-                            classes += ' bg-red-600 text-white';
                         } else {
-                            classes += ' bg-gray-100 text-gray-500';
+                            classes += ' bg-red-600 text-white';
                         }
-                
+
                         const tooltipText = row["Next Fixture Details"] || "";
                         const tooltipHtml = tooltipText
                             .replace(/&/g, '&amp;')
                             .replace(/</g, '&lt;')
                             .replace(/>/g, '&gt;')
                             .replace(/\n/g, '<br>');
-                        
+
                         return `
                             <div class="custom-tooltip-container">
-                                <span class="${classes}">${numericRating.toFixed(2)}</span>
+                                <span class="${classes}">${numericRating.toFixed(1)}</span>
                                 <span class="custom-tooltip-content">${tooltipHtml}</span>
                             </div>
                         `;
@@ -1750,54 +1728,46 @@
                 },
                 "Following Fixture Score": {
                     abbr: 'Fix+1',
-                    full: 'Next gameweek fixture rating (lower = easier). Color is based on the 1-5 fixture bucket.',
+                    full: 'Following gameweek fixture opportunity from 0-100 (higher = better). Uses ASA xG, recent form, opponent strength, venue, and gameweek volume.',
                     type: 'num',
                     render: function (data, type, row) {
                         const rating = row["Following Fixture Rating"];
-                        const scoreBucket = row["Following Fixture Score"];
-                
                         const numericRating = (rating === null || rating === undefined || rating === "")
                             ? null
                             : parseFloat(rating);
-                
-                        const numericBucket = (scoreBucket === null || scoreBucket === undefined || scoreBucket === "")
-                            ? null
-                            : parseInt(scoreBucket, 10);
-                
+
                         if (type !== 'display') {
-                            return numericRating === null || isNaN(numericRating) ? 999 : numericRating;
+                            return numericRating === null || isNaN(numericRating) ? -1 : numericRating;
                         }
-                
+
                         if (numericRating === null || isNaN(numericRating)) {
                             return '<span class="text-gray-400">-</span>';
                         }
-                
+
                         let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[48px] text-center';
-                
-                        if (numericBucket === 1) {
+
+                        if (numericRating >= 80) {
                             classes += ' bg-green-600 text-white';
-                        } else if (numericBucket === 2) {
+                        } else if (numericRating >= 65) {
                             classes += ' bg-green-200 text-green-900';
-                        } else if (numericBucket === 3) {
+                        } else if (numericRating >= 45) {
                             classes += ' bg-gray-200 text-gray-800';
-                        } else if (numericBucket === 4) {
+                        } else if (numericRating >= 25) {
                             classes += ' bg-red-200 text-red-900';
-                        } else if (numericBucket === 5) {
-                            classes += ' bg-red-600 text-white';
                         } else {
-                            classes += ' bg-gray-100 text-gray-500';
+                            classes += ' bg-red-600 text-white';
                         }
-                
+
                         const tooltipText = row["Following Fixture Details"] || "";
                         const tooltipHtml = tooltipText
                             .replace(/&/g, '&amp;')
                             .replace(/</g, '&lt;')
                             .replace(/>/g, '&gt;')
                             .replace(/\n/g, '<br>');
-                        
+
                         return `
                             <div class="custom-tooltip-container">
-                                <span class="${classes}">${numericRating.toFixed(2)}</span>
+                                <span class="${classes}">${numericRating.toFixed(1)}</span>
                                 <span class="custom-tooltip-content">${tooltipHtml}</span>
                             </div>
                         `;
@@ -1805,7 +1775,6 @@
                     className: 'dt-center'
                 },
 
-                
                 "Form Rating": {
                     abbr: 'Form',
                     full: 'Recent form rating from 0-100, based on last 4 games: recent points, consistency, and bonus involvement',
@@ -2118,30 +2087,9 @@
                 $('#club-display-text').text(text);
             }
 
-            function updateFixtureScoreDisplayText() {
-                const selectedCount = $('#fixture-score-filter-list input[type="checkbox"]:checked').length;
-                const totalCount = $('#fixture-score-filter-list input[type="checkbox"]').length;
-            
-                let text = "Fixture Score (None)";
-                if (selectedCount === totalCount) {
-                    text = "Fixture Score (All)";
-                } else if (selectedCount > 0) {
-                    text = `Fixture Score (${selectedCount}/${totalCount})`;
-                }
-            
-                $('#fixture-score-display-text').text(text);
-            }
-
             function toggleClubDropdown() {
                 $('#club-dropdown-menu').toggleClass('hidden');
                 $('#club-dropdown-toggle').attr('aria-expanded', function (_, attr) {
-                    return attr === 'true' ? 'false' : 'true';
-                });
-            }
-
-            function toggleFixtureScoreDropdown() {
-                $('#fixture-score-dropdown-menu').toggleClass('hidden');
-                $('#fixture-score-dropdown-toggle').attr('aria-expanded', function (_, attr) {
                     return attr === 'true' ? 'false' : 'true';
                 });
             }
@@ -2175,98 +2123,112 @@
 
             $.fn.dataTable.ext.search.push(
                 function (settings, data, dataIndex, rowData) {
-                    if (dataTableInstance && settings.nTable.id !== dataTableInstance.table().node().id) {
+                    if (settings.nTable.id !== 'myTable') {
                         return true;
                     }
 
+                    // Maximum player value
                     const maxValueInput = parseFloat($('#max-value-filter').val());
                     const playerValue = parseFloat(rowData["Value"]);
-                    const isValueValid = isNaN(maxValueInput) || isNaN(playerValue) || playerValue <= maxValueInput;
-                    if (!isValueValid) { return false; }
+                    if (!isNaN(maxValueInput) && !isNaN(playerValue) && playerValue > maxValueInput) {
+                        return false;
+                    }
 
+                    // Minimum next-GW fixture opportunity (0-100, higher is better)
+                    const minFixture = parseFloat($('#min-fixture-filter').val());
+                    const nextFixture = parseFloat(rowData["Next Fixture Rating"]);
+                    if (!isNaN(minFixture)) {
+                        if (isNaN(nextFixture) || nextFixture < minFixture) {
+                            return false;
+                        }
+                    }
+
+                    // Minimum following-GW fixture opportunity
+                    const minFollowingFixture = parseFloat($('#min-following-fixture-filter').val());
+                    const followingFixture = parseFloat(rowData["Following Fixture Rating"]);
+                    if (!isNaN(minFollowingFixture)) {
+                        if (isNaN(followingFixture) || followingFixture < minFollowingFixture) {
+                            return false;
+                        }
+                    }
+
+                    // Minimum player form rating
+                    const minForm = parseFloat($('#min-form-filter').val());
+                    const playerForm = parseFloat(rowData["Form Rating"]);
+                    if (!isNaN(minForm)) {
+                        if (isNaN(playerForm) || playerForm < minForm) {
+                            return false;
+                        }
+                    }
+
+                    // Position
                     const selectedPosition = $('#position-filter').val();
-                    const playerPosition = rowData["Position"];
-                    const isPositionValid = selectedPosition === "" || playerPosition === selectedPosition;
-                    if (!isPositionValid) { return false; }
+                    if (selectedPosition && rowData["Position"] !== selectedPosition) {
+                        return false;
+                    }
 
+                    // Clubs
                     const selectedClubs = $('#club-filter-list input[type="checkbox"]:checked').map(function () {
                         return this.value;
                     }).get();
+                    if (selectedClubs.length === 0 || !selectedClubs.includes(rowData["Club"])) {
+                        return false;
+                    }
 
-                    const playerClub = rowData["Club"];
-                    const isClubValid = selectedClubs.length === 0 ? false : selectedClubs.includes(playerClub);
-                    if (!isClubValid) { return false; }
-
+                    // Visionary / hot-pick filters
                     const visionaryChecked = $('#visionary-filter').is(':checked');
-                    const isVisionary = rowData.Visionary === true;
-
+                    const isVisionary = rowData.Visionary === true || rowData.Visionary === "true";
                     if (visionaryChecked && !isVisionary) {
                         return false;
                     }
+
                     const hotPickChecked = $('#hot-pick-filter').is(':checked');
                     const isHotPick = rowData["Hot Pick"] === true || rowData["Hot Pick"] === "true";
-            
                     if (hotPickChecked && !isHotPick) {
                         return false;
                     }
 
-                    const myTeamChecked = $('#my-team-filter').is(':checked');
-                    const watchlistChecked = $('#watchlist-filter').is(':checked');
-                    
-                    const isMyTeam = isMyTeamPlayer(rowData.Name);
-                    const isWatchlist = isWatchlistPlayer(rowData.Name);
-                    
-                    if (myTeamChecked && watchlistChecked) {
-                        if (!isMyTeam && !isWatchlist) {
+                    // Hide stale bench/injured players: require an appearance in at least
+                    // one of the two most recent gameweeks represented in the dataset.
+                    if ($('#recently-active-filter').is(':checked')) {
+                        const recentGwKeys = Object.keys(rowData)
+                            .filter(key => /^\d+$/.test(key))
+                            .map(Number)
+                            .sort((a, b) => b - a)
+                            .slice(0, 2)
+                            .map(String);
+
+                        const playedRecently = recentGwKeys.some(gwKey => {
+                            const gwValue = rowData[gwKey];
+                            return (
+                                gwValue &&
+                                typeof gwValue === 'object' &&
+                                Object.prototype.hasOwnProperty.call(gwValue, 'points')
+                            );
+                        });
+
+                        if (!playedRecently) {
                             return false;
                         }
+                    }
+
+                    // My Team / Watchlist
+                    const myTeamChecked = $('#my-team-filter').is(':checked');
+                    const watchlistChecked = $('#watchlist-filter').is(':checked');
+                    const isMyTeam = isMyTeamPlayer(rowData.Name);
+                    const isWatchlist = isWatchlistPlayer(rowData.Name);
+
+                    if (myTeamChecked && watchlistChecked) {
+                        if (!isMyTeam && !isWatchlist) return false;
                     } else if (myTeamChecked && !isMyTeam) {
                         return false;
                     } else if (watchlistChecked && !isWatchlist) {
                         return false;
                     }
 
-                    const selectedFixtureScores = $('.fixture-score-filter:checked').map(function () {
-                        return parseInt(this.value, 10);
-                    }).get();
-                    
-                    const allFixtureScoresSelected = selectedFixtureScores.length === 5;
-                    
-                    const playerFixtureScore = parseInt(rowData["Next Fixture Score"], 10);
-                    
-                    if (!allFixtureScoresSelected) {
-                        if (isNaN(playerFixtureScore) || !selectedFixtureScores.includes(playerFixtureScore)) {
-                            return false;
-                        }
-                    }
-            
                     return true;
                 }
             );
-
-            $.fn.dataTable.ext.search.push(
-                function (settings, data, dataIndex) {
-                    if (settings.nTable.id !== 'myTable') {
-                        return true;
-                    }
-
-                    const rowData = settings.aoData[dataIndex]._aData;
-                    const showVisionariesOnly = $('#visionary-filter').prop('checked');
-                    const isVisionary = rowData.Visionary === true;
-
-                    if (showVisionariesOnly) {
-                        return isVisionary;
-                    } else {
-                        return true;
-                    }
-                }
-            );
-
-            $('#visionary-filter').on('change', function () {
-                if (dataTableInstance) {
-                    dataTableInstance.draw();
-                }
-            });
 
             // --- initializeTable (No Change) ---
             function initializeTable(data) {
@@ -2279,7 +2241,7 @@
                 $('#myTable').removeClass('hidden');
 
                 populateClubFilters(data);
-                updateFixtureScoreDisplayText();
+                
 
                 let columns = [];
                 let headerRow = '<tr>';
@@ -2367,7 +2329,7 @@
                     pageLength: 15,
 
                     columnDefs: [
-                        { orderSequence: ['asc', 'desc'], targets: '_all' }
+                        { orderSequence: ['desc', 'asc'], targets: '_all' }
                     ],
 
                     language: {
@@ -2440,53 +2402,17 @@
                     });
                 });
                 
-                $('#visionary-filter').on('change', function () {
+                $('#visionary-filter, #hot-pick-filter, #recently-active-filter, #my-team-filter, #watchlist-filter').on('change', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
                 });
 
-                $('#my-team-filter, #watchlist-filter').on('change', function () {
+                $('#max-value-filter, #min-fixture-filter, #min-following-fixture-filter, #min-form-filter, #position-filter').on('keyup change input', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
                 });
-
-                $('#hot-pick-filter').on('change', function () {
-                    if (dataTableInstance) {
-                        dataTableInstance.draw();
-                    }
-                });
-
-                $('#fixture-score-filter-list').on('change', '.fixture-score-filter', function () {
-                    updateFixtureScoreDisplayText();
-                    if (dataTableInstance) {
-                        dataTableInstance.draw();
-                    }
-                });
-                
-                $('#select-all-fixture-scores, #unselect-all-fixture-scores').on('click', function () {
-                    const isSelectAll = this.id === 'select-all-fixture-scores';
-                    $('#fixture-score-filter-list input[type="checkbox"]').prop('checked', isSelectAll).trigger('change');
-                });      
-                
-                $('#max-value-filter, #position-filter').on('keyup change', function () {
-                    if (dataTableInstance) {
-                        dataTableInstance.draw();
-                    }
-                });
-                $('#delta-mode-filter').on('change', function () {
-                    selectedDeltaField = $(this).val();
-                
-                    if (window.transformedMetadataForUI) {
-                        updateDeltaReferenceNote(window.transformedMetadataForUI);
-                    }
-                
-                    if (dataTableInstance) {
-                        dataTableInstance.rows().invalidate().draw(false);
-                    }
-                });
-
                 $('#delta-mode-filter').on('change', function () {
                     selectedDeltaField = $(this).val();
                 
@@ -2504,24 +2430,12 @@
                     toggleClubDropdown();
                 });
 
-                $('#fixture-score-dropdown-toggle').on('click', function (e) {
-                    e.stopPropagation();
-                    toggleFixtureScoreDropdown();
-                });
-
                 $(document).on('click', function (e) {
                     if (!$('#club-dropdown-menu').hasClass('hidden') &&
                         !$(e.target).closest('#club-dropdown-menu').length &&
                         !$(e.target).closest('#club-dropdown-toggle').length) {
                         $('#club-dropdown-menu').addClass('hidden');
                         $('#club-dropdown-toggle').attr('aria-expanded', 'false');
-                    }
-                
-                    if (!$('#fixture-score-dropdown-menu').hasClass('hidden') &&
-                        !$(e.target).closest('#fixture-score-dropdown-menu').length &&
-                        !$(e.target).closest('#fixture-score-dropdown-toggle').length) {
-                        $('#fixture-score-dropdown-menu').addClass('hidden');
-                        $('#fixture-score-dropdown-toggle').attr('aria-expanded', 'false');
                     }
                 });
 
