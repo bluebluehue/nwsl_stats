@@ -532,111 +532,148 @@ def filter_asa_games_to_fantasy_schedule(
     """
     Keep only ASA xG games that correspond to completed Fantasy NWSL fixtures.
 
-    Matching is based on home team, away team and UTC calendar date.
-    Also prints diagnostics for any completed Fantasy fixtures that do not
-    match ASA, plus any ASA league games that do not match Fantasy.
+    Matching rules:
+    - same home team
+    - same away team
+    - date may differ by up to 1 calendar day
+
+    This handles provider timezone/date discrepancies while still excluding
+    non-fantasy competitions such as the NWSL Challenge Cup.
     """
-    fantasy_match_keys = set()
-    fantasy_game_lookup = {}
+
+    fantasy_games_prepared = []
 
     for game in fantasy_games:
         home = str(
             game.get("home", {}).get("party", {}).get("id", "")
         ).upper()
+
         away = str(
             game.get("away", {}).get("party", {}).get("id", "")
         ).upper()
+
         scheduled_at = game.get("scheduledAt")
         has_started = game.get("hasStarted")
 
-        if not home or not away or not scheduled_at or has_started is not True:
+        if not home or not away or not scheduled_at:
+            continue
+
+        if has_started is not True:
             continue
 
         try:
-            date_key = datetime.fromisoformat(
+            fantasy_date = datetime.fromisoformat(
                 scheduled_at.replace("Z", "+00:00")
-            ).date().isoformat()
+            ).date()
         except Exception:
             continue
 
-        key = (home, away, date_key)
-        fantasy_match_keys.add(key)
-        fantasy_game_lookup[key] = game
+        fantasy_games_prepared.append({
+            "home": home,
+            "away": away,
+            "date": fantasy_date,
+            "game": game,
+        })
 
     matched_games = []
-    matched_keys = set()
-    asa_game_lookup = {}
+    matched_fantasy_indexes = set()
 
-    for game in asa_games:
-        home = asa_team_code_map.get(game.get("home_team_id"))
-        away = asa_team_code_map.get(game.get("away_team_id"))
+    asa_unmatched = []
+
+    for asa_game in asa_games:
+        home = asa_team_code_map.get(asa_game.get("home_team_id"))
+        away = asa_team_code_map.get(asa_game.get("away_team_id"))
 
         if not home or not away:
             continue
 
-        date_text = str(game.get("date_time_utc", ""))
-        date_key = date_text[:10]
+        try:
+            asa_date = datetime.strptime(
+                str(asa_game.get("date_time_utc", "")).replace(" UTC", ""),
+                "%Y-%m-%d %H:%M:%S",
+            ).date()
+        except Exception:
+            continue
 
-        key = (home, away, date_key)
-        asa_game_lookup[key] = game
+        best_match_index = None
+        best_date_difference = None
 
-        if key in fantasy_match_keys:
-            matched_games.append(game)
-            matched_keys.add(key)
+        for index, fantasy_game in enumerate(fantasy_games_prepared):
+
+            if index in matched_fantasy_indexes:
+                continue
+
+            if fantasy_game["home"] != home:
+                continue
+
+            if fantasy_game["away"] != away:
+                continue
+
+            date_difference = abs(
+                (fantasy_game["date"] - asa_date).days
+            )
+
+            if date_difference > 1:
+                continue
+
+            if (
+                best_date_difference is None
+                or date_difference < best_date_difference
+            ):
+                best_match_index = index
+                best_date_difference = date_difference
+
+        if best_match_index is not None:
+            matched_games.append(asa_game)
+            matched_fantasy_indexes.add(best_match_index)
+
+        else:
+            asa_unmatched.append(asa_game)
 
     print(
         f"Matched {len(matched_games)} ASA xG games to "
-        f"{len(fantasy_match_keys)} completed Fantasy NWSL fixtures."
+        f"{len(fantasy_games_prepared)} completed Fantasy NWSL fixtures."
     )
 
-    # ---------------------------------------------------------
-    # DIAGNOSTIC: Fantasy fixtures with no matching ASA xG game
-    # ---------------------------------------------------------
-    unmatched_fantasy = sorted(
-        fantasy_match_keys - matched_keys,
-        key=lambda x: x[2],
-    )
+    unmatched_fantasy = [
+        fantasy_game
+        for index, fantasy_game in enumerate(fantasy_games_prepared)
+        if index not in matched_fantasy_indexes
+    ]
 
     if unmatched_fantasy:
         print()
         print("=== UNMATCHED COMPLETED FANTASY FIXTURES ===")
 
-        for home, away, date_key in unmatched_fantasy:
-            game = fantasy_game_lookup.get((home, away, date_key), {})
+        for item in unmatched_fantasy:
+            game = item["game"]
 
             home_score = game.get("home", {}).get("score")
             away_score = game.get("away", {}).get("score")
             stage = game.get("stage", {}).get("id")
 
             print(
-                f"{date_key} | GW {stage} | "
-                f"{home} {home_score} - {away_score} {away}"
+                f"{item['date']} | GW {stage} | "
+                f"{item['home']} {home_score} - "
+                f"{away_score} {item['away']}"
             )
     else:
         print("All completed Fantasy fixtures matched ASA xG data.")
 
-    # ---------------------------------------------------------
-    # DIAGNOSTIC: ASA games with no matching Fantasy fixture
-    # ---------------------------------------------------------
-    unmatched_asa = sorted(
-        set(asa_game_lookup.keys()) - fantasy_match_keys,
-        key=lambda x: x[2],
-    )
-
-    if unmatched_asa:
+    if asa_unmatched:
         print()
         print("=== ASA GAMES NOT IN COMPLETED FANTASY SCHEDULE ===")
 
-        for home, away, date_key in unmatched_asa:
-            game = asa_game_lookup[(home, away, date_key)]
+        for game in asa_unmatched:
+            home = asa_team_code_map.get(game.get("home_team_id"), "???")
+            away = asa_team_code_map.get(game.get("away_team_id"), "???")
 
-            home_goals = game.get("home_goals")
-            away_goals = game.get("away_goals")
-            stage_name = game.get("stage_name", "")
+            date_text = str(game.get("date_time_utc", ""))[:10]
 
             print(
-                f"{date_key} | {home} {home_goals} - "
-                f"{away_goals} {away} | {stage_name}"
+                f"{date_text} | "
+                f"{home} {game.get('home_goals')} - "
+                f"{game.get('away_goals')} {away}"
             )
 
     print()
