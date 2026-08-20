@@ -1669,6 +1669,43 @@ def apply_recent_play_penalty(form_rating, last_played_gw, latest_gw):
     else:
         return 0
 
+# --- POSITION-SPECIFIC OVERALL / DECISION RATING ---
+DECISION_WEIGHTS = {
+    "GK":  {"fixture": 0.85, "form": 0.15},
+    "DEF": {"fixture": 0.65, "form": 0.35},
+    "MID": {"fixture": 0.35, "form": 0.65},
+    "FOR": {"fixture": 0.25, "form": 0.75},
+}
+
+def calculate_decision_rating(position, form_rating, fixture_rating):
+    """
+    Combine current Form Rating and next-GW Fixture Rating into a 0-100
+    position-specific Decision Rating.
+
+    Weighting from the historical backtest:
+      GK  = 85% fixture / 15% form
+      DEF = 65% fixture / 35% form
+      MID = 35% fixture / 65% form
+      FOR = 25% fixture / 75% form
+
+    A player with no upcoming fixture receives a fixture component of 0.
+    DGW value is already contained in Fixture Rating, so it is not added again.
+    """
+    weights = DECISION_WEIGHTS.get(position, {"fixture": 0.50, "form": 0.50})
+
+    try:
+        form = float(form_rating or 0)
+    except (TypeError, ValueError):
+        form = 0.0
+
+    try:
+        fixture = float(fixture_rating) if fixture_rating is not None else 0.0
+    except (TypeError, ValueError):
+        fixture = 0.0
+
+    rating = (weights["fixture"] * fixture) + (weights["form"] * form)
+    return round(clamp(rating, 0, 100), 1)
+
 def is_hot_pick(recent_points):
     """
     Returns True if the player scored more than 4 points
@@ -2185,6 +2222,14 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             player["Following Fixture Score"] = following_fixture_score
             player["Following Fixture Details"] = following_fixture_details
 
+            # Overall / Decision Rating: position-specific blend of current form
+            # and the NEXT gameweek fixture opportunity.
+            player["Decision Rating"] = calculate_decision_rating(
+                player.get("Position"),
+                player.get("Form Rating"),
+                next_fixture_rating,
+            )
+
         output_payload = {
             "metadata": {
                 "last_global_price_change_date": (
@@ -2200,6 +2245,11 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "home_factor": round(fixture_model_context["home_factor"], 4),
                     "away_factor": round(fixture_model_context["away_factor"], 4),
                     "league_avg_xg": round(fixture_model_context["league_avg_xg"], 4),
+                },
+                "decision_rating": {
+                    "version": "v1-position-specific",
+                    "weights": DECISION_WEIGHTS,
+                    "uses": ["Form Rating", "Next Fixture Rating"],
                 },
             },
             "players": combined_data
