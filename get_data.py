@@ -1829,106 +1829,234 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         # Initialize stats
         gw_data_map = {}
+        gw_visionary_bonus_map = defaultdict(int)
+
         gw_points_total_4gw = 0
         gw_games_played_4gw = 0
         recent_points = []
         recent_bonus_games = 0
+        recent_game_records = []
+
         last_played_gw = None
         bonus_games_count = 0
         overall_stats = defaultdict(int)
         overall_games_played = 0
-        total_points = 0  # Will calculate by summing all game points
 
-        # Collect all games
+        # We calculate Total Points ourselves from:
+        #   individual game points
+        #   + any gameweek-level Visionary bonus in performanceV2.extras
+        total_points = 0
+
+        # ---------------------------------------------------------
+        # Collect games AND gameweek-level Visionary extras
+        # ---------------------------------------------------------
         all_games = []
+
         for performance in player.get("performanceV2", []):
-            for game_data in performance.get("games", []):
+
+            performance_games = performance.get("games", []) or []
+
+            # Preserve all individual games for the existing processing below.
+            for game_data in performance_games:
                 all_games.append(game_data)
-        # TEMP DEBUG: inspect Fantasy NWSL "extras" contributions.
-        # This may contain Visionary bonus points that are not included
-        # in the individual game point totals.
-        if name == "Sally Menti":
-            print("\n=== SALLY MENTI PERFORMANCE EXTRAS ===")
-            for performance in player.get("performanceV2", []):
-                print(json.dumps(
-                    performance.get("extras", {}),
-                    indent=2
-                ))
-            print("=== END SALLY MENTI EXTRAS ===\n")
-        
+
+            # A performance entry represents a gameweek. In a DGW it can contain
+            # multiple games, but they should all carry the same stage/gameweek ID.
+            performance_gws = set()
+
+            for game_data in performance_games:
+                gw_value = (
+                    game_data
+                    .get("game", {})
+                    .get("stage", {})
+                    .get("id")
+                )
+
+                if gw_value is not None and str(gw_value).strip() != "":
+                    performance_gws.add(str(gw_value))
+
+            # Extras are gameweek-level points such as the +3 Visionary award.
+            visionary_extra_points = 0
+
+            extras = performance.get("extras", {}) or {}
+
+            for contrib in extras.get("contributions", []) or []:
+                if contrib.get("contribution") == "Visionary":
+                    quantity = contrib.get("quantity", 1) or 0
+                    individual_points = contrib.get("individualPoints", 0) or 0
+
+                    visionary_extra_points += quantity * individual_points
+
+            if visionary_extra_points:
+                if len(performance_gws) == 1:
+                    performance_gw = next(iter(performance_gws))
+                    gw_visionary_bonus_map[performance_gw] += visionary_extra_points
+
+                else:
+                    print(
+                        f"WARNING: Could not assign Visionary bonus for {name}. "
+                        f"Found gameweeks={sorted(performance_gws)} "
+                        f"and bonus={visionary_extra_points}."
+                    )
+
         # Sort games by gameweek (most recent first)
         sorted_games = sorted(
             all_games,
-            key=lambda g: int(g.get("game", {}).get("stage", {}).get("id", 0)),
+            key=lambda g: int(
+                g.get("game", {}).get("stage", {}).get("id", 0)
+            ),
             reverse=True,
         )
 
-        # Process each game
+        # ---------------------------------------------------------
+        # Process individual games
+        # ---------------------------------------------------------
         for i, game_data in enumerate(sorted_games):
+
             game = game_data.get("game", {})
-            gw = game.get("stage", {}).get("id", "")
-            points = game_data.get("points", 0)
+            gw = str(game.get("stage", {}).get("id", ""))
+            points = game_data.get("points", 0) or 0
             got_bonus_this_game = False
 
             try:
                 gw_int = int(gw)
+
                 if last_played_gw is None or gw_int > last_played_gw:
                     last_played_gw = gw_int
+
             except (ValueError, TypeError):
                 pass
 
             if not gw:
                 continue
 
-            # Create tooltip
+            # Create normal match tooltip.
             tooltip_str = create_gw_tooltip(game_data, club)
 
-            # Store gameweek data
-            # If a player has multiple games in the same gameweek, add the points together
-            # and keep both fixture tooltips.
+            # Store BASE game points first.
+            # If this is a DGW, combine the individual match scores.
             if gw in gw_data_map:
                 gw_data_map[gw]["points"] += points
-                gw_data_map[gw]["tooltip"] += "\n\n---\n\n" + tooltip_str
+                gw_data_map[gw]["tooltip"] += (
+                    "\n\n---\n\n" + tooltip_str
+                )
             else:
-                gw_data_map[gw] = {"points": points, "tooltip": tooltip_str}
-    
-            # Calculate total points by summing all game points
+                gw_data_map[gw] = {
+                    "points": points,
+                    "base_points": points,
+                    "visionary_bonus": 0,
+                    "tooltip": tooltip_str,
+                }
+
+            # If it became a DGW, keep base_points synced to the accumulated
+            # individual-game total.
+            gw_data_map[gw]["base_points"] = gw_data_map[gw]["points"]
+
+            # Base game points count toward season total now.
+            # Visionary extras are added once per gameweek below.
             total_points += points
 
-            # Accumulate contribution stats
+            # ---------------------------------------------------------
+            # Accumulate ordinary game contribution stats
+            # ---------------------------------------------------------
             for contrib in game_data.get("contributions", []):
+
                 contrib_type = contrib["contribution"]
 
-                if contrib_type == "Bonus" and contrib.get("quantity", 0) > 0:
+                if (
+                    contrib_type == "Bonus"
+                    and contrib.get("quantity", 0) > 0
+                ):
                     got_bonus_this_game = True
-    
+
                 target_stat_key = STAT_ACCUMULATORS.get(contrib_type)
 
                 if target_stat_key:
+
                     if contrib_type == "ConcededGoals":
-                        # For conceded goals, accumulate total points (quantity * individualPoints)
-                        # This matches the old format: Total Conceeded stores negative points
                         quantity = contrib.get("quantity", 1)
-                        individual_pts = contrib.get("individualPoints", 0)
-                        overall_stats[target_stat_key] += quantity * individual_pts
+                        individual_pts = contrib.get(
+                            "individualPoints",
+                            0
+                        )
+
+                        overall_stats[target_stat_key] += (
+                            quantity * individual_pts
+                        )
+
                     else:
-                        # For everything else, accumulate the quantity
-                        overall_stats[target_stat_key] += contrib.get("quantity", 1)
+                        overall_stats[target_stat_key] += (
+                            contrib.get("quantity", 1)
+                        )
 
             if got_bonus_this_game:
                 bonus_games_count += 1
 
-            # Calculate recent stats from the last 4 games
-            # This must stay INSIDE the per-game loop, after contributions are processed.
+            # Save the last N individual games now.
+            # We apply a Visionary award to these records AFTER processing
+            # all games so the once-per-GW bonus cannot be double-counted
+            # during a DGW.
             if i < recent_games_count:
-                gw_points_total_4gw += points
-                gw_games_played_4gw += 1
-                recent_points.append(points)
-
-                if got_bonus_this_game:
-                    recent_bonus_games += 1
+                recent_game_records.append({
+                    "gw": gw,
+                    "points": points,
+                    "got_bonus": got_bonus_this_game,
+                })
 
             overall_games_played += 1
+
+        # ---------------------------------------------------------
+        # Apply gameweek-level Visionary bonuses
+        # ---------------------------------------------------------
+        for gw, visionary_bonus in gw_visionary_bonus_map.items():
+
+            if gw not in gw_data_map:
+                print(
+                    f"WARNING: {name} has a Visionary bonus in GW{gw} "
+                    f"but no matching game data."
+                )
+                continue
+
+            base_points = gw_data_map[gw]["points"]
+
+            gw_data_map[gw]["base_points"] = base_points
+            gw_data_map[gw]["visionary_bonus"] = visionary_bonus
+            gw_data_map[gw]["points"] = base_points + visionary_bonus
+
+            gw_data_map[gw]["tooltip"] += (
+                f"\n\nVisionary bonus: +{visionary_bonus} pts"
+            )
+
+            # Visionary is not contained in the individual game's points,
+            # so add it to the season total here exactly once.
+            total_points += visionary_bonus
+
+        # ---------------------------------------------------------
+        # Build recent-form points using TRUE fantasy scores
+        # ---------------------------------------------------------
+        visionary_bonus_used_for_recent_gw = set()
+
+        for record in recent_game_records:
+
+            adjusted_points = record["points"]
+            record_gw = record["gw"]
+
+            # A Visionary award is once per gameweek, even in a DGW.
+            # Attach it to only one of the recent game records for that GW.
+            if (
+                record_gw in gw_visionary_bonus_map
+                and record_gw not in visionary_bonus_used_for_recent_gw
+            ):
+                adjusted_points += gw_visionary_bonus_map[record_gw]
+                visionary_bonus_used_for_recent_gw.add(record_gw)
+
+            recent_points.append(adjusted_points)
+
+            if record["got_bonus"]:
+                recent_bonus_games += 1
+
+        gw_points_total_4gw = sum(recent_points)
+        gw_games_played_4gw = len(recent_points)
         
         # Calculate derived metrics
         ppm_total = total_points / value if value > 0 else 0.0
