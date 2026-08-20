@@ -1844,6 +1844,17 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         for performance in player.get("performanceV2", []):
             for game_data in performance.get("games", []):
                 all_games.append(game_data)
+        # TEMP DEBUG: inspect Fantasy NWSL "extras" contributions.
+        # This may contain Visionary bonus points that are not included
+        # in the individual game point totals.
+        if name == "Sally Menti":
+            print("\n=== SALLY MENTI PERFORMANCE EXTRAS ===")
+            for performance in player.get("performanceV2", []):
+                print(json.dumps(
+                    performance.get("extras", {}),
+                    indent=2
+                ))
+            print("=== END SALLY MENTI EXTRAS ===\n")
         
         # Sort games by gameweek (most recent first)
         sorted_games = sorted(
