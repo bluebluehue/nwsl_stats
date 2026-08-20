@@ -1,0 +1,33 @@
+name: Backtest NWSL Fixture Model
+
+on:
+  workflow_dispatch:
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run historical backtest
+        run: python backtest_fixture_model.py
+
+      - name: Upload backtest results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nwsl-backtest-results
+          path: |
+            backtest_player_weeks.csv
+            backtest_summary.json
+            backtest_combined_weight_grid.csv
+            backtest_model_variants.csv
