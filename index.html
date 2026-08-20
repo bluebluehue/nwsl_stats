@@ -896,6 +896,15 @@
                     </div>
 
                     <div class="flex items-center space-x-2 w-full sm:w-auto">
+                        <label for="min-decision-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
+                            Min Decision:
+                        </label>
+                        <input type="number" min="0" max="100" step="1" id="min-decision-filter"
+                            class="w-full sm:w-20 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                            placeholder="e.g. 80">
+                    </div>
+
+                    <div class="flex items-center space-x-2 w-full sm:w-auto">
                         <label for="min-fixture-filter" class="text-sm font-medium text-gray-700 whitespace-nowrap">
                             Min Fix:
                         </label>
@@ -1280,7 +1289,7 @@
 
             function getExportColumns(rows) {
                 const preferred = [
-                    'Name', 'Club', 'Position', 'Value', 'Form Rating',
+                    'Name', 'Club', 'Position', 'Value', 'Decision Rating', 'Form Rating',
                     'Total Points', 'Points Per Game', 'Selected Percentage',
                     'Selected Percentage Change 1W',
                     'Selected Percentage Change Since Last Global Price Change',
@@ -1787,6 +1796,58 @@
                         return data;
                     }
                 },
+                "Decision Rating": {
+                    abbr: 'Decision',
+                    full: 'Overall Decision Rating (0-100). Position-specific blend of next-GW fixture opportunity and recent form: GK 85/15, DEF 65/35, MID 35/65, FWD 25/75.',
+                    type: 'num',
+                    render: function (data, type, row) {
+                        const numericRating = (data === null || data === undefined || data === "")
+                            ? null
+                            : parseFloat(data);
+
+                        if (type !== 'display') {
+                            return numericRating === null || isNaN(numericRating) ? -1 : numericRating;
+                        }
+
+                        if (numericRating === null || isNaN(numericRating)) {
+                            return '<span class="text-gray-400">-</span>';
+                        }
+
+                        let classes = 'px-2 py-1 rounded-full text-xs font-semibold whitespace-nowrap inline-block min-w-[48px] text-center';
+                        if (numericRating >= 80) {
+                            classes += ' bg-green-600 text-white';
+                        } else if (numericRating >= 65) {
+                            classes += ' bg-green-200 text-green-900';
+                        } else if (numericRating >= 50) {
+                            classes += ' bg-gray-200 text-gray-800';
+                        } else if (numericRating >= 35) {
+                            classes += ' bg-red-200 text-red-900';
+                        } else {
+                            classes += ' bg-red-600 text-white';
+                        }
+
+                        const pos = row["Position"] || '';
+                        const form = parseFloat(row["Form Rating"] || 0);
+                        const fixture = parseFloat(row["Next Fixture Rating"] || 0);
+                        const weights = {
+                            GK: [85, 15],
+                            DEF: [65, 35],
+                            MID: [35, 65],
+                            FOR: [25, 75]
+                        };
+                        const w = weights[pos] || [50, 50];
+                        const tooltipHtml = `Decision ${numericRating.toFixed(1)}/100<br>${pos}: ${w[0]}% next fixture + ${w[1]}% form<br>Fixture: ${fixture.toFixed(1)} | Form: ${form.toFixed(0)}`;
+
+                        return `
+                            <div class="custom-tooltip-container">
+                                <span class="${classes}">${numericRating.toFixed(1)}</span>
+                                <span class="custom-tooltip-content">${tooltipHtml}</span>
+                            </div>
+                        `;
+                    },
+                    className: 'dt-center'
+                },
+
                 "Next Fixture Score": {
                     abbr: 'Fix',
                     full: 'Next gameweek fixture opportunity from 0-100 (higher = better). Uses ASA xG, recent form, opponent strength, venue, and gameweek volume.',
@@ -2243,6 +2304,15 @@
                         return false;
                     }
 
+                    // Minimum overall / Decision Rating (0-100)
+                    const minDecision = parseFloat($('#min-decision-filter').val());
+                    const decisionRating = parseFloat(rowData["Decision Rating"]);
+                    if (!isNaN(minDecision)) {
+                        if (isNaN(decisionRating) || decisionRating < minDecision) {
+                            return false;
+                        }
+                    }
+
                     // Minimum next-GW fixture opportunity (0-100, higher is better)
                     const minFixture = parseFloat($('#min-fixture-filter').val());
                     const nextFixture = parseFloat(rowData["Next Fixture Rating"]);
@@ -2517,7 +2587,7 @@
                     }
                 });
 
-                $('#max-value-filter, #min-fixture-filter, #min-following-fixture-filter, #min-form-filter, #position-filter').on('keyup change input', function () {
+                $('#max-value-filter, #min-decision-filter, #min-fixture-filter, #min-following-fixture-filter, #min-form-filter, #position-filter').on('keyup change input', function () {
                     if (dataTableInstance) {
                         dataTableInstance.draw();
                     }
