@@ -2094,6 +2094,62 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
         gw_points_total_4gw = sum(recent_points)
         gw_games_played_4gw = len(recent_points)
+
+        # TEMP DEBUG: audit Sam Kerr's Form Rating inputs
+        if name == "Sam Kerr":
+            raw_form_rating = calculate_form_rating(
+                recent_points,
+                recent_bonus_games
+            )
+        
+            print("\n=== SAM KERR FORM DEBUG ===")
+            print("Club:", club)
+            print("Position:", position)
+            print("Recent game records:", recent_game_records)
+            print("Recent points used:", recent_points)
+            print("Number of recent games:", len(recent_points))
+            print("Recent bonus games:", recent_bonus_games)
+            print("Last played GW:", last_played_gw)
+            print("Latest completed GW:", latest_gw)
+        
+            if recent_points:
+                recent_ppg_debug = sum(recent_points) / len(recent_points)
+                ppg_score_debug = min(
+                    100,
+                    max(0, (recent_ppg_debug / 8) * 100)
+                )
+                consistency_games_debug = sum(
+                    1 for pts in recent_points if pts >= 3
+                )
+                consistency_score_debug = (
+                    consistency_games_debug / len(recent_points)
+                ) * 100
+                bonus_score_debug = (
+                    recent_bonus_games / len(recent_points)
+                ) * 100
+        
+                print("Recent PPG:", recent_ppg_debug)
+                print("PPG component score:", ppg_score_debug)
+                print(
+                    "Consistency:",
+                    consistency_games_debug,
+                    "/",
+                    len(recent_points),
+                    "=",
+                    consistency_score_debug
+                )
+                print("Bonus component score:", bonus_score_debug)
+        
+            print("Raw Form Rating:", raw_form_rating)
+            print(
+                "After recent-play penalty:",
+                apply_recent_play_penalty(
+                    raw_form_rating,
+                    last_played_gw,
+                    latest_gw
+                )
+            )
+            print("=== END SAM KERR FORM DEBUG ===\n")
         
         # Calculate derived metrics
         ppm_total = total_points / value if value > 0 else 0.0
