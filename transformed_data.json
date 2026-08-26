@@ -1162,9 +1162,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 57,
-            "Selected Percentage": 9.8,
-            "Selected Percentage Change 1W": 0.4,
-            "Selected Percentage Change Since Last Global Price Change": 0.4,
+            "Selected Percentage": 9.9,
+            "Selected Percentage Change 1W": 0.5,
+            "Selected Percentage Change Since Last Global Price Change": 0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 18,
@@ -1500,7 +1500,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\n1 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -1692,9 +1692,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 89,
-            "Selected Percentage": 57.1,
-            "Selected Percentage Change 1W": 1.1,
-            "Selected Percentage Change Since Last Global Price Change": 0.9,
+            "Selected Percentage": 57.2,
+            "Selected Percentage Change 1W": 1.2,
+            "Selected Percentage Change Since Last Global Price Change": 1.0,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -2030,7 +2030,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -3725,7 +3725,7 @@
             "Visionary": false,
             "Total Points": 85,
             "Selected Percentage": 7.3,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Differential",
             "Hot Pick": true,
@@ -3804,7 +3804,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) CHI L 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nRed Card (-3pts)"
+                "tooltip": "24 May (H) CHI L 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nRed Card (-3pts)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "11": "-",
             "12": {
@@ -5628,7 +5628,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -5888,7 +5888,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -8751,7 +8751,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\nConceded x2 (-2pts)"
+                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\nConceded x2 (-2pts)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -9216,9 +9216,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 45,
-            "Selected Percentage": 1.7,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 1.8,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 13,
@@ -9568,7 +9568,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)"
             },
             "19": "-",
             "upcoming_fixtures": [
@@ -11541,7 +11541,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -12072,7 +12072,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)"
+                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 7,
@@ -12791,9 +12791,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 104,
-            "Selected Percentage": 39.6,
-            "Selected Percentage Change 1W": 0.8,
-            "Selected Percentage Change Since Last Global Price Change": 0.5,
+            "Selected Percentage": 39.7,
+            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change Since Last Global Price Change": 0.6,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 18,
@@ -13123,7 +13123,7 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "14": {
                 "points": 1,
@@ -13345,7 +13345,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (A) HOU W 0-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\n1 min (+1pt)"
+                "tooltip": "30 Jul (A) BAY W 0-1\n1 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\n1 min (+1pt)"
             },
             "17": {
                 "points": 9,
@@ -13566,7 +13566,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (H) WAS W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 1,
@@ -13948,9 +13948,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 90,
-            "Selected Percentage": 24.5,
-            "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage": 24.6,
+            "Selected Percentage Change 1W": 0.3,
+            "Selected Percentage Change Since Last Global Price Change": 0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 20,
@@ -14977,7 +14977,7 @@
                 "points": 13,
                 "base_points": 10,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (H) WAS W 1-0\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 2,
@@ -15317,18 +15317,18 @@
             "News": null,
             "Visionary": false,
             "Total Points": 77,
-            "Selected Percentage": 21.4,
-            "Selected Percentage Change 1W": -1.0,
-            "Selected Percentage Change Since Last Global Price Change": -0.7,
+            "Selected Percentage": 21.3,
+            "Selected Percentage Change 1W": -1.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.8,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 19,
-            "Total Over 4 Gameweeks": 11,
-            "Form Rating": 38,
+            "Total Over 4 Gameweeks": 8,
+            "Form Rating": 21,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.8,
+            "Points Per Game Over 4 Gameweeks": 2.0,
             "Points Per Million": 8.1,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Points Per Million Over 4 Gameweeks": 0.8,
             "Total Goals": 4,
             "Total Assists": 1,
             "Total Goals + Assists": 5,
@@ -15405,7 +15405,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "15 Jul (H) WAS W 1-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)"
+                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 10,
@@ -15423,7 +15423,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (A) HOU W 0-1\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 3,
@@ -15550,7 +15550,7 @@
             "Following Fixture Rating": 50.0,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs DEN (A): 50.0/100\n  Attack opportunity: 48.8/100\n  Defense opportunity: 60.4/100\n  Projected team xG: 1.38\n  Projected opponent xG: 1.22\n  Est. clean-sheet chance: 29.4%\n  DEN attack strength: 38.8/100\n  DEN defense strength: 57.6/100\n  DEN xG/game: 1.38 season, 1.19 weighted recent\n  DEN xGA/game: 1.53 season, 1.43 weighted recent\n\nAverage fixture opportunity: 50.0/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 50.0/100\n\nOwn team attack strength: 65.1/100\nOwn team defense strength: 92.0/100\nOwn xG/game: 1.61 season, 1.98 weighted recent\nOwn xGA/game: 1.09 season, 1.24 weighted recent",
-            "Decision Rating": 47.9
+            "Decision Rating": 36.8
         },
         {
             "Name": "Sarah Schupansky",
@@ -15862,7 +15862,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)"
+                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -15880,7 +15880,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -16943,15 +16943,15 @@
             "Selected Percentage": 3.0,
             "Selected Percentage Change 1W": -0.2,
             "Selected Percentage Change Since Last Global Price Change": 0.0,
-            "Recommendation": "Differential",
+            "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 20,
-            "Total Over 4 Gameweeks": 21,
-            "Form Rating": 54,
+            "Total Over 4 Gameweeks": 11,
+            "Form Rating": 26,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 5.2,
+            "Points Per Game Over 4 Gameweeks": 2.8,
             "Points Per Million": 13.8,
-            "Points Per Million Over 4 Gameweeks": 4.2,
+            "Points Per Million Over 4 Gameweeks": 2.2,
             "Total Goals": 4,
             "Total Assists": 4,
             "Total Goals + Assists": 8,
@@ -17056,7 +17056,7 @@
                 "points": 14,
                 "base_points": 14,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (H) POR W 5-1\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -17183,7 +17183,7 @@
             "Following Fixture Rating": 72.7,
             "Following Fixture Score": 2,
             "Following Fixture Details": "Next GW fixtures:\nvs BOS (H): 72.7/100\n  Attack opportunity: 72.7/100\n  Defense opportunity: 60.2/100\n  Projected team xG: 1.79\n  Projected opponent xG: 1.23\n  Est. clean-sheet chance: 29.3%\n  BOS attack strength: 39.6/100\n  BOS defense strength: 41.5/100\n  BOS xG/game: 1.33 season, 1.17 weighted recent\n  BOS xGA/game: 1.47 season, 1.76 weighted recent\n\nAverage fixture opportunity: 72.7/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 72.7/100\n\nOwn team attack strength: 70.5/100\nOwn team defense strength: 57.6/100\nOwn xG/game: 1.58 season, 1.50 weighted recent\nOwn xGA/game: 1.34 season, 1.51 weighted recent",
-            "Decision Rating": 53.6
+            "Decision Rating": 32.6
         },
         {
             "Name": "Mak Whitham",
@@ -17363,9 +17363,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 65,
-            "Selected Percentage": 16.7,
-            "Selected Percentage Change 1W": -0.8,
-            "Selected Percentage Change Since Last Global Price Change": -0.6,
+            "Selected Percentage": 16.6,
+            "Selected Percentage Change 1W": -0.9,
+            "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -18506,7 +18506,7 @@
                 "points": 15,
                 "base_points": 12,
                 "visionary_bonus": 3,
-                "tooltip": "6 Aug (A) DEN W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\nGoal (+6pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "8 Aug (A) WAS W 3-4\nGoal (+6pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
             },
             "18": {
                 "points": 1,
@@ -18961,7 +18961,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "10 May (H) DEN L 1-4\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 2,
@@ -20101,7 +20101,7 @@
             "Total Points": 85,
             "Selected Percentage": 7.1,
             "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -20910,7 +20910,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "20 Aug (H) CHI W 5-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 3,
@@ -21419,9 +21419,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 60,
-            "Selected Percentage": 12.0,
-            "Selected Percentage Change 1W": 0.5,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 11.9,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -21499,7 +21499,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) LA W 2-1\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n21 May (H) SD D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
+                "tooltip": "21 May (H) SD D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) LA W 2-1\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "11": {
                 "points": 2,
@@ -22081,7 +22081,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "11": {
                 "points": 7,
@@ -22301,7 +22301,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) LOU W 5-1\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n1 Aug (H) LA D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "1 Aug (H) LA D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n30 Jul (H) LOU W 5-1\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "17": {
                 "points": 1,
@@ -25880,9 +25880,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 69,
-            "Selected Percentage": 15.2,
-            "Selected Percentage Change 1W": 1.6,
-            "Selected Percentage Change Since Last Global Price Change": 0.4,
+            "Selected Percentage": 15.4,
+            "Selected Percentage Change 1W": 1.8,
+            "Selected Percentage Change Since Last Global Price Change": 0.6,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 11,
@@ -25945,7 +25945,7 @@
                 "points": 13,
                 "base_points": 13,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) POR W 3-1\nGoal (+4pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n\n---\n\n24 May (H) POR W 3-1\nGoal (+4pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 7,
@@ -26156,7 +26156,7 @@
                 "points": 15,
                 "base_points": 15,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 4,
@@ -26879,7 +26879,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 7,
@@ -27071,9 +27071,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 42,
-            "Selected Percentage": 0.7,
-            "Selected Percentage Change 1W": -0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 0.6,
+            "Selected Percentage Change 1W": -0.2,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 8,
@@ -27626,7 +27626,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "18": {
                 "points": 2,
@@ -28560,7 +28560,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (A) BOS D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n2 May (H) KC L 1-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -29273,9 +29273,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 83,
-            "Selected Percentage": 1.2,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": 0.2,
+            "Selected Percentage": 1.3,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 0.3,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -30559,7 +30559,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)"
             },
             "8": "-",
             "9": "-",
@@ -30815,7 +30815,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (H) WAS W 1-0\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 10,
@@ -30971,9 +30971,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 141,
-            "Selected Percentage": 44.1,
-            "Selected Percentage Change 1W": 1.9,
-            "Selected Percentage Change Since Last Global Price Change": 1.1,
+            "Selected Percentage": 44.2,
+            "Selected Percentage Change 1W": 2.0,
+            "Selected Percentage Change Since Last Global Price Change": 1.2,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -31093,7 +31093,7 @@
                 "points": 15,
                 "base_points": 15,
                 "visionary_bonus": 0,
-                "tooltip": "6 Aug (A) DEN W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)"
+                "tooltip": "8 Aug (A) WAS W 3-4\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "18": {
                 "points": 2,
@@ -31684,7 +31684,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (H) CHI W 2-0\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (A) ORL W 0-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 6,
@@ -32077,7 +32077,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 2,
@@ -32311,7 +32311,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (H) KC W 3-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) BOS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (H) BOS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) KC W 3-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 2,
@@ -32462,9 +32462,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 68,
-            "Selected Percentage": 2.6,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 2.7,
+            "Selected Percentage Change 1W": -0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -32711,9 +32711,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 83,
-            "Selected Percentage": 15.1,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": 0.6,
+            "Selected Percentage": 15.2,
+            "Selected Percentage Change 1W": 0.4,
+            "Selected Percentage Change Since Last Global Price Change": 0.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -32784,7 +32784,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 4,
@@ -34482,8 +34482,8 @@
             "Visionary": true,
             "Total Points": 65,
             "Selected Percentage": 0.7,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 18,
@@ -37140,7 +37140,7 @@
                 "points": 16,
                 "base_points": 16,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -37892,7 +37892,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (A) CHI W 0-2\n1 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -39182,8 +39182,8 @@
             "Visionary": true,
             "Total Points": 3,
             "Selected Percentage": 0.3,
-            "Selected Percentage Change 1W": 0.0,
-            "Selected Percentage Change Since Last Global Price Change": 0.0,
+            "Selected Percentage Change 1W": -0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Avoid",
             "Hot Pick": false,
             "Total Games Played": 4,
@@ -39422,7 +39422,7 @@
                 "points": 16,
                 "base_points": 13,
                 "visionary_bonus": 3,
-                "tooltip": "30 Apr (H) SD W 2-0\nGoal (+5pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nGoal (+5pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "8": {
                 "points": 1,
@@ -40032,9 +40032,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 107,
-            "Selected Percentage": 16.7,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.3,
+            "Selected Percentage": 16.6,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Steady",
             "Hot Pick": true,
             "Total Games Played": 21,
@@ -40291,9 +40291,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 89,
-            "Selected Percentage": 46.8,
-            "Selected Percentage Change 1W": -0.8,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 46.7,
+            "Selected Percentage Change 1W": -0.9,
+            "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 21,
@@ -40376,7 +40376,7 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) BAY W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (A) KC L 3-1\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) BAY W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 6,
@@ -41911,13 +41911,13 @@
             "Visionary": true,
             "Total Points": 53,
             "Selected Percentage": 0.8,
-            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 16,
             "Total Over 4 Gameweeks": 11,
-            "Form Rating": 35,
+            "Form Rating": 26,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 2.8,
             "Points Per Million": 8.8,
@@ -42018,7 +42018,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Aug (H) BOS W 4-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 1,
@@ -42133,7 +42133,7 @@
             "Following Fixture Rating": 45.8,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs LA (H): 45.8/100\n  Attack opportunity: 63.3/100\n  Defense opportunity: 45.8/100\n  Projected team xG: 1.63\n  Projected opponent xG: 1.47\n  Est. clean-sheet chance: 22.9%\n  LA attack strength: 56.7/100\n  LA defense strength: 65.5/100\n  LA xG/game: 1.51 season, 1.62 weighted recent\n  LA xGA/game: 1.34 season, 1.59 weighted recent\n\nAverage fixture opportunity: 45.8/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 45.8/100\n\nOwn team attack strength: 71.6/100\nOwn team defense strength: 31.4/100\nOwn xG/game: 1.47 season, 1.91 weighted recent\nOwn xGA/game: 1.81 season, 1.59 weighted recent",
-            "Decision Rating": 30.3
+            "Decision Rating": 27.2
         },
         {
             "Name": "Ellie Jean",
@@ -42240,7 +42240,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "1 Aug (H) CHI W 2-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\n1 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -42484,7 +42484,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "1 Aug (H) CHI W 2-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "30 Jul (A) KC L 5-1\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n1 Aug (H) CHI W 2-1\n1 min (+1pt)"
             },
             "17": "-",
             "18": "-",
@@ -43301,9 +43301,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 99,
-            "Selected Percentage": 2.1,
-            "Selected Percentage Change 1W": 0.2,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 2.0,
+            "Selected Percentage Change 1W": 0.1,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 21,
@@ -43898,14 +43898,14 @@
             "Selected Percentage Change 1W": 0.2,
             "Selected Percentage Change Since Last Global Price Change": -0.0,
             "Recommendation": "Differential",
-            "Hot Pick": true,
+            "Hot Pick": false,
             "Total Games Played": 19,
-            "Total Over 4 Gameweeks": 25,
-            "Form Rating": 77,
+            "Total Over 4 Gameweeks": 18,
+            "Form Rating": 53,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 6.2,
+            "Points Per Game Over 4 Gameweeks": 4.5,
             "Points Per Million": 8.3,
-            "Points Per Million Over 4 Gameweeks": 2.8,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 4,
             "Total Assists": 0,
             "Total Goals + Assists": 4,
@@ -43956,7 +43956,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -44005,14 +44005,14 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) KC L 5-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "1 Aug (H) CHI W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": "-",
             "18": {
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (H) SEA W 2-1\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\n1 min (+1pt)"
+                "tooltip": "15 Aug (H) BOS W 4-1\n1 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 10,
@@ -44127,7 +44127,7 @@
             "Following Fixture Rating": 61.5,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs LA (H): 61.5/100\n  Attack opportunity: 63.3/100\n  Defense opportunity: 45.8/100\n  Projected team xG: 1.63\n  Projected opponent xG: 1.47\n  Est. clean-sheet chance: 22.9%\n  LA attack strength: 56.7/100\n  LA defense strength: 65.5/100\n  LA xG/game: 1.51 season, 1.62 weighted recent\n  LA xGA/game: 1.34 season, 1.59 weighted recent\n\nAverage fixture opportunity: 61.5/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 61.5/100\n\nOwn team attack strength: 71.6/100\nOwn team defense strength: 31.4/100\nOwn xG/game: 1.47 season, 1.91 weighted recent\nOwn xGA/game: 1.81 season, 1.59 weighted recent",
-            "Decision Rating": 61.8
+            "Decision Rating": 46.2
         },
         {
             "Name": "Sarah Weber",
@@ -44439,7 +44439,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "8": {
                 "points": 18,
@@ -44631,9 +44631,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 87,
-            "Selected Percentage": 14.5,
-            "Selected Percentage Change 1W": 1.2,
-            "Selected Percentage Change Since Last Global Price Change": -1.2,
+            "Selected Percentage": 14.3,
+            "Selected Percentage Change 1W": 1.0,
+            "Selected Percentage Change Since Last Global Price Change": -1.4,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 20,
@@ -44742,7 +44742,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "1 Aug (H) CHI W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (A) KC L 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 12,
@@ -45205,7 +45205,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 7,
@@ -45768,9 +45768,9 @@
             "News": null,
             "Visionary": true,
             "Total Points": 51,
-            "Selected Percentage": 0.6,
-            "Selected Percentage Change 1W": 0.1,
-            "Selected Percentage Change Since Last Global Price Change": -0.0,
+            "Selected Percentage": 0.5,
+            "Selected Percentage Change 1W": 0.0,
+            "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Differential",
             "Hot Pick": true,
             "Total Games Played": 16,
@@ -47277,7 +47277,7 @@
                 "points": 5,
                 "base_points": 5,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -47783,7 +47783,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\n1 min (+1pt)"
+                "tooltip": "15 Jul (H) WAS W 1-0\n1 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -47981,7 +47981,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -47999,7 +47999,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nGoal (+4pts)\n1 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "21 May (A) HOU D 2-2\nGoal (+4pts)\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "11": {
                 "points": 8,
@@ -48432,7 +48432,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)"
             },
             "11": {
                 "points": 5,
@@ -48796,9 +48796,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 59,
-            "Selected Percentage": 19.7,
-            "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Selected Percentage": 19.8,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 17,
@@ -48914,7 +48914,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "19": {
                 "points": 2,
@@ -52014,7 +52014,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (H) CHI W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)"
+                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -52203,7 +52203,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -52498,7 +52498,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\n1 min (+1pt)"
+                "tooltip": "15 Aug (H) CHI W 1-0\n1 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -53313,9 +53313,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 55,
-            "Selected Percentage": 6.2,
-            "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 6.1,
+            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 18,
@@ -53557,9 +53557,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 69,
-            "Selected Percentage": 2.0,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Selected Percentage": 1.9,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 15,
@@ -53791,9 +53791,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 77,
-            "Selected Percentage": 11.8,
-            "Selected Percentage Change 1W": -0.4,
-            "Selected Percentage Change Since Last Global Price Change": -0.4,
+            "Selected Percentage": 11.7,
+            "Selected Percentage Change 1W": -0.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.5,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 21,
@@ -54310,12 +54310,12 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 17,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 21,
+            "Total Over 4 Gameweeks": 9,
+            "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Game Over 4 Gameweeks": 2.2,
             "Points Per Million": 14.9,
-            "Points Per Million Over 4 Gameweeks": 1.8,
+            "Points Per Million Over 4 Gameweeks": 2.0,
             "Total Goals": 0,
             "Total Assists": 1,
             "Total Goals + Assists": 1,
@@ -54405,7 +54405,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Jul (H) WAS L 0-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "17": {
                 "points": 2,
@@ -54532,7 +54532,7 @@
             "Following Fixture Rating": 60.2,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs BOS (H): 60.2/100\n  Attack opportunity: 72.7/100\n  Defense opportunity: 60.2/100\n  Projected team xG: 1.79\n  Projected opponent xG: 1.23\n  Est. clean-sheet chance: 29.3%\n  BOS attack strength: 39.6/100\n  BOS defense strength: 41.5/100\n  BOS xG/game: 1.33 season, 1.17 weighted recent\n  BOS xGA/game: 1.47 season, 1.76 weighted recent\n\nAverage fixture opportunity: 60.2/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 60.2/100\n\nOwn team attack strength: 70.5/100\nOwn team defense strength: 57.6/100\nOwn xG/game: 1.58 season, 1.50 weighted recent\nOwn xGA/game: 1.34 season, 1.51 weighted recent",
-            "Decision Rating": 37.1
+            "Decision Rating": 37.8
         },
         {
             "Name": "Alex Loera",
@@ -55095,9 +55095,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 68,
-            "Selected Percentage": 12.4,
-            "Selected Percentage Change 1W": 2.2,
-            "Selected Percentage Change Since Last Global Price Change": 1.6,
+            "Selected Percentage": 12.5,
+            "Selected Percentage Change 1W": 2.3,
+            "Selected Percentage Change Since Last Global Price Change": 1.7,
             "Recommendation": "Bandwagon",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -55434,7 +55434,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "10 May (A) BAY D 0-0\n1 min (+1pt)\n\n---\n\n7 May (H) HOU W 2-0\n1 min (+1pt)"
+                "tooltip": "7 May (H) HOU W 2-0\n1 min (+1pt)\n\n---\n\n10 May (A) BAY D 0-0\n1 min (+1pt)"
             },
             "9": "-",
             "10": "-",
@@ -55585,18 +55585,18 @@
             "News": null,
             "Visionary": false,
             "Total Points": 125,
-            "Selected Percentage": 23.1,
-            "Selected Percentage Change 1W": 0.7,
-            "Selected Percentage Change Since Last Global Price Change": 0.1,
+            "Selected Percentage": 23.0,
+            "Selected Percentage Change 1W": 0.6,
+            "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Value Pick",
-            "Hot Pick": false,
+            "Hot Pick": true,
             "Total Games Played": 21,
-            "Total Over 4 Gameweeks": 15,
-            "Form Rating": 45,
+            "Total Over 4 Gameweeks": 27,
+            "Form Rating": 76,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.8,
+            "Points Per Game Over 4 Gameweeks": 6.8,
             "Points Per Million": 25.0,
-            "Points Per Million Over 4 Gameweeks": 3.0,
+            "Points Per Million Over 4 Gameweeks": 5.4,
             "Total Goals": 6,
             "Total Assists": 10,
             "Total Goals + Assists": 16,
@@ -55706,7 +55706,7 @@
                 "points": 16,
                 "base_points": 16,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\nAssist x3 (+9pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (H) POR W 5-1\nAssist x3 (+9pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -55833,7 +55833,7 @@
             "Following Fixture Rating": 71.5,
             "Following Fixture Score": 2,
             "Following Fixture Details": "Next GW fixtures:\nvs BOS (H): 71.5/100\n  Attack opportunity: 72.7/100\n  Defense opportunity: 60.2/100\n  Projected team xG: 1.79\n  Projected opponent xG: 1.23\n  Est. clean-sheet chance: 29.3%\n  BOS attack strength: 39.6/100\n  BOS defense strength: 41.5/100\n  BOS xG/game: 1.33 season, 1.17 weighted recent\n  BOS xGA/game: 1.47 season, 1.76 weighted recent\n\nAverage fixture opportunity: 71.5/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 71.5/100\n\nOwn team attack strength: 70.5/100\nOwn team defense strength: 57.6/100\nOwn xG/game: 1.58 season, 1.50 weighted recent\nOwn xGA/game: 1.34 season, 1.51 weighted recent",
-            "Decision Rating": 47.3
+            "Decision Rating": 67.5
         },
         {
             "Name": "Mina Tanaka",
@@ -57074,12 +57074,12 @@
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 21,
-            "Total Over 4 Gameweeks": 17,
-            "Form Rating": 52,
+            "Total Over 4 Gameweeks": 12,
+            "Form Rating": 31,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.2,
+            "Points Per Game Over 4 Gameweeks": 3.0,
             "Points Per Million": 10.9,
-            "Points Per Million Over 4 Gameweeks": 2.1,
+            "Points Per Million Over 4 Gameweeks": 1.5,
             "Total Goals": 1,
             "Total Assists": 2,
             "Total Goals + Assists": 3,
@@ -57184,7 +57184,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) UTA W 0-1\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) UTA W 0-1\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 0,
@@ -57311,7 +57311,7 @@
             "Following Fixture Rating": 48.8,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs POR (A): 48.8/100\n  Attack opportunity: 47.6/100\n  Defense opportunity: 48.8/100\n  Projected team xG: 1.36\n  Projected opponent xG: 1.42\n  Est. clean-sheet chance: 24.2%\n  POR attack strength: 55.8/100\n  POR defense strength: 52.8/100\n  POR xG/game: 1.38 season, 1.37 weighted recent\n  POR xGA/game: 1.50 season, 1.47 weighted recent\n\nAverage fixture opportunity: 48.8/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 48.8/100\n\nOwn team attack strength: 56.8/100\nOwn team defense strength: 79.8/100\nOwn xG/game: 1.54 season, 1.61 weighted recent\nOwn xGA/game: 1.11 season, 1.39 weighted recent",
-            "Decision Rating": 63.6
+            "Decision Rating": 56.3
         },
         {
             "Name": "Gabrielle Carle",
@@ -58034,9 +58034,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 101,
-            "Selected Percentage": 23.1,
-            "Selected Percentage Change 1W": 0.3,
-            "Selected Percentage Change Since Last Global Price Change": -0.1,
+            "Selected Percentage": 23.0,
+            "Selected Percentage Change 1W": 0.2,
+            "Selected Percentage Change Since Last Global Price Change": -0.2,
             "Recommendation": "Steady",
             "Hot Pick": true,
             "Total Games Played": 21,
@@ -58293,9 +58293,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 100,
-            "Selected Percentage": 10.8,
-            "Selected Percentage Change 1W": -2.4,
-            "Selected Percentage Change Since Last Global Price Change": -0.6,
+            "Selected Percentage": 10.7,
+            "Selected Percentage Change 1W": -2.5,
+            "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -58991,12 +58991,12 @@
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 21,
-            "Total Over 4 Gameweeks": 8,
-            "Form Rating": 12,
+            "Total Over 4 Gameweeks": 9,
+            "Form Rating": 23,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.0,
+            "Points Per Game Over 4 Gameweeks": 2.2,
             "Points Per Million": 7.2,
-            "Points Per Million Over 4 Gameweeks": 1.1,
+            "Points Per Million Over 4 Gameweeks": 1.2,
             "Total Goals": 1,
             "Total Assists": 0,
             "Total Goals + Assists": 1,
@@ -59101,7 +59101,7 @@
                 "points": 5,
                 "base_points": 5,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) UTA W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (A) UTA W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -59228,7 +59228,7 @@
             "Following Fixture Rating": 47.7,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs POR (A): 47.7/100\n  Attack opportunity: 47.6/100\n  Defense opportunity: 48.8/100\n  Projected team xG: 1.36\n  Projected opponent xG: 1.42\n  Est. clean-sheet chance: 24.2%\n  POR attack strength: 55.8/100\n  POR defense strength: 52.8/100\n  POR xG/game: 1.38 season, 1.37 weighted recent\n  POR xGA/game: 1.50 season, 1.47 weighted recent\n\nAverage fixture opportunity: 47.7/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 47.7/100\n\nOwn team attack strength: 56.8/100\nOwn team defense strength: 79.8/100\nOwn xG/game: 1.54 season, 1.61 weighted recent\nOwn xGA/game: 1.11 season, 1.39 weighted recent",
-            "Decision Rating": 29.8
+            "Decision Rating": 37.0
         },
         {
             "Name": "Paige Metayer",
@@ -59245,12 +59245,12 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 14,
-            "Total Over 4 Gameweeks": 12,
-            "Form Rating": 28,
+            "Total Over 4 Gameweeks": 8,
+            "Form Rating": 21,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.0,
+            "Points Per Game Over 4 Gameweeks": 2.0,
             "Points Per Million": 4.8,
-            "Points Per Million Over 4 Gameweeks": 2.0,
+            "Points Per Million Over 4 Gameweeks": 1.3,
             "Total Goals": 0,
             "Total Assists": 1,
             "Total Goals + Assists": 1,
@@ -59330,7 +59330,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "30 Jul (A) UTA W 0-1\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) UTA W 0-1\nAssist (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "17": {
                 "points": 1,
@@ -59457,7 +59457,7 @@
             "Following Fixture Rating": 47.7,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs POR (A): 47.7/100\n  Attack opportunity: 47.6/100\n  Defense opportunity: 48.8/100\n  Projected team xG: 1.36\n  Projected opponent xG: 1.42\n  Est. clean-sheet chance: 24.2%\n  POR attack strength: 55.8/100\n  POR defense strength: 52.8/100\n  POR xG/game: 1.38 season, 1.37 weighted recent\n  POR xGA/game: 1.50 season, 1.47 weighted recent\n\nAverage fixture opportunity: 47.7/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 47.7/100\n\nOwn team attack strength: 56.8/100\nOwn team defense strength: 79.8/100\nOwn xG/game: 1.54 season, 1.61 weighted recent\nOwn xGA/game: 1.11 season, 1.39 weighted recent",
-            "Decision Rating": 40.2
+            "Decision Rating": 35.7
         },
         {
             "Name": "Chloe Ricketts",
@@ -59825,14 +59825,14 @@
             "Selected Percentage Change 1W": 1.6,
             "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Hot Pick",
-            "Hot Pick": false,
+            "Hot Pick": true,
             "Total Games Played": 21,
-            "Total Over 4 Gameweeks": 18,
-            "Form Rating": 46,
+            "Total Over 4 Gameweeks": 27,
+            "Form Rating": 72,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 4.5,
+            "Points Per Game Over 4 Gameweeks": 6.8,
             "Points Per Million": 12.6,
-            "Points Per Million Over 4 Gameweeks": 1.8,
+            "Points Per Million Over 4 Gameweeks": 2.7,
             "Total Goals": 10,
             "Total Assists": 5,
             "Total Goals + Assists": 15,
@@ -59937,7 +59937,7 @@
                 "points": 13,
                 "base_points": 13,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) UTA W 0-1\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (A) UTA W 0-1\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 7,
@@ -60064,7 +60064,7 @@
             "Following Fixture Rating": 47.7,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs POR (A): 47.7/100\n  Attack opportunity: 47.6/100\n  Defense opportunity: 48.8/100\n  Projected team xG: 1.36\n  Projected opponent xG: 1.42\n  Est. clean-sheet chance: 24.2%\n  POR attack strength: 55.8/100\n  POR defense strength: 52.8/100\n  POR xG/game: 1.38 season, 1.37 weighted recent\n  POR xGA/game: 1.50 season, 1.47 weighted recent\n\nAverage fixture opportunity: 47.7/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 47.7/100\n\nOwn team attack strength: 56.8/100\nOwn team defense strength: 79.8/100\nOwn xG/game: 1.54 season, 1.61 weighted recent\nOwn xGA/game: 1.11 season, 1.39 weighted recent",
-            "Decision Rating": 52.0
+            "Decision Rating": 68.8
         },
         {
             "Name": "Makenna Morris",
@@ -61166,9 +61166,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 80,
-            "Selected Percentage": 14.9,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": -0.8,
+            "Selected Percentage": 14.8,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": -0.9,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 20,
@@ -61233,7 +61233,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 5,
@@ -62030,7 +62030,7 @@
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "10 May (A) BAY D 0-0\n1 min (+1pt)\n\n---\n\n7 May (H) HOU W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "7 May (H) HOU W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (A) BAY D 0-0\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 2,
@@ -63690,7 +63690,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nAssist (+3pts)\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -64224,9 +64224,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 80,
-            "Selected Percentage": 10.7,
-            "Selected Percentage Change 1W": 0.8,
-            "Selected Percentage Change Since Last Global Price Change": 0.9,
+            "Selected Percentage": 10.8,
+            "Selected Percentage Change 1W": 0.9,
+            "Selected Percentage Change Since Last Global Price Change": 1.0,
             "Recommendation": "Value Pick",
             "Hot Pick": true,
             "Total Games Played": 17,
@@ -66374,7 +66374,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "19 Aug (A) LOU L 2-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -66515,10 +66515,10 @@
             "Selected Percentage Change 1W": -0.4,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
             "Recommendation": "Differential",
-            "Hot Pick": false,
+            "Hot Pick": true,
             "Total Games Played": 18,
             "Total Over 4 Gameweeks": 27,
-            "Form Rating": 67,
+            "Form Rating": 76,
             "Games Played Over 4 Gameweeks": 4,
             "Points Per Game Over 4 Gameweeks": 6.8,
             "Points Per Million": 12.0,
@@ -66634,7 +66634,7 @@
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "15 Aug (H) CHI W 1-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 1,
@@ -66760,7 +66760,7 @@
             "Following Fixture Rating": 42.5,
             "Following Fixture Score": 4,
             "Following Fixture Details": "Next GW fixtures:\nvs SD (H): 42.5/100\n  Attack opportunity: 41.6/100\n  Defense opportunity: 50.9/100\n  Projected team xG: 1.26\n  Projected opponent xG: 1.39\n  Est. clean-sheet chance: 25.0%\n  SD attack strength: 60.4/100\n  SD defense strength: 100.0/100\n  SD xG/game: 1.63 season, 1.44 weighted recent\n  SD xGA/game: 0.88 season, 0.83 weighted recent\n\nAverage fixture opportunity: 42.5/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 42.5/100\n\nOwn team attack strength: 54.9/100\nOwn team defense strength: 52.0/100\nOwn xG/game: 1.38 season, 1.86 weighted recent\nOwn xGA/game: 1.51 season, 1.69 weighted recent",
-            "Decision Rating": 66.2
+            "Decision Rating": 72.1
         },
         {
             "Name": "Mia Fishel",
@@ -67021,9 +67021,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 59,
-            "Selected Percentage": 6.1,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Selected Percentage": 6.0,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 21,
@@ -67088,7 +67088,7 @@
                 "points": 14,
                 "base_points": 14,
                 "visionary_bonus": 0,
-                "tooltip": "2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -68181,7 +68181,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 11,
@@ -69232,7 +69232,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) KC W 2-1\n1 min (+1pt)"
+                "tooltip": "21 May (H) KC W 2-1\n1 min (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -70544,7 +70544,7 @@
                 "points": 7,
                 "base_points": 4,
                 "visionary_bonus": 3,
-                "tooltip": "9 May (A) GFC D 1-1\nClearance (+1pt)\n1 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\nClearance (+1pt)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 1,
@@ -70960,12 +70960,12 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 7,
-            "Total Over 4 Gameweeks": 5,
+            "Total Over 4 Gameweeks": 4,
             "Form Rating": 0,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 1.2,
+            "Points Per Game Over 4 Gameweeks": 1.0,
             "Points Per Million": 2.0,
-            "Points Per Million Over 4 Gameweeks": 1.2,
+            "Points Per Million Over 4 Gameweeks": 1.0,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -70997,7 +70997,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": {
                 "points": 2,
@@ -71440,7 +71440,7 @@
                 "points": 9,
                 "base_points": 6,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 2,
@@ -72082,7 +72082,7 @@
                 "points": 0,
                 "base_points": 0,
                 "visionary_bonus": 0,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": {
                 "points": 2,
@@ -72804,7 +72804,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (H) CHI W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "15 Jul (A) ORL W 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -73023,7 +73023,7 @@
                 "points": 12,
                 "base_points": 9,
                 "visionary_bonus": 3,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "13 May (H) ORL W 2-1\nGoal (+5pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 1,
@@ -73266,7 +73266,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 1,
@@ -75601,7 +75601,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (H) UTA W 2-1\n1 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)"
+                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\n1 min (+1pt)"
             },
             "18": {
                 "points": 0,
@@ -78135,7 +78135,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) SD D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) LA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) LA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\n1 min (+1pt)"
             },
             "11": "-",
             "12": "-",
@@ -78332,7 +78332,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 1,
@@ -78571,7 +78571,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
             },
             "9": {
                 "points": 1,
@@ -78820,7 +78820,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": {
                 "points": 1,
@@ -79325,7 +79325,7 @@
                 "points": 16,
                 "base_points": 13,
                 "visionary_bonus": 3,
-                "tooltip": "24 May (H) LA W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "21 May (H) SD D 2-2\nGoal (+4pts)\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n24 May (H) LA W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "11": {
                 "points": 2,
@@ -79808,7 +79808,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) POR W 3-1\n1 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) POR W 3-1\n1 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -80365,7 +80365,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) POR W 3-1\n1 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n\n---\n\n24 May (H) POR W 3-1\n1 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -81345,7 +81345,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 May (H) KC L 1-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Apr (A) BOS D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 2,
@@ -81953,9 +81953,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 101,
-            "Selected Percentage": 12.7,
-            "Selected Percentage Change 1W": 2.7,
-            "Selected Percentage Change Since Last Global Price Change": 1.2,
+            "Selected Percentage": 12.8,
+            "Selected Percentage Change 1W": 2.8,
+            "Selected Percentage Change Since Last Global Price Change": 1.3,
             "Recommendation": "Hot Pick",
             "Hot Pick": true,
             "Total Games Played": 19,
@@ -82515,7 +82515,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (A) WAS W 3-4\n1 min (+1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\n1 min (+1pt)"
+                "tooltip": "6 Aug (A) DEN W 0-2\n1 min (+1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\n1 min (+1pt)"
             },
             "18": {
                 "points": 1,
@@ -83293,7 +83293,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\n1 min (+1pt)"
+                "tooltip": "9 May (H) NC W 1-0\n1 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -83715,7 +83715,7 @@
                 "points": 9,
                 "base_points": 6,
                 "visionary_bonus": 3,
-                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "8": {
                 "points": 1,
@@ -84953,7 +84953,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "1 Aug (H) CHI W 2-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\n1 min (+1pt)"
+                "tooltip": "30 Jul (A) KC L 5-1\n1 min (+1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\n1 min (+1pt)"
             },
             "17": {
                 "points": 1,
@@ -84965,7 +84965,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (H) BOS W 4-1\n1 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)"
+                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -85204,7 +85204,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (H) BOS W 4-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)"
+                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 2,
@@ -85788,7 +85788,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\nBonus x2 (+2pts)\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nBonus x2 (+2pts)\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "11": {
                 "points": 6,
@@ -86037,7 +86037,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "11": {
                 "points": 1,
@@ -86211,9 +86211,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 84,
-            "Selected Percentage": 10.7,
-            "Selected Percentage Change 1W": -0.2,
-            "Selected Percentage Change Since Last Global Price Change": -0.2,
+            "Selected Percentage": 10.6,
+            "Selected Percentage Change 1W": -0.3,
+            "Selected Percentage Change Since Last Global Price Change": -0.3,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 21,
@@ -86278,7 +86278,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -90331,7 +90331,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "20 Aug (H) CHI W 5-0\n1 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)"
+                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\n1 min (+1pt)"
             },
             "19": "-",
             "upcoming_fixtures": [
@@ -92302,15 +92302,15 @@
             "Selected Percentage": 5.0,
             "Selected Percentage Change 1W": -0.0,
             "Selected Percentage Change Since Last Global Price Change": -0.1,
-            "Recommendation": "Steady",
+            "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 16,
-            "Total Over 4 Gameweeks": 10,
-            "Form Rating": 42,
+            "Total Over 4 Gameweeks": 16,
+            "Form Rating": 55,
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 2.5,
+            "Points Per Game Over 4 Gameweeks": 4.0,
             "Points Per Million": 6.9,
-            "Points Per Million Over 4 Gameweeks": 1.1,
+            "Points Per Million Over 4 Gameweeks": 1.8,
             "Total Goals": 0,
             "Total Assists": 4,
             "Total Goals + Assists": 4,
@@ -92341,7 +92341,7 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -92390,7 +92390,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (A) HOU W 0-1\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 3,
@@ -92517,7 +92517,7 @@
             "Following Fixture Rating": 50.0,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs DEN (A): 50.0/100\n  Attack opportunity: 48.8/100\n  Defense opportunity: 60.4/100\n  Projected team xG: 1.38\n  Projected opponent xG: 1.22\n  Est. clean-sheet chance: 29.4%\n  DEN attack strength: 38.8/100\n  DEN defense strength: 57.6/100\n  DEN xG/game: 1.38 season, 1.19 weighted recent\n  DEN xGA/game: 1.53 season, 1.43 weighted recent\n\nAverage fixture opportunity: 50.0/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 50.0/100\n\nOwn team attack strength: 65.1/100\nOwn team defense strength: 92.0/100\nOwn xG/game: 1.61 season, 1.98 weighted recent\nOwn xGA/game: 1.09 season, 1.24 weighted recent",
-            "Decision Rating": 50.5
+            "Decision Rating": 58.9
         },
         {
             "Name": "Natalie Mitchell",
@@ -95108,9 +95108,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 27,
-            "Selected Percentage": 14.3,
-            "Selected Percentage Change 1W": -0.7,
-            "Selected Percentage Change Since Last Global Price Change": -0.3,
+            "Selected Percentage": 14.2,
+            "Selected Percentage Change 1W": -0.8,
+            "Selected Percentage Change Since Last Global Price Change": -0.4,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 8,
@@ -96605,7 +96605,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "20 Aug (H) CHI W 5-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)"
             },
             "19": {
                 "points": 2,
@@ -97321,7 +97321,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)"
+                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -98377,7 +98377,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "20 Aug (H) CHI W 5-0\nAssist x2 (+6pts)\n1 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)"
+                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nAssist x2 (+6pts)\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
