@@ -24,16 +24,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run NWSL Opta audit
-        env:
-          NWSL_SEASON_ID: ${{ vars.NWSL_SEASON_ID }}
+      - name: Run NWSL Opta discovery audit
         run: |
           python audit_nwsl_opta_stats.py
 
-      - name: Show audit summary
+      - name: Show generated files
         if: always()
         run: |
+          echo "Files after audit:"
+          ls -lah
+
+          if [ -f nwsl_opta_discovery_audit.json ]; then
+            echo ""
+            echo "Discovery audit created."
+          fi
+
           if [ -f nwsl_opta_stats_audit.json ]; then
+            echo ""
+            echo "Stats audit created."
+
             python - <<'PY'
           import json
 
@@ -46,55 +55,44 @@ jobs:
 
           meta = data.get("metadata", {})
 
-          print("Season:", meta.get("season_id"))
-          print("Players:", meta.get("player_count"))
+          print(
+              "Season ID:",
+              meta.get("season_id"),
+          )
+          print(
+              "Players:",
+              meta.get("player_count"),
+          )
           print(
               "Unique stats:",
               meta.get("unique_stat_count"),
           )
           print(
-              "All 9 targets found:",
+              "All 9 involvement targets:",
               meta.get(
                   "all_target_concepts_found"
               ),
           )
-
-          print()
-          print("TARGETS")
-
-          for concept, matches in (
-              data
-              .get(
-                  "target_involvement_concepts",
-                  {},
-              )
-              .items()
-          ):
-              print(
-                  concept,
-                  "=>",
-                  [
-                      (
-                          m.get("statsId"),
-                          m.get("statsLabel"),
-                      )
-                      for m in matches
-                  ],
-              )
           PY
           fi
 
-      - name: Commit audit file
-        if: success()
+      - name: Commit audit files
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add nwsl_opta_stats_audit.json
+          if [ -f nwsl_opta_discovery_audit.json ]; then
+            git add nwsl_opta_discovery_audit.json
+          fi
+
+          if [ -f nwsl_opta_stats_audit.json ]; then
+            git add nwsl_opta_stats_audit.json
+          fi
 
           if git diff --cached --quiet; then
             echo "No audit changes to commit."
           else
-            git commit -m "Audit NWSL Opta player stats"
+            git commit -m "Audit NWSL Opta API structure"
             git push
           fi
