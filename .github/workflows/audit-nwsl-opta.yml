@@ -1,0 +1,100 @@
+name: Audit NWSL Opta stats
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run NWSL Opta audit
+        env:
+          NWSL_SEASON_ID: ${{ vars.NWSL_SEASON_ID }}
+        run: |
+          python audit_nwsl_opta_stats.py
+
+      - name: Show audit summary
+        if: always()
+        run: |
+          if [ -f nwsl_opta_stats_audit.json ]; then
+            python - <<'PY'
+          import json
+
+          with open(
+              "nwsl_opta_stats_audit.json",
+              "r",
+              encoding="utf-8",
+          ) as f:
+              data = json.load(f)
+
+          meta = data.get("metadata", {})
+
+          print("Season:", meta.get("season_id"))
+          print("Players:", meta.get("player_count"))
+          print(
+              "Unique stats:",
+              meta.get("unique_stat_count"),
+          )
+          print(
+              "All 9 targets found:",
+              meta.get(
+                  "all_target_concepts_found"
+              ),
+          )
+
+          print()
+          print("TARGETS")
+
+          for concept, matches in (
+              data
+              .get(
+                  "target_involvement_concepts",
+                  {},
+              )
+              .items()
+          ):
+              print(
+                  concept,
+                  "=>",
+                  [
+                      (
+                          m.get("statsId"),
+                          m.get("statsLabel"),
+                      )
+                      for m in matches
+                  ],
+              )
+          PY
+          fi
+
+      - name: Commit audit file
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add nwsl_opta_stats_audit.json
+
+          if git diff --cached --quiet; then
+            echo "No audit changes to commit."
+          else
+            git commit -m "Audit NWSL Opta player stats"
+            git push
+          fi
