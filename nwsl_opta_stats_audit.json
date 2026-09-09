@@ -1,0 +1,5903 @@
+{
+  "metadata": {
+    "source": "NWSL public SDP / Opta API",
+    "seasonId": "nwsl::Football_Season::0b6761e4701749f593690c0f338da74c",
+    "endpoint": "https://api-sdp.nwslsoccer.com/v1/nwsl/football/seasons/nwsl::Football_Season::0b6761e4701749f593690c0f338da74c/stats/players",
+    "playerCount": 400,
+    "uniqueStatCount": 176,
+    "minimumStatsPerPlayer": 43,
+    "maximumStatsPerPlayer": 147,
+    "averageStatsPerPlayer": 108.6,
+    "allNineTargetConceptsMatched": true
+  },
+  "targetInvolvementConcepts": {
+    "shots_on_target": [
+      {
+        "statsId": "Shots On Target ( inc goals )",
+        "statsLabel": "Shots On Target ( inc goals )",
+        "seenForPlayers": 257,
+        "exampleValues": [
+          3,
+          14,
+          7,
+          3,
+          1
+        ],
+        "matchedPhrases": [
+          "shots on target"
+        ]
+      }
+    ],
+    "key_passes": [
+      {
+        "statsId": "Key Passes (Attempt Assists)",
+        "statsLabel": "Key Passes (Attempt Assists)",
+        "seenForPlayers": 290,
+        "exampleValues": [
+          17,
+          15,
+          21,
+          15,
+          1
+        ],
+        "matchedPhrases": [
+          "key passes",
+          "attempt assists"
+        ]
+      }
+    ],
+    "successful_crosses": [
+      {
+        "statsId": "Successful Crosses & Corners",
+        "statsLabel": "Successful Crosses & Corners",
+        "seenForPlayers": 222,
+        "exampleValues": [
+          4,
+          1,
+          27,
+          1,
+          13
+        ],
+        "matchedPhrases": [
+          "successful crosses"
+        ]
+      },
+      {
+        "statsId": "Successful Crosses open play",
+        "statsLabel": "Successful Crosses open play",
+        "seenForPlayers": 217,
+        "exampleValues": [
+          4,
+          1,
+          17,
+          1,
+          5
+        ],
+        "matchedPhrases": [
+          "successful crosses"
+        ]
+      },
+      {
+        "statsId": "Unsuccessful Crosses & Corners",
+        "statsLabel": "Unsuccessful Crosses & Corners",
+        "seenForPlayers": 275,
+        "exampleValues": [
+          13,
+          20,
+          80,
+          2,
+          4
+        ],
+        "matchedPhrases": [
+          "successful crosses"
+        ]
+      },
+      {
+        "statsId": "Unsuccessful Crosses open play",
+        "statsLabel": "Unsuccessful Crosses open play",
+        "seenForPlayers": 269,
+        "exampleValues": [
+          12,
+          20,
+          59,
+          2,
+          4
+        ],
+        "matchedPhrases": [
+          "successful crosses"
+        ]
+      }
+    ],
+    "successful_dribbles": [
+      {
+        "statsId": "Successful Dribbles",
+        "statsLabel": "Successful Dribbles",
+        "seenForPlayers": 275,
+        "exampleValues": [
+          6,
+          5,
+          7,
+          8,
+          2
+        ],
+        "matchedPhrases": [
+          "successful dribbles"
+        ]
+      },
+      {
+        "statsId": "Unsuccessful Dribbles",
+        "statsLabel": "Unsuccessful Dribbles",
+        "seenForPlayers": 277,
+        "exampleValues": [
+          8,
+          13,
+          8,
+          5,
+          2
+        ],
+        "matchedPhrases": [
+          "successful dribbles"
+        ]
+      }
+    ],
+    "tackles_won": [
+      {
+        "statsId": "tackles-won",
+        "statsLabel": "Tackles won",
+        "seenForPlayers": 400,
+        "exampleValues": [
+          21,
+          27,
+          25,
+          0,
+          24
+        ],
+        "matchedPhrases": [
+          "tackles won"
+        ]
+      },
+      {
+        "statsId": "Tackles Won",
+        "statsLabel": "Tackles Won",
+        "seenForPlayers": 301,
+        "exampleValues": [
+          21,
+          27,
+          25,
+          24,
+          15
+        ],
+        "matchedPhrases": [
+          "tackles won"
+        ]
+      },
+      {
+        "statsId": "tackles-won-perc",
+        "statsLabel": "Tackles Won Percentage",
+        "seenForPlayers": 400,
+        "exampleValues": [
+          58.33,
+          72.97,
+          51.02,
+          0,
+          55.81
+        ],
+        "matchedPhrases": [
+          "tackles won"
+        ]
+      }
+    ],
+    "interceptions": [
+      {
+        "statsId": "Interceptions",
+        "statsLabel": "Interceptions",
+        "seenForPlayers": 287,
+        "exampleValues": [
+          28,
+          11,
+          29,
+          36,
+          9
+        ],
+        "matchedPhrases": [
+          "interceptions",
+          "interception"
+        ]
+      }
+    ],
+    "clearances": [
+      {
+        "statsId": "Clearances Off the Line",
+        "statsLabel": "Clearances Off the Line",
+        "seenForPlayers": 25,
+        "exampleValues": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "matchedPhrases": [
+          "clearances",
+          "clearance"
+        ]
+      },
+      {
+        "statsId": "Total Clearances",
+        "statsLabel": "Total Clearances",
+        "seenForPlayers": 322,
+        "exampleValues": [
+          24,
+          27,
+          76,
+          24,
+          42
+        ],
+        "matchedPhrases": [
+          "clearances",
+          "clearance"
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "statsId": "Blocked Shots",
+        "statsLabel": "Blocked Shots",
+        "seenForPlayers": 245,
+        "exampleValues": [
+          3,
+          3,
+          4,
+          2,
+          1
+        ],
+        "matchedPhrases": [
+          "blocked shots",
+          "blocked"
+        ]
+      },
+      {
+        "statsId": "Blocks",
+        "statsLabel": "Blocks",
+        "seenForPlayers": 218,
+        "exampleValues": [
+          2,
+          8,
+          12,
+          10,
+          2
+        ],
+        "matchedPhrases": [
+          "blocks"
+        ]
+      },
+      {
+        "statsId": "PutThrough/Blocked Distribution",
+        "statsLabel": "PutThrough/Blocked Distribution",
+        "seenForPlayers": 306,
+        "exampleValues": [
+          18,
+          38,
+          43,
+          20,
+          8
+        ],
+        "matchedPhrases": [
+          "blocked"
+        ]
+      },
+      {
+        "statsId": "PutThrough/Blocked Distribution Won",
+        "statsLabel": "PutThrough/Blocked Distribution Won",
+        "seenForPlayers": 291,
+        "exampleValues": [
+          15,
+          23,
+          21,
+          12,
+          7
+        ],
+        "matchedPhrases": [
+          "blocked"
+        ]
+      }
+    ],
+    "recoveries": [
+      {
+        "statsId": "Recoveries",
+        "statsLabel": "Recoveries",
+        "seenForPlayers": 333,
+        "exampleValues": [
+          109,
+          60,
+          66,
+          87,
+          46
+        ],
+        "matchedPhrases": [
+          "recoveries"
+        ]
+      }
+    ]
+  },
+  "representativePlayers": {
+    "MID": {
+      "name": "L. LaBonta",
+      "team": "KC",
+      "positionRaw": "Midfielder",
+      "playerId": "nwsl::Football_Player::9b7fd5c1259c48b1a87f1cc0c10f713c",
+      "providerId": "opta:Player:4c6z6g6q7jq62bznylu0kjnc9",
+      "statsCount": 135,
+      "sampleStats": [
+        {
+          "statsId": "games-played",
+          "statsLabel": "Games played",
+          "statsLabelAbbreviation": "GP",
+          "statsValue": 22,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "minutes-played",
+          "statsLabel": "Minutes played",
+          "statsLabelAbbreviation": "Mins",
+          "statsValue": 1794,
+          "statsUnit": "minutes",
+          "statsUnitAbbreviation": "'"
+        },
+        {
+          "statsId": "goals",
+          "statsLabel": "Goals",
+          "statsLabelAbbreviation": "G",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "assists",
+          "statsLabel": "Assists",
+          "statsLabelAbbreviation": "A",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-scoring-attempts",
+          "statsLabel": "Total scoring attempts",
+          "statsLabelAbbreviation": "S",
+          "statsValue": 12,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goal-involvements",
+          "statsLabel": "Goals Involvements",
+          "statsLabelAbbreviation": "GI",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "on-target-scoring-attempts",
+          "statsLabel": "On target scoring attempts",
+          "statsLabelAbbreviation": "SOT",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-attacking-assist",
+          "statsLabel": "Total attacking assists",
+          "statsLabelAbbreviation": "KP",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won",
+          "statsLabel": "Tackles won",
+          "statsLabelAbbreviation": "Tackles",
+          "statsValue": 21,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-committed",
+          "statsLabel": "Fouls committed",
+          "statsLabelAbbreviation": "FC",
+          "statsValue": 10,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-suffered",
+          "statsLabel": "Fouls suffered",
+          "statsLabelAbbreviation": "FS",
+          "statsValue": 25,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-offside",
+          "statsLabel": "Total offside",
+          "statsLabelAbbreviation": "OFF",
+          "statsValue": 2,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-cards",
+          "statsLabel": "Yellow cards",
+          "statsLabelAbbreviation": "YC",
+          "statsValue": 2,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "red-cards",
+          "statsLabel": "Red cards",
+          "statsLabelAbbreviation": "RC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Aerials-Won-Perc",
+          "statsLabel": "Aerials Won Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "accurate-pass-percentage",
+          "statsLabel": "Accurate pass percentage",
+          "statsLabelAbbreviation": "Pass%",
+          "statsValue": 82,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-conceded",
+          "statsLabel": "Goals conceded",
+          "statsLabelAbbreviation": "",
+          "statsValue": 26,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-against-average",
+          "statsLabel": "Goals against average",
+          "statsLabelAbbreviation": "GAA",
+          "statsValue": 1.3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "corners",
+          "statsLabel": "corners",
+          "statsLabelAbbreviation": "",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-free-kick",
+          "statsLabel": "Goals Free kick",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "hit-woodwork",
+          "statsLabel": "Hit Woodwork",
+          "statsLabelAbbreviation": "",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalty-attempts",
+          "statsLabel": "Penalty Attempts",
+          "statsLabelAbbreviation": "",
+          "statsValue": 2,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalties-successful",
+          "statsLabel": "Penalties Successful",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-red-cards",
+          "statsLabel": "Yellow Red Cards",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Xg",
+          "statsLabel": "Xg",
+          "statsLabelAbbreviation": "",
+          "statsValue": 2.1854,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "XGEfficiency",
+          "statsLabel": "XGEfficiency",
+          "statsLabelAbbreviation": "",
+          "statsValue": -1.1854,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won-perc",
+          "statsLabel": "Tackles Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 58.33,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "duels-won-perc",
+          "statsLabel": "Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 62.5,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "aerial-duels-won-perc",
+          "statsLabel": "Aerial Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 56.25,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "crosses-complete-percentage",
+          "statsLabel": "Cross Complete Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 23.53,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered",
+          "statsLabel": "Total Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "avg-distance-covered",
+          "statsLabel": "Average Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-walking",
+          "statsLabel": "Total Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-walking",
+          "statsLabel": "Average Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-jogging",
+          "statsLabel": "Total Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-jogging",
+          "statsLabel": "Average Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-low-intensity-running",
+          "statsLabel": "Total Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-low-intensity-running",
+          "statsLabel": "Average Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-sprinting",
+          "statsLabel": "Total Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-sprinting",
+          "statsLabel": "Average Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        }
+      ]
+    },
+    "FOR": {
+      "name": "H. Hopkins",
+      "team": "KC",
+      "positionRaw": "Forward",
+      "playerId": "nwsl::Football_Player::f82ac82c607145468005f6b2e5da5b72",
+      "providerId": "opta:Player:3qk8owv039ppiiev6skkkb52i",
+      "statsCount": 134,
+      "sampleStats": [
+        {
+          "statsId": "games-played",
+          "statsLabel": "Games played",
+          "statsLabelAbbreviation": "GP",
+          "statsValue": 23,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "minutes-played",
+          "statsLabel": "Minutes played",
+          "statsLabelAbbreviation": "Mins",
+          "statsValue": 1332,
+          "statsUnit": "minutes",
+          "statsUnitAbbreviation": "'"
+        },
+        {
+          "statsId": "goals",
+          "statsLabel": "Goals",
+          "statsLabelAbbreviation": "G",
+          "statsValue": 5,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "assists",
+          "statsLabel": "Assists",
+          "statsLabelAbbreviation": "A",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-scoring-attempts",
+          "statsLabel": "Total scoring attempts",
+          "statsLabelAbbreviation": "S",
+          "statsValue": 22,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goal-involvements",
+          "statsLabel": "Goals Involvements",
+          "statsLabelAbbreviation": "GI",
+          "statsValue": 8,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "on-target-scoring-attempts",
+          "statsLabel": "On target scoring attempts",
+          "statsLabelAbbreviation": "SOT",
+          "statsValue": 14,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-attacking-assist",
+          "statsLabel": "Total attacking assists",
+          "statsLabelAbbreviation": "KP",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won",
+          "statsLabel": "Tackles won",
+          "statsLabelAbbreviation": "Tackles",
+          "statsValue": 27,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-committed",
+          "statsLabel": "Fouls committed",
+          "statsLabelAbbreviation": "FC",
+          "statsValue": 23,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-suffered",
+          "statsLabel": "Fouls suffered",
+          "statsLabelAbbreviation": "FS",
+          "statsValue": 12,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-offside",
+          "statsLabel": "Total offside",
+          "statsLabelAbbreviation": "OFF",
+          "statsValue": 9,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-cards",
+          "statsLabel": "Yellow cards",
+          "statsLabelAbbreviation": "YC",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "red-cards",
+          "statsLabel": "Red cards",
+          "statsLabelAbbreviation": "RC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Aerials-Won-Perc",
+          "statsLabel": "Aerials Won Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "accurate-pass-percentage",
+          "statsLabel": "Accurate pass percentage",
+          "statsLabelAbbreviation": "Pass%",
+          "statsValue": 67,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-conceded",
+          "statsLabel": "Goals conceded",
+          "statsLabelAbbreviation": "",
+          "statsValue": 20,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-against-average",
+          "statsLabel": "Goals against average",
+          "statsLabelAbbreviation": "GAA",
+          "statsValue": 1.35,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "corners",
+          "statsLabel": "corners",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-free-kick",
+          "statsLabel": "Goals Free kick",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "hit-woodwork",
+          "statsLabel": "Hit Woodwork",
+          "statsLabelAbbreviation": "",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalty-attempts",
+          "statsLabel": "Penalty Attempts",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalties-successful",
+          "statsLabel": "Penalties Successful",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-red-cards",
+          "statsLabel": "Yellow Red Cards",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Xg",
+          "statsLabel": "Xg",
+          "statsLabelAbbreviation": "",
+          "statsValue": 5.3043,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "XGEfficiency",
+          "statsLabel": "XGEfficiency",
+          "statsLabelAbbreviation": "",
+          "statsValue": -0.3043,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won-perc",
+          "statsLabel": "Tackles Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 72.97,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "duels-won-perc",
+          "statsLabel": "Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 45.97,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "aerial-duels-won-perc",
+          "statsLabel": "Aerial Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 52.44,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "crosses-complete-percentage",
+          "statsLabel": "Cross Complete Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 4.76,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered",
+          "statsLabel": "Total Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "avg-distance-covered",
+          "statsLabel": "Average Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-walking",
+          "statsLabel": "Total Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-walking",
+          "statsLabel": "Average Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-jogging",
+          "statsLabel": "Total Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-jogging",
+          "statsLabel": "Average Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-low-intensity-running",
+          "statsLabel": "Total Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-low-intensity-running",
+          "statsLabel": "Average Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-sprinting",
+          "statsLabel": "Total Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-sprinting",
+          "statsLabel": "Average Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        }
+      ]
+    },
+    "DEF": {
+      "name": "I. Rodriguez",
+      "team": "KC",
+      "positionRaw": "Defender",
+      "playerId": "nwsl::Football_Player::04a1aad603eb46dd9c349c2ba91d2322",
+      "providerId": "opta:Player:736jvvtkgwc3g1vooviaod33d",
+      "statsCount": 138,
+      "sampleStats": [
+        {
+          "statsId": "games-played",
+          "statsLabel": "Games played",
+          "statsLabelAbbreviation": "GP",
+          "statsValue": 23,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "minutes-played",
+          "statsLabel": "Minutes played",
+          "statsLabelAbbreviation": "Mins",
+          "statsValue": 2007,
+          "statsUnit": "minutes",
+          "statsUnitAbbreviation": "'"
+        },
+        {
+          "statsId": "goals",
+          "statsLabel": "Goals",
+          "statsLabelAbbreviation": "G",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "assists",
+          "statsLabel": "Assists",
+          "statsLabelAbbreviation": "A",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-scoring-attempts",
+          "statsLabel": "Total scoring attempts",
+          "statsLabelAbbreviation": "S",
+          "statsValue": 11,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goal-involvements",
+          "statsLabel": "Goals Involvements",
+          "statsLabelAbbreviation": "GI",
+          "statsValue": 4,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "on-target-scoring-attempts",
+          "statsLabel": "On target scoring attempts",
+          "statsLabelAbbreviation": "SOT",
+          "statsValue": 7,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-attacking-assist",
+          "statsLabel": "Total attacking assists",
+          "statsLabelAbbreviation": "KP",
+          "statsValue": 3,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won",
+          "statsLabel": "Tackles won",
+          "statsLabelAbbreviation": "Tackles",
+          "statsValue": 25,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-committed",
+          "statsLabel": "Fouls committed",
+          "statsLabelAbbreviation": "FC",
+          "statsValue": 19,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-suffered",
+          "statsLabel": "Fouls suffered",
+          "statsLabelAbbreviation": "FS",
+          "statsValue": 11,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-offside",
+          "statsLabel": "Total offside",
+          "statsLabelAbbreviation": "OFF",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-cards",
+          "statsLabel": "Yellow cards",
+          "statsLabelAbbreviation": "YC",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "red-cards",
+          "statsLabel": "Red cards",
+          "statsLabelAbbreviation": "RC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Aerials-Won-Perc",
+          "statsLabel": "Aerials Won Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "accurate-pass-percentage",
+          "statsLabel": "Accurate pass percentage",
+          "statsLabelAbbreviation": "Pass%",
+          "statsValue": 67,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-conceded",
+          "statsLabel": "Goals conceded",
+          "statsLabelAbbreviation": "",
+          "statsValue": 30,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-against-average",
+          "statsLabel": "Goals against average",
+          "statsLabelAbbreviation": "GAA",
+          "statsValue": 1.35,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "corners",
+          "statsLabel": "corners",
+          "statsLabelAbbreviation": "",
+          "statsValue": 32,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-free-kick",
+          "statsLabel": "Goals Free kick",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "hit-woodwork",
+          "statsLabel": "Hit Woodwork",
+          "statsLabelAbbreviation": "",
+          "statsValue": 1,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalty-attempts",
+          "statsLabel": "Penalty Attempts",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalties-successful",
+          "statsLabel": "Penalties Successful",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-red-cards",
+          "statsLabel": "Yellow Red Cards",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Xg",
+          "statsLabel": "Xg",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0.8518,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "XGEfficiency",
+          "statsLabel": "XGEfficiency",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0.1482,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won-perc",
+          "statsLabel": "Tackles Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 51.02,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "duels-won-perc",
+          "statsLabel": "Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 56.74,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "aerial-duels-won-perc",
+          "statsLabel": "Aerial Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 51.85,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "crosses-complete-percentage",
+          "statsLabel": "Cross Complete Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 16.19,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered",
+          "statsLabel": "Total Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "avg-distance-covered",
+          "statsLabel": "Average Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-walking",
+          "statsLabel": "Total Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-walking",
+          "statsLabel": "Average Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-jogging",
+          "statsLabel": "Total Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-jogging",
+          "statsLabel": "Average Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-low-intensity-running",
+          "statsLabel": "Total Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-low-intensity-running",
+          "statsLabel": "Average Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-sprinting",
+          "statsLabel": "Total Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-sprinting",
+          "statsLabel": "Average Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        }
+      ]
+    },
+    "GK": {
+      "name": "Lorena",
+      "team": "KC",
+      "positionRaw": "Goalkeeper",
+      "playerId": "nwsl::Football_Player::7d50dd7b6526453ea7be4ca492fdef5a",
+      "providerId": "opta:Player:das6ydxiwz8trtyp98ss5i295",
+      "statsCount": 102,
+      "sampleStats": [
+        {
+          "statsId": "games-played",
+          "statsLabel": "Games played",
+          "statsLabelAbbreviation": "GP",
+          "statsValue": 14,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "minutes-played",
+          "statsLabel": "Minutes played",
+          "statsLabelAbbreviation": "Mins",
+          "statsValue": 1260,
+          "statsUnit": "minutes",
+          "statsUnitAbbreviation": "'"
+        },
+        {
+          "statsId": "goals",
+          "statsLabel": "Goals",
+          "statsLabelAbbreviation": "G",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "assists",
+          "statsLabel": "Assists",
+          "statsLabelAbbreviation": "A",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-scoring-attempts",
+          "statsLabel": "Total scoring attempts",
+          "statsLabelAbbreviation": "S",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goal-involvements",
+          "statsLabel": "Goals Involvements",
+          "statsLabelAbbreviation": "GI",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "on-target-scoring-attempts",
+          "statsLabel": "On target scoring attempts",
+          "statsLabelAbbreviation": "SOT",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-attacking-assist",
+          "statsLabel": "Total attacking assists",
+          "statsLabelAbbreviation": "KP",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won",
+          "statsLabel": "Tackles won",
+          "statsLabelAbbreviation": "Tackles",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-committed",
+          "statsLabel": "Fouls committed",
+          "statsLabelAbbreviation": "FC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "fouls-suffered",
+          "statsLabel": "Fouls suffered",
+          "statsLabelAbbreviation": "FS",
+          "statsValue": 5,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-offside",
+          "statsLabel": "Total offside",
+          "statsLabelAbbreviation": "OFF",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-cards",
+          "statsLabel": "Yellow cards",
+          "statsLabelAbbreviation": "YC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "red-cards",
+          "statsLabel": "Red cards",
+          "statsLabelAbbreviation": "RC",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Aerials-Won-Perc",
+          "statsLabel": "Aerials Won Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "accurate-pass-percentage",
+          "statsLabel": "Accurate pass percentage",
+          "statsLabelAbbreviation": "Pass%",
+          "statsValue": 71,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-conceded",
+          "statsLabel": "Goals conceded",
+          "statsLabelAbbreviation": "",
+          "statsValue": 20,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-against-average",
+          "statsLabel": "Goals against average",
+          "statsLabelAbbreviation": "GAA",
+          "statsValue": 1.43,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "corners",
+          "statsLabel": "corners",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "goals-free-kick",
+          "statsLabel": "Goals Free kick",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "hit-woodwork",
+          "statsLabel": "Hit Woodwork",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalty-attempts",
+          "statsLabel": "Penalty Attempts",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "penalties-successful",
+          "statsLabel": "Penalties Successful",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "yellow-red-cards",
+          "statsLabel": "Yellow Red Cards",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "Xg",
+          "statsLabel": "Xg",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "XGEfficiency",
+          "statsLabel": "XGEfficiency",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "tackles-won-perc",
+          "statsLabel": "Tackles Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "duels-won-perc",
+          "statsLabel": "Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 70,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "aerial-duels-won-perc",
+          "statsLabel": "Aerial Duels Won Percentage",
+          "statsLabelAbbreviation": "%",
+          "statsValue": 66.67,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "crosses-complete-percentage",
+          "statsLabel": "Cross Complete Percentage",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered",
+          "statsLabel": "Total Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "avg-distance-covered",
+          "statsLabel": "Average Distance Covered",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-walking",
+          "statsLabel": "Total Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-walking",
+          "statsLabel": "Average Distance Covered Walking",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-jogging",
+          "statsLabel": "Total Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-jogging",
+          "statsLabel": "Average Distance Covered Jogging",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-low-intensity-running",
+          "statsLabel": "Total Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-low-intensity-running",
+          "statsLabel": "Average Distance Covered Low Intensity Running",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "total-distance-covered-sprinting",
+          "statsLabel": "Total Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        },
+        {
+          "statsId": "average-distance-covered-sprinting",
+          "statsLabel": "Average Distance Covered Sprinting",
+          "statsLabelAbbreviation": "",
+          "statsValue": 0,
+          "statsUnit": null,
+          "statsUnitAbbreviation": null
+        }
+      ]
+    }
+  },
+  "samplePlayerTargetValues": [
+    {
+      "name": "L. LaBonta",
+      "team": "KC",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::9b7fd5c1259c48b1a87f1cc0c10f713c",
+      "providerId": "opta:Player:4c6z6g6q7jq62bznylu0kjnc9",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 3
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 17
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 4
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 12
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 4
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 13
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 8
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 6
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 21
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 58.33
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 21
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 28
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 24
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 18
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 15
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 3
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 109
+          }
+        ]
+      }
+    },
+    {
+      "name": "H. Hopkins",
+      "team": "KC",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::f82ac82c607145468005f6b2e5da5b72",
+      "providerId": "opta:Player:3qk8owv039ppiiev6skkkb52i",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 14
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 15
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 20
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 20
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 13
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 5
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 27
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 72.97
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 27
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 11
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 27
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 38
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 2
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 23
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 3
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 60
+          }
+        ]
+      }
+    },
+    {
+      "name": "I. Rodriguez",
+      "team": "KC",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::04a1aad603eb46dd9c349c2ba91d2322",
+      "providerId": "opta:Player:736jvvtkgwc3g1vooviaod33d",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 7
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 21
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 27
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 59
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 17
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 80
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 8
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 7
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 25
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 51.02
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 25
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 29
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Clearances Off the Line",
+            "statsLabel": "Clearances Off the Line",
+            "value": 1
+          },
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 76
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 43
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 8
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 21
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 4
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 66
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flora Marta Lacho",
+      "team": "TBD",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::a62cd15f05c645a188617a4ced02ab5c",
+      "providerId": "opta:Player:ambkmqohpux5r4cvtszfpeej8",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "D. Colaprico",
+      "team": "HOU",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::0bb3c16212754939b111d70c83644b8e",
+      "providerId": "opta:Player:1c2boqmoi50esuelgdd96o06h",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 3
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 15
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 2
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 2
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 5
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 8
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 24
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 55.81
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 24
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 36
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 24
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 20
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 12
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 12
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 2
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 87
+          }
+        ]
+      }
+    },
+    {
+      "name": "M. Berkely",
+      "team": "HOU",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::907a57b1c41046b08063e94229484b5e",
+      "providerId": "opta:Player:cqpdeqi0psfadqsgejcvdqqne",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 1
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 1
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 4
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 4
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 2
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 2
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 15
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 57.69
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 15
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 9
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Clearances Off the Line",
+            "statsLabel": "Clearances Off the Line",
+            "value": 1
+          },
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 42
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 8
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 10
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 7
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 46
+          }
+        ]
+      }
+    },
+    {
+      "name": "A. West",
+      "team": "HOU",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::077ea2ab10e8473d9224cd482d7970f0",
+      "providerId": "opta:Player:3yttjppa6jh9yv8zfc9kd34es",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "S. Puntigam",
+      "team": "HOU",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::9e98c713a7154c928697e3cf043fec63",
+      "providerId": "opta:Player:6089nfwh31ha73pl7vlla75cl",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 4
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 6
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 3
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 3
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 1
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 1
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 7
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 63.64
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 7
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 11
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 22
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 15
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 2
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 10
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 29
+          }
+        ]
+      }
+    },
+    {
+      "name": "C. Westphal",
+      "team": "HOU",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::0bc0d986844b458592417f6157d1aeb4",
+      "providerId": "opta:Player:n4egj8ymfled94mco0lwa95",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "Debinha",
+      "team": "KC",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::a74c35267e4b4a689431f9d3be7522c6",
+      "providerId": "opta:Player:5ekbwy8vf1l1jzj6txawrg7h1",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 15
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 23
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 13
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 15
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 5
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 29
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 18
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 14
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 13
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 81.25
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 13
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 12
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 4
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 29
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 15
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 8
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 72
+          }
+        ]
+      }
+    },
+    {
+      "name": "M. Brewer",
+      "team": "KC",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::3ca26686728a463fa1e1a40a4495a994",
+      "providerId": "opta:Player:7p8heljotf88nebnflokf84",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "Z. Matthews",
+      "team": "ORL",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::d19b2c8f459848858cd65bf39ae5aef3",
+      "providerId": "opta:Player:6vfx2udsgk0gsqdqnpknlpr10",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 1
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 1
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 1
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 1
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 1
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 100
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 1
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 2
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 1
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "name": "M. Long",
+      "team": "KC",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::8d16edc2033a4281990ebb8662af78b5",
+      "providerId": "opta:Player:cmivpbf5hzq5j8feacgla5nv8",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "M. Bright",
+      "team": "HOU",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::b0fe6c1df4fc4afeabe923ab23915632",
+      "providerId": "opta:Player:191uogxjdg4uo178qv1544jys",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 2
+          }
+        ],
+        "successful_crosses": [],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 3
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 1
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 4
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 80
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 4
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 1
+          }
+        ],
+        "clearances": [],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 6
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 1
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 3
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 2
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 12
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lorena",
+      "team": "KC",
+      "position": "Goalkeeper",
+      "playerId": "nwsl::Football_Player::7d50dd7b6526453ea7be4ca492fdef5a",
+      "providerId": "opta:Player:das6ydxiwz8trtyp98ss5i295",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 13
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 123
+          }
+        ]
+      }
+    },
+    {
+      "name": "V. DiBernardo",
+      "team": "KC",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::cac9bfef965b49f9a20bbc0deb15ccfa",
+      "providerId": "opta:Player:dv8265k3za578hkzxxuttqmdx",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 1
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 6
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 8
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 4
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 6
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 12
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 1
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 1
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 8
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 66.67
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 8
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 7
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 9
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 10
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 5
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 35
+          }
+        ]
+      }
+    },
+    {
+      "name": "K. Van Zanten",
+      "team": "HOU",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::defa5ede49564c5c9b518c5c5281cf9a",
+      "providerId": "opta:Player:97ia01cyibu1l7qs8qexd2n3e",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 18
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 17
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 6
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 12
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 6
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 12
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 29
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 15
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 16
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 59.26
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 16
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 9
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 16
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 41
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 1
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 27
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 3
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 56
+          }
+        ]
+      }
+    },
+    {
+      "name": "M. Hayashi",
+      "team": "CHI",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::13f55375d4344a56ab4ae19e39d9342d",
+      "providerId": "opta:Player:56jjwfa02gep01vggqojvfbe2",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 3
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 10
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 5
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 5
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 15
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 7
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 6
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 26
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 63.41
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 26
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 17
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 15
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 26
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 9
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 16
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 74
+          }
+        ]
+      }
+    },
+    {
+      "name": "T. Wood",
+      "team": "CHI",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::144dbd486f6847edb0164f392e656aac",
+      "providerId": "opta:Player:4tnm3hxzav142ow867jwcozkk",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 3
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 8
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 8
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 3
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 8
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 100
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 8
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 12
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 17
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 11
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 4
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 2
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 2
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 26
+          }
+        ]
+      }
+    },
+    {
+      "name": "S. Schmidt",
+      "team": "HOU",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::55c607b8f8ea48efa308facc28601331",
+      "providerId": "opta:Player:cgfk0e62cesbgieslfge2p61h",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 3
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 5
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 3
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 3
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 1
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 2
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 5
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 83.33
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 5
+          }
+        ],
+        "interceptions": [],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 6
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 5
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 13
+          }
+        ]
+      }
+    },
+    {
+      "name": "S. Cary Angel",
+      "team": "CHI",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::23ad319baa72463cbb6e646de021b507",
+      "providerId": "opta:Player:1fupp4fzx28kvln7xziqkahd6",
+      "targetValues": {
+        "shots_on_target": [],
+        "key_passes": [],
+        "successful_crosses": [],
+        "successful_dribbles": [],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 0
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 0
+          }
+        ],
+        "interceptions": [],
+        "clearances": [],
+        "blocks": [],
+        "recoveries": []
+      }
+    },
+    {
+      "name": "J. Bike",
+      "team": "CHI",
+      "position": "Forward",
+      "playerId": "nwsl::Football_Player::badbf997458d485caabfecfba5bb76f1",
+      "providerId": "opta:Player:8v62hppzsz2yonw60h9910iga",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 2
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 6
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 15
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 16
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 2
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 7
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 12
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 54.55
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 12
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 10
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 31
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 24
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 3
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 12
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 3
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 39
+          }
+        ]
+      }
+    },
+    {
+      "name": "G. Robinson",
+      "team": "KC",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::27615fa77e0f4bc78e0365f58a4df924",
+      "providerId": "opta:Player:72e9oc63fclgqqvn3lgsjue50",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 1
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 2
+          }
+        ],
+        "successful_crosses": [],
+        "successful_dribbles": [
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 1
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 10
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 83.33
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 10
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 25
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 87
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 15
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 9
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 8
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 54
+          }
+        ]
+      }
+    },
+    {
+      "name": "B. Franklin",
+      "team": "CHI",
+      "position": "Midfielder",
+      "playerId": "nwsl::Football_Player::84e65c9b042d400492b5088a8f3d3c6a",
+      "providerId": "opta:Player:a652ucv412tcgm98cx2ri6psk",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 1
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 2
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 1
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 1
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 3
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 2
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 4
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 100
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 4
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 11
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 30
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 4
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 4
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 3
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 18
+          }
+        ]
+      }
+    },
+    {
+      "name": "M. Alozie",
+      "team": "CHI",
+      "position": "Defender",
+      "playerId": "nwsl::Football_Player::8772001989134074a48629a1110d6b62",
+      "providerId": "opta:Player:edwr7f7jwnxm1plk91fx8hfro",
+      "targetValues": {
+        "shots_on_target": [
+          {
+            "statsId": "Shots On Target ( inc goals )",
+            "statsLabel": "Shots On Target ( inc goals )",
+            "value": 4
+          }
+        ],
+        "key_passes": [
+          {
+            "statsId": "Key Passes (Attempt Assists)",
+            "statsLabel": "Key Passes (Attempt Assists)",
+            "value": 6
+          }
+        ],
+        "successful_crosses": [
+          {
+            "statsId": "Successful Crosses & Corners",
+            "statsLabel": "Successful Crosses & Corners",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses open play",
+            "statsLabel": "Unsuccessful Crosses open play",
+            "value": 15
+          },
+          {
+            "statsId": "Successful Crosses open play",
+            "statsLabel": "Successful Crosses open play",
+            "value": 2
+          },
+          {
+            "statsId": "Unsuccessful Crosses & Corners",
+            "statsLabel": "Unsuccessful Crosses & Corners",
+            "value": 15
+          }
+        ],
+        "successful_dribbles": [
+          {
+            "statsId": "Unsuccessful Dribbles",
+            "statsLabel": "Unsuccessful Dribbles",
+            "value": 9
+          },
+          {
+            "statsId": "Successful Dribbles",
+            "statsLabel": "Successful Dribbles",
+            "value": 5
+          }
+        ],
+        "tackles_won": [
+          {
+            "statsId": "tackles-won",
+            "statsLabel": "Tackles won",
+            "value": 19
+          },
+          {
+            "statsId": "tackles-won-perc",
+            "statsLabel": "Tackles Won Percentage",
+            "value": 76
+          },
+          {
+            "statsId": "Tackles Won",
+            "statsLabel": "Tackles Won",
+            "value": 19
+          }
+        ],
+        "interceptions": [
+          {
+            "statsId": "Interceptions",
+            "statsLabel": "Interceptions",
+            "value": 12
+          }
+        ],
+        "clearances": [
+          {
+            "statsId": "Total Clearances",
+            "statsLabel": "Total Clearances",
+            "value": 28
+          }
+        ],
+        "blocks": [
+          {
+            "statsId": "PutThrough/Blocked Distribution",
+            "statsLabel": "PutThrough/Blocked Distribution",
+            "value": 18
+          },
+          {
+            "statsId": "Blocks",
+            "statsLabel": "Blocks",
+            "value": 2
+          },
+          {
+            "statsId": "PutThrough/Blocked Distribution Won",
+            "statsLabel": "PutThrough/Blocked Distribution Won",
+            "value": 6
+          },
+          {
+            "statsId": "Blocked Shots",
+            "statsLabel": "Blocked Shots",
+            "value": 1
+          }
+        ],
+        "recoveries": [
+          {
+            "statsId": "Recoveries",
+            "statsLabel": "Recoveries",
+            "value": 24
+          }
+        ]
+      }
+    }
+  ],
+  "allAvailableStats": [
+    {
+      "statsId": "accurate-pass-percentage",
+      "statsLabel": "Accurate pass percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        82,
+        67,
+        67,
+        81,
+        78
+      ]
+    },
+    {
+      "statsId": "Aerial Duels",
+      "statsLabel": "Aerial Duels",
+      "seenForPlayers": 316,
+      "exampleValues": [
+        16,
+        82,
+        27,
+        18,
+        11
+      ]
+    },
+    {
+      "statsId": "Aerial Duels lost",
+      "statsLabel": "Aerial Duels lost",
+      "seenForPlayers": 295,
+      "exampleValues": [
+        7,
+        39,
+        13,
+        9,
+        7
+      ]
+    },
+    {
+      "statsId": "Aerial Duels won",
+      "statsLabel": "Aerial Duels won",
+      "seenForPlayers": 303,
+      "exampleValues": [
+        9,
+        43,
+        14,
+        9,
+        4
+      ]
+    },
+    {
+      "statsId": "aerial-duels-won-perc",
+      "statsLabel": "Aerial Duels Won Percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        56.25,
+        52.44,
+        51.85,
+        0,
+        50
+      ]
+    },
+    {
+      "statsId": "Aerials-Won-Perc",
+      "statsLabel": "Aerials Won Percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Appearances",
+      "statsLabel": "Appearances",
+      "seenForPlayers": 342,
+      "exampleValues": [
+        22,
+        23,
+        23,
+        23,
+        17
+      ]
+    },
+    {
+      "statsId": "assists",
+      "statsLabel": "Assists",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        3,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "statsId": "Assists (Intentional)",
+      "statsLabel": "Assists (Intentional)",
+      "seenForPlayers": 133,
+      "exampleValues": [
+        2,
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Attempts from Set Pieces",
+      "statsLabel": "Attempts from Set Pieces",
+      "seenForPlayers": 38,
+      "exampleValues": [
+        4,
+        1,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "statsId": "avg-distance-covered",
+      "statsLabel": "Average Distance Covered",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "average-distance-covered-high-intensity-running",
+      "statsLabel": "Average Distance Covered High Intensity Running",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "average-distance-covered-jogging",
+      "statsLabel": "Average Distance Covered Jogging",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "average-distance-covered-low-intensity-running",
+      "statsLabel": "Average Distance Covered Low Intensity Running",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "average-distance-covered-sprinting",
+      "statsLabel": "Average Distance Covered Sprinting",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "average-distance-covered-walking",
+      "statsLabel": "Average Distance Covered Walking",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Away Goals",
+      "statsLabel": "Away Goals",
+      "seenForPlayers": 149,
+      "exampleValues": [
+        0,
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "statsId": "Backward Passes",
+      "statsLabel": "Backward Passes",
+      "seenForPlayers": 307,
+      "exampleValues": [
+        114,
+        97,
+        135,
+        89,
+        26
+      ]
+    },
+    {
+      "statsId": "Blocked Shots",
+      "statsLabel": "Blocked Shots",
+      "seenForPlayers": 245,
+      "exampleValues": [
+        3,
+        3,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "statsId": "Blocks",
+      "statsLabel": "Blocks",
+      "seenForPlayers": 218,
+      "exampleValues": [
+        2,
+        8,
+        12,
+        10,
+        2
+      ]
+    },
+    {
+      "statsId": "Carries",
+      "statsLabel": "Carries",
+      "seenForPlayers": 338,
+      "exampleValues": [
+        138,
+        88,
+        176,
+        107,
+        137
+      ]
+    },
+    {
+      "statsId": "Catches",
+      "statsLabel": "Catches",
+      "seenForPlayers": 26,
+      "exampleValues": [
+        7,
+        3,
+        3,
+        8,
+        11
+      ]
+    },
+    {
+      "statsId": "Clean Sheets",
+      "statsLabel": "Clean Sheets",
+      "seenForPlayers": 176,
+      "exampleValues": [
+        4,
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "statsId": "Clearances Off the Line",
+      "statsLabel": "Clearances Off the Line",
+      "seenForPlayers": 25,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "corners",
+      "statsLabel": "corners",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1,
+        0,
+        32,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Corners Taken (incl short corners)",
+      "statsLabel": "Corners Taken (incl short corners)",
+      "seenForPlayers": 111,
+      "exampleValues": [
+        1,
+        32,
+        24,
+        11,
+        4
+      ]
+    },
+    {
+      "statsId": "Corners Won",
+      "statsLabel": "Corners Won",
+      "seenForPlayers": 263,
+      "exampleValues": [
+        7,
+        20,
+        20,
+        2,
+        2
+      ]
+    },
+    {
+      "statsId": "crosses-complete-percentage",
+      "statsLabel": "Cross Complete Percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        23.53,
+        4.76,
+        16.19,
+        0,
+        33.33
+      ]
+    },
+    {
+      "statsId": "Crosses not Claimed",
+      "statsLabel": "Crosses not Claimed",
+      "seenForPlayers": 1,
+      "exampleValues": [
+        1
+      ]
+    },
+    {
+      "statsId": "Direct Corner Goals",
+      "statsLabel": "Direct Corner Goals",
+      "seenForPlayers": 1,
+      "exampleValues": [
+        1
+      ]
+    },
+    {
+      "statsId": "Direct Setpiece Goals",
+      "statsLabel": "Direct Setpiece Goals",
+      "seenForPlayers": 6,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Drops",
+      "statsLabel": "Drops",
+      "seenForPlayers": 17,
+      "exampleValues": [
+        3,
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "statsId": "Duels",
+      "statsLabel": "Duels",
+      "seenForPlayers": 330,
+      "exampleValues": [
+        120,
+        211,
+        141,
+        137,
+        49
+      ]
+    },
+    {
+      "statsId": "Duels lost",
+      "statsLabel": "Duels lost",
+      "seenForPlayers": 325,
+      "exampleValues": [
+        45,
+        114,
+        61,
+        49,
+        14
+      ]
+    },
+    {
+      "statsId": "Duels won",
+      "statsLabel": "Duels won",
+      "seenForPlayers": 328,
+      "exampleValues": [
+        75,
+        97,
+        80,
+        88,
+        35
+      ]
+    },
+    {
+      "statsId": "duels-won-perc",
+      "statsLabel": "Duels Won Percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        62.5,
+        45.97,
+        56.74,
+        0,
+        64.23
+      ]
+    },
+    {
+      "statsId": "Final Third Touches",
+      "statsLabel": "Final Third Touches",
+      "seenForPlayers": 312,
+      "exampleValues": [
+        216,
+        327,
+        378,
+        159,
+        30
+      ]
+    },
+    {
+      "statsId": "Forward Passes",
+      "statsLabel": "Forward Passes",
+      "seenForPlayers": 339,
+      "exampleValues": [
+        303,
+        102,
+        405,
+        254,
+        197
+      ]
+    },
+    {
+      "statsId": "Foul Attempted Tackle",
+      "statsLabel": "Foul Attempted Tackle",
+      "seenForPlayers": 286,
+      "exampleValues": [
+        7,
+        15,
+        11,
+        11,
+        1
+      ]
+    },
+    {
+      "statsId": "Foul Won Penalty",
+      "statsLabel": "Foul Won Penalty",
+      "seenForPlayers": 35,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "fouls-committed",
+      "statsLabel": "Fouls committed",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        10,
+        23,
+        19,
+        0,
+        22
+      ]
+    },
+    {
+      "statsId": "fouls-suffered",
+      "statsLabel": "Fouls suffered",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        25,
+        12,
+        11,
+        0,
+        28
+      ]
+    },
+    {
+      "statsId": "games-played",
+      "statsLabel": "Games played",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        22,
+        23,
+        23,
+        0,
+        23
+      ]
+    },
+    {
+      "statsId": "Games Played",
+      "statsLabel": "Games Played",
+      "seenForPlayers": 350,
+      "exampleValues": [
+        22,
+        23,
+        23,
+        0,
+        23
+      ]
+    },
+    {
+      "statsId": "GK Successful Distribution",
+      "statsLabel": "GK Successful Distribution",
+      "seenForPlayers": 81,
+      "exampleValues": [
+        1,
+        16,
+        144,
+        2,
+        8
+      ]
+    },
+    {
+      "statsId": "GK Unsuccessful Distribution",
+      "statsLabel": "GK Unsuccessful Distribution",
+      "seenForPlayers": 40,
+      "exampleValues": [
+        8,
+        27,
+        35,
+        1,
+        4
+      ]
+    },
+    {
+      "statsId": "Goal Assists",
+      "statsLabel": "Goal Assists",
+      "seenForPlayers": 155,
+      "exampleValues": [
+        3,
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Goal Kicks",
+      "statsLabel": "Goal Kicks",
+      "seenForPlayers": 85,
+      "exampleValues": [
+        1,
+        24,
+        104,
+        2,
+        8
+      ]
+    },
+    {
+      "statsId": "Goalkeeper Smother",
+      "statsLabel": "Goalkeeper Smother",
+      "seenForPlayers": 21,
+      "exampleValues": [
+        3,
+        2,
+        3,
+        5,
+        1
+      ]
+    },
+    {
+      "statsId": "goals",
+      "statsLabel": "Goals",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1,
+        5,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Goals",
+      "statsLabel": "Goals",
+      "seenForPlayers": 157,
+      "exampleValues": [
+        1,
+        5,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "goals-against-average",
+      "statsLabel": "Goals against average",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1.3,
+        1.35,
+        1.35,
+        1.48,
+        1.72
+      ]
+    },
+    {
+      "statsId": "goals-conceded",
+      "statsLabel": "Goals conceded",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        26,
+        20,
+        30,
+        0,
+        28
+      ]
+    },
+    {
+      "statsId": "Goals Conceded",
+      "statsLabel": "Goals Conceded",
+      "seenForPlayers": 327,
+      "exampleValues": [
+        26,
+        20,
+        30,
+        28,
+        18
+      ]
+    },
+    {
+      "statsId": "Goals Conceded Inside Box",
+      "statsLabel": "Goals Conceded Inside Box",
+      "seenForPlayers": 323,
+      "exampleValues": [
+        24,
+        19,
+        27,
+        25,
+        16
+      ]
+    },
+    {
+      "statsId": "Goals Conceded Outside Box",
+      "statsLabel": "Goals Conceded Outside Box",
+      "seenForPlayers": 256,
+      "exampleValues": [
+        2,
+        1,
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "statsId": "goals-free-kick",
+      "statsLabel": "Goals Free kick",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Goals from Inside Box",
+      "statsLabel": "Goals from Inside Box",
+      "seenForPlayers": 136,
+      "exampleValues": [
+        1,
+        5,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "statsId": "Goals from Outside Box",
+      "statsLabel": "Goals from Outside Box",
+      "seenForPlayers": 46,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "statsId": "goal-involvements",
+      "statsLabel": "Goals Involvements",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1,
+        8,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "statsId": "Goals Openplay",
+      "statsLabel": "Goals Openplay",
+      "seenForPlayers": 122,
+      "exampleValues": [
+        1,
+        5,
+        4,
+        5,
+        1
+      ]
+    },
+    {
+      "statsId": "Ground Duels",
+      "statsLabel": "Ground Duels",
+      "seenForPlayers": 329,
+      "exampleValues": [
+        104,
+        129,
+        114,
+        119,
+        38
+      ]
+    },
+    {
+      "statsId": "Ground Duels lost",
+      "statsLabel": "Ground Duels lost",
+      "seenForPlayers": 322,
+      "exampleValues": [
+        38,
+        75,
+        48,
+        40,
+        7
+      ]
+    },
+    {
+      "statsId": "Ground Duels won",
+      "statsLabel": "Ground Duels won",
+      "seenForPlayers": 323,
+      "exampleValues": [
+        66,
+        54,
+        66,
+        79,
+        31
+      ]
+    },
+    {
+      "statsId": "Handballs conceded",
+      "statsLabel": "Handballs conceded",
+      "seenForPlayers": 104,
+      "exampleValues": [
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "statsId": "Headed Goals",
+      "statsLabel": "Headed Goals",
+      "seenForPlayers": 42,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "hit-woodwork",
+      "statsLabel": "Hit Woodwork",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Hit Woodwork",
+      "statsLabel": "Hit Woodwork",
+      "seenForPlayers": 98,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Home Goals",
+      "statsLabel": "Home Goals",
+      "seenForPlayers": 149,
+      "exampleValues": [
+        1,
+        4,
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "statsId": "Interceptions",
+      "statsLabel": "Interceptions",
+      "seenForPlayers": 287,
+      "exampleValues": [
+        28,
+        11,
+        29,
+        36,
+        9
+      ]
+    },
+    {
+      "statsId": "Key Passes (Attempt Assists)",
+      "statsLabel": "Key Passes (Attempt Assists)",
+      "seenForPlayers": 290,
+      "exampleValues": [
+        17,
+        15,
+        21,
+        15,
+        1
+      ]
+    },
+    {
+      "statsId": "Last Player Tackle",
+      "statsLabel": "Last Player Tackle",
+      "seenForPlayers": 34,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Left Foot Goals",
+      "statsLabel": "Left Foot Goals",
+      "seenForPlayers": 86,
+      "exampleValues": [
+        3,
+        1,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "statsId": "Leftside Passes",
+      "statsLabel": "Leftside Passes",
+      "seenForPlayers": 333,
+      "exampleValues": [
+        193,
+        79,
+        27,
+        147,
+        116
+      ]
+    },
+    {
+      "statsId": "minutes-played",
+      "statsLabel": "Minutes played",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        1794,
+        1332,
+        2007,
+        0,
+        1700
+      ]
+    },
+    {
+      "statsId": "Offsides",
+      "statsLabel": "Offsides",
+      "seenForPlayers": 158,
+      "exampleValues": [
+        2,
+        9,
+        1,
+        5,
+        2
+      ]
+    },
+    {
+      "statsId": "on-target-scoring-attempts",
+      "statsLabel": "On target scoring attempts",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        3,
+        14,
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "statsId": "Open Play Passes",
+      "statsLabel": "Open Play Passes",
+      "seenForPlayers": 341,
+      "exampleValues": [
+        714,
+        355,
+        764,
+        634,
+        408
+      ]
+    },
+    {
+      "statsId": "Other Goals",
+      "statsLabel": "Other Goals",
+      "seenForPlayers": 1,
+      "exampleValues": [
+        1
+      ]
+    },
+    {
+      "statsId": "Overruns",
+      "statsLabel": "Overruns",
+      "seenForPlayers": 144,
+      "exampleValues": [
+        1,
+        3,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "statsId": "Own Goal Scored",
+      "statsLabel": "Own Goal Scored",
+      "seenForPlayers": 9,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Penalties Conceded",
+      "statsLabel": "Penalties Conceded",
+      "seenForPlayers": 41,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "statsId": "Penalties Faced",
+      "statsLabel": "Penalties Faced",
+      "seenForPlayers": 19,
+      "exampleValues": [
+        2,
+        2,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "statsId": "Penalties Off Target",
+      "statsLabel": "Penalties Off Target",
+      "seenForPlayers": 3,
+      "exampleValues": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Penalties Saved",
+      "statsLabel": "Penalties Saved",
+      "seenForPlayers": 6,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "penalties-successful",
+      "statsLabel": "Penalties Successful",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Penalties Taken",
+      "statsLabel": "Penalties Taken",
+      "seenForPlayers": 31,
+      "exampleValues": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "penalty-attempts",
+      "statsLabel": "Penalty Attempts",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Penalty Goals",
+      "statsLabel": "Penalty Goals",
+      "seenForPlayers": 24,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "statsId": "Penalty Goals Conceded",
+      "statsLabel": "Penalty Goals Conceded",
+      "seenForPlayers": 197,
+      "exampleValues": [
+        3,
+        2,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "statsId": "Progressive Carries",
+      "statsLabel": "Progressive Carries",
+      "seenForPlayers": 335,
+      "exampleValues": [
+        68,
+        47,
+        121,
+        45,
+        80
+      ]
+    },
+    {
+      "statsId": "Punches",
+      "statsLabel": "Punches",
+      "seenForPlayers": 24,
+      "exampleValues": [
+        5,
+        5,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "statsId": "PutThrough/Blocked Distribution",
+      "statsLabel": "PutThrough/Blocked Distribution",
+      "seenForPlayers": 306,
+      "exampleValues": [
+        18,
+        38,
+        43,
+        20,
+        8
+      ]
+    },
+    {
+      "statsId": "PutThrough/Blocked Distribution Won",
+      "statsLabel": "PutThrough/Blocked Distribution Won",
+      "seenForPlayers": 291,
+      "exampleValues": [
+        15,
+        23,
+        21,
+        12,
+        7
+      ]
+    },
+    {
+      "statsId": "Recoveries",
+      "statsLabel": "Recoveries",
+      "seenForPlayers": 333,
+      "exampleValues": [
+        109,
+        60,
+        66,
+        87,
+        46
+      ]
+    },
+    {
+      "statsId": "red-cards",
+      "statsLabel": "Red cards",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Red Cards - 2nd Yellow",
+      "statsLabel": "Red Cards - 2nd Yellow",
+      "seenForPlayers": 13,
+      "exampleValues": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Right Foot Goals",
+      "statsLabel": "Right Foot Goals",
+      "seenForPlayers": 107,
+      "exampleValues": [
+        1,
+        2,
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Rightside Passes",
+      "statsLabel": "Rightside Passes",
+      "seenForPlayers": 335,
+      "exampleValues": [
+        149,
+        89,
+        225,
+        152,
+        125
+      ]
+    },
+    {
+      "statsId": "Saves from Penalty",
+      "statsLabel": "Saves from Penalty",
+      "seenForPlayers": 6,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Saves Made",
+      "statsLabel": "Saves Made",
+      "seenForPlayers": 29,
+      "exampleValues": [
+        46,
+        28,
+        4,
+        29,
+        62
+      ]
+    },
+    {
+      "statsId": "Saves made - caught",
+      "statsLabel": "Saves made - caught",
+      "seenForPlayers": 12,
+      "exampleValues": [
+        3,
+        2,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "statsId": "Saves Made from Inside Box",
+      "statsLabel": "Saves Made from Inside Box",
+      "seenForPlayers": 28,
+      "exampleValues": [
+        29,
+        15,
+        4,
+        24,
+        42
+      ]
+    },
+    {
+      "statsId": "Saves Made from Outside Box",
+      "statsLabel": "Saves Made from Outside Box",
+      "seenForPlayers": 25,
+      "exampleValues": [
+        17,
+        13,
+        5,
+        17,
+        31
+      ]
+    },
+    {
+      "statsId": "Saves made - parried",
+      "statsLabel": "Saves made - parried",
+      "seenForPlayers": 25,
+      "exampleValues": [
+        11,
+        8,
+        7,
+        9,
+        19
+      ]
+    },
+    {
+      "statsId": "Second Goal Assists",
+      "statsLabel": "Second Goal Assists",
+      "seenForPlayers": 20,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Set Pieces Goals",
+      "statsLabel": "Set Pieces Goals",
+      "seenForPlayers": 5,
+      "exampleValues": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "statsId": "Shots Created",
+      "statsLabel": "Shots Created",
+      "seenForPlayers": 295,
+      "exampleValues": [
+        17,
+        18,
+        24,
+        17,
+        1
+      ]
+    },
+    {
+      "statsId": "Shots Off Target (inc woodwork)",
+      "statsLabel": "Shots Off Target (inc woodwork)",
+      "seenForPlayers": 268,
+      "exampleValues": [
+        9,
+        8,
+        4,
+        6,
+        4
+      ]
+    },
+    {
+      "statsId": "Shots On Target ( inc goals )",
+      "statsLabel": "Shots On Target ( inc goals )",
+      "seenForPlayers": 257,
+      "exampleValues": [
+        3,
+        14,
+        7,
+        3,
+        1
+      ]
+    },
+    {
+      "statsId": "sprints",
+      "statsLabel": "Sprints",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Starts",
+      "statsLabel": "Starts",
+      "seenForPlayers": 311,
+      "exampleValues": [
+        21,
+        12,
+        23,
+        21,
+        9
+      ]
+    },
+    {
+      "statsId": "Straight Red Cards",
+      "statsLabel": "Straight Red Cards",
+      "seenForPlayers": 20,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "statsId": "Substitute Off",
+      "statsLabel": "Substitute Off",
+      "seenForPlayers": 284,
+      "exampleValues": [
+        7,
+        4,
+        4,
+        0,
+        15
+      ]
+    },
+    {
+      "statsId": "Substitute On",
+      "statsLabel": "Substitute On",
+      "seenForPlayers": 287,
+      "exampleValues": [
+        1,
+        11,
+        0,
+        2,
+        8
+      ]
+    },
+    {
+      "statsId": "Successful Corners into Box",
+      "statsLabel": "Successful Corners into Box",
+      "seenForPlayers": 63,
+      "exampleValues": [
+        8,
+        8,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "statsId": "Successful Crosses & Corners",
+      "statsLabel": "Successful Crosses & Corners",
+      "seenForPlayers": 222,
+      "exampleValues": [
+        4,
+        1,
+        27,
+        1,
+        13
+      ]
+    },
+    {
+      "statsId": "Successful Crosses open play",
+      "statsLabel": "Successful Crosses open play",
+      "seenForPlayers": 217,
+      "exampleValues": [
+        4,
+        1,
+        17,
+        1,
+        5
+      ]
+    },
+    {
+      "statsId": "Successful Dribbles",
+      "statsLabel": "Successful Dribbles",
+      "seenForPlayers": 275,
+      "exampleValues": [
+        6,
+        5,
+        7,
+        8,
+        2
+      ]
+    },
+    {
+      "statsId": "Successful Launches",
+      "statsLabel": "Successful Launches",
+      "seenForPlayers": 221,
+      "exampleValues": [
+        4,
+        17,
+        1,
+        6,
+        2
+      ]
+    },
+    {
+      "statsId": "Successful Lay-offs",
+      "statsLabel": "Successful Lay-offs",
+      "seenForPlayers": 208,
+      "exampleValues": [
+        5,
+        9,
+        11,
+        14,
+        11
+      ]
+    },
+    {
+      "statsId": "Successful Long Passes",
+      "statsLabel": "Successful Long Passes",
+      "seenForPlayers": 314,
+      "exampleValues": [
+        37,
+        5,
+        49,
+        21,
+        42
+      ]
+    },
+    {
+      "statsId": "Successful Open Play Passes",
+      "statsLabel": "Successful Open Play Passes",
+      "seenForPlayers": 339,
+      "exampleValues": [
+        579,
+        233,
+        504,
+        508,
+        320
+      ]
+    },
+    {
+      "statsId": "Successful Passes Opposition Half",
+      "statsLabel": "Successful Passes Opposition Half",
+      "seenForPlayers": 336,
+      "exampleValues": [
+        318,
+        161,
+        295,
+        259,
+        122
+      ]
+    },
+    {
+      "statsId": "Successful Passes Own Half",
+      "statsLabel": "Successful Passes Own Half",
+      "seenForPlayers": 334,
+      "exampleValues": [
+        305,
+        85,
+        258,
+        258,
+        238
+      ]
+    },
+    {
+      "statsId": "Successful Short Passes",
+      "statsLabel": "Successful Short Passes",
+      "seenForPlayers": 339,
+      "exampleValues": [
+        582,
+        240,
+        477,
+        495,
+        318
+      ]
+    },
+    {
+      "statsId": "Tackles Lost",
+      "statsLabel": "Tackles Lost",
+      "seenForPlayers": 281,
+      "exampleValues": [
+        15,
+        10,
+        24,
+        19,
+        11
+      ]
+    },
+    {
+      "statsId": "tackles-won",
+      "statsLabel": "Tackles won",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        21,
+        27,
+        25,
+        0,
+        24
+      ]
+    },
+    {
+      "statsId": "Tackles Won",
+      "statsLabel": "Tackles Won",
+      "seenForPlayers": 301,
+      "exampleValues": [
+        21,
+        27,
+        25,
+        24,
+        15
+      ]
+    },
+    {
+      "statsId": "tackles-won-perc",
+      "statsLabel": "Tackles Won Percentage",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        58.33,
+        72.97,
+        51.02,
+        0,
+        55.81
+      ]
+    },
+    {
+      "statsId": "Through balls",
+      "statsLabel": "Through balls",
+      "seenForPlayers": 136,
+      "exampleValues": [
+        1,
+        1,
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "statsId": "Throw Ins to Opposition Player",
+      "statsLabel": "Throw Ins to Opposition Player",
+      "seenForPlayers": 146,
+      "exampleValues": [
+        1,
+        52,
+        1,
+        1,
+        4
+      ]
+    },
+    {
+      "statsId": "Throw Ins to Own Player",
+      "statsLabel": "Throw Ins to Own Player",
+      "seenForPlayers": 259,
+      "exampleValues": [
+        7,
+        6,
+        148,
+        1,
+        7
+      ]
+    },
+    {
+      "statsId": "Time Played",
+      "statsLabel": "Time Played",
+      "seenForPlayers": 342,
+      "exampleValues": [
+        1794,
+        1332,
+        2007,
+        1700,
+        944
+      ]
+    },
+    {
+      "statsId": "Times Tackled",
+      "statsLabel": "Times Tackled",
+      "seenForPlayers": 301,
+      "exampleValues": [
+        20,
+        42,
+        16,
+        10,
+        3
+      ]
+    },
+    {
+      "statsId": "total-attacking-assist",
+      "statsLabel": "Total attacking assists",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        3,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "statsId": "Total Big Chances Created",
+      "statsLabel": "Total Big Chances Created",
+      "seenForPlayers": 191,
+      "exampleValues": [
+        3,
+        5,
+        4,
+        5,
+        4
+      ]
+    },
+    {
+      "statsId": "Total Big Chances Missed",
+      "statsLabel": "Total Big Chances Missed",
+      "seenForPlayers": 153,
+      "exampleValues": [
+        2,
+        3,
+        1,
+        1,
+        8
+      ]
+    },
+    {
+      "statsId": "Total Big Chances Saved",
+      "statsLabel": "Total Big Chances Saved",
+      "seenForPlayers": 56,
+      "exampleValues": [
+        6,
+        1,
+        1,
+        5,
+        1
+      ]
+    },
+    {
+      "statsId": "Total Big Chances Scored",
+      "statsLabel": "Total Big Chances Scored",
+      "seenForPlayers": 116,
+      "exampleValues": [
+        5,
+        1,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "statsId": "Total Clearances",
+      "statsLabel": "Total Clearances",
+      "seenForPlayers": 322,
+      "exampleValues": [
+        24,
+        27,
+        76,
+        24,
+        42
+      ]
+    },
+    {
+      "statsId": "total-distance-covered",
+      "statsLabel": "Total Distance Covered",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-distance-covered-high-intensity-running",
+      "statsLabel": "Total Distance Covered High Intensity Running",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-distance-covered-jogging",
+      "statsLabel": "Total Distance Covered Jogging",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-distance-covered-low-intensity-running",
+      "statsLabel": "Total Distance Covered Low Intensity Running",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-distance-covered-sprinting",
+      "statsLabel": "Total Distance Covered Sprinting",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-distance-covered-walking",
+      "statsLabel": "Total Distance Covered Walking",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Total Fouls Conceded",
+      "statsLabel": "Total Fouls Conceded",
+      "seenForPlayers": 295,
+      "exampleValues": [
+        10,
+        23,
+        19,
+        22,
+        3
+      ]
+    },
+    {
+      "statsId": "Total Fouls Won",
+      "statsLabel": "Total Fouls Won",
+      "seenForPlayers": 304,
+      "exampleValues": [
+        25,
+        12,
+        11,
+        28,
+        3
+      ]
+    },
+    {
+      "statsId": "Total Losses Of Possession",
+      "statsLabel": "Total Losses Of Possession",
+      "seenForPlayers": 341,
+      "exampleValues": [
+        205,
+        254,
+        444,
+        159,
+        125
+      ]
+    },
+    {
+      "statsId": "total-offside",
+      "statsLabel": "Total offside",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        2,
+        9,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Total Passes",
+      "statsLabel": "Total Passes",
+      "seenForPlayers": 341,
+      "exampleValues": [
+        759,
+        367,
+        792,
+        642,
+        464
+      ]
+    },
+    {
+      "statsId": "Total Red Cards",
+      "statsLabel": "Total Red Cards",
+      "seenForPlayers": 24,
+      "exampleValues": [
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "total-scoring-attempts",
+      "statsLabel": "Total scoring attempts",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        12,
+        22,
+        11,
+        0,
+        9
+      ]
+    },
+    {
+      "statsId": "Total Shots",
+      "statsLabel": "Total Shots",
+      "seenForPlayers": 290,
+      "exampleValues": [
+        12,
+        22,
+        11,
+        9,
+        5
+      ]
+    },
+    {
+      "statsId": "Total Successful Passes ( Excl Crosses & Corners ) ",
+      "statsLabel": "Total Successful Passes ( Excl Crosses & Corners ) ",
+      "seenForPlayers": 339,
+      "exampleValues": [
+        619,
+        245,
+        526,
+        516,
+        360
+      ]
+    },
+    {
+      "statsId": "Total Tackles",
+      "statsLabel": "Total Tackles",
+      "seenForPlayers": 309,
+      "exampleValues": [
+        36,
+        37,
+        49,
+        43,
+        26
+      ]
+    },
+    {
+      "statsId": "Total Touches In Opposition Box",
+      "statsLabel": "Total Touches In Opposition Box",
+      "seenForPlayers": 301,
+      "exampleValues": [
+        35,
+        92,
+        26,
+        7,
+        7
+      ]
+    },
+    {
+      "statsId": "Total Unsuccessful Passes ( Excl Crosses & Corners )",
+      "statsLabel": "Total Unsuccessful Passes ( Excl Crosses & Corners )",
+      "seenForPlayers": 340,
+      "exampleValues": [
+        140,
+        122,
+        266,
+        126,
+        104
+      ]
+    },
+    {
+      "statsId": "Touches",
+      "statsLabel": "Touches",
+      "seenForPlayers": 341,
+      "exampleValues": [
+        1024,
+        678,
+        1394,
+        876,
+        603
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Corners into Box",
+      "statsLabel": "Unsuccessful Corners into Box",
+      "seenForPlayers": 85,
+      "exampleValues": [
+        17,
+        13,
+        5,
+        10,
+        1
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Crosses & Corners",
+      "statsLabel": "Unsuccessful Crosses & Corners",
+      "seenForPlayers": 275,
+      "exampleValues": [
+        13,
+        20,
+        80,
+        2,
+        4
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Crosses open play",
+      "statsLabel": "Unsuccessful Crosses open play",
+      "seenForPlayers": 269,
+      "exampleValues": [
+        12,
+        20,
+        59,
+        2,
+        4
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Dribbles",
+      "statsLabel": "Unsuccessful Dribbles",
+      "seenForPlayers": 277,
+      "exampleValues": [
+        8,
+        13,
+        8,
+        5,
+        2
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Launches",
+      "statsLabel": "Unsuccessful Launches",
+      "seenForPlayers": 300,
+      "exampleValues": [
+        18,
+        6,
+        69,
+        14,
+        36
+      ]
+    },
+    {
+      "statsId": "Unsuccessful lay-offs",
+      "statsLabel": "Unsuccessful lay-offs",
+      "seenForPlayers": 116,
+      "exampleValues": [
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Long Passes",
+      "statsLabel": "Unsuccessful Long Passes",
+      "seenForPlayers": 320,
+      "exampleValues": [
+        48,
+        11,
+        130,
+        28,
+        71
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Passes Opposition Half",
+      "statsLabel": "Unsuccessful Passes Opposition Half",
+      "seenForPlayers": 337,
+      "exampleValues": [
+        123,
+        120,
+        266,
+        86,
+        81
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Passes Own Half",
+      "statsLabel": "Unsuccessful Passes Own Half",
+      "seenForPlayers": 330,
+      "exampleValues": [
+        30,
+        22,
+        80,
+        42,
+        27
+      ]
+    },
+    {
+      "statsId": "Unsuccessful Short Passes",
+      "statsLabel": "Unsuccessful Short Passes",
+      "seenForPlayers": 335,
+      "exampleValues": [
+        92,
+        111,
+        136,
+        98,
+        33
+      ]
+    },
+    {
+      "statsId": "Winning Goal",
+      "statsLabel": "Winning Goal",
+      "seenForPlayers": 342,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "statsId": "Xg",
+      "statsLabel": "Xg",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        2.1854,
+        5.3043,
+        0.8518,
+        0,
+        0.5987
+      ]
+    },
+    {
+      "statsId": "XGEfficiency",
+      "statsLabel": "XGEfficiency",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        -1.1854,
+        -0.3043,
+        0.1482,
+        0,
+        -0.5987
+      ]
+    },
+    {
+      "statsId": "yellow-cards",
+      "statsLabel": "Yellow cards",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        2,
+        3,
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "statsId": "Yellow Cards",
+      "statsLabel": "Yellow Cards",
+      "seenForPlayers": 205,
+      "exampleValues": [
+        2,
+        3,
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "statsId": "yellow-red-cards",
+      "statsLabel": "Yellow Red Cards",
+      "seenForPlayers": 400,
+      "exampleValues": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}
