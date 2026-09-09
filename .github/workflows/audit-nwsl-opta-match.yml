@@ -1,0 +1,120 @@
+name: Audit NWSL Opta match
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-match:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run NWSL Opta match audit
+        run: |
+          python audit_nwsl_opta_match.py
+
+      - name: Show audit summary
+        if: always()
+        run: |
+          if [ -f nwsl_opta_match_audit.json ]; then
+            python - <<'PY'
+          import json
+
+          with open(
+              "nwsl_opta_match_audit.json",
+              "r",
+              encoding="utf-8",
+          ) as f:
+              data = json.load(f)
+
+          meta = data.get("metadata", {})
+
+          print(
+              "Match UUID:",
+              meta.get("matchUuid"),
+          )
+
+          print(
+              "Working base:",
+              meta.get("workingBaseUrl"),
+          )
+
+          print(
+              "Lineup players:",
+              meta.get("lineupPlayerCount"),
+          )
+
+          print(
+              "Feed pages:",
+              meta.get("feedPageCount"),
+          )
+
+          print(
+              "Feed events:",
+              meta.get("feedEventCount"),
+          )
+
+          print()
+          print("EVENT TYPES")
+
+          event_types = (
+              data
+              .get("feedAnalysis", {})
+              .get("eventTypeCounts", {})
+          )
+
+          for event_type, count in (
+              event_types.items()
+          ):
+              print(
+                  f"{event_type}: {count}"
+              )
+
+          print()
+          print("SANITY COUNTS")
+
+          for key, value in (
+              data
+              .get(
+                  "feedSanityCounts",
+                  {},
+              )
+              .items()
+          ):
+              print(
+                  f"{key}: {value}"
+              )
+          PY
+          else
+            echo "nwsl_opta_match_audit.json was not created."
+          fi
+
+      - name: Commit match audit
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add nwsl_opta_match_audit.json
+
+          if git diff --cached --quiet; then
+            echo "No match audit changes to commit."
+          else
+            git commit -m "Audit NWSL Opta match feed"
+            git push
+          fi
