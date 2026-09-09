@@ -39,6 +39,15 @@
             "imagery": {}
           },
           {
+            "competitionId": "nwsl::Football_Competition::f1cf8ec479fc4794847f5a698a1fafa3",
+            "providerId": "opta:Competition:cesdwwnxbc5fmajgroc0hqzy2",
+            "name": "Friendlies",
+            "officialName": "Friendlies",
+            "shortName": "Friendlies",
+            "acronymName": "Friendlies",
+            "imagery": {}
+          },
+          {
             "competitionId": "nwsl::Football_Competition::ace6b371c96b46e795f8537ce9c63076",
             "providerId": "opta:Competition:287tckirbfj9nb8ar2k9r60vn",
             "name": "MLS",
@@ -48,120 +57,12 @@
             "imagery": {}
           },
           {
-            "competitionId": "nwsl::Football_Competition::de3bf05b5d2141df980b54447443bd85",
-            "providerId": "opta:Competition:85qdzpr6i56z8tjex9d5mu5pm",
-            "name": "NWSL Challenge Cup",
-            "officialName": "NWSL Challenge Cup",
-            "shortName": "NWSL Challenge Cup",
-            "acronymName": "NWSL Challenge Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::36cb1aa863444a5abb37916b8248b914",
-            "providerId": "opta:Competition:dghq9effjuf4gpiushuaq426s",
-            "name": "CONMEBOL/UEFA Women's Finalissima",
-            "officialName": "CONMEBOL/UEFA Women's Finalissima",
-            "shortName": "CONMEBOL/UEFA Women's Finalissima",
-            "acronymName": "CONMEBOL/UEFA Women's Finalissima",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::347c6338733743d9b9680e60dbbcfc06",
-            "providerId": "opta:Competition:dzdh9f7vyvzpq3nmvl22dyx2h",
-            "name": "SheBelieves Cup",
-            "officialName": "SheBelieves Cup",
-            "shortName": "SheBelieves Cup",
-            "acronymName": "SheBelieves Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::d6c3f78dfb944b67acb15c69b8bdd11b",
-            "providerId": "opta:Competition:cslv7hwxd1z23vsj50i88ziwa",
-            "name": "Tournoi de France",
-            "officialName": "Tournoi de France",
-            "shortName": "Tournoi de France",
-            "acronymName": "Tournoi de France",
-            "imagery": {}
-          },
-          {
             "competitionId": "nwsl::Football_Competition::be2658941f3e4f039b5886dd4cf19f12",
             "providerId": "opta:Competition:dvtl8sf1262pd2aqgu641qa7u",
             "name": "Friendlies Women",
             "officialName": "Friendlies Women",
             "shortName": "Friendlies Women",
             "acronymName": "Friendlies Women",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::fc44d384183649a49785d47fbc04b5b5",
-            "providerId": "opta:Competition:3oa9e03e7w9nr8kqwqc3tlqz9",
-            "name": "Indian Super League",
-            "officialName": "Indian Super League",
-            "shortName": "Indian Super League",
-            "acronymName": "Indian Super League",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::6c7d264587f8440486d362f876459342",
-            "providerId": "opta:Competition:4oogyu6o156iphvdvphwpck10",
-            "name": "UEFA Champions League",
-            "officialName": "UEFA Champions League",
-            "shortName": "UEFA Champions League",
-            "acronymName": "UEFA Champions League",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::59c189a9a911446fa92b566f7989d9dc",
-            "providerId": "opta:Competition:1wdo4oew5cbtr9q26h44gndw4",
-            "name": "NWSL Fall Series",
-            "officialName": "NWSL Fall Series",
-            "shortName": "NWSL Fall Series",
-            "acronymName": "NWSL Fall Series",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::3e0758381150413c884f0510705caed6",
-            "providerId": "opta:Competition:59tpnfrwnvhnhzmnvfyug68hj",
-            "name": "CONMEBOL Libertadores",
-            "officialName": "CONMEBOL Libertadores",
-            "shortName": "CONMEBOL Libertadores",
-            "acronymName": "CONMEBOL Libertadores",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::e0d431397c1d4b55aaac36edfb0756b9",
-            "providerId": "opta:Competition:135j6qi3ap8i3vc9hwdo4fjtg",
-            "name": "NWSL x Liga MXF Summer Cup",
-            "officialName": "NWSL x Liga MXF Summer Cup",
-            "shortName": "NWSL x Liga MXF Summer Cup",
-            "acronymName": "NWSL x Liga MXF Summer Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::a9e371fb7cd3474f803b9670552b6e09",
-            "providerId": "opta:Competition:3a0j0giz3c3ajw9h59evv7lqt",
-            "name": "Concacaf World Cup Qualifiers",
-            "officialName": "Concacaf World Cup Qualifiers",
-            "shortName": "Concacaf World Cup Qualifiers",
-            "acronymName": "Concacaf World Cup Qualifiers",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::6f7b08e1ccb94565a8b4b4d8319861ad",
-            "providerId": "opta:Competition:2b2icbbniygc7cr29b5utgxgq",
-            "name": "Intercontinental Cup",
-            "officialName": "Intercontinental Cup",
-            "shortName": "Intercontinental Cup",
-            "acronymName": "Intercontinental Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::f1cf8ec479fc4794847f5a698a1fafa3",
-            "providerId": "opta:Competition:cesdwwnxbc5fmajgroc0hqzy2",
-            "name": "Friendlies",
-            "officialName": "Friendlies",
-            "shortName": "Friendlies",
-            "acronymName": "Friendlies",
             "imagery": {}
           },
           {
@@ -183,6 +84,60 @@
             "imagery": {}
           },
           {
+            "competitionId": "nwsl::Football_Competition::de3bf05b5d2141df980b54447443bd85",
+            "providerId": "opta:Competition:85qdzpr6i56z8tjex9d5mu5pm",
+            "name": "NWSL Challenge Cup",
+            "officialName": "NWSL Challenge Cup",
+            "shortName": "NWSL Challenge Cup",
+            "acronymName": "NWSL Challenge Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::36cb1aa863444a5abb37916b8248b914",
+            "providerId": "opta:Competition:dghq9effjuf4gpiushuaq426s",
+            "name": "CONMEBOL/UEFA Women's Finalissima",
+            "officialName": "CONMEBOL/UEFA Women's Finalissima",
+            "shortName": "CONMEBOL/UEFA Women's Finalissima",
+            "acronymName": "CONMEBOL/UEFA Women's Finalissima",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::fc44d384183649a49785d47fbc04b5b5",
+            "providerId": "opta:Competition:3oa9e03e7w9nr8kqwqc3tlqz9",
+            "name": "Indian Super League",
+            "officialName": "Indian Super League",
+            "shortName": "Indian Super League",
+            "acronymName": "Indian Super League",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::6c7d264587f8440486d362f876459342",
+            "providerId": "opta:Competition:4oogyu6o156iphvdvphwpck10",
+            "name": "UEFA Champions League",
+            "officialName": "UEFA Champions League",
+            "shortName": "UEFA Champions League",
+            "acronymName": "UEFA Champions League",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::a9e371fb7cd3474f803b9670552b6e09",
+            "providerId": "opta:Competition:3a0j0giz3c3ajw9h59evv7lqt",
+            "name": "Concacaf World Cup Qualifiers",
+            "officialName": "Concacaf World Cup Qualifiers",
+            "shortName": "Concacaf World Cup Qualifiers",
+            "acronymName": "Concacaf World Cup Qualifiers",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::347c6338733743d9b9680e60dbbcfc06",
+            "providerId": "opta:Competition:dzdh9f7vyvzpq3nmvl22dyx2h",
+            "name": "SheBelieves Cup",
+            "officialName": "SheBelieves Cup",
+            "shortName": "SheBelieves Cup",
+            "acronymName": "SheBelieves Cup",
+            "imagery": {}
+          },
+          {
             "competitionId": "nwsl::Football_Competition::351aaa7c231a47be9b132c2d9aeaa407",
             "providerId": "opta:Competition:dshmvjxthals5752x057s7jf8",
             "name": "Arnold Clark Cup",
@@ -192,12 +147,57 @@
             "imagery": {}
           },
           {
+            "competitionId": "nwsl::Football_Competition::59c189a9a911446fa92b566f7989d9dc",
+            "providerId": "opta:Competition:1wdo4oew5cbtr9q26h44gndw4",
+            "name": "NWSL Fall Series",
+            "officialName": "NWSL Fall Series",
+            "shortName": "NWSL Fall Series",
+            "acronymName": "NWSL Fall Series",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::6f7b08e1ccb94565a8b4b4d8319861ad",
+            "providerId": "opta:Competition:2b2icbbniygc7cr29b5utgxgq",
+            "name": "Intercontinental Cup",
+            "officialName": "Intercontinental Cup",
+            "shortName": "Intercontinental Cup",
+            "acronymName": "Intercontinental Cup",
+            "imagery": {}
+          },
+          {
             "competitionId": "nwsl::Football_Competition::186e97a9f08847a9bec4b4fb125feb79",
             "providerId": "opta:Competition:44uk0qy9nasrbiliiapc8be8l",
             "name": "Kirin Cup",
             "officialName": "Kirin Cup",
             "shortName": "Kirin Cup",
             "acronymName": "Kirin Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::d6c3f78dfb944b67acb15c69b8bdd11b",
+            "providerId": "opta:Competition:cslv7hwxd1z23vsj50i88ziwa",
+            "name": "Tournoi de France",
+            "officialName": "Tournoi de France",
+            "shortName": "Tournoi de France",
+            "acronymName": "Tournoi de France",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::3e0758381150413c884f0510705caed6",
+            "providerId": "opta:Competition:59tpnfrwnvhnhzmnvfyug68hj",
+            "name": "CONMEBOL Libertadores",
+            "officialName": "CONMEBOL Libertadores",
+            "shortName": "CONMEBOL Libertadores",
+            "acronymName": "CONMEBOL Libertadores",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::e0d431397c1d4b55aaac36edfb0756b9",
+            "providerId": "opta:Competition:135j6qi3ap8i3vc9hwdo4fjtg",
+            "name": "NWSL x Liga MXF Summer Cup",
+            "officialName": "NWSL x Liga MXF Summer Cup",
+            "shortName": "NWSL x Liga MXF Summer Cup",
+            "acronymName": "NWSL x Liga MXF Summer Cup",
             "imagery": {}
           },
           {
@@ -14952,7 +14952,7 @@
             "imagery": {}
           }
         ],
-        "apiCallRequestTime": "2026-09-09T21:58:37.0194649+00:00"
+        "apiCallRequestTime": "2026-09-09T22:06:08.7359127+00:00"
       },
       "error": null
     },
@@ -14979,48 +14979,12 @@
             "imagery": {}
           },
           {
-            "competitionId": "nwsl::Football_Competition::f1cf8ec479fc4794847f5a698a1fafa3",
-            "providerId": "opta:Competition:cesdwwnxbc5fmajgroc0hqzy2",
-            "name": "Friendlies",
-            "officialName": "Friendlies",
-            "shortName": "Friendlies",
-            "acronymName": "Friendlies",
-            "imagery": {}
-          },
-          {
             "competitionId": "nwsl::Football_Competition::ace6b371c96b46e795f8537ce9c63076",
             "providerId": "opta:Competition:287tckirbfj9nb8ar2k9r60vn",
             "name": "MLS",
             "officialName": "MLS",
             "shortName": "MLS",
             "acronymName": "MLS",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::be2658941f3e4f039b5886dd4cf19f12",
-            "providerId": "opta:Competition:dvtl8sf1262pd2aqgu641qa7u",
-            "name": "Friendlies Women",
-            "officialName": "Friendlies Women",
-            "shortName": "Friendlies Women",
-            "acronymName": "Friendlies Women",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::3293333447504e83986ec13e794b68ea",
-            "providerId": "opta:Competition:djkvh1luqdkdixpoe653lzixg",
-            "name": "NWSL",
-            "officialName": "NWSL",
-            "shortName": "NWSL",
-            "acronymName": "NWSL",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::dc611581c93a4dd18018067efe5c3440",
-            "providerId": "opta:Competition:16mfkt95bh7o8gmvtnzs526i2",
-            "name": "Pinatar Cup",
-            "officialName": "Pinatar Cup",
-            "shortName": "Pinatar Cup",
-            "acronymName": "Pinatar Cup",
             "imagery": {}
           },
           {
@@ -15042,6 +15006,33 @@
             "imagery": {}
           },
           {
+            "competitionId": "nwsl::Football_Competition::347c6338733743d9b9680e60dbbcfc06",
+            "providerId": "opta:Competition:dzdh9f7vyvzpq3nmvl22dyx2h",
+            "name": "SheBelieves Cup",
+            "officialName": "SheBelieves Cup",
+            "shortName": "SheBelieves Cup",
+            "acronymName": "SheBelieves Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::d6c3f78dfb944b67acb15c69b8bdd11b",
+            "providerId": "opta:Competition:cslv7hwxd1z23vsj50i88ziwa",
+            "name": "Tournoi de France",
+            "officialName": "Tournoi de France",
+            "shortName": "Tournoi de France",
+            "acronymName": "Tournoi de France",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::be2658941f3e4f039b5886dd4cf19f12",
+            "providerId": "opta:Competition:dvtl8sf1262pd2aqgu641qa7u",
+            "name": "Friendlies Women",
+            "officialName": "Friendlies Women",
+            "shortName": "Friendlies Women",
+            "acronymName": "Friendlies Women",
+            "imagery": {}
+          },
+          {
             "competitionId": "nwsl::Football_Competition::fc44d384183649a49785d47fbc04b5b5",
             "providerId": "opta:Competition:3oa9e03e7w9nr8kqwqc3tlqz9",
             "name": "Indian Super League",
@@ -15060,66 +15051,12 @@
             "imagery": {}
           },
           {
-            "competitionId": "nwsl::Football_Competition::a9e371fb7cd3474f803b9670552b6e09",
-            "providerId": "opta:Competition:3a0j0giz3c3ajw9h59evv7lqt",
-            "name": "Concacaf World Cup Qualifiers",
-            "officialName": "Concacaf World Cup Qualifiers",
-            "shortName": "Concacaf World Cup Qualifiers",
-            "acronymName": "Concacaf World Cup Qualifiers",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::347c6338733743d9b9680e60dbbcfc06",
-            "providerId": "opta:Competition:dzdh9f7vyvzpq3nmvl22dyx2h",
-            "name": "SheBelieves Cup",
-            "officialName": "SheBelieves Cup",
-            "shortName": "SheBelieves Cup",
-            "acronymName": "SheBelieves Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::351aaa7c231a47be9b132c2d9aeaa407",
-            "providerId": "opta:Competition:dshmvjxthals5752x057s7jf8",
-            "name": "Arnold Clark Cup",
-            "officialName": "Arnold Clark Cup",
-            "shortName": "Arnold Clark Cup",
-            "acronymName": "Arnold Clark Cup",
-            "imagery": {}
-          },
-          {
             "competitionId": "nwsl::Football_Competition::59c189a9a911446fa92b566f7989d9dc",
             "providerId": "opta:Competition:1wdo4oew5cbtr9q26h44gndw4",
             "name": "NWSL Fall Series",
             "officialName": "NWSL Fall Series",
             "shortName": "NWSL Fall Series",
             "acronymName": "NWSL Fall Series",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::6f7b08e1ccb94565a8b4b4d8319861ad",
-            "providerId": "opta:Competition:2b2icbbniygc7cr29b5utgxgq",
-            "name": "Intercontinental Cup",
-            "officialName": "Intercontinental Cup",
-            "shortName": "Intercontinental Cup",
-            "acronymName": "Intercontinental Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::186e97a9f08847a9bec4b4fb125feb79",
-            "providerId": "opta:Competition:44uk0qy9nasrbiliiapc8be8l",
-            "name": "Kirin Cup",
-            "officialName": "Kirin Cup",
-            "shortName": "Kirin Cup",
-            "acronymName": "Kirin Cup",
-            "imagery": {}
-          },
-          {
-            "competitionId": "nwsl::Football_Competition::d6c3f78dfb944b67acb15c69b8bdd11b",
-            "providerId": "opta:Competition:cslv7hwxd1z23vsj50i88ziwa",
-            "name": "Tournoi de France",
-            "officialName": "Tournoi de France",
-            "shortName": "Tournoi de France",
-            "acronymName": "Tournoi de France",
             "imagery": {}
           },
           {
@@ -15138,6 +15075,69 @@
             "officialName": "NWSL x Liga MXF Summer Cup",
             "shortName": "NWSL x Liga MXF Summer Cup",
             "acronymName": "NWSL x Liga MXF Summer Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::a9e371fb7cd3474f803b9670552b6e09",
+            "providerId": "opta:Competition:3a0j0giz3c3ajw9h59evv7lqt",
+            "name": "Concacaf World Cup Qualifiers",
+            "officialName": "Concacaf World Cup Qualifiers",
+            "shortName": "Concacaf World Cup Qualifiers",
+            "acronymName": "Concacaf World Cup Qualifiers",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::6f7b08e1ccb94565a8b4b4d8319861ad",
+            "providerId": "opta:Competition:2b2icbbniygc7cr29b5utgxgq",
+            "name": "Intercontinental Cup",
+            "officialName": "Intercontinental Cup",
+            "shortName": "Intercontinental Cup",
+            "acronymName": "Intercontinental Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::f1cf8ec479fc4794847f5a698a1fafa3",
+            "providerId": "opta:Competition:cesdwwnxbc5fmajgroc0hqzy2",
+            "name": "Friendlies",
+            "officialName": "Friendlies",
+            "shortName": "Friendlies",
+            "acronymName": "Friendlies",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::3293333447504e83986ec13e794b68ea",
+            "providerId": "opta:Competition:djkvh1luqdkdixpoe653lzixg",
+            "name": "NWSL",
+            "officialName": "NWSL",
+            "shortName": "NWSL",
+            "acronymName": "NWSL",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::dc611581c93a4dd18018067efe5c3440",
+            "providerId": "opta:Competition:16mfkt95bh7o8gmvtnzs526i2",
+            "name": "Pinatar Cup",
+            "officialName": "Pinatar Cup",
+            "shortName": "Pinatar Cup",
+            "acronymName": "Pinatar Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::351aaa7c231a47be9b132c2d9aeaa407",
+            "providerId": "opta:Competition:dshmvjxthals5752x057s7jf8",
+            "name": "Arnold Clark Cup",
+            "officialName": "Arnold Clark Cup",
+            "shortName": "Arnold Clark Cup",
+            "acronymName": "Arnold Clark Cup",
+            "imagery": {}
+          },
+          {
+            "competitionId": "nwsl::Football_Competition::186e97a9f08847a9bec4b4fb125feb79",
+            "providerId": "opta:Competition:44uk0qy9nasrbiliiapc8be8l",
+            "name": "Kirin Cup",
+            "officialName": "Kirin Cup",
+            "shortName": "Kirin Cup",
+            "acronymName": "Kirin Cup",
             "imagery": {}
           },
           {
@@ -29892,7 +29892,7 @@
             "imagery": {}
           }
         ],
-        "apiCallRequestTime": "2026-09-09T03:01:24.3895667+00:00"
+        "apiCallRequestTime": "2026-09-09T22:06:09.672661+00:00"
       },
       "error": null
     },
@@ -36188,7 +36188,7 @@
             "allSeasonImagery": []
           }
         ],
-        "apiCallRequestTime": "2026-09-09T21:58:39.34726+00:00"
+        "apiCallRequestTime": "2026-09-09T22:06:11.8330237+00:00"
       },
       "error": null
     },
@@ -42456,7 +42456,7 @@
             "allSeasonImagery": []
           }
         ],
-        "apiCallRequestTime": "2026-09-09T21:58:39.9930842+00:00"
+        "apiCallRequestTime": "2026-09-09T22:06:12.4614404+00:00"
       },
       "error": null
     }
