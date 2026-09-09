@@ -38,68 +38,145 @@ PLAYER_STATS_URL = (
 
 
 # =============================================================================
-# Involvement components
+# Verified Opta involvement fields
 # =============================================================================
-#
-# These are the nine concepts we verified in the Opta audit.
 #
 # IMPORTANT:
-# This file deliberately keeps the raw components separate from the final
-# involvement score. That lets us inspect/recalibrate the weights later
-# without having to re-discover the data.
 #
-# Attack:
-#   shots on target
-#   key passes
-#   successful crosses
-#   successful dribbles
+# These are now STRICT mappings.
 #
-# Defense:
-#   tackles won
-#   interceptions
-#   clearances
-#   blocks
-#   recoveries
+# We do NOT fuzzy-match similar-looking fields.
 #
-# The aliases are intentionally fairly strict. We do not want to silently
-# substitute a vaguely similar Opta field.
+# If a verified field is absent from a player's Opta stat array, we treat
+# that as zero. Opta frequently omits zero-valued player stats.
+#
+# This prevents errors such as:
+#
+#   Successful Dribbles
+#       accidentally matching
+#   Unsuccessful Dribbles
+#
+# or:
+#
+#   Successful Crosses & Corners
+#       accidentally matching
+#   Unsuccessful Crosses & Corners
+#
 # =============================================================================
 
-STAT_ALIASES = {
+INVOLVEMENT_STAT_FIELDS = {
     "shots_on_target": [
-        "shots on target",
-        "shots on goal",
+        "Shots On Target ( inc goals )",
     ],
+
     "key_passes": [
-        "key passes (attempt assists)",
-        "key passes",
+        "Key Passes (Attempt Assists)",
     ],
+
     "successful_crosses": [
-        "successful crosses",
-        "accurate crosses",
+        "Successful Crosses & Corners",
     ],
+
     "successful_dribbles": [
-        "successful dribbles",
-        "successful take ons",
-        "successful take-ons",
+        "Successful Dribbles",
     ],
+
     "tackles_won": [
-        "tackles won",
-        "successful tackles",
+        "Tackles won",
     ],
+
     "interceptions": [
-        "interceptions",
+        "Interceptions",
     ],
+
     "clearances": [
-        "clearances",
+        "Total Clearances",
     ],
+
+    # Opta exposes both of these labels.
+    #
+    # We allow either exact label but NEVER fuzzy-match.
+    # "Blocked Shots" is preferred when both happen to exist.
     "blocks": [
-        "blocks",
-        "blocked shots",
+        "Blocked Shots",
+        "Blocks",
     ],
+
     "recoveries": [
-        "recoveries",
-        "ball recoveries",
+        "Recoveries",
+    ],
+}
+
+
+# =============================================================================
+# Supporting fields
+# =============================================================================
+#
+# These are also exact mappings.
+#
+# This fixes another issue seen in v1 where "shots" could accidentally match
+# "Shots Created".
+#
+# For counting fields such as goals, assists, starts, etc., absence is treated
+# as zero.
+#
+# =============================================================================
+
+SUPPORTING_STAT_FIELDS = {
+    "minutes": [
+        "Minutes played",
+    ],
+
+    "appearances": [
+        "Appearances",
+    ],
+
+    "starts": [
+        "Starts",
+    ],
+
+    "sub_on": [
+        "Substitute On",
+    ],
+
+    "sub_off": [
+        "Substitute Off",
+    ],
+
+    "goals": [
+        "Goals",
+    ],
+
+    "assists": [
+        "Assists",
+    ],
+
+    "shots": [
+        "Total Shots",
+    ],
+
+    "xg": [
+        "Xg",
+    ],
+
+    "touches_opposition_box": [
+        "Total Touches In Opposition Box",
+    ],
+
+    "final_third_touches": [
+        "Final Third Touches",
+    ],
+
+    "progressive_carries": [
+        "Progressive Carries",
+    ],
+
+    "shots_created": [
+        "Shots Created",
+    ],
+
+    "big_chances_created": [
+        "Total Big Chances Created",
     ],
 }
 
@@ -108,16 +185,10 @@ STAT_ALIASES = {
 # Position-specific component weights
 # =============================================================================
 #
-# These are INITIAL transparent weights, not sacred model coefficients.
+# These remain INITIAL transparent weights.
 #
-# The important thing in v1 is:
-#   1. capture the correct Opta data,
-#   2. normalize it fairly,
-#   3. expose every component,
-#   4. inspect the rankings,
-#   5. then backtest/recalibrate.
-#
-# They sum to 1.0 within each position.
+# We will inspect and backtest them before allowing Involvement Rating to
+# affect the live Decision Rating.
 # =============================================================================
 
 POSITION_WEIGHTS = {
@@ -191,8 +262,10 @@ def safe_float(value: Any) -> float | None:
         return float(value)
 
     if isinstance(value, (int, float)):
-        if math.isfinite(float(value)):
-            return float(value)
+        number = float(value)
+
+        if math.isfinite(number):
+            return number
 
         return None
 
@@ -246,6 +319,7 @@ def fetch_players() -> list[dict[str, Any]]:
     print("=" * 88)
     print("FETCHING NWSL OPTA PLAYER STATS")
     print("=" * 88)
+
     print(PLAYER_STATS_URL)
     print(params)
 
@@ -256,16 +330,23 @@ def fetch_players() -> list[dict[str, Any]]:
         timeout=90,
     )
 
-    print("HTTP:", response.status_code)
+    print(
+        "HTTP:",
+        response.status_code,
+    )
 
     response.raise_for_status()
 
     payload = response.json()
 
-    if isinstance(payload, dict):
-        players = payload.get("players")
-    else:
-        players = None
+    if not isinstance(payload, dict):
+        raise RuntimeError(
+            "NWSL Opta response was not a JSON object."
+        )
+
+    players = payload.get(
+        "players"
+    )
 
     if not isinstance(players, list):
         raise RuntimeError(
@@ -273,10 +354,16 @@ def fetch_players() -> list[dict[str, Any]]:
         )
 
     players = [
-        row
-        for row in players
-        if isinstance(row, dict)
+        player
+        for player in players
+        if isinstance(player, dict)
     ]
+
+    if len(players) < 100:
+        raise RuntimeError(
+            "Unexpectedly small player response. "
+            f"Only {len(players)} players returned."
+        )
 
     print(
         "Players returned:",
@@ -317,10 +404,13 @@ def player_name(
         or ""
     )
 
-    name = f"{first} {last}".strip()
+    combined = (
+        f"{first} {last}"
+        .strip()
+    )
 
-    if name:
-        return name
+    if combined:
+        return combined
 
     return str(
         player.get("playerId")
@@ -340,14 +430,17 @@ def player_team(
                 team.get("teamId")
                 or team.get("id")
             ),
+
             "providerId": (
                 team.get("providerId")
             ),
+
             "name": (
                 team.get("officialName")
                 or team.get("name")
                 or team.get("shortName")
             ),
+
             "shortName": (
                 team.get("shortName")
                 or team.get("acronymName")
@@ -356,14 +449,23 @@ def player_team(
         }
 
     return {
-        "id": player.get("teamId"),
-        "providerId": (
-            player.get("teamProviderId")
+        "id": player.get(
+            "teamId"
         ),
-        "name": player.get("teamName"),
+
+        "providerId": player.get(
+            "teamProviderId"
+        ),
+
+        "name": player.get(
+            "teamName"
+        ),
+
         "shortName": (
             player.get("teamShortName")
-            or player.get("teamAcronymName")
+            or player.get(
+                "teamAcronymName"
+            )
         ),
     }
 
@@ -379,7 +481,9 @@ def normalize_position(
     ]
 
     for candidate in candidates:
-        text = normalize_text(candidate)
+        text = normalize_text(
+            candidate
+        )
 
         if not text:
             continue
@@ -414,7 +518,9 @@ def normalize_position(
         ):
             return "FOR"
 
-    role = player.get("role")
+    role = player.get(
+        "role"
+    )
 
     role_map = {
         1: "GK",
@@ -434,13 +540,15 @@ def normalize_position(
 
 
 # =============================================================================
-# Opta stat extraction
+# Raw Opta stats
 # =============================================================================
 
 def extract_stats(
     player: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    stats = player.get("stats")
+    stats = player.get(
+        "stats"
+    )
 
     if isinstance(stats, list):
         return [
@@ -452,9 +560,15 @@ def extract_stats(
     if isinstance(stats, dict):
         output = []
 
-        for key, value in stats.items():
-            if isinstance(value, dict):
+        for key, value in (
+            stats.items()
+        ):
+            if isinstance(
+                value,
+                dict,
+            ):
                 row = dict(value)
+
                 row.setdefault(
                     "statsId",
                     key,
@@ -474,79 +588,72 @@ def extract_stats(
     return []
 
 
-def build_stat_lookup(
-    player: dict[str, Any],
-) -> dict[str, dict[str, Any]]:
-    lookup = {}
+def stat_identity_values(
+    stat: dict[str, Any],
+) -> set[str]:
+    """
+    Return normalized exact identity strings for a stat.
 
-    for stat in extract_stats(player):
-        stat_id = str(
-            stat.get("statsId")
-            or stat.get("statId")
-            or stat.get("id")
-            or ""
-        )
+    We compare the requested field against these exact normalized strings.
+    We do NOT use substring matching.
+    """
 
-        stat_label = str(
-            stat.get("statsLabel")
-            or stat.get("statLabel")
-            or stat.get("label")
-            or stat_id
-        )
+    identities = set()
 
-        if not stat_id and not stat_label:
+    for key in (
+        "statsId",
+        "statId",
+        "statsLabel",
+        "statLabel",
+        "label",
+        "id",
+    ):
+        value = stat.get(key)
+
+        if value is None:
             continue
 
-        searchable = normalize_text(
-            f"{stat_id} {stat_label}"
+        normalized = normalize_text(
+            value
         )
 
-        lookup[searchable] = stat
+        if normalized:
+            identities.add(
+                normalized
+            )
 
-    return lookup
+    return identities
 
 
-def find_stat(
+def find_exact_stat(
     player: dict[str, Any],
-    aliases: list[str],
+    accepted_names: list[str],
 ) -> dict[str, Any] | None:
-    stats = extract_stats(player)
+    """
+    Find a stat using exact normalized identity equality only.
 
-    normalized_aliases = [
-        normalize_text(alias)
-        for alias in aliases
+    The order of accepted_names matters:
+    the first exact field available wins.
+    """
+
+    stats = extract_stats(
+        player
+    )
+
+    normalized_targets = [
+        normalize_text(name)
+        for name in accepted_names
     ]
 
-    # First pass: exact label / ID match.
-    for stat in stats:
-        stat_id = normalize_text(
-            stat.get("statsId")
-        )
+    for target in normalized_targets:
+        for stat in stats:
+            identities = (
+                stat_identity_values(
+                    stat
+                )
+            )
 
-        stat_label = normalize_text(
-            stat.get("statsLabel")
-            or stat.get("statLabel")
-            or stat.get("label")
-        )
-
-        for alias in normalized_aliases:
-            if (
-                stat_id == alias
-                or stat_label == alias
-            ):
-                return stat
-
-    # Second pass: phrase match.
-    for stat in stats:
-        searchable = normalize_text(
-            f"{stat.get('statsId', '')} "
-            f"{stat.get('statsLabel', '')} "
-            f"{stat.get('statLabel', '')} "
-            f"{stat.get('label', '')}"
-        )
-
-        for alias in normalized_aliases:
-            if alias and alias in searchable:
+            if target in identities:
                 return stat
 
     return None
@@ -558,114 +665,108 @@ def stat_value(
     if not stat:
         return None
 
-    if "statsValue" in stat:
-        return safe_float(
-            stat.get("statsValue")
+    for key in (
+        "statsValue",
+        "statValue",
+        "value",
+    ):
+        if key not in stat:
+            continue
+
+        value = safe_float(
+            stat.get(key)
         )
 
-    return safe_float(
-        stat.get("value")
+        if value is not None:
+            return value
+
+    return None
+
+
+def stat_metadata(
+    stat: dict[str, Any] | None,
+) -> dict[str, Any]:
+    if not stat:
+        return {
+            "found": False,
+            "statsId": None,
+            "statsLabel": None,
+        }
+
+    return {
+        "found": True,
+
+        "statsId": (
+            stat.get("statsId")
+            or stat.get("statId")
+            or stat.get("id")
+        ),
+
+        "statsLabel": (
+            stat.get("statsLabel")
+            or stat.get("statLabel")
+            or stat.get("label")
+        ),
+    }
+
+
+# =============================================================================
+# Strict field extraction
+# =============================================================================
+
+def extract_verified_counting_stat(
+    player: dict[str, Any],
+    accepted_names: list[str],
+) -> dict[str, Any]:
+    """
+    For verified counting stats:
+
+    exact stat present -> use its value
+    exact stat absent  -> 0
+
+    This is deliberate because the NWSL Opta player endpoint commonly omits
+    zero-valued stats from an individual player's stat array.
+    """
+
+    stat = find_exact_stat(
+        player,
+        accepted_names,
     )
 
+    metadata = stat_metadata(
+        stat
+    )
 
-# =============================================================================
-# Supporting stats
-# =============================================================================
-#
-# We want minutes / appearances if Opta exposes them so that raw season totals
-# become rates rather than simply rewarding whoever has played the most.
-# =============================================================================
+    if stat is None:
+        value = 0.0
+    else:
+        value = stat_value(
+            stat
+        )
 
-SUPPORTING_STAT_ALIASES = {
-    "minutes": [
-        "minutes played",
-        "total minutes played",
-        "minutes",
-    ],
-    "appearances": [
-        "appearances",
-        "total appearances",
-    ],
-    "starts": [
-        "starts",
-        "total starts",
-    ],
-    "sub_on": [
-        "total sub on",
-        "substitute on",
-        "sub on",
-    ],
-    "sub_off": [
-        "total sub off",
-        "substitute off",
-        "sub off",
-    ],
-    "goals": [
-        "goals",
-        "total goals",
-    ],
-    "assists": [
-        "assists",
-        "total assists",
-    ],
-    "shots": [
-        "shots",
-        "total shots",
-    ],
-    "xg": [
-        "expected goals",
-        "xg",
-    ],
-    "touches_opposition_box": [
-        "total touches in opposition box",
-        "touches in opposition box",
-    ],
-    "final_third_touches": [
-        "final third touches",
-    ],
-    "progressive_carries": [
-        "progressive carries",
-    ],
-    "shots_created": [
-        "shots created",
-    ],
-    "big_chances_created": [
-        "total big chances created",
-        "big chances created",
-    ],
-}
+        if value is None:
+            value = 0.0
 
+    return {
+        "value": value,
+        **metadata,
+    }
 
-# =============================================================================
-# Build raw player records
-# =============================================================================
 
 def extract_component_values(
     player: dict[str, Any],
 ) -> dict[str, Any]:
     output = {}
 
-    for concept, aliases in (
-        STAT_ALIASES.items()
+    for concept, names in (
+        INVOLVEMENT_STAT_FIELDS.items()
     ):
-        stat = find_stat(
-            player,
-            aliases,
+        output[concept] = (
+            extract_verified_counting_stat(
+                player,
+                names,
+            )
         )
-
-        output[concept] = {
-            "value": stat_value(stat),
-            "statsId": (
-                stat.get("statsId")
-                if stat
-                else None
-            ),
-            "statsLabel": (
-                stat.get("statsLabel")
-                if stat
-                else None
-            ),
-        }
 
     return output
 
@@ -675,30 +776,22 @@ def extract_supporting_values(
 ) -> dict[str, Any]:
     output = {}
 
-    for concept, aliases in (
-        SUPPORTING_STAT_ALIASES.items()
+    for concept, names in (
+        SUPPORTING_STAT_FIELDS.items()
     ):
-        stat = find_stat(
-            player,
-            aliases,
+        output[concept] = (
+            extract_verified_counting_stat(
+                player,
+                names,
+            )
         )
-
-        output[concept] = {
-            "value": stat_value(stat),
-            "statsId": (
-                stat.get("statsId")
-                if stat
-                else None
-            ),
-            "statsLabel": (
-                stat.get("statsLabel")
-                if stat
-                else None
-            ),
-        }
 
     return output
 
+
+# =============================================================================
+# Build raw player records
+# =============================================================================
 
 def build_raw_player(
     player: dict[str, Any],
@@ -716,37 +809,42 @@ def build_raw_player(
     )
 
     minutes = (
-        supporting
-        .get("minutes", {})
-        .get("value")
+        supporting[
+            "minutes"
+        ]["value"]
     )
 
     appearances = (
-        supporting
-        .get("appearances", {})
-        .get("value")
+        supporting[
+            "appearances"
+        ]["value"]
     )
 
-    # Prefer per-90.
-    #
-    # If minutes aren't available, fall back to per appearance.
-    # If neither exists, retain raw values but mark the rate basis.
-    if minutes and minutes > 0:
+    if (
+        minutes is not None
+        and minutes > 0
+    ):
         denominator = (
             minutes / 90.0
         )
+
         rate_basis = "per90"
 
     elif (
-        appearances
+        appearances is not None
         and appearances > 0
     ):
-        denominator = appearances
-        rate_basis = "perAppearance"
+        denominator = (
+            appearances
+        )
+
+        rate_basis = (
+            "perAppearance"
+        )
 
     else:
-        denominator = 1.0
-        rate_basis = "raw"
+        denominator = None
+        rate_basis = "noMinutes"
 
     rates = {}
 
@@ -757,72 +855,126 @@ def build_raw_player(
             "value"
         )
 
-        if raw_value is None:
+        if (
+            denominator is None
+            or denominator <= 0
+        ):
             rates[concept] = None
+
         else:
             rates[concept] = round(
-                raw_value / denominator,
+                float(raw_value or 0)
+                / denominator,
                 4,
             )
 
-    team = player_team(player)
+    team = player_team(
+        player
+    )
 
     return {
         "playerId": player.get(
             "playerId"
         ),
+
         "providerId": player.get(
             "providerId"
         ),
-        "name": player_name(player),
+
+        "name": player_name(
+            player
+        ),
+
         "team": team,
+
         "position": (
-            normalize_position(player)
+            normalize_position(
+                player
+            )
         ),
 
         "minutes": minutes,
-        "appearances": appearances,
+
+        "appearances": (
+            appearances
+        ),
 
         "starts": (
-            supporting
-            .get("starts", {})
-            .get("value")
+            supporting[
+                "starts"
+            ]["value"]
         ),
 
         "subOn": (
-            supporting
-            .get("sub_on", {})
-            .get("value")
+            supporting[
+                "sub_on"
+            ]["value"]
         ),
 
         "subOff": (
-            supporting
-            .get("sub_off", {})
-            .get("value")
+            supporting[
+                "sub_off"
+            ]["value"]
         ),
 
         "rateBasis": rate_basis,
 
-        "components": components,
+        "components": (
+            components
+        ),
 
         "rates": rates,
 
-        "supporting": supporting,
+        "supporting": (
+            supporting
+        ),
     }
 
 
 # =============================================================================
-# Percentile normalization
+# Normalization eligibility
 # =============================================================================
-#
-# Percentiles are much more robust here than fixed min/max scaling.
-#
-# A score of 80 means roughly:
-# "this player's rate is better than ~80% of relevant players in the
-# comparison pool."
-#
-# We normalize WITHIN POSITION so defenders are not punished for failing to
-# shoot like forwards and forwards are not expected to clear like CBs.
+
+def eligible_for_normalization(
+    player: dict[str, Any],
+) -> bool:
+    """
+    Low-minute players remain in the output, but they do not define the
+    percentile population.
+
+    This prevents a five-minute cameo from resetting the scale for an entire
+    position group.
+    """
+
+    minutes = player.get(
+        "minutes"
+    )
+
+    appearances = player.get(
+        "appearances"
+    )
+
+    if (
+        minutes is not None
+        and minutes >= 180
+    ):
+        return True
+
+    if (
+        (
+            minutes is None
+            or minutes <= 0
+        )
+        and appearances is not None
+        and appearances >= 3
+    ):
+        return True
+
+    return False
+
+
+# =============================================================================
+# Percentile normalization
 # =============================================================================
 
 def percentile_rank(
@@ -833,10 +985,12 @@ def percentile_rank(
         return None
 
     clean = sorted(
-        x
+        float(x)
         for x in population
         if x is not None
-        and math.isfinite(x)
+        and math.isfinite(
+            float(x)
+        )
     )
 
     if not clean:
@@ -857,7 +1011,6 @@ def percentile_rank(
         if x == value
     )
 
-    # Midrank percentile.
     rank = (
         below
         + (equal - 1) / 2
@@ -879,52 +1032,16 @@ def percentile_rank(
     )
 
 
-def eligible_for_normalization(
-    player: dict[str, Any],
-) -> bool:
-    """
-    Avoid letting a 10-minute cameo establish the position distribution.
-
-    This does NOT remove low-minute players from the output. It only keeps
-    tiny samples from distorting everybody else's percentile scale.
-    """
-
-    minutes = player.get(
-        "minutes"
-    )
-
-    appearances = player.get(
-        "appearances"
-    )
-
-    if (
-        minutes is not None
-        and minutes >= 180
-    ):
-        return True
-
-    if (
-        minutes is None
-        and appearances is not None
-        and appearances >= 3
-    ):
-        return True
-
-    # If the API didn't expose either field, we cannot apply the filter.
-    if (
-        minutes is None
-        and appearances is None
-    ):
-        return True
-
-    return False
-
-
 def build_position_populations(
     players: list[dict[str, Any]],
-) -> dict[str, dict[str, list[float]]]:
+) -> dict[
+    str,
+    dict[str, list[float]],
+]:
     populations = defaultdict(
-        lambda: defaultdict(list)
+        lambda: defaultdict(
+            list
+        )
     )
 
     for player in players:
@@ -932,12 +1049,12 @@ def build_position_populations(
             "position"
         )
 
-        if position not in (
+        if position not in {
             "GK",
             "DEF",
             "MID",
             "FOR",
-        ):
+        }:
             continue
 
         if not eligible_for_normalization(
@@ -946,17 +1063,21 @@ def build_position_populations(
             continue
 
         for concept, value in (
-            player.get(
+            player
+            .get(
                 "rates",
                 {},
-            ).items()
+            )
+            .items()
         ):
-            if value is not None:
-                populations[
-                    position
-                ][concept].append(
-                    value
-                )
+            if value is None:
+                continue
+
+            populations[
+                position
+            ][concept].append(
+                float(value)
+            )
 
     return populations
 
@@ -976,8 +1097,10 @@ def calculate_player_scores(
         "position"
     )
 
-    weights = POSITION_WEIGHTS.get(
-        position
+    weights = (
+        POSITION_WEIGHTS.get(
+            position
+        )
     )
 
     if not weights:
@@ -1001,19 +1124,30 @@ def calculate_player_scores(
     ):
         rate = (
             player
-            .get("rates", {})
+            .get(
+                "rates",
+                {},
+            )
             .get(concept)
         )
 
         population = (
             populations
-            .get(position, {})
-            .get(concept, [])
+            .get(
+                position,
+                {},
+            )
+            .get(
+                concept,
+                [],
+            )
         )
 
-        percentile = percentile_rank(
-            rate,
-            population,
+        percentile = (
+            percentile_rank(
+                rate,
+                population,
+            )
         )
 
         percentiles[
@@ -1033,12 +1167,15 @@ def calculate_player_scores(
                 weight
             )
 
-    if available_weight > 0:
+    if (
+        available_weight > 0
+    ):
         involvement_rating = round(
             weighted_total
             / available_weight,
             1,
         )
+
     else:
         involvement_rating = None
 
@@ -1059,13 +1196,11 @@ def calculate_sample_confidence(
     player: dict[str, Any],
 ) -> float:
     """
-    0-100 indicator of how much season sample we have.
-
-    This is intentionally NOT baked into Involvement Rating. A player can
-    have an excellent involvement profile in a small sample; we simply want
-    the consumer to know the sample is uncertain.
+    Separate reliability signal.
 
     900 minutes ~= full confidence.
+
+    This is NOT baked into the raw involvement rating yet.
     """
 
     minutes = player.get(
@@ -1078,11 +1213,13 @@ def calculate_sample_confidence(
 
     if (
         minutes is not None
-        and minutes >= 0
+        and minutes > 0
     ):
         return round(
             clamp(
-                minutes / 900.0 * 100.0,
+                minutes
+                / 900.0
+                * 100.0,
                 0.0,
                 100.0,
             ),
@@ -1091,11 +1228,13 @@ def calculate_sample_confidence(
 
     if (
         appearances is not None
-        and appearances >= 0
+        and appearances > 0
     ):
         return round(
             clamp(
-                appearances / 10.0 * 100.0,
+                appearances
+                / 10.0
+                * 100.0,
                 0.0,
                 100.0,
             ),
@@ -1103,6 +1242,185 @@ def calculate_sample_confidence(
         )
 
     return 0.0
+
+
+# =============================================================================
+# More useful confidence-adjusted inspection score
+# =============================================================================
+#
+# This is NOT the live Decision component.
+#
+# It is simply included so we can inspect established players without tiny
+# cameo samples dominating the top of every list.
+#
+# We shrink low-confidence involvement ratings toward a neutral 50.
+#
+# Example:
+#
+#   confidence 100 -> full rating
+#   confidence  50 -> halfway between rating and 50
+#   confidence   0 -> 50
+#
+# =============================================================================
+
+def confidence_adjusted_rating(
+    rating: float | None,
+    confidence: float,
+) -> float | None:
+    if rating is None:
+        return None
+
+    weight = clamp(
+        confidence / 100.0,
+        0.0,
+        1.0,
+    )
+
+    adjusted = (
+        50.0
+        + (
+            rating - 50.0
+        )
+        * weight
+    )
+
+    return round(
+        adjusted,
+        1,
+    )
+
+
+# =============================================================================
+# Field-resolution audit
+# =============================================================================
+
+def build_stat_resolution(
+    raw_players: list[dict[str, Any]],
+) -> dict[str, Any]:
+    output = {}
+
+    for concept, names in (
+        INVOLVEMENT_STAT_FIELDS.items()
+    ):
+        labels = defaultdict(
+            int
+        )
+
+        matched = 0
+        absent = 0
+
+        for player in raw_players:
+            stat = find_exact_stat(
+                player,
+                names,
+            )
+
+            if stat is None:
+                absent += 1
+                continue
+
+            matched += 1
+
+            label = str(
+                stat.get(
+                    "statsLabel"
+                )
+                or stat.get(
+                    "statsId"
+                )
+                or "UNKNOWN"
+            )
+
+            labels[
+                label
+            ] += 1
+
+        output[concept] = {
+            "playersMatched": matched,
+            "playersAbsentTreatedAsZero": (
+                absent
+            ),
+
+            "acceptedFields": names,
+
+            "labelsUsed": dict(
+                sorted(
+                    labels.items(),
+                    key=lambda item: (
+                        -item[1],
+                        item[0],
+                    ),
+                )
+            ),
+        }
+
+    return output
+
+
+def build_supporting_resolution(
+    raw_players: list[dict[str, Any]],
+) -> dict[str, Any]:
+    output = {}
+
+    for concept, names in (
+        SUPPORTING_STAT_FIELDS.items()
+    ):
+        labels = defaultdict(
+            int
+        )
+
+        matched = 0
+        absent = 0
+
+        for player in raw_players:
+            stat = find_exact_stat(
+                player,
+                names,
+            )
+
+            if stat is None:
+                absent += 1
+                continue
+
+            matched += 1
+
+            label = str(
+                stat.get(
+                    "statsLabel"
+                )
+                or stat.get(
+                    "statsId"
+                )
+                or "UNKNOWN"
+            )
+
+            labels[
+                label
+            ] += 1
+
+        output[concept] = {
+            "playersMatched": (
+                matched
+            ),
+
+            "playersAbsentTreatedAsZero": (
+                absent
+            ),
+
+            "acceptedFields": names,
+
+            "labelsUsed": dict(
+                sorted(
+                    labels.items(),
+                    key=lambda item: (
+                        -item[1],
+                        item[0],
+                    ),
+                )
+            ),
+        }
+
+    return output
 
 
 # =============================================================================
@@ -1123,74 +1441,177 @@ def build_position_summary(
         position_players = [
             player
             for player in players
-            if player.get(
-                "position"
-            ) == position
-            and player.get(
-                "involvementRating"
-            ) is not None
-        ]
-
-        position_players.sort(
-            key=lambda player: (
+            if (
                 player.get(
+                    "position"
+                ) == position
+                and player.get(
                     "involvementRating"
-                )
-                or -1
-            ),
-            reverse=True,
-        )
+                ) is not None
+            )
+        ]
 
         ratings = [
             player[
                 "involvementRating"
             ]
-            for player
-            in position_players
+            for player in (
+                position_players
+            )
         ]
+
+        raw_sorted = sorted(
+            position_players,
+            key=lambda player: (
+                player.get(
+                    "involvementRating"
+                )
+                if player.get(
+                    "involvementRating"
+                )
+                is not None
+                else -1
+            ),
+            reverse=True,
+        )
+
+        trusted_sorted = sorted(
+            position_players,
+            key=lambda player: (
+                player.get(
+                    "confidenceAdjustedRating"
+                )
+                if player.get(
+                    "confidenceAdjustedRating"
+                )
+                is not None
+                else -1
+            ),
+            reverse=True,
+        )
+
+        established = [
+            player
+            for player in (
+                position_players
+            )
+            if (
+                player.get(
+                    "minutes",
+                    0,
+                )
+                or 0
+            ) >= 180
+        ]
+
+        established_sorted = sorted(
+            established,
+            key=lambda player: (
+                player.get(
+                    "involvementRating"
+                )
+                if player.get(
+                    "involvementRating"
+                )
+                is not None
+                else -1
+            ),
+            reverse=True,
+        )
+
+        def compact(
+            player: dict[str, Any],
+        ) -> dict[str, Any]:
+            return {
+                "name": (
+                    player.get(
+                        "name"
+                    )
+                ),
+
+                "team": (
+                    player
+                    .get(
+                        "team",
+                        {},
+                    )
+                    .get(
+                        "shortName"
+                    )
+                ),
+
+                "rating": (
+                    player.get(
+                        "involvementRating"
+                    )
+                ),
+
+                "confidenceAdjustedRating": (
+                    player.get(
+                        "confidenceAdjustedRating"
+                    )
+                ),
+
+                "minutes": (
+                    player.get(
+                        "minutes"
+                    )
+                ),
+
+                "appearances": (
+                    player.get(
+                        "appearances"
+                    )
+                ),
+
+                "sampleConfidence": (
+                    player.get(
+                        "sampleConfidence"
+                    )
+                ),
+            }
 
         output[position] = {
             "playerCount": len(
                 position_players
             ),
 
+            "establishedPlayerCount": (
+                len(established)
+            ),
+
             "medianRating": (
                 round(
-                    median(ratings),
+                    median(
+                        ratings
+                    ),
                     1,
                 )
                 if ratings
                 else None
             ),
 
-            "topPlayers": [
-                {
-                    "name": player[
-                        "name"
-                    ],
-                    "team": (
-                        player
-                        .get("team", {})
-                        .get("shortName")
-                    ),
-                    "rating": (
-                        player[
-                            "involvementRating"
-                        ]
-                    ),
-                    "minutes": (
-                        player.get(
-                            "minutes"
-                        )
-                    ),
-                    "sampleConfidence": (
-                        player.get(
-                            "sampleConfidence"
-                        )
-                    ),
-                }
-                for player
-                in position_players[:15]
+            "topRawPlayers": [
+                compact(player)
+                for player in (
+                    raw_sorted[:15]
+                )
+            ],
+
+            "topEstablishedPlayers": [
+                compact(player)
+                for player in (
+                    established_sorted[
+                        :15
+                    ]
+                )
+            ],
+
+            "topConfidenceAdjustedPlayers": [
+                compact(player)
+                for player in (
+                    trusted_sorted[:15]
+                )
             ],
         }
 
@@ -1198,54 +1619,43 @@ def build_position_summary(
 
 
 # =============================================================================
-# Stat-resolution audit
+# Validation
 # =============================================================================
 
-def build_stat_resolution(
-    players: list[dict[str, Any]],
-) -> dict[str, Any]:
-    output = {}
+def validate_resolution(
+    stat_resolution: dict[str, Any],
+) -> None:
+    """
+    Fail loudly if an unexpected Opta label slips into production.
+    """
 
-    for concept, aliases in (
-        STAT_ALIASES.items()
+    for concept, info in (
+        stat_resolution.items()
     ):
-        labels = defaultdict(int)
-
-        found = 0
-
-        for player in players:
-            stat = find_stat(
-                player,
-                aliases,
+        accepted_normalized = {
+            normalize_text(
+                name
             )
-
-            if not stat:
-                continue
-
-            found += 1
-
-            label = str(
-                stat.get("statsLabel")
-                or stat.get("statsId")
-                or "UNKNOWN"
-            )
-
-            labels[label] += 1
-
-        output[concept] = {
-            "playersMatched": found,
-            "labelsUsed": dict(
-                sorted(
-                    labels.items(),
-                    key=lambda item: (
-                        -item[1],
-                        item[0],
-                    ),
-                )
-            ),
+            for name in info[
+                "acceptedFields"
+            ]
         }
 
-    return output
+        for label in (
+            info[
+                "labelsUsed"
+            ].keys()
+        ):
+            if (
+                normalize_text(
+                    label
+                )
+                not in accepted_normalized
+            ):
+                raise RuntimeError(
+                    "Unexpected Opta stat mapping: "
+                    f"{concept} -> {label}"
+                )
 
 
 # =============================================================================
@@ -1253,13 +1663,17 @@ def build_stat_resolution(
 # =============================================================================
 
 def main() -> None:
-    raw_players = fetch_players()
+    raw_players = (
+        fetch_players()
+    )
 
     players = [
         build_raw_player(
             player
         )
-        for player in raw_players
+        for player in (
+            raw_players
+        )
     ]
 
     populations = (
@@ -1274,27 +1688,26 @@ def main() -> None:
             populations,
         )
 
-        player[
-            "sampleConfidence"
-        ] = (
+        confidence = (
             calculate_sample_confidence(
                 player
             )
         )
 
-    # Highest involvement first makes the JSON pleasant to inspect.
-    players.sort(
-        key=lambda player: (
-            player.get(
-                "involvementRating"
+        player[
+            "sampleConfidence"
+        ] = confidence
+
+        player[
+            "confidenceAdjustedRating"
+        ] = (
+            confidence_adjusted_rating(
+                player.get(
+                    "involvementRating"
+                ),
+                confidence,
             )
-            if player.get(
-                "involvementRating"
-            ) is not None
-            else -1
-        ),
-        reverse=True,
-    )
+        )
 
     stat_resolution = (
         build_stat_resolution(
@@ -1302,10 +1715,34 @@ def main() -> None:
         )
     )
 
+    supporting_resolution = (
+        build_supporting_resolution(
+            raw_players
+        )
+    )
+
+    validate_resolution(
+        stat_resolution
+    )
+
     position_summary = (
         build_position_summary(
             players
         )
+    )
+
+    players.sort(
+        key=lambda player: (
+            player.get(
+                "confidenceAdjustedRating"
+            )
+            if player.get(
+                "confidenceAdjustedRating"
+            )
+            is not None
+            else -1
+        ),
+        reverse=True,
     )
 
     metadata = {
@@ -1327,48 +1764,68 @@ def main() -> None:
             PLAYER_STATS_URL
         ),
 
-        "playerCount": len(
-            players
+        "playerCount": (
+            len(players)
         ),
 
         "modelVersion": (
-            "nwsl-involvement-v1"
+            "nwsl-involvement-v1.1"
         ),
 
         "normalization": (
             "within-position percentile "
-            "of per-90 rates where minutes "
-            "are available"
+            "of per-90 rates"
         ),
 
         "minimumNormalizationSample": (
-            "180 minutes, or 3 appearances "
-            "when minutes unavailable"
+            "180 minutes"
+        ),
+
+        "missingStatTreatment": (
+            "verified counting stat absent "
+            "from player payload = zero"
+        ),
+
+        "statMatching": (
+            "exact normalized Opta label/ID "
+            "matching only; no substring fallback"
         ),
 
         "notes": [
             (
-                "Involvement Rating is intentionally "
-                "separate from Fixture, Fantasy Form, "
-                "Decision Rating, Visionary, and DGW value."
+                "Involvement Rating remains separate "
+                "from Fixture, Fantasy Form, Decision "
+                "Rating, Visionary, and DGW value."
             ),
+
             (
-                "Initial position weights are transparent "
-                "starting weights and should be inspected/"
-                "backtested before becoming part of the "
-                "live Decision Rating."
+                "Raw Involvement Rating is not sample "
+                "confidence adjusted."
             ),
+
             (
-                "Recent match role/activity is not included "
-                "in v1. Match-specific endpoints have been "
-                "verified separately and will be added after "
-                "reliable match enumeration is connected."
+                "Confidence Adjusted Rating is included "
+                "for inspection only and shrinks tiny "
+                "samples toward neutral 50."
+            ),
+
+            (
+                "Players under 180 minutes remain in "
+                "the output but do not define the "
+                "position percentile distributions."
+            ),
+
+            (
+                "Recent match role/activity is not "
+                "included yet."
             ),
         ],
     }
 
     output = {
-        "metadata": metadata,
+        "metadata": (
+            metadata
+        ),
 
         "weights": (
             POSITION_WEIGHTS
@@ -1378,11 +1835,17 @@ def main() -> None:
             stat_resolution
         ),
 
+        "supportingStatResolution": (
+            supporting_resolution
+        ),
+
         "positionSummary": (
             position_summary
         ),
 
-        "players": players,
+        "players": (
+            players
+        ),
     }
 
     OUTPUT_PATH.write_text(
@@ -1396,7 +1859,7 @@ def main() -> None:
 
     print()
     print("=" * 88)
-    print("NWSL INVOLVEMENT V1")
+    print("NWSL INVOLVEMENT V1.1")
     print("=" * 88)
 
     print(
@@ -1405,7 +1868,7 @@ def main() -> None:
     )
 
     print()
-    print("STAT RESOLUTION")
+    print("INVOLVEMENT STAT RESOLUTION")
     print("-" * 88)
 
     for concept, result in (
@@ -1413,12 +1876,31 @@ def main() -> None:
     ):
         print(
             f"{concept:25} "
-            f"{result['playersMatched']:4} players "
+            f"matched="
+            f"{result['playersMatched']:3} "
+            f"zero="
+            f"{result['playersAbsentTreatedAsZero']:3} "
             f"{result['labelsUsed']}"
         )
 
     print()
-    print("TOP PLAYERS BY POSITION")
+    print("SUPPORTING STAT RESOLUTION")
+    print("-" * 88)
+
+    for concept, result in (
+        supporting_resolution.items()
+    ):
+        print(
+            f"{concept:25} "
+            f"matched="
+            f"{result['playersMatched']:3} "
+            f"zero="
+            f"{result['playersAbsentTreatedAsZero']:3} "
+            f"{result['labelsUsed']}"
+        )
+
+    print()
+    print("TOP ESTABLISHED PLAYERS BY POSITION")
     print("-" * 88)
 
     for position, summary in (
@@ -1428,7 +1910,9 @@ def main() -> None:
         print(position)
 
         for row in (
-            summary["topPlayers"][:10]
+            summary[
+                "topEstablishedPlayers"
+            ][:10]
         ):
             print(
                 f"  "
