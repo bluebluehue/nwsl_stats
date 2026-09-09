@@ -4,19 +4,21 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
 
 import requests
 
 
 BASE_URL = "https://api-sdp.nwslsoccer.com"
 
-# Gotham FC 1-1 Portland Thorns
-# August 28, 2026
-MATCH_UUID = "4f89a6e4705c470f8afb28aff5c5ad06"
+MATCH_SEASON_ID = (
+    "nwsl::Football_Season::fad050beee834db88fa9f2eb28ce5a5c"
+)
 
-# SDP normally uses this namespaced form internally.
-MATCH_ID = f"nwsl::Football_Match::{MATCH_UUID}"
+MATCH_ID = (
+    "nwsl::Football_Match::4f89a6e4705c470f8afb28aff5c5ad06"
+)
+
+MATCH_UUID = "4f89a6e4705c470f8afb28aff5c5ad06"
 
 OUTPUT_PATH = Path("nwsl_opta_match_audit.json")
 
@@ -30,9 +32,32 @@ HEADERS = {
 }
 
 
-# ---------------------------------------------------------------------------
+# ===========================================================================
+# Exact endpoints confirmed in Firefox
+# ===========================================================================
+
+LINEUPS_URL = (
+    f"{BASE_URL}/v1/nwsl/football/"
+    f"seasons/{MATCH_SEASON_ID}/"
+    f"matches/{MATCH_ID}/lineups"
+)
+
+FEED_URL = (
+    f"{BASE_URL}/v1/nwsl/football/"
+    f"seasons/{MATCH_SEASON_ID}/"
+    f"matches/{MATCH_ID}/feed"
+)
+
+TEAMSTATS_URL = (
+    f"{BASE_URL}/v1/nwsl/football/"
+    f"seasons/{MATCH_SEASON_ID}/"
+    f"match/{MATCH_ID}/teamstats"
+)
+
+
+# ===========================================================================
 # HTTP
-# ---------------------------------------------------------------------------
+# ===========================================================================
 
 def request_json(
     url: str,
@@ -57,7 +82,6 @@ def request_json(
     )
 
     preview = response.text[:500].replace("\n", " ")
-
     print("BODY PREVIEW:", preview)
 
     response.raise_for_status()
@@ -65,93 +89,16 @@ def request_json(
     return response.json()
 
 
-def candidate_match_bases() -> list[str]:
+# ===========================================================================
+# Feed
+# ===========================================================================
+
+def extract_feed_items(
+    payload: Any,
+) -> list[dict[str, Any]]:
     """
-    Try the common SDP match URL forms.
-
-    We already know the public page UUID. The site may accept either:
-      /matches/<namespaced Football_Match id>
-    or
-      /matches/<raw uuid>
-
-    The diagnostic discovers which one works.
-    """
-
-    encoded_namespaced = quote(
-        MATCH_ID,
-        safe=":",
-    )
-
-    return [
-        (
-            f"{BASE_URL}/v1/nwsl/football/"
-            f"matches/{encoded_namespaced}"
-        ),
-        (
-            f"{BASE_URL}/v1/nwsl/football/"
-            f"matches/{MATCH_UUID}"
-        ),
-    ]
-
-
-def discover_working_base() -> tuple[str, Any]:
-    """
-    Use /header as the probe because Firefox confirmed that endpoint exists.
-    """
-
-    errors = []
-
-    for base in candidate_match_bases():
-        try:
-            payload = request_json(
-                f"{base}/header",
-                {"locale": "en-US"},
-            )
-
-            print()
-            print("SUCCESSFUL MATCH BASE:")
-            print(base)
-
-            return base, payload
-
-        except Exception as exc:
-            errors.append(
-                {
-                    "base": base,
-                    "error": str(exc),
-                }
-            )
-
-    raise RuntimeError(
-        "Could not discover a working match API base.\n"
-        + json.dumps(errors, indent=2)
-    )
-
-
-# ---------------------------------------------------------------------------
-# Endpoint fetchers
-# ---------------------------------------------------------------------------
-
-def fetch_simple_endpoint(
-    base: str,
-    endpoint: str,
-) -> Any:
-    return request_json(
-        f"{base}/{endpoint}",
-        {"locale": "en-US"},
-    )
-
-
-def extract_feed_items(payload: Any) -> list[dict[str, Any]]:
-    """
-    The match-feed response may be:
-      - a list directly
-      - {"feed": [...]}
-      - {"events": [...]}
-      - {"items": [...]}
-      - {"content": [...]}
-
-    Keep the diagnostic defensive.
+    Firefox showed the feed response as a JSON list, but keep this defensive
+    in case some pages are wrapped differently.
     """
 
     if isinstance(payload, list):
@@ -190,120 +137,51 @@ def extract_feed_items(payload: Any) -> list[dict[str, Any]]:
     return []
 
 
-def payload_has_more_pages(
-    payload: Any,
-    page: int,
-    item_count: int,
-) -> bool:
+def event_signature(
+    events: list[dict[str, Any]],
+) -> str:
     """
-    Look for explicit pagination metadata first.
-
-    If there is none, a zero-length next page will stop the loop.
+    Used to detect an endpoint that ignores page= and returns the same page
+    repeatedly.
     """
 
-    if not isinstance(payload, dict):
-        return item_count > 0
-
-    # Explicit booleans
-    for key in (
-        "hasNext",
-        "hasNextPage",
-        "hasMore",
-        "more",
-    ):
-        value = payload.get(key)
-
-        if isinstance(value, bool):
-            return value
-
-    # Page totals
-    for key in (
-        "totalPages",
-        "pages",
-        "pageCount",
-    ):
-        value = payload.get(key)
-
-        if isinstance(value, int):
-            return page < value
-
-    # Current / next page values
-    next_page = payload.get("nextPage")
-
-    if next_page is not None:
-        return bool(next_page)
-
-    pagination = payload.get("pagination")
-
-    if isinstance(pagination, dict):
-        for key in (
-            "hasNext",
-            "hasNextPage",
-            "hasMore",
-        ):
-            value = pagination.get(key)
-
-            if isinstance(value, bool):
-                return value
-
-        total_pages = (
-            pagination.get("totalPages")
-            or pagination.get("pages")
-        )
-
-        if isinstance(total_pages, int):
-            return page < total_pages
-
-    # No metadata. Continue until a page returns no events.
-    return item_count > 0
+    return json.dumps(
+        events,
+        sort_keys=True,
+        ensure_ascii=False,
+        default=str,
+    )
 
 
 def fetch_all_feed_pages(
-    base: str,
-    max_pages: int = 50,
+    max_pages: int = 100,
 ) -> dict[str, Any]:
-    all_items = []
+    all_events = []
     page_summaries = []
 
     seen_signatures = set()
 
     for page in range(1, max_pages + 1):
         payload = request_json(
-            f"{base}/feed",
+            FEED_URL,
             {
                 "locale": "en-US",
                 "page": page,
             },
         )
 
-        items = extract_feed_items(payload)
-
-        signature = json.dumps(
-            items[:5],
-            sort_keys=True,
-            default=str,
-        )
+        events = extract_feed_items(payload)
 
         print(
             f"Feed page {page}: "
-            f"{len(items)} event rows"
+            f"{len(events)} events"
         )
-
-        # Prevent a badly behaved endpoint from returning page 1 forever.
-        if signature in seen_signatures and items:
-            print(
-                "Repeated feed page detected. "
-                "Stopping pagination."
-            )
-            break
-
-        seen_signatures.add(signature)
 
         page_summaries.append(
             {
                 "page": page,
-                "itemCount": len(items),
-                "topLevelType": type(payload).__name__,
+                "eventCount": len(events),
+                "payloadType": type(payload).__name__,
                 "topLevelKeys": (
                     sorted(payload.keys())
                     if isinstance(payload, dict)
@@ -312,27 +190,41 @@ def fetch_all_feed_pages(
             }
         )
 
-        if not items:
+        # Normal end of pagination.
+        if not events:
+            print(
+                f"Page {page} returned no events. "
+                "Pagination complete."
+            )
             break
 
-        all_items.extend(items)
+        signature = event_signature(events)
 
-        if not payload_has_more_pages(
-            payload,
-            page,
-            len(items),
-        ):
+        if signature in seen_signatures:
+            print(
+                f"Page {page} repeated a previously "
+                "seen response. Stopping."
+            )
+
+            page_summaries[-1][
+                "repeatedPreviousPage"
+            ] = True
+
             break
+
+        seen_signatures.add(signature)
+
+        all_events.extend(events)
 
     return {
-        "events": all_items,
+        "events": all_events,
         "pages": page_summaries,
     }
 
 
-# ---------------------------------------------------------------------------
-# Lineups
-# ---------------------------------------------------------------------------
+# ===========================================================================
+# Generic JSON walker
+# ===========================================================================
 
 def walk_dicts(value: Any):
     if isinstance(value, dict):
@@ -346,86 +238,23 @@ def walk_dicts(value: Any):
             yield from walk_dicts(child)
 
 
-def identify_player_dict(row: dict[str, Any]) -> bool:
+# ===========================================================================
+# Lineups
+# ===========================================================================
+
+def is_player_dict(
+    row: dict[str, Any],
+) -> bool:
+    provider = row.get("providerId")
+    player_id = row.get("playerId")
+
     return bool(
-        row.get("playerId")
+        player_id
         or (
-            isinstance(row.get("providerId"), str)
-            and "Player:" in row["providerId"]
+            isinstance(provider, str)
+            and "Player:" in provider
         )
     )
-
-
-def extract_lineup_players(
-    lineups_payload: Any,
-) -> list[dict[str, Any]]:
-    players = []
-
-    seen = set()
-
-    for row in walk_dicts(lineups_payload):
-        if not identify_player_dict(row):
-            continue
-
-        identity = (
-            row.get("providerId")
-            or row.get("playerId")
-        )
-
-        if identity in seen:
-            continue
-
-        seen.add(identity)
-
-        players.append(row)
-
-    return players
-
-
-def infer_lineup_statuses(
-    lineups_payload: Any,
-) -> dict[str, str]:
-    """
-    Record whether a player appeared under a `fielded` or `benched`
-    branch in the lineup JSON.
-    """
-
-    statuses = {}
-
-    def recurse(
-        value: Any,
-        current_status: str | None = None,
-    ):
-        if isinstance(value, dict):
-            if identify_player_dict(value):
-                identity = (
-                    value.get("providerId")
-                    or value.get("playerId")
-                )
-
-                if identity and current_status:
-                    statuses[identity] = current_status
-
-            for key, child in value.items():
-                next_status = current_status
-
-                normalized = str(key).lower()
-
-                if normalized == "fielded":
-                    next_status = "fielded"
-
-                elif normalized == "benched":
-                    next_status = "benched"
-
-                recurse(child, next_status)
-
-        elif isinstance(value, list):
-            for child in value:
-                recurse(child, current_status)
-
-    recurse(lineups_payload)
-
-    return statuses
 
 
 def player_display_name(
@@ -463,68 +292,170 @@ def player_display_name(
     )
 
 
+def extract_lineup_statuses(
+    payload: Any,
+) -> dict[str, str]:
+    statuses = {}
+
+    def recurse(
+        value: Any,
+        status: str | None = None,
+        team: str | None = None,
+    ):
+        if isinstance(value, dict):
+            current_team = team
+
+            if value.get("shortName"):
+                current_team = str(
+                    value.get("shortName")
+                )
+
+            if is_player_dict(value):
+                identity = (
+                    value.get("providerId")
+                    or value.get("playerId")
+                )
+
+                if identity:
+                    statuses[identity] = {
+                        "status": status,
+                        "team": current_team,
+                    }
+
+            for key, child in value.items():
+                next_status = status
+
+                normalized = str(key).lower()
+
+                if normalized == "fielded":
+                    next_status = "fielded"
+
+                elif normalized == "benched":
+                    next_status = "benched"
+
+                recurse(
+                    child,
+                    next_status,
+                    current_team,
+                )
+
+        elif isinstance(value, list):
+            for child in value:
+                recurse(
+                    child,
+                    status,
+                    team,
+                )
+
+    recurse(payload)
+
+    return statuses
+
+
 def summarize_lineups(
     payload: Any,
 ) -> dict[str, Any]:
-    players = extract_lineup_players(payload)
+    status_lookup = extract_lineup_statuses(
+        payload
+    )
 
-    statuses = infer_lineup_statuses(payload)
+    players = []
+    seen = set()
 
-    rows = []
+    for row in walk_dicts(payload):
+        if not is_player_dict(row):
+            continue
 
-    for player in players:
         identity = (
-            player.get("providerId")
-            or player.get("playerId")
+            row.get("providerId")
+            or row.get("playerId")
         )
 
-        rows.append(
+        if not identity:
+            continue
+
+        if identity in seen:
+            continue
+
+        seen.add(identity)
+
+        status_info = status_lookup.get(
+            identity,
+            {},
+        )
+
+        embedded_events = row.get("events")
+
+        if not isinstance(
+            embedded_events,
+            list,
+        ):
+            embedded_events = []
+
+        players.append(
             {
-                "name": player_display_name(player),
-                "providerId": player.get(
+                "name": player_display_name(
+                    row
+                ),
+                "providerId": row.get(
                     "providerId"
                 ),
-                "playerId": player.get(
+                "playerId": row.get(
                     "playerId"
                 ),
-                "roleLabel": player.get(
+                "team": status_info.get(
+                    "team"
+                ),
+                "lineupStatus": (
+                    status_info.get(
+                        "status"
+                    )
+                ),
+                "roleLabel": row.get(
                     "roleLabel"
                 ),
-                "role": player.get("role"),
-                "bibNumber": player.get(
+                "role": row.get("role"),
+                "bibNumber": row.get(
                     "bibNumber"
                 ),
-                "isGoalkeeper": player.get(
+                "isGoalkeeper": row.get(
                     "isGoalkeeper"
                 ),
-                "isCaptain": player.get(
+                "isCaptain": row.get(
                     "isCaptain"
                 ),
-                "lineupStatus": statuses.get(
-                    identity
+                "embeddedEventCount": (
+                    len(embedded_events)
                 ),
                 "embeddedEvents": (
-                    player.get("events")
-                    if isinstance(
-                        player.get("events"),
-                        list,
-                    )
-                    else []
+                    embedded_events
                 ),
             }
         )
 
     return {
-        "playerCount": len(rows),
-        "players": rows,
+        "playerCount": len(players),
+        "fieldedCount": sum(
+            1
+            for row in players
+            if row["lineupStatus"]
+            == "fielded"
+        ),
+        "benchedCount": sum(
+            1
+            for row in players
+            if row["lineupStatus"]
+            == "benched"
+        ),
+        "players": players,
     }
 
 
-# ---------------------------------------------------------------------------
+# ===========================================================================
 # Feed analysis
-# ---------------------------------------------------------------------------
+# ===========================================================================
 
-def get_event_type(
+def event_type(
     event: dict[str, Any],
 ) -> str:
     return str(
@@ -535,219 +466,193 @@ def get_event_type(
     )
 
 
-def get_event_player_candidates(
-    event: dict[str, Any],
-) -> list[dict[str, Any]]:
-    candidates = []
-
-    for row in walk_dicts(event):
-        provider = row.get("providerId")
-        player_id = row.get("playerId")
-
-        if (
-            isinstance(provider, str)
-            and "Player:" in provider
-        ) or player_id:
-            candidates.append(row)
-
-    return candidates
-
-
 def analyze_feed(
     events: list[dict[str, Any]],
 ) -> dict[str, Any]:
     type_counts = Counter()
-    field_counts = Counter()
 
-    event_type_fields = defaultdict(Counter)
+    top_level_field_counts = Counter()
 
-    player_event_counts = defaultdict(Counter)
+    fields_by_type = defaultdict(
+        Counter
+    )
 
-    player_names = {}
+    value_catalog = defaultdict(
+        Counter
+    )
 
-    interesting_examples = defaultdict(list)
+    interesting_examples = defaultdict(
+        list
+    )
+
+    keywords = {
+        "shot": [
+            "shot",
+            "effort on goal",
+        ],
+        "key_pass": [
+            "key pass",
+            "attempt assist",
+            "chance created",
+        ],
+        "cross": [
+            "cross",
+        ],
+        "dribble": [
+            "dribble",
+            "take on",
+            "take-on",
+        ],
+        "tackle": [
+            "tackle",
+        ],
+        "interception": [
+            "interception",
+        ],
+        "clearance": [
+            "clearance",
+        ],
+        "block": [
+            "block",
+        ],
+        "recovery": [
+            "recovery",
+        ],
+        "substitution": [
+            "substitution",
+            "substitute",
+        ],
+    }
 
     for event in events:
-        event_type = get_event_type(event)
+        e_type = event_type(event)
 
-        type_counts[event_type] += 1
+        type_counts[e_type] += 1
 
-        for key in event.keys():
-            field_counts[key] += 1
-            event_type_fields[event_type][key] += 1
+        for key, value in event.items():
+            top_level_field_counts[
+                key
+            ] += 1
 
-        candidates = get_event_player_candidates(
-            event
-        )
+            fields_by_type[
+                e_type
+            ][key] += 1
 
-        for player in candidates:
-            identity = (
-                player.get("providerId")
-                or player.get("playerId")
-            )
+            # Keep a small catalog of common scalar values.
+            if isinstance(
+                value,
+                (
+                    str,
+                    int,
+                    float,
+                    bool,
+                    type(None),
+                ),
+            ):
+                value_catalog[
+                    key
+                ][str(value)] += 1
 
-            if not identity:
-                continue
-
-            player_event_counts[
-                identity
-            ][event_type] += 1
-
-            player_names.setdefault(
-                identity,
-                player_display_name(player),
-            )
-
-        lower_blob = json.dumps(
+        blob = json.dumps(
             event,
             ensure_ascii=False,
         ).lower()
 
-        keyword_buckets = {
-            "shot": [
-                "shot",
-                "effort on goal",
-            ],
-            "cross": [
-                "cross",
-            ],
-            "tackle": [
-                "tackle",
-            ],
-            "interception": [
-                "interception",
-            ],
-            "recovery": [
-                "recovery",
-            ],
-            "clearance": [
-                "clearance",
-            ],
-            "block": [
-                "block",
-            ],
-            "assist_or_key_pass": [
-                "assist",
-                "key pass",
-                "chance created",
-            ],
-            "substitution": [
-                "substitution",
-                "substitute",
-                "subbed",
-            ],
-        }
-
-        for bucket, keywords in (
-            keyword_buckets.items()
+        for bucket, terms in (
+            keywords.items()
         ):
             if any(
-                keyword in lower_blob
-                for keyword in keywords
+                term in blob
+                for term in terms
             ):
-                if len(
-                    interesting_examples[bucket]
-                ) < 10:
+                if (
+                    len(
+                        interesting_examples[
+                            bucket
+                        ]
+                    )
+                    < 12
+                ):
                     interesting_examples[
                         bucket
-                    ].append(event)
-
-    type_field_output = {}
-
-    for event_type, counts in (
-        event_type_fields.items()
-    ):
-        type_field_output[event_type] = dict(
-            counts.most_common()
-        )
-
-    player_output = []
-
-    for identity, counts in (
-        player_event_counts.items()
-    ):
-        player_output.append(
-            {
-                "identity": identity,
-                "name": player_names.get(
-                    identity
-                ),
-                "eventCounts": dict(
-                    counts.most_common()
-                ),
-                "totalAttributedEvents": sum(
-                    counts.values()
-                ),
-            }
-        )
-
-    player_output.sort(
-        key=lambda row: row[
-            "totalAttributedEvents"
-        ],
-        reverse=True,
-    )
+                    ].append(
+                        event
+                    )
 
     return {
         "eventCount": len(events),
+
         "eventTypeCounts": dict(
             type_counts.most_common()
         ),
-        "allTopLevelFields": dict(
-            field_counts.most_common()
+
+        "topLevelFieldCounts": dict(
+            top_level_field_counts.most_common()
         ),
-        "fieldsByEventType": type_field_output,
-        "playerAttributedEvents": (
-            player_output
-        ),
+
+        "fieldsByEventType": {
+            key: dict(
+                counts.most_common()
+            )
+            for key, counts
+            in fields_by_type.items()
+        },
+
+        "scalarValueCatalog": {
+            key: dict(
+                counts.most_common(30)
+            )
+            for key, counts
+            in value_catalog.items()
+        },
+
         "interestingExamples": dict(
             interesting_examples
         ),
     }
 
 
-# ---------------------------------------------------------------------------
+# ===========================================================================
 # Team stats
-# ---------------------------------------------------------------------------
+# ===========================================================================
 
-def extract_team_stat_rows(
+def extract_teamstats(
     payload: Any,
 ) -> list[dict[str, Any]]:
     if isinstance(payload, list):
-        return [
-            row
-            for row in payload
-            if isinstance(row, dict)
-        ]
+        rows = payload
 
-    if isinstance(payload, dict):
+    elif isinstance(payload, dict):
+        rows = []
+
         for key in (
             "stats",
             "teamStats",
             "items",
-            "data",
             "content",
+            "data",
         ):
             value = payload.get(key)
 
-            if isinstance(value, list):
-                return [
-                    row
-                    for row in value
-                    if isinstance(row, dict)
-                ]
+            if isinstance(
+                value,
+                list,
+            ):
+                rows = value
+                break
 
-    return []
-
-
-def summarize_teamstats(
-    payload: Any,
-) -> list[dict[str, Any]]:
-    rows = extract_team_stat_rows(payload)
+    else:
+        rows = []
 
     output = []
 
     for row in rows:
+        if not isinstance(
+            row,
+            dict,
+        ):
+            continue
+
         output.append(
             {
                 "statsId": row.get(
@@ -768,180 +673,240 @@ def summarize_teamstats(
     return output
 
 
-# ---------------------------------------------------------------------------
-# Cross-check feed vs team totals
-# ---------------------------------------------------------------------------
+# ===========================================================================
+# Feed sanity counts
+# ===========================================================================
 
-def classify_feed_events(
+def feed_sanity_counts(
     events: list[dict[str, Any]],
-) -> dict[str, int]:
-    """
-    Very conservative counts.
-
-    These are NOT intended to become the model yet.
-    They're just sanity checks to see whether the public feed
-    contains enough raw events to reproduce official team totals.
-    """
-
+) -> dict[str, Any]:
     counts = Counter()
 
+    shot_results = Counter()
+
     for event in events:
-        event_type = get_event_type(
+        e_type = event_type(
             event
         ).lower()
+
+        if e_type == "shot":
+            counts["shot_events"] += 1
+
+        shot_result = event.get(
+            "shotResult"
+        )
+
+        if shot_result is not None:
+            shot_results[
+                str(shot_result)
+            ] += 1
 
         blob = json.dumps(
             event,
             ensure_ascii=False,
         ).lower()
 
-        if event_type == "shot" or (
-            '"label": "shot"' in blob
+        if "tackle" in blob:
+            counts[
+                "events_containing_tackle"
+            ] += 1
+
+        if "interception" in blob:
+            counts[
+                "events_containing_interception"
+            ] += 1
+
+        if "clearance" in blob:
+            counts[
+                "events_containing_clearance"
+            ] += 1
+
+        if "recovery" in blob:
+            counts[
+                "events_containing_recovery"
+            ] += 1
+
+        if "cross" in blob:
+            counts[
+                "events_containing_cross"
+            ] += 1
+
+        if "dribble" in blob:
+            counts[
+                "events_containing_dribble"
+            ] += 1
+
+        if (
+            "key pass" in blob
+            or "attempt assist" in blob
         ):
-            counts["shots"] += 1
+            counts[
+                "events_containing_key_pass"
+            ] += 1
 
-        shot_result = str(
-            event.get("shotResult")
-            or ""
-        ).lower()
-
-        if "ontarget" in shot_result:
-            counts["shots_on_target"] += 1
-
-        if "tackle" in event_type:
-            counts["tackle_events"] += 1
-
-        if "interception" in event_type:
-            counts["interception_events"] += 1
-
-        if "clearance" in event_type:
-            counts["clearance_events"] += 1
-
-        if "recovery" in event_type:
-            counts["recovery_events"] += 1
-
-        if "cross" in event_type:
-            counts["cross_events"] += 1
-
-    return dict(counts)
+    return {
+        "counts": dict(counts),
+        "shotResults": dict(
+            shot_results
+        ),
+    }
 
 
-# ---------------------------------------------------------------------------
+# ===========================================================================
 # Main
-# ---------------------------------------------------------------------------
+# ===========================================================================
 
 def main() -> None:
     print("=" * 88)
     print("NWSL OPTA MATCH-LEVEL AUDIT")
     print("=" * 88)
 
-    base, header = discover_working_base()
+    print()
+    print("Match season:")
+    print(MATCH_SEASON_ID)
 
     print()
-    print("Fetching lineups...")
+    print("Match:")
+    print(MATCH_ID)
 
-    lineups = fetch_simple_endpoint(
-        base,
-        "lineups",
-    )
-
-    print()
-    print("Fetching team stats...")
-
-    teamstats = fetch_simple_endpoint(
-        base,
-        "teamstats",
-    )
+    # ------------------------------------------------------------------
+    # Lineups
+    # ------------------------------------------------------------------
 
     print()
-    print("Fetching match summary...")
+    print("FETCHING LINEUPS")
 
-    try:
-        summary = fetch_simple_endpoint(
-            base,
-            "summary",
-        )
-    except Exception as exc:
-        print(
-            "Summary endpoint unavailable:",
-            exc,
-        )
+    lineups_raw = request_json(
+        LINEUPS_URL,
+        {
+            "locale": "en-US",
+        },
+    )
 
-        summary = None
+    lineups = summarize_lineups(
+        lineups_raw
+    )
+
+    # ------------------------------------------------------------------
+    # Team stats
+    # ------------------------------------------------------------------
 
     print()
-    print("Fetching ALL feed pages...")
+    print("FETCHING TEAM STATS")
 
-    feed_result = fetch_all_feed_pages(
-        base
+    teamstats_raw = request_json(
+        TEAMSTATS_URL,
+        {
+            "locale": "en-US",
+        },
     )
 
-    events = feed_result["events"]
-
-    lineup_summary = summarize_lineups(
-        lineups
+    teamstats = extract_teamstats(
+        teamstats_raw
     )
+
+    # ------------------------------------------------------------------
+    # Feed
+    # ------------------------------------------------------------------
+
+    print()
+    print("FETCHING ALL FEED PAGES")
+
+    feed_result = (
+        fetch_all_feed_pages()
+    )
+
+    events = feed_result[
+        "events"
+    ]
 
     feed_analysis = analyze_feed(
         events
     )
 
-    teamstats_summary = (
-        summarize_teamstats(
-            teamstats
-        )
-    )
-
-    feed_sanity = classify_feed_events(
+    sanity = feed_sanity_counts(
         events
     )
+
+    # ------------------------------------------------------------------
+    # Output
+    # ------------------------------------------------------------------
 
     audit = {
         "metadata": {
             "source": (
                 "NWSL public SDP / Opta API"
             ),
-            "matchUuid": MATCH_UUID,
+            "matchSeasonId": (
+                MATCH_SEASON_ID
+            ),
             "matchId": MATCH_ID,
-            "workingBaseUrl": base,
-            "feedPageCount": len(
-                feed_result["pages"]
+            "matchUuid": MATCH_UUID,
+
+            "lineupsUrl": (
+                LINEUPS_URL
             ),
-            "feedEventCount": len(
-                events
+            "feedUrl": FEED_URL,
+            "teamstatsUrl": (
+                TEAMSTATS_URL
             ),
+
             "lineupPlayerCount": (
-                lineup_summary[
+                lineups[
                     "playerCount"
                 ]
             ),
+
+            "fieldedPlayerCount": (
+                lineups[
+                    "fieldedCount"
+                ]
+            ),
+
+            "benchedPlayerCount": (
+                lineups[
+                    "benchedCount"
+                ]
+            ),
+
+            "feedPageCount": len(
+                feed_result[
+                    "pages"
+                ]
+            ),
+
+            "feedEventCount": len(
+                events
+            ),
+
+            "teamStatCount": len(
+                teamstats
+            ),
         },
 
-        "header": header,
-
-        "lineups": lineup_summary,
+        "lineups": lineups,
 
         "feedPagination": (
-            feed_result["pages"]
+            feed_result[
+                "pages"
+            ]
         ),
 
-        "feedAnalysis": feed_analysis,
-
-        "feedSanityCounts": (
-            feed_sanity
+        "feedAnalysis": (
+            feed_analysis
         ),
 
-        "teamStats": (
-            teamstats_summary
-        ),
+        "feedSanity": sanity,
 
-        "rawSummary": summary,
+        "teamStats": teamstats,
 
-        # Include raw endpoint payloads for this ONE match.
-        # Very useful while reverse engineering.
         "raw": {
-            "lineups": lineups,
-            "teamstats": teamstats,
+            "lineups": (
+                lineups_raw
+            ),
+            "teamstats": (
+                teamstats_raw
+            ),
             "feed": events,
         },
     }
@@ -955,26 +920,43 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    # ------------------------------------------------------------------
+    # Console summary
+    # ------------------------------------------------------------------
+
     print()
     print("=" * 88)
-    print("AUDIT SUMMARY")
+    print("AUDIT COMPLETE")
     print("=" * 88)
-
-    print(
-        "Working API base:",
-        base,
-    )
 
     print(
         "Lineup players:",
-        lineup_summary[
+        lineups[
             "playerCount"
         ],
     )
 
     print(
+        "Fielded:",
+        lineups[
+            "fieldedCount"
+        ],
+    )
+
+    print(
+        "Benched:",
+        lineups[
+            "benchedCount"
+        ],
+    )
+
+    print(
         "Feed pages:",
-        len(feed_result["pages"]),
+        len(
+            feed_result[
+                "pages"
+            ]
+        ),
     )
 
     print(
@@ -982,35 +964,55 @@ def main() -> None:
         len(events),
     )
 
+    print(
+        "Team stat rows:",
+        len(teamstats),
+    )
+
     print()
     print("EVENT TYPES")
     print("-" * 88)
 
-    for event_type, count in (
+    for key, value in (
         feed_analysis[
             "eventTypeCounts"
         ].items()
     ):
         print(
-            f"{event_type:30} {count}"
+            f"{key:32} {value}"
         )
 
     print()
-    print("SANITY COUNTS")
+    print("SHOT RESULTS")
     print("-" * 88)
 
     for key, value in (
-        feed_sanity.items()
+        sanity[
+            "shotResults"
+        ].items()
     ):
         print(
-            f"{key:30} {value}"
+            f"{key:32} {value}"
         )
 
     print()
-    print("TEAM STATS")
+    print("KEYWORD SANITY COUNTS")
     print("-" * 88)
 
-    for row in teamstats_summary:
+    for key, value in (
+        sanity[
+            "counts"
+        ].items()
+    ):
+        print(
+            f"{key:40} {value}"
+        )
+
+    print()
+    print("OFFICIAL TEAM STATS")
+    print("-" * 88)
+
+    for row in teamstats:
         print(
             f"{str(row.get('statsLabel')):35} "
             f"home={row.get('statsValueHome')} "
