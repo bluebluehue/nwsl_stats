@@ -2,23 +2,20 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
 
 import requests
 
 
 BASE_URL = "https://api-sdp.nwslsoccer.com"
-API_PREFIX = "/v1/nwsl/football"
-LOCALE = "en-US"
 
-DISCOVERY_OUTPUT = Path("nwsl_opta_discovery_audit.json")
-STATS_OUTPUT = Path("nwsl_opta_stats_audit.json")
+SEASON_ID = "nwsl::Football_Season::0b6761e4701749f593690c0f338da74c"
+
+OUTPUT_PATH = Path("nwsl_opta_stats_audit.json")
 
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 NWSL fantasy stats discovery",
+    "User-Agent": "Mozilla/5.0 NWSL fantasy stats audit",
     "Accept": "application/json,text/plain,*/*",
     "Referer": "https://www.nwslsoccer.com/",
 }
@@ -26,51 +23,45 @@ HEADERS = {
 
 TARGET_CONCEPTS = {
     "shots_on_target": [
-        "shot on target",
         "shots on target",
-        "shots-on-target",
-        "shot-on-target",
+        "shot on target",
     ],
     "key_passes": [
-        "key pass",
         "key passes",
-        "key-pass",
-        "key-passes",
+        "attempt assists",
     ],
     "successful_crosses": [
-        "successful cross",
         "successful crosses",
-        "crosses successful",
         "accurate crosses",
+        "crosses successful",
     ],
     "successful_dribbles": [
-        "successful dribble",
         "successful dribbles",
         "dribbles completed",
-        "dribble success",
+        "successful take ons",
+        "successful take-ons",
     ],
     "tackles_won": [
         "tackles won",
-        "tackle won",
         "successful tackles",
     ],
     "interceptions": [
-        "interception",
         "interceptions",
+        "interception",
     ],
     "clearances": [
-        "clearance",
         "clearances",
+        "clearance",
     ],
     "blocks": [
-        "block",
         "blocks",
         "blocked shots",
+        "blocked",
     ],
     "recoveries": [
-        "recovery",
         "recoveries",
         "ball recoveries",
+        "recovery",
     ],
 }
 
@@ -83,270 +74,57 @@ def normalize_text(value: Any) -> str:
     ).strip()
 
 
-def request_json(
-    path: str,
-    params: dict[str, Any] | None = None,
-) -> dict[str, Any]:
-    url = f"{BASE_URL}{path}"
+def fetch_players() -> list[dict[str, Any]]:
+    url = (
+        f"{BASE_URL}/v1/nwsl/football/seasons/"
+        f"{SEASON_ID}/stats/players"
+    )
 
-    merged = {"locale": LOCALE}
-    if params:
-        merged.update(params)
+    params = {
+        "locale": "en-US",
+        "category": "general",
+        "role": "all",
+        "direction": "desc",
+        "page": 1,
+        "pageNumElement": 400,
+    }
 
-    print()
     print("=" * 80)
-    print(f"GET {url}")
-    print(f"PARAMS {merged}")
+    print("FETCHING NWSL OPTA PLAYER STATS")
+    print("=" * 80)
+    print(f"URL: {url}")
+    print(f"PARAMS: {params}")
 
     response = requests.get(
         url,
-        params=merged,
+        params=params,
         headers=HEADERS,
-        timeout=30,
+        timeout=60,
     )
 
     print(f"HTTP {response.status_code}")
-    print(f"CONTENT-TYPE {response.headers.get('content-type')}")
+    print(
+        "CONTENT-TYPE:",
+        response.headers.get("content-type"),
+    )
 
-    preview = response.text[:1000].replace("\n", " ")
-    print(f"BODY PREVIEW {preview}")
+    response.raise_for_status()
 
-    if response.status_code >= 400:
-        raise requests.HTTPError(
-            f"HTTP {response.status_code}",
-            response=response,
-        )
+    payload = response.json()
 
-    try:
-        return response.json()
-    except Exception as exc:
+    players = payload.get("players")
+
+    if not isinstance(players, list):
         raise RuntimeError(
-            f"Response was not valid JSON: {exc}"
-        ) from exc
-
-
-def safe_probe(
-    name: str,
-    path: str,
-    params: dict[str, Any] | None = None,
-) -> dict[str, Any]:
-    result = {
-        "name": name,
-        "path": path,
-        "params": params or {},
-        "ok": False,
-        "status": None,
-        "payload_type": None,
-        "top_level_keys": [],
-        "payload": None,
-        "error": None,
-    }
-
-    try:
-        payload = request_json(path, params)
-
-        result["ok"] = True
-        result["payload_type"] = type(payload).__name__
-
-        if isinstance(payload, dict):
-            result["top_level_keys"] = sorted(
-                str(k) for k in payload.keys()
-            )
-
-        result["payload"] = payload
-
-    except requests.HTTPError as exc:
-        status = None
-
-        if exc.response is not None:
-            status = exc.response.status_code
-
-        result["status"] = status
-        result["error"] = str(exc)
-
-    except Exception as exc:
-        result["error"] = str(exc)
-
-    return result
-
-
-def flatten_dict(
-    value: Any,
-    prefix: str = "",
-    depth: int = 0,
-) -> list[tuple[str, Any]]:
-    if depth > 6:
-        return []
-
-    out = []
-
-    if isinstance(value, dict):
-        for key, child in value.items():
-            path = f"{prefix}.{key}" if prefix else str(key)
-            out.extend(flatten_dict(child, path, depth + 1))
-
-    elif isinstance(value, list):
-        for idx, child in enumerate(value[:100]):
-            path = f"{prefix}[{idx}]"
-            out.extend(flatten_dict(child, path, depth + 1))
-
-    else:
-        out.append((prefix, value))
-
-    return out
-
-
-def extract_candidate_season_ids(
-    payload: Any,
-) -> list[str]:
-    found = set()
-
-    # Internal season IDs appear to use the Football_Season namespace.
-    pattern = re.compile(
-        r"(nwsl::Football_Season::[A-Za-z0-9_-]+)",
-        re.IGNORECASE,
-    )
-
-    for path, value in flatten_dict(payload):
-        for candidate in (
-            str(value or ""),
-            str(path or ""),
-        ):
-            match = pattern.search(candidate)
-            if match:
-                found.add(match.group(1))
-
-    return sorted(found)
-
-
-def inspect_possible_seasons(
-    probes: list[dict[str, Any]],
-) -> list[dict[str, Any]]:
-    candidates = {}
-
-    for probe in probes:
-        if not probe.get("ok"):
-            continue
-
-        payload = probe.get("payload")
-
-        for season_id in extract_candidate_season_ids(payload):
-            row = candidates.setdefault(
-                season_id,
-                {
-                    "season_id": season_id,
-                    "found_in": [],
-                    "2026_evidence": [],
-                },
-            )
-
-            row["found_in"].append(probe["name"])
-
-        # Also look for objects containing both "season" and a year.
-        flat = flatten_dict(payload)
-
-        for path, value in flat:
-            text = f"{path} {value}"
-
-            if "2026" not in text:
-                continue
-
-            lower_path = path.lower()
-
-            if "season" in lower_path:
-                for season_id in extract_candidate_season_ids(payload):
-                    row = candidates.setdefault(
-                        season_id,
-                        {
-                            "season_id": season_id,
-                            "found_in": [],
-                            "2026_evidence": [],
-                        },
-                    )
-
-                    evidence = f"{path}={value}"
-
-                    if evidence not in row["2026_evidence"]:
-                        row["2026_evidence"].append(evidence)
-
-    return list(candidates.values())
-
-
-def discover_api_structure() -> dict[str, Any]:
-    probes = []
-
-    # ------------------------------------------------------------------
-    # Broad discovery routes.
-    #
-    # We deliberately try several plausible forms because the public SDP
-    # deployment is undocumented and may not expose all common SDP routes.
-    # ------------------------------------------------------------------
-
-    candidates = [
-        (
-            "football root",
-            f"{API_PREFIX}",
-            None,
-        ),
-        (
-            "competitions",
-            f"{API_PREFIX}/competitions",
-            {"page": 1, "pageNumElement": 100},
-        ),
-        (
-            "competitions simple",
-            f"{API_PREFIX}/competitions",
-            None,
-        ),
-        (
-            "seasons",
-            f"{API_PREFIX}/seasons",
-            {"page": 1, "pageNumElement": 100},
-        ),
-        (
-            "seasons simple",
-            f"{API_PREFIX}/seasons",
-            None,
-        ),
-        (
-            "teams",
-            f"{API_PREFIX}/teams",
-            {"page": 1, "pageNumElement": 100},
-        ),
-        (
-            "teams simple",
-            f"{API_PREFIX}/teams",
-            None,
-        ),
-    ]
-
-    for name, path, params in candidates:
-        probes.append(
-            safe_probe(name, path, params)
+            "Response did not contain a players list."
         )
 
-    seasons = inspect_possible_seasons(probes)
+    print(f"Players returned: {len(players)}")
 
-    result = {
-        "base_url": BASE_URL,
-        "api_prefix": API_PREFIX,
-        "probes": probes,
-        "candidate_seasons": seasons,
-    }
-
-    DISCOVERY_OUTPUT.write_text(
-        json.dumps(
-            result,
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
-
-    return result
+    return players
 
 
-def extract_stat_rows(player: dict[str, Any]) -> list[dict[str, Any]]:
+def extract_stats(player: dict[str, Any]) -> list[dict[str, Any]]:
     stats = player.get("stats")
 
     if isinstance(stats, list):
@@ -385,8 +163,10 @@ def player_name(player: dict[str, Any]) -> str:
         "shortName",
         "shirtName",
     ):
-        if player.get(key):
-            return str(player[key])
+        value = player.get(key)
+
+        if value:
+            return str(value)
 
     first = (
         player.get("mediaFirstName")
@@ -400,11 +180,14 @@ def player_name(player: dict[str, Any]) -> str:
         or ""
     )
 
-    full = f"{first} {last}".strip()
+    combined = f"{first} {last}".strip()
 
-    return full or str(
+    if combined:
+        return combined
+
+    return str(
         player.get("playerId")
-        or player.get("id")
+        or player.get("providerId")
         or "Unknown Player"
     )
 
@@ -414,22 +197,26 @@ def player_team(player: dict[str, Any]) -> str:
 
     if isinstance(team, dict):
         for key in (
-            "acronym",
             "acronymName",
+            "acronym",
             "shortName",
-            "name",
             "officialName",
+            "name",
         ):
-            if team.get(key):
-                return str(team[key])
+            value = team.get(key)
+
+            if value:
+                return str(value)
 
     for key in (
         "teamAcronymName",
         "teamShortName",
         "teamName",
     ):
-        if player.get(key):
-            return str(player[key])
+        value = player.get(key)
+
+        if value:
+            return str(value)
 
     return ""
 
@@ -441,8 +228,10 @@ def player_position(player: dict[str, Any]) -> str:
         "positionName",
         "skillName",
     ):
-        if player.get(key):
-            return str(player[key])
+        value = player.get(key)
+
+        if value:
+            return str(value)
 
     role = player.get("role")
 
@@ -460,114 +249,13 @@ def player_position(player: dict[str, Any]) -> str:
     return role_map.get(role, str(role or ""))
 
 
-def find_players_list(payload: Any) -> list[dict[str, Any]]:
-    if isinstance(payload, dict):
-        for key in (
-            "players",
-            "items",
-            "content",
-            "results",
-            "data",
-        ):
-            value = payload.get(key)
-
-            if isinstance(value, list):
-                if value and isinstance(value[0], dict):
-                    return value
-
-            if isinstance(value, dict):
-                nested = find_players_list(value)
-                if nested:
-                    return nested
-
-    return []
-
-
-def fetch_players_for_season(
-    season_id: str,
-) -> dict[str, Any]:
-    encoded = quote(season_id, safe="")
-
-    path = (
-        f"{API_PREFIX}/seasons/"
-        f"{encoded}/stats/players"
-    )
-
-    order_candidates = [
-        "goals",
-        "appearances",
-        "minutes",
-        "minutes-played",
-        "total-points",
-    ]
-
-    for order_by in order_candidates:
-        try:
-            payload = request_json(
-                path,
-                {
-                    "orderBy": order_by,
-                    "direction": "desc",
-                    "page": 1,
-                    "pageNumElement": 500,
-                },
-            )
-
-            players = find_players_list(payload)
-
-            if players:
-                return {
-                    "season_id": season_id,
-                    "order_by": order_by,
-                    "payload": payload,
-                    "players": players,
-                }
-
-        except Exception as exc:
-            print(
-                f"Player stats attempt failed "
-                f"for {season_id} / {order_by}: {exc}"
-            )
-
-    return {}
-
-
-def build_stats_audit(
-    successful: dict[str, Any],
-) -> dict[str, Any]:
-    players = successful["players"]
-
-    stat_catalog = {}
-    player_examples = []
-    position_examples = {}
-    stat_counts = []
+def build_stat_catalog(
+    players: list[dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    catalog = {}
 
     for player in players:
-        stats = extract_stat_rows(player)
-
-        stat_counts.append(len(stats))
-
-        pos = player_position(player)
-
-        if pos and pos not in position_examples:
-            position_examples[pos] = {
-                "name": player_name(player),
-                "team": player_team(player),
-                "position": pos,
-                "stats_count": len(stats),
-                "sample_stats": stats[:40],
-            }
-
-        if len(player_examples) < 10:
-            player_examples.append({
-                "name": player_name(player),
-                "team": player_team(player),
-                "position": pos,
-                "stats_count": len(stats),
-                "top_level_keys": sorted(player.keys()),
-            })
-
-        for stat in stats:
+        for stat in extract_stats(player):
             stats_id = str(
                 stat.get("statsId")
                 or stat.get("statId")
@@ -582,6 +270,7 @@ def build_stats_audit(
                 stat.get("statsLabel")
                 or stat.get("statLabel")
                 or stat.get("label")
+                or stats_id
             )
 
             stats_value = (
@@ -590,175 +279,350 @@ def build_stats_audit(
                 else stat.get("value")
             )
 
-            row = stat_catalog.setdefault(
+            row = catalog.setdefault(
                 stats_id,
                 {
                     "statsId": stats_id,
                     "statsLabel": stats_label,
-                    "exampleValue": stats_value,
                     "seenForPlayers": 0,
+                    "exampleValues": [],
                 },
             )
 
             row["seenForPlayers"] += 1
 
-            if not row.get("statsLabel") and stats_label:
-                row["statsLabel"] = stats_label
+            if (
+                stats_value is not None
+                and len(row["exampleValues"]) < 5
+            ):
+                row["exampleValues"].append(stats_value)
 
-    target_matches = {}
+    return catalog
+
+
+def match_target_concepts(
+    catalog: dict[str, dict[str, Any]],
+) -> dict[str, list[dict[str, Any]]]:
+    results = {}
 
     for concept, phrases in TARGET_CONCEPTS.items():
         matches = []
 
-        for stats_id, row in stat_catalog.items():
-            combined = normalize_text(
-                f"{stats_id} {row.get('statsLabel') or ''}"
+        for row in catalog.values():
+            stats_id = row.get("statsId")
+            stats_label = row.get("statsLabel")
+
+            searchable = normalize_text(
+                f"{stats_id} {stats_label}"
             )
 
-            if any(
-                normalize_text(phrase) in combined
-                for phrase in phrases
-            ):
-                matches.append(row)
+            matched_phrases = []
 
-        target_matches[concept] = matches
+            for phrase in phrases:
+                normalized_phrase = normalize_text(phrase)
 
-    counts = stat_counts or [0]
+                if normalized_phrase in searchable:
+                    matched_phrases.append(phrase)
+
+            if matched_phrases:
+                matches.append(
+                    {
+                        "statsId": stats_id,
+                        "statsLabel": stats_label,
+                        "seenForPlayers": row.get(
+                            "seenForPlayers"
+                        ),
+                        "exampleValues": row.get(
+                            "exampleValues"
+                        ),
+                        "matchedPhrases": matched_phrases,
+                    }
+                )
+
+        results[concept] = sorted(
+            matches,
+            key=lambda x: (
+                normalize_text(x.get("statsLabel")),
+                normalize_text(x.get("statsId")),
+            ),
+        )
+
+    return results
+
+
+def get_representative_players(
+    players: list[dict[str, Any]],
+) -> dict[str, dict[str, Any]]:
+    examples = {}
+
+    for player in players:
+        position = player_position(player)
+
+        normalized_position = normalize_text(position)
+
+        if "goal" in normalized_position:
+            bucket = "GK"
+        elif "def" in normalized_position:
+            bucket = "DEF"
+        elif "mid" in normalized_position:
+            bucket = "MID"
+        elif (
+            "for" in normalized_position
+            or "striker" in normalized_position
+            or "forward" in normalized_position
+        ):
+            bucket = "FOR"
+        else:
+            continue
+
+        if bucket in examples:
+            continue
+
+        stats = extract_stats(player)
+
+        examples[bucket] = {
+            "name": player_name(player),
+            "team": player_team(player),
+            "positionRaw": position,
+            "playerId": player.get("playerId"),
+            "providerId": player.get("providerId"),
+            "statsCount": len(stats),
+            "sampleStats": stats[:40],
+        }
+
+        if len(examples) == 4:
+            break
+
+    return examples
+
+
+def build_player_target_values(
+    players: list[dict[str, Any]],
+    target_matches: dict[str, list[dict[str, Any]]],
+) -> list[dict[str, Any]]:
+    target_ids = {}
+
+    for concept, matches in target_matches.items():
+        target_ids[concept] = {
+            str(match.get("statsId"))
+            for match in matches
+        }
+
+    sample_rows = []
+
+    for player in players:
+        stats_lookup = {}
+
+        for stat in extract_stats(player):
+            stats_id = str(
+                stat.get("statsId")
+                or stat.get("statId")
+                or stat.get("id")
+                or ""
+            )
+
+            if stats_id:
+                stats_lookup[stats_id] = stat
+
+        values = {}
+
+        any_found = False
+
+        for concept, ids in target_ids.items():
+            concept_values = []
+
+            for stats_id in ids:
+                stat = stats_lookup.get(stats_id)
+
+                if not stat:
+                    continue
+
+                value = (
+                    stat.get("statsValue")
+                    if "statsValue" in stat
+                    else stat.get("value")
+                )
+
+                concept_values.append(
+                    {
+                        "statsId": stats_id,
+                        "statsLabel": (
+                            stat.get("statsLabel")
+                            or stat.get("statLabel")
+                            or stat.get("label")
+                        ),
+                        "value": value,
+                    }
+                )
+
+            if concept_values:
+                any_found = True
+
+            values[concept] = concept_values
+
+        if any_found:
+            sample_rows.append(
+                {
+                    "name": player_name(player),
+                    "team": player_team(player),
+                    "position": player_position(player),
+                    "playerId": player.get("playerId"),
+                    "providerId": player.get(
+                        "providerId"
+                    ),
+                    "targetValues": values,
+                }
+            )
+
+        if len(sample_rows) >= 25:
+            break
+
+    return sample_rows
+
+
+def build_audit(
+    players: list[dict[str, Any]],
+) -> dict[str, Any]:
+    catalog = build_stat_catalog(players)
+
+    targets = match_target_concepts(catalog)
+
+    stat_counts = [
+        len(extract_stats(player))
+        for player in players
+    ]
+
+    if not stat_counts:
+        stat_counts = [0]
+
+    sorted_catalog = sorted(
+        catalog.values(),
+        key=lambda row: (
+            normalize_text(row.get("statsLabel")),
+            normalize_text(row.get("statsId")),
+        ),
+    )
 
     return {
         "metadata": {
             "source": "NWSL public SDP / Opta API",
-            "season_id": successful["season_id"],
-            "order_by": successful["order_by"],
-            "player_count": len(players),
-            "unique_stat_count": len(stat_catalog),
-            "minimum_stats_per_player": min(counts),
-            "maximum_stats_per_player": max(counts),
-            "average_stats_per_player": round(
-                sum(counts) / len(counts),
+            "seasonId": SEASON_ID,
+            "endpoint": (
+                f"{BASE_URL}/v1/nwsl/football/"
+                f"seasons/{SEASON_ID}/stats/players"
+            ),
+            "playerCount": len(players),
+            "uniqueStatCount": len(catalog),
+            "minimumStatsPerPlayer": min(stat_counts),
+            "maximumStatsPerPlayer": max(stat_counts),
+            "averageStatsPerPlayer": round(
+                sum(stat_counts) / len(stat_counts),
                 2,
             ),
-            "all_target_concepts_found": all(
-                bool(v)
-                for v in target_matches.values()
+            "allNineTargetConceptsMatched": all(
+                bool(matches)
+                for matches in targets.values()
             ),
         },
-        "target_involvement_concepts": target_matches,
-        "position_examples": position_examples,
-        "player_examples": player_examples,
-        "all_available_stats": sorted(
-            stat_catalog.values(),
-            key=lambda row: (
-                normalize_text(row.get("statsLabel")),
-                normalize_text(row.get("statsId")),
-            ),
+        "targetInvolvementConcepts": targets,
+        "representativePlayers": (
+            get_representative_players(players)
         ),
+        "samplePlayerTargetValues": (
+            build_player_target_values(
+                players,
+                targets,
+            )
+        ),
+        "allAvailableStats": sorted_catalog,
     }
 
 
-def main() -> int:
-    print("Starting NWSL SDP discovery audit.")
-
-    discovery = discover_api_structure()
-
-    candidates = [
-        row["season_id"]
-        for row in discovery.get(
-            "candidate_seasons",
-            [],
-        )
-    ]
+def print_summary(
+    audit: dict[str, Any],
+) -> None:
+    metadata = audit["metadata"]
 
     print()
     print("=" * 80)
+    print("NWSL OPTA STATS AUDIT")
+    print("=" * 80)
+
     print(
-        f"DISCOVERED {len(candidates)} "
-        f"Football_Season candidate IDs"
+        "Season ID:",
+        metadata["seasonId"],
     )
 
-    for season in candidates:
-        print(season)
-
-    if not candidates:
-        print()
-        print(
-            "No Football_Season IDs were found "
-            "from the discovery endpoints."
-        )
-        print()
-        print(
-            "This run is still useful. "
-            "nwsl_opta_discovery_audit.json "
-            "contains every successful and failed "
-            "API probe plus response bodies."
-        )
-        print()
-        print(
-            "Commit that file and send it to me."
-        )
-
-        return 0
-
-    # ------------------------------------------------------------------
-    # Try all discovered seasons.
-    #
-    # We are looking for the one that actually exposes a current player
-    # stats payload. If several work, preserve all attempts in discovery.
-    # ------------------------------------------------------------------
-
-    successful = None
-    attempts = []
-
-    for season_id in candidates:
-        print()
-        print(
-            f"Trying player stats for season "
-            f"{season_id}"
-        )
-
-        result = fetch_players_for_season(
-            season_id
-        )
-
-        attempts.append({
-            "season_id": season_id,
-            "worked": bool(result),
-            "player_count": (
-                len(result.get("players", []))
-                if result
-                else 0
-            ),
-        })
-
-        if result:
-            successful = result
-            break
-
-    discovery["player_stats_attempts"] = attempts
-
-    DISCOVERY_OUTPUT.write_text(
-        json.dumps(
-            discovery,
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
+    print(
+        "Players:",
+        metadata["playerCount"],
     )
 
-    if not successful:
-        print()
-        print(
-            "Season IDs were discovered, "
-            "but none returned player stats."
-        )
-        print(
-            "Send me nwsl_opta_discovery_audit.json."
-        )
-        return 0
+    print(
+        "Unique Opta stat fields:",
+        metadata["uniqueStatCount"],
+    )
 
-    audit = build_stats_audit(successful)
+    print(
+        "Stats/player:",
+        f"min={metadata['minimumStatsPerPlayer']}",
+        f"avg={metadata['averageStatsPerPlayer']}",
+        f"max={metadata['maximumStatsPerPlayer']}",
+    )
 
-    STATS_OUTPUT.write_text(
+    print()
+    print("WSL-STYLE INVOLVEMENT TARGETS")
+    print("-" * 80)
+
+    for concept, matches in (
+        audit["targetInvolvementConcepts"].items()
+    ):
+        marker = "YES" if matches else "NO"
+
+        print(f"{marker:3}  {concept}")
+
+        for match in matches[:10]:
+            print(
+                "     ",
+                match.get("statsId"),
+                "|",
+                match.get("statsLabel"),
+                "| examples:",
+                match.get("exampleValues"),
+            )
+
+    print()
+    print(
+        "All nine concepts matched:",
+        metadata[
+            "allNineTargetConceptsMatched"
+        ],
+    )
+
+    print()
+    print(
+        "Representative players by position:"
+    )
+
+    for position, row in (
+        audit["representativePlayers"].items()
+    ):
+        print(
+            f"  {position}: "
+            f"{row.get('name')} "
+            f"({row.get('team')}) "
+            f"- {row.get('statsCount')} stats"
+        )
+
+    print("=" * 80)
+
+
+def main() -> None:
+    players = fetch_players()
+
+    audit = build_audit(players)
+
+    OUTPUT_PATH.write_text(
         json.dumps(
             audit,
             indent=2,
@@ -767,48 +631,13 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    meta = audit["metadata"]
-
-    print()
-    print("=" * 80)
-    print("NWSL OPTA STATS SUCCESS")
-    print("=" * 80)
-    print(f"Season ID: {meta['season_id']}")
-    print(f"Players: {meta['player_count']}")
-    print(
-        f"Unique stats: "
-        f"{meta['unique_stat_count']}"
-    )
-    print(
-        f"Average stats/player: "
-        f"{meta['average_stats_per_player']}"
-    )
-    print()
-
-    for concept, matches in (
-        audit[
-            "target_involvement_concepts"
-        ].items()
-    ):
-        mark = "YES" if matches else "NO"
-
-        print(f"{mark:3}  {concept}")
-
-        for row in matches[:5]:
-            print(
-                f"     {row.get('statsId')} "
-                f"| {row.get('statsLabel')} "
-                f"| example={row.get('exampleValue')}"
-            )
+    print_summary(audit)
 
     print()
     print(
-        "All nine concepts found:",
-        meta["all_target_concepts_found"],
+        f"Wrote {OUTPUT_PATH}"
     )
-
-    return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
