@@ -1,0 +1,2229 @@
+{
+  "metadata": {
+    "version": "recent-involvement-backtest-v1",
+    "generated_at_utc": "2026-09-10T16:42:30.265721+00:00",
+    "production_model_changed": false,
+    "season": 2026,
+    "recent_window": "previous 4 team matches",
+    "super_sub_treatment": "Primary activity rates are per TEAM match, not per 90. Missed matches count as zero minutes/actions. Per90 and per90-with-minute-exposure are retained for direct comparison.",
+    "fotmob_completed_matches": 182,
+    "fotmob_requests": 241,
+    "fotmob_fetch_errors": 0,
+    "fantasy_games": 240,
+    "fantasy_players": 462,
+    "fantasy_to_fotmob_game_mappings": 116,
+    "historical_samples": 2362
+  },
+  "mapping_diagnostics": {
+    "unmapped_fantasy_games": [
+      {
+        "fantasy_game_id": "kcuta",
+        "date": "2026-03-14T20:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "UTA"
+      },
+      {
+        "fantasy_game_id": "nclou",
+        "date": "2026-03-14T23:00:00+00:00",
+        "home": "NC",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "sdhou",
+        "date": "2026-03-15T00:45:00+00:00",
+        "home": "SD WAVE",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "louwas",
+        "date": "2026-03-21T00:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "WAS"
+      },
+      {
+        "fantasy_game_id": "chikc",
+        "date": "2026-03-22T18:00:00+00:00",
+        "home": "CHI",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "utasd",
+        "date": "2026-03-22T23:00:00+00:00",
+        "home": "UTA",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "seakc",
+        "date": "2026-03-26T01:00:00+00:00",
+        "home": "SEA",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "sdpor",
+        "date": "2026-03-26T02:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "porkc",
+        "date": "2026-03-28T20:00:00+00:00",
+        "home": "POR",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "sealou",
+        "date": "2026-03-28T22:30:00+00:00",
+        "home": "SEA",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "sdchi",
+        "date": "2026-03-29T00:45:00+00:00",
+        "home": "SD WAVE",
+        "away": "CHI"
+      },
+      {
+        "fantasy_game_id": "bossd",
+        "date": "2026-04-04T00:00:00+00:00",
+        "home": "BOS",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "houlou",
+        "date": "2026-04-04T00:30:00+00:00",
+        "home": "HOU",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "kcgfc",
+        "date": "2026-04-04T20:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "louorl",
+        "date": "2026-04-24T21:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "waskc",
+        "date": "2026-04-25T00:00:00+00:00",
+        "home": "WAS",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "densd",
+        "date": "2026-04-26T00:45:00+00:00",
+        "home": "DEN",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "waslou",
+        "date": "2026-04-29T23:00:00+00:00",
+        "home": "WAS",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "porsd",
+        "date": "2026-04-30T02:00:00+00:00",
+        "home": "POR",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "nckc",
+        "date": "2026-05-02T22:30:00+00:00",
+        "home": "NC",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "gfclou",
+        "date": "2026-05-03T21:00:00+00:00",
+        "home": "GFC",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "sdbay",
+        "date": "2026-05-03T23:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "loupor",
+        "date": "2026-05-08T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "lasd",
+        "date": "2026-05-10T00:45:00+00:00",
+        "home": "LA",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "kcchi",
+        "date": "2026-05-10T16:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "CHI"
+      },
+      {
+        "fantasy_game_id": "kchou",
+        "date": "2026-05-16T00:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "sdwas",
+        "date": "2026-05-16T02:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "WAS"
+      },
+      {
+        "fantasy_game_id": "utalou",
+        "date": "2026-05-18T00:00:00+00:00",
+        "home": "UTA",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "housd",
+        "date": "2026-05-21T00:00:00+00:00",
+        "home": "HOU",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "lakc",
+        "date": "2026-05-21T02:00:00+00:00",
+        "home": "LA",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "lounc",
+        "date": "2026-05-23T20:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "kcpor",
+        "date": "2026-05-24T17:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "sdorl",
+        "date": "2026-05-24T23:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "louden",
+        "date": "2026-05-30T00:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "kcbos",
+        "date": "2026-05-30T17:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "chisd",
+        "date": "2026-05-31T17:00:00+00:00",
+        "home": "CHI",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "denkc",
+        "date": "2026-07-04T01:30:00+00:00",
+        "home": "DEN",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "sdgfc",
+        "date": "2026-07-05T00:45:00+00:00",
+        "home": "SD WAVE",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "porlou",
+        "date": "2026-07-05T23:00:00+00:00",
+        "home": "POR",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "orlkc",
+        "date": "2026-07-11T00:00:00+00:00",
+        "home": "ORL",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "loubay",
+        "date": "2026-07-11T00:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "sdla",
+        "date": "2026-07-12T00:45:00+00:00",
+        "home": "SD WAVE",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "kcsd",
+        "date": "2026-07-18T00:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "louhou",
+        "date": "2026-07-19T00:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "boskc",
+        "date": "2026-07-25T21:00:00+00:00",
+        "home": "BOS",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "sdsea",
+        "date": "2026-07-26T21:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "lalou",
+        "date": "2026-07-27T01:00:00+00:00",
+        "home": "LA",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "kclou",
+        "date": "2026-07-30T00:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "louchi",
+        "date": "2026-08-01T20:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "CHI"
+      },
+      {
+        "fantasy_game_id": "kcla",
+        "date": "2026-08-01T22:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "wassd",
+        "date": "2026-08-02T20:00:00+00:00",
+        "home": "WAS",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "orllou",
+        "date": "2026-08-07T23:00:00+00:00",
+        "home": "ORL",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "gfcsd",
+        "date": "2026-08-08T00:00:00+00:00",
+        "home": "GFC",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "houkc",
+        "date": "2026-08-09T00:45:00+00:00",
+        "home": "HOU",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "gfckc",
+        "date": "2026-08-15T00:00:00+00:00",
+        "home": "GFC",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "sdden",
+        "date": "2026-08-15T02:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "loubos",
+        "date": "2026-08-15T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "lousea",
+        "date": "2026-08-19T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "sduta",
+        "date": "2026-08-22T02:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "UTA"
+      },
+      {
+        "fantasy_game_id": "kcsea",
+        "date": "2026-08-22T22:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "chilou",
+        "date": "2026-08-23T18:00:00+00:00",
+        "home": "CHI",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "sdlou",
+        "date": "2026-08-29T02:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "kcnc",
+        "date": "2026-08-29T22:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "baykc",
+        "date": "2026-09-05T02:00:00+00:00",
+        "home": "BAY",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "loula",
+        "date": "2026-09-05T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "seasd",
+        "date": "2026-09-07T01:00:00+00:00",
+        "home": "SEA",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "lougfc",
+        "date": "2026-09-11T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "kcorl",
+        "date": "2026-09-12T00:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "laden",
+        "date": "2026-09-12T02:00:00+00:00",
+        "home": "LA",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "sdnc",
+        "date": "2026-09-12T22:30:00+00:00",
+        "home": "SD WAVE",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "seabay",
+        "date": "2026-09-13T00:00:00+00:00",
+        "home": "SEA",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "houuta",
+        "date": "2026-09-13T00:45:00+00:00",
+        "home": "HOU",
+        "away": "UTA"
+      },
+      {
+        "fantasy_game_id": "wasbos",
+        "date": "2026-09-13T17:00:00+00:00",
+        "home": "WAS",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "porchi",
+        "date": "2026-09-13T23:00:00+00:00",
+        "home": "POR",
+        "away": "CHI"
+      },
+      {
+        "fantasy_game_id": "denbay",
+        "date": "2026-09-17T01:30:00+00:00",
+        "home": "DEN",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "lasea",
+        "date": "2026-09-17T02:00:00+00:00",
+        "home": "LA",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "sdkc",
+        "date": "2026-09-19T00:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "orlpor",
+        "date": "2026-09-19T20:00:00+00:00",
+        "home": "ORL",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "ncgfc",
+        "date": "2026-09-19T22:30:00+00:00",
+        "home": "NC",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "densea",
+        "date": "2026-09-20T00:45:00+00:00",
+        "home": "DEN",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "boshou",
+        "date": "2026-09-20T18:00:00+00:00",
+        "home": "BOS",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "chiwas",
+        "date": "2026-09-20T21:00:00+00:00",
+        "home": "CHI",
+        "away": "WAS"
+      },
+      {
+        "fantasy_game_id": "baylou",
+        "date": "2026-09-20T23:00:00+00:00",
+        "home": "BAY",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "utala",
+        "date": "2026-09-20T23:00:00+00:00",
+        "home": "UTA",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "lousd",
+        "date": "2026-09-25T22:30:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "gfcchi",
+        "date": "2026-09-26T00:00:00+00:00",
+        "home": "GFC",
+        "away": "CHI"
+      },
+      {
+        "fantasy_game_id": "seabos",
+        "date": "2026-09-26T00:30:00+00:00",
+        "home": "SEA",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "kcden",
+        "date": "2026-09-26T16:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "wasla",
+        "date": "2026-09-26T22:30:00+00:00",
+        "home": "WAS",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "porhou",
+        "date": "2026-09-27T00:45:00+00:00",
+        "home": "POR",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "bayorl",
+        "date": "2026-09-27T21:00:00+00:00",
+        "home": "BAY",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "utanc",
+        "date": "2026-09-27T23:00:00+00:00",
+        "home": "UTA",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "orlsd",
+        "date": "2026-10-03T00:00:00+00:00",
+        "home": "ORL",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "seanc",
+        "date": "2026-10-03T02:00:00+00:00",
+        "home": "SEA",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "louuta",
+        "date": "2026-10-03T20:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "UTA"
+      },
+      {
+        "fantasy_game_id": "kcbay",
+        "date": "2026-10-03T22:30:00+00:00",
+        "home": "KC CURRENT",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "porbos",
+        "date": "2026-10-04T00:45:00+00:00",
+        "home": "POR",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "gfcla",
+        "date": "2026-10-04T16:00:00+00:00",
+        "home": "GFC",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "chiden",
+        "date": "2026-10-04T20:00:00+00:00",
+        "home": "CHI",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "houwas",
+        "date": "2026-10-04T23:00:00+00:00",
+        "home": "HOU",
+        "away": "WAS"
+      },
+      {
+        "fantasy_game_id": "boslou",
+        "date": "2026-10-17T00:00:00+00:00",
+        "home": "BOS",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "wasgfc",
+        "date": "2026-10-17T16:30:00+00:00",
+        "home": "WAS",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "utakc",
+        "date": "2026-10-17T22:30:00+00:00",
+        "home": "UTA",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "ncsd",
+        "date": "2026-10-17T23:00:00+00:00",
+        "home": "NC",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "denla",
+        "date": "2026-10-18T00:45:00+00:00",
+        "home": "DEN",
+        "away": "LA"
+      },
+      {
+        "fantasy_game_id": "houorl",
+        "date": "2026-10-18T17:00:00+00:00",
+        "home": "HOU",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "baypor",
+        "date": "2026-10-18T21:00:00+00:00",
+        "home": "BAY",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "chisea",
+        "date": "2026-10-18T23:00:00+00:00",
+        "home": "CHI",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "chihou",
+        "date": "2026-10-24T00:00:00+00:00",
+        "home": "CHI",
+        "away": "HOU"
+      },
+      {
+        "fantasy_game_id": "utasea",
+        "date": "2026-10-24T01:30:00+00:00",
+        "home": "UTA",
+        "away": "SEA"
+      },
+      {
+        "fantasy_game_id": "pornc",
+        "date": "2026-10-24T02:00:00+00:00",
+        "home": "POR",
+        "away": "NC"
+      },
+      {
+        "fantasy_game_id": "denlou",
+        "date": "2026-10-24T22:30:00+00:00",
+        "home": "DEN",
+        "away": "RACING LOUISVILLLE"
+      },
+      {
+        "fantasy_game_id": "labay",
+        "date": "2026-10-25T01:45:00+00:00",
+        "home": "LA",
+        "away": "BAY"
+      },
+      {
+        "fantasy_game_id": "orlgfc",
+        "date": "2026-10-25T19:00:00+00:00",
+        "home": "ORL",
+        "away": "GFC"
+      },
+      {
+        "fantasy_game_id": "kcwas",
+        "date": "2026-10-25T21:00:00+00:00",
+        "home": "KC CURRENT",
+        "away": "WAS"
+      },
+      {
+        "fantasy_game_id": "sdbos",
+        "date": "2026-10-25T23:00:00+00:00",
+        "home": "SD WAVE",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "labos",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "LA",
+        "away": "BOS"
+      },
+      {
+        "fantasy_game_id": "baysd",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "BAY",
+        "away": "SD WAVE"
+      },
+      {
+        "fantasy_game_id": "gfcuta",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "GFC",
+        "away": "UTA"
+      },
+      {
+        "fantasy_game_id": "houpor",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "HOU",
+        "away": "POR"
+      },
+      {
+        "fantasy_game_id": "ncden",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "NC",
+        "away": "DEN"
+      },
+      {
+        "fantasy_game_id": "loukc",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "RACING LOUISVILLLE",
+        "away": "KC CURRENT"
+      },
+      {
+        "fantasy_game_id": "seaorl",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "SEA",
+        "away": "ORL"
+      },
+      {
+        "fantasy_game_id": "waschi",
+        "date": "2026-11-01T22:00:00+00:00",
+        "home": "WAS",
+        "away": "CHI"
+      }
+    ],
+    "status_counts": {
+      "not_four_prior_team_matches": 593,
+      "sample": 2362,
+      "fantasy_game_not_mapped": 2041,
+      "player_name_unmatched": 609
+    },
+    "most_common_unmatched_players": [
+      [
+        "Cece Kizer|UTA",
+        16
+      ],
+      [
+        "Amanda Gutierres dos Santos|BOS",
+        16
+      ],
+      [
+        "Sam Staab|CHI",
+        15
+      ],
+      [
+        "Nádia Filipa Gomes Coelho|CHI",
+        15
+      ],
+      [
+        "Tara Rudd|WAS",
+        15
+      ],
+      [
+        "Manaka Hayashi|CHI",
+        14
+      ],
+      [
+        "Jenna Bike|CHI",
+        14
+      ],
+      [
+        "Angelina Alonso Costantino|ORL",
+        14
+      ],
+      [
+        "Phoebe McClernon|SEA",
+        14
+      ],
+      [
+        "Maddie Mercado|SEA",
+        14
+      ],
+      [
+        "Sally Menti|SEA",
+        14
+      ],
+      [
+        "Aaliyah Farmer|CHI",
+        14
+      ],
+      [
+        "Maddie Dahlien|SEA",
+        13
+      ],
+      [
+        "Nérilia Mondésir|SEA",
+        13
+      ],
+      [
+        "Brittany Ratcliffe|SEA",
+        13
+      ],
+      [
+        "Sofia Huerta|SEA",
+        13
+      ],
+      [
+        "Mia Fishel|SEA",
+        13
+      ],
+      [
+        "Angharad James-Turner|SEA",
+        12
+      ],
+      [
+        "Sam Meza|SEA",
+        12
+      ],
+      [
+        "Ainsley McCammon|SEA",
+        12
+      ],
+      [
+        "Jameese Joseph|CHI",
+        11
+      ],
+      [
+        "Micayla Johnson|CHI",
+        11
+      ],
+      [
+        "Brianna Pinto|CHI",
+        11
+      ],
+      [
+        "Rafaelle Leone Carvalho Souza|ORL",
+        11
+      ],
+      [
+        "Luana Bertolucci Paixão|ORL",
+        11
+      ],
+      [
+        "Katie Lund|CHI",
+        11
+      ],
+      [
+        "Claudia Dickey|SEA",
+        11
+      ],
+      [
+        "Madison Curry|SEA",
+        11
+      ],
+      [
+        "Maitane López|CHI",
+        10
+      ],
+      [
+        "Michelle Alozie|CHI",
+        10
+      ],
+      [
+        "Jordyn Bugg|SEA",
+        10
+      ],
+      [
+        "Emeri Adames|SEA",
+        10
+      ],
+      [
+        "Tessa Dellarose|CHI",
+        10
+      ],
+      [
+        "Holly Ward|SEA",
+        10
+      ],
+      [
+        "Julia Grosso|CHI",
+        9
+      ],
+      [
+        "Bruna Santos Nhaia|GFC",
+        9
+      ],
+      [
+        "Sarah Schupansky|BOS",
+        9
+      ],
+      [
+        "Paige Cronin|UTA",
+        9
+      ],
+      [
+        "Ivonne Chacón|CHI",
+        9
+      ],
+      [
+        "Mallory Swanson|CHI",
+        8
+      ]
+    ]
+  },
+  "candidate_composites": {
+    "FOR": {
+      "attack_core": {
+        "xg": 0.3,
+        "xa": 0.15,
+        "sot": 0.2,
+        "box_touches": 0.2,
+        "chances": 0.15
+      },
+      "attack_broad": {
+        "xg": 0.25,
+        "xa": 0.15,
+        "sot": 0.15,
+        "box_touches": 0.15,
+        "chances": 0.15,
+        "dribbles": 0.1,
+        "crosses": 0.05
+      }
+    },
+    "MID": {
+      "attack_core": {
+        "xg": 0.2,
+        "xa": 0.2,
+        "sot": 0.15,
+        "box_touches": 0.15,
+        "chances": 0.2,
+        "dribbles": 0.1
+      },
+      "two_way": {
+        "xg": 0.15,
+        "xa": 0.15,
+        "sot": 0.1,
+        "box_touches": 0.1,
+        "chances": 0.15,
+        "tackles": 0.08,
+        "interceptions": 0.07,
+        "recoveries": 0.1,
+        "dribbles": 0.05,
+        "crosses": 0.05
+      }
+    },
+    "DEF": {
+      "defense_core": {
+        "tackles": 0.2,
+        "interceptions": 0.2,
+        "recoveries": 0.2,
+        "clearances": 0.2,
+        "blocks": 0.2
+      },
+      "fantasy_two_way": {
+        "xg": 0.08,
+        "xa": 0.08,
+        "box_touches": 0.08,
+        "chances": 0.08,
+        "tackles": 0.14,
+        "interceptions": 0.14,
+        "recoveries": 0.14,
+        "clearances": 0.13,
+        "blocks": 0.13
+      }
+    },
+    "GK": {
+      "keeper_activity": {
+        "saves": 0.35,
+        "xgot_faced": 0.25,
+        "goals_prevented": 0.25,
+        "saves_inside_box": 0.15
+      }
+    }
+  },
+  "results": {
+    "GK": {
+      "sample_count": 166,
+      "role_signals": {
+        "role_minutes_per_team_match": {
+          "samples": 166,
+          "spearman_next_match_points": -0.1799,
+          "top_quartile_avg_next_points": 3.585,
+          "rest_avg_next_points": 4.048,
+          "top_quartile_lift": -0.463
+        },
+        "role_appearance_rate": {
+          "samples": 166,
+          "spearman_next_match_points": -0.1798,
+          "top_quartile_avg_next_points": 3.585,
+          "rest_avg_next_points": 4.048,
+          "top_quartile_lift": -0.463
+        },
+        "role_sixty_plus_rate": {
+          "samples": 166,
+          "spearman_next_match_points": -0.1807,
+          "top_quartile_avg_next_points": 3.585,
+          "rest_avg_next_points": 4.048,
+          "top_quartile_lift": -0.463
+        },
+        "role_seventyfive_plus_rate": {
+          "samples": 166,
+          "spearman_next_match_points": -0.1799,
+          "top_quartile_avg_next_points": 3.585,
+          "rest_avg_next_points": 4.048,
+          "top_quartile_lift": -0.463
+        }
+      },
+      "individual_features": {
+        "goals_prevented": {
+          "per_team_match": {
+            "samples": 158,
+            "spearman_next_match_points": 0.0671,
+            "top_quartile_avg_next_points": 4.103,
+            "rest_avg_next_points": 3.824,
+            "top_quartile_lift": 0.279
+          },
+          "per90": {
+            "samples": 158,
+            "spearman_next_match_points": 0.0922,
+            "top_quartile_avg_next_points": 4.077,
+            "rest_avg_next_points": 3.832,
+            "top_quartile_lift": 0.245
+          }
+        },
+        "saves": {
+          "per_team_match": {
+            "samples": 159,
+            "spearman_next_match_points": -0.0599,
+            "top_quartile_avg_next_points": 3.923,
+            "rest_avg_next_points": 3.933,
+            "top_quartile_lift": -0.01
+          },
+          "per90": {
+            "samples": 159,
+            "spearman_next_match_points": -0.0254,
+            "top_quartile_avg_next_points": 3.949,
+            "rest_avg_next_points": 3.925,
+            "top_quartile_lift": 0.024
+          }
+        },
+        "saves_inside_box": {
+          "per_team_match": {
+            "samples": 159,
+            "spearman_next_match_points": -0.0566,
+            "top_quartile_avg_next_points": 3.769,
+            "rest_avg_next_points": 3.983,
+            "top_quartile_lift": -0.214
+          },
+          "per90": {
+            "samples": 159,
+            "spearman_next_match_points": -0.0138,
+            "top_quartile_avg_next_points": 4.179,
+            "rest_avg_next_points": 3.85,
+            "top_quartile_lift": 0.329
+          }
+        },
+        "xgot_faced": {
+          "per_team_match": {
+            "samples": 158,
+            "spearman_next_match_points": -0.0383,
+            "top_quartile_avg_next_points": 4.333,
+            "rest_avg_next_points": 3.748,
+            "top_quartile_lift": 0.585
+          },
+          "per90": {
+            "samples": 158,
+            "spearman_next_match_points": -0.0355,
+            "top_quartile_avg_next_points": 4.41,
+            "rest_avg_next_points": 3.723,
+            "top_quartile_lift": 0.688
+          }
+        }
+      },
+      "composites": {
+        "keeper_activity": {
+          "per_team_match": {
+            "samples": 166,
+            "spearman_next_match_points": -0.0016,
+            "top_quartile_avg_next_points": 4.146,
+            "rest_avg_next_points": 3.864,
+            "top_quartile_lift": 0.282
+          },
+          "per90": {
+            "samples": 166,
+            "spearman_next_match_points": 0.0184,
+            "top_quartile_avg_next_points": 4.268,
+            "rest_avg_next_points": 3.824,
+            "top_quartile_lift": 0.444
+          },
+          "per90_exposure_adjusted": {
+            "samples": 166,
+            "spearman_next_match_points": 0.0572,
+            "top_quartile_avg_next_points": 4.317,
+            "rest_avg_next_points": 3.808,
+            "top_quartile_lift": 0.509
+          }
+        }
+      },
+      "chronological_holdout": {
+        "holdout_gws": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "sample_count": 63,
+        "composites": {
+          "keeper_activity": {
+            "per_team_match": {
+              "samples": 63,
+              "spearman_next_match_points": -0.0424,
+              "top_quartile_avg_next_points": 4.933,
+              "rest_avg_next_points": 3.75,
+              "top_quartile_lift": 1.183
+            },
+            "per90": {
+              "samples": 63,
+              "spearman_next_match_points": -0.0549,
+              "top_quartile_avg_next_points": 4.867,
+              "rest_avg_next_points": 3.771,
+              "top_quartile_lift": 1.096
+            },
+            "per90_exposure_adjusted": {
+              "samples": 63,
+              "spearman_next_match_points": 0.0143,
+              "top_quartile_avg_next_points": 5.133,
+              "rest_avg_next_points": 3.688,
+              "top_quartile_lift": 1.446
+            }
+          }
+        }
+      }
+    },
+    "DEF": {
+      "sample_count": 757,
+      "role_signals": {
+        "role_minutes_per_team_match": {
+          "samples": 757,
+          "spearman_next_match_points": 0.2014,
+          "top_quartile_avg_next_points": 3.164,
+          "rest_avg_next_points": 2.461,
+          "top_quartile_lift": 0.703
+        },
+        "role_appearance_rate": {
+          "samples": 757,
+          "spearman_next_match_points": 0.1214,
+          "top_quartile_avg_next_points": 3.021,
+          "rest_avg_next_points": 2.509,
+          "top_quartile_lift": 0.512
+        },
+        "role_sixty_plus_rate": {
+          "samples": 757,
+          "spearman_next_match_points": 0.205,
+          "top_quartile_avg_next_points": 3.032,
+          "rest_avg_next_points": 2.505,
+          "top_quartile_lift": 0.526
+        },
+        "role_seventyfive_plus_rate": {
+          "samples": 757,
+          "spearman_next_match_points": 0.1971,
+          "top_quartile_avg_next_points": 3.021,
+          "rest_avg_next_points": 2.509,
+          "top_quartile_lift": 0.512
+        }
+      },
+      "individual_features": {
+        "blocks": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0664,
+            "top_quartile_avg_next_points": 2.742,
+            "rest_avg_next_points": 2.673,
+            "top_quartile_lift": 0.069
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0212,
+            "top_quartile_avg_next_points": 2.533,
+            "rest_avg_next_points": 2.742,
+            "top_quartile_lift": -0.209
+          }
+        },
+        "box_touches": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0919,
+            "top_quartile_avg_next_points": 3.275,
+            "rest_avg_next_points": 2.495,
+            "top_quartile_lift": 0.779
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": -0.0,
+            "top_quartile_avg_next_points": 2.808,
+            "rest_avg_next_points": 2.651,
+            "top_quartile_lift": 0.157
+          }
+        },
+        "chances": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.1301,
+            "top_quartile_avg_next_points": 3.297,
+            "rest_avg_next_points": 2.488,
+            "top_quartile_lift": 0.809
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0761,
+            "top_quartile_avg_next_points": 3.192,
+            "rest_avg_next_points": 2.523,
+            "top_quartile_lift": 0.669
+          }
+        },
+        "clearances": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.1346,
+            "top_quartile_avg_next_points": 2.967,
+            "rest_avg_next_points": 2.598,
+            "top_quartile_lift": 0.369
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0106,
+            "top_quartile_avg_next_points": 2.577,
+            "rest_avg_next_points": 2.728,
+            "top_quartile_lift": -0.151
+          }
+        },
+        "interceptions": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.1365,
+            "top_quartile_avg_next_points": 2.868,
+            "rest_avg_next_points": 2.631,
+            "top_quartile_lift": 0.237
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0869,
+            "top_quartile_avg_next_points": 2.758,
+            "rest_avg_next_points": 2.667,
+            "top_quartile_lift": 0.091
+          }
+        },
+        "recoveries": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.1471,
+            "top_quartile_avg_next_points": 2.89,
+            "rest_avg_next_points": 2.623,
+            "top_quartile_lift": 0.267
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0296,
+            "top_quartile_avg_next_points": 2.665,
+            "rest_avg_next_points": 2.698,
+            "top_quartile_lift": -0.034
+          }
+        },
+        "tackles": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.1064,
+            "top_quartile_avg_next_points": 2.791,
+            "rest_avg_next_points": 2.656,
+            "top_quartile_lift": 0.135
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0024,
+            "top_quartile_avg_next_points": 2.544,
+            "rest_avg_next_points": 2.739,
+            "top_quartile_lift": -0.195
+          }
+        },
+        "xa": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.2043,
+            "top_quartile_avg_next_points": 3.456,
+            "rest_avg_next_points": 2.435,
+            "top_quartile_lift": 1.021
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.163,
+            "top_quartile_avg_next_points": 3.264,
+            "rest_avg_next_points": 2.499,
+            "top_quartile_lift": 0.765
+          }
+        },
+        "xg": {
+          "per_team_match": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0547,
+            "top_quartile_avg_next_points": 3.165,
+            "rest_avg_next_points": 2.532,
+            "top_quartile_lift": 0.633
+          },
+          "per90": {
+            "samples": 729,
+            "spearman_next_match_points": 0.0187,
+            "top_quartile_avg_next_points": 2.813,
+            "rest_avg_next_points": 2.649,
+            "top_quartile_lift": 0.164
+          }
+        }
+      },
+      "composites": {
+        "defense_core": {
+          "per_team_match": {
+            "samples": 757,
+            "spearman_next_match_points": 0.165,
+            "top_quartile_avg_next_points": 2.862,
+            "rest_avg_next_points": 2.562,
+            "top_quartile_lift": 0.301
+          },
+          "per90": {
+            "samples": 757,
+            "spearman_next_match_points": 0.0856,
+            "top_quartile_avg_next_points": 2.651,
+            "rest_avg_next_points": 2.632,
+            "top_quartile_lift": 0.019
+          },
+          "per90_exposure_adjusted": {
+            "samples": 757,
+            "spearman_next_match_points": 0.0188,
+            "top_quartile_avg_next_points": 2.534,
+            "rest_avg_next_points": 2.671,
+            "top_quartile_lift": -0.136
+          }
+        },
+        "fantasy_two_way": {
+          "per_team_match": {
+            "samples": 757,
+            "spearman_next_match_points": 0.1958,
+            "top_quartile_avg_next_points": 3.053,
+            "rest_avg_next_points": 2.498,
+            "top_quartile_lift": 0.555
+          },
+          "per90": {
+            "samples": 757,
+            "spearman_next_match_points": 0.1233,
+            "top_quartile_avg_next_points": 2.878,
+            "rest_avg_next_points": 2.556,
+            "top_quartile_lift": 0.322
+          },
+          "per90_exposure_adjusted": {
+            "samples": 757,
+            "spearman_next_match_points": 0.075,
+            "top_quartile_avg_next_points": 2.947,
+            "rest_avg_next_points": 2.533,
+            "top_quartile_lift": 0.414
+          }
+        }
+      },
+      "chronological_holdout": {
+        "holdout_gws": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "sample_count": 295,
+        "composites": {
+          "defense_core": {
+            "per_team_match": {
+              "samples": 295,
+              "spearman_next_match_points": 0.1697,
+              "top_quartile_avg_next_points": 3.041,
+              "rest_avg_next_points": 2.414,
+              "top_quartile_lift": 0.627
+            },
+            "per90": {
+              "samples": 295,
+              "spearman_next_match_points": 0.1499,
+              "top_quartile_avg_next_points": 3.041,
+              "rest_avg_next_points": 2.414,
+              "top_quartile_lift": 0.627
+            },
+            "per90_exposure_adjusted": {
+              "samples": 295,
+              "spearman_next_match_points": 0.0956,
+              "top_quartile_avg_next_points": 2.767,
+              "rest_avg_next_points": 2.505,
+              "top_quartile_lift": 0.263
+            }
+          },
+          "fantasy_two_way": {
+            "per_team_match": {
+              "samples": 295,
+              "spearman_next_match_points": 0.1957,
+              "top_quartile_avg_next_points": 2.945,
+              "rest_avg_next_points": 2.446,
+              "top_quartile_lift": 0.499
+            },
+            "per90": {
+              "samples": 295,
+              "spearman_next_match_points": 0.1928,
+              "top_quartile_avg_next_points": 3.329,
+              "rest_avg_next_points": 2.32,
+              "top_quartile_lift": 1.009
+            },
+            "per90_exposure_adjusted": {
+              "samples": 295,
+              "spearman_next_match_points": 0.1329,
+              "top_quartile_avg_next_points": 3.123,
+              "rest_avg_next_points": 2.387,
+              "top_quartile_lift": 0.736
+            }
+          }
+        }
+      }
+    },
+    "MID": {
+      "sample_count": 894,
+      "role_signals": {
+        "role_minutes_per_team_match": {
+          "samples": 894,
+          "spearman_next_match_points": 0.4256,
+          "top_quartile_avg_next_points": 4.094,
+          "rest_avg_next_points": 2.718,
+          "top_quartile_lift": 1.376
+        },
+        "role_appearance_rate": {
+          "samples": 894,
+          "spearman_next_match_points": 0.323,
+          "top_quartile_avg_next_points": 3.045,
+          "rest_avg_next_points": 3.067,
+          "top_quartile_lift": -0.022
+        },
+        "role_sixty_plus_rate": {
+          "samples": 894,
+          "spearman_next_match_points": 0.4112,
+          "top_quartile_avg_next_points": 3.825,
+          "rest_avg_next_points": 2.808,
+          "top_quartile_lift": 1.017
+        },
+        "role_seventyfive_plus_rate": {
+          "samples": 894,
+          "spearman_next_match_points": 0.4187,
+          "top_quartile_avg_next_points": 4.345,
+          "rest_avg_next_points": 2.635,
+          "top_quartile_lift": 1.71
+        }
+      },
+      "individual_features": {
+        "box_touches": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.3834,
+            "top_quartile_avg_next_points": 4.598,
+            "rest_avg_next_points": 2.602,
+            "top_quartile_lift": 1.996
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1635,
+            "top_quartile_avg_next_points": 4.042,
+            "rest_avg_next_points": 2.787,
+            "top_quartile_lift": 1.255
+          }
+        },
+        "chances": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.4011,
+            "top_quartile_avg_next_points": 4.313,
+            "rest_avg_next_points": 2.697,
+            "top_quartile_lift": 1.616
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.2512,
+            "top_quartile_avg_next_points": 3.607,
+            "rest_avg_next_points": 2.932,
+            "top_quartile_lift": 0.676
+          }
+        },
+        "crosses": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.2754,
+            "top_quartile_avg_next_points": 4.435,
+            "rest_avg_next_points": 2.657,
+            "top_quartile_lift": 1.778
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.2298,
+            "top_quartile_avg_next_points": 3.963,
+            "rest_avg_next_points": 2.814,
+            "top_quartile_lift": 1.149
+          }
+        },
+        "dribbles": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.2993,
+            "top_quartile_avg_next_points": 4.206,
+            "rest_avg_next_points": 2.733,
+            "top_quartile_lift": 1.473
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1875,
+            "top_quartile_avg_next_points": 3.72,
+            "rest_avg_next_points": 2.894,
+            "top_quartile_lift": 0.825
+          }
+        },
+        "interceptions": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1998,
+            "top_quartile_avg_next_points": 3.355,
+            "rest_avg_next_points": 3.016,
+            "top_quartile_lift": 0.34
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": -0.001,
+            "top_quartile_avg_next_points": 2.551,
+            "rest_avg_next_points": 3.283,
+            "top_quartile_lift": -0.731
+          }
+        },
+        "recoveries": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.4078,
+            "top_quartile_avg_next_points": 3.977,
+            "rest_avg_next_points": 2.809,
+            "top_quartile_lift": 1.168
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.0631,
+            "top_quartile_avg_next_points": 2.888,
+            "rest_avg_next_points": 3.171,
+            "top_quartile_lift": -0.283
+          }
+        },
+        "sot": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.2933,
+            "top_quartile_avg_next_points": 4.393,
+            "rest_avg_next_points": 2.671,
+            "top_quartile_lift": 1.722
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1728,
+            "top_quartile_avg_next_points": 3.86,
+            "rest_avg_next_points": 2.848,
+            "top_quartile_lift": 1.012
+          }
+        },
+        "tackles": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.362,
+            "top_quartile_avg_next_points": 3.729,
+            "rest_avg_next_points": 2.891,
+            "top_quartile_lift": 0.838
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.0858,
+            "top_quartile_avg_next_points": 2.883,
+            "rest_avg_next_points": 3.172,
+            "top_quartile_lift": -0.289
+          }
+        },
+        "xa": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.3717,
+            "top_quartile_avg_next_points": 4.098,
+            "rest_avg_next_points": 2.769,
+            "top_quartile_lift": 1.329
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1888,
+            "top_quartile_avg_next_points": 3.509,
+            "rest_avg_next_points": 2.964,
+            "top_quartile_lift": 0.545
+          }
+        },
+        "xg": {
+          "per_team_match": {
+            "samples": 858,
+            "spearman_next_match_points": 0.3403,
+            "top_quartile_avg_next_points": 4.509,
+            "rest_avg_next_points": 2.632,
+            "top_quartile_lift": 1.877
+          },
+          "per90": {
+            "samples": 858,
+            "spearman_next_match_points": 0.1997,
+            "top_quartile_avg_next_points": 4.098,
+            "rest_avg_next_points": 2.769,
+            "top_quartile_lift": 1.329
+          }
+        }
+      },
+      "composites": {
+        "attack_core": {
+          "per_team_match": {
+            "samples": 894,
+            "spearman_next_match_points": 0.438,
+            "top_quartile_avg_next_points": 4.839,
+            "rest_avg_next_points": 2.471,
+            "top_quartile_lift": 2.368
+          },
+          "per90": {
+            "samples": 894,
+            "spearman_next_match_points": 0.29,
+            "top_quartile_avg_next_points": 4.614,
+            "rest_avg_next_points": 2.545,
+            "top_quartile_lift": 2.069
+          },
+          "per90_exposure_adjusted": {
+            "samples": 894,
+            "spearman_next_match_points": 0.227,
+            "top_quartile_avg_next_points": 4.834,
+            "rest_avg_next_points": 2.472,
+            "top_quartile_lift": 2.362
+          }
+        },
+        "two_way": {
+          "per_team_match": {
+            "samples": 894,
+            "spearman_next_match_points": 0.4663,
+            "top_quartile_avg_next_points": 4.888,
+            "rest_avg_next_points": 2.455,
+            "top_quartile_lift": 2.433
+          },
+          "per90": {
+            "samples": 894,
+            "spearman_next_match_points": 0.3157,
+            "top_quartile_avg_next_points": 4.561,
+            "rest_avg_next_points": 2.563,
+            "top_quartile_lift": 1.997
+          },
+          "per90_exposure_adjusted": {
+            "samples": 894,
+            "spearman_next_match_points": 0.2686,
+            "top_quartile_avg_next_points": 4.794,
+            "rest_avg_next_points": 2.486,
+            "top_quartile_lift": 2.308
+          }
+        }
+      },
+      "chronological_holdout": {
+        "holdout_gws": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "sample_count": 361,
+        "composites": {
+          "attack_core": {
+            "per_team_match": {
+              "samples": 361,
+              "spearman_next_match_points": 0.4432,
+              "top_quartile_avg_next_points": 4.633,
+              "rest_avg_next_points": 2.376,
+              "top_quartile_lift": 2.257
+            },
+            "per90": {
+              "samples": 361,
+              "spearman_next_match_points": 0.3144,
+              "top_quartile_avg_next_points": 4.711,
+              "rest_avg_next_points": 2.351,
+              "top_quartile_lift": 2.361
+            },
+            "per90_exposure_adjusted": {
+              "samples": 361,
+              "spearman_next_match_points": 0.2115,
+              "top_quartile_avg_next_points": 4.656,
+              "rest_avg_next_points": 2.369,
+              "top_quartile_lift": 2.287
+            }
+          },
+          "two_way": {
+            "per_team_match": {
+              "samples": 361,
+              "spearman_next_match_points": 0.4667,
+              "top_quartile_avg_next_points": 4.733,
+              "rest_avg_next_points": 2.343,
+              "top_quartile_lift": 2.39
+            },
+            "per90": {
+              "samples": 361,
+              "spearman_next_match_points": 0.3619,
+              "top_quartile_avg_next_points": 4.7,
+              "rest_avg_next_points": 2.354,
+              "top_quartile_lift": 2.346
+            },
+            "per90_exposure_adjusted": {
+              "samples": 361,
+              "spearman_next_match_points": 0.2777,
+              "top_quartile_avg_next_points": 4.611,
+              "rest_avg_next_points": 2.384,
+              "top_quartile_lift": 2.227
+            }
+          }
+        }
+      }
+    },
+    "FOR": {
+      "sample_count": 545,
+      "role_signals": {
+        "role_minutes_per_team_match": {
+          "samples": 545,
+          "spearman_next_match_points": 0.4546,
+          "top_quartile_avg_next_points": 3.699,
+          "rest_avg_next_points": 2.235,
+          "top_quartile_lift": 1.464
+        },
+        "role_appearance_rate": {
+          "samples": 545,
+          "spearman_next_match_points": 0.3087,
+          "top_quartile_avg_next_points": 3.434,
+          "rest_avg_next_points": 2.323,
+          "top_quartile_lift": 1.111
+        },
+        "role_sixty_plus_rate": {
+          "samples": 545,
+          "spearman_next_match_points": 0.4392,
+          "top_quartile_avg_next_points": 3.559,
+          "rest_avg_next_points": 2.281,
+          "top_quartile_lift": 1.278
+        },
+        "role_seventyfive_plus_rate": {
+          "samples": 545,
+          "spearman_next_match_points": 0.3951,
+          "top_quartile_avg_next_points": 3.794,
+          "rest_avg_next_points": 2.203,
+          "top_quartile_lift": 1.591
+        }
+      },
+      "individual_features": {
+        "box_touches": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.4046,
+            "top_quartile_avg_next_points": 3.767,
+            "rest_avg_next_points": 2.309,
+            "top_quartile_lift": 1.458
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.1113,
+            "top_quartile_avg_next_points": 2.93,
+            "rest_avg_next_points": 2.588,
+            "top_quartile_lift": 0.343
+          }
+        },
+        "chances": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.3041,
+            "top_quartile_avg_next_points": 3.403,
+            "rest_avg_next_points": 2.43,
+            "top_quartile_lift": 0.973
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.1034,
+            "top_quartile_avg_next_points": 2.512,
+            "rest_avg_next_points": 2.727,
+            "top_quartile_lift": -0.215
+          }
+        },
+        "crosses": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.1211,
+            "top_quartile_avg_next_points": 3.132,
+            "rest_avg_next_points": 2.521,
+            "top_quartile_lift": 0.611
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.0859,
+            "top_quartile_avg_next_points": 2.791,
+            "rest_avg_next_points": 2.634,
+            "top_quartile_lift": 0.157
+          }
+        },
+        "dribbles": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.2689,
+            "top_quartile_avg_next_points": 3.527,
+            "rest_avg_next_points": 2.389,
+            "top_quartile_lift": 1.138
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.1239,
+            "top_quartile_avg_next_points": 2.798,
+            "rest_avg_next_points": 2.631,
+            "top_quartile_lift": 0.167
+          }
+        },
+        "sot": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.3597,
+            "top_quartile_avg_next_points": 3.977,
+            "rest_avg_next_points": 2.24,
+            "top_quartile_lift": 1.737
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.2006,
+            "top_quartile_avg_next_points": 3.054,
+            "rest_avg_next_points": 2.546,
+            "top_quartile_lift": 0.508
+          }
+        },
+        "xa": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.3004,
+            "top_quartile_avg_next_points": 3.434,
+            "rest_avg_next_points": 2.42,
+            "top_quartile_lift": 1.014
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.1317,
+            "top_quartile_avg_next_points": 2.783,
+            "rest_avg_next_points": 2.637,
+            "top_quartile_lift": 0.146
+          }
+        },
+        "xg": {
+          "per_team_match": {
+            "samples": 517,
+            "spearman_next_match_points": 0.3632,
+            "top_quartile_avg_next_points": 3.543,
+            "rest_avg_next_points": 2.384,
+            "top_quartile_lift": 1.159
+          },
+          "per90": {
+            "samples": 517,
+            "spearman_next_match_points": 0.141,
+            "top_quartile_avg_next_points": 2.969,
+            "rest_avg_next_points": 2.575,
+            "top_quartile_lift": 0.394
+          }
+        }
+      },
+      "composites": {
+        "attack_core": {
+          "per_team_match": {
+            "samples": 545,
+            "spearman_next_match_points": 0.4393,
+            "top_quartile_avg_next_points": 3.735,
+            "rest_avg_next_points": 2.222,
+            "top_quartile_lift": 1.513
+          },
+          "per90": {
+            "samples": 545,
+            "spearman_next_match_points": 0.2493,
+            "top_quartile_avg_next_points": 3.125,
+            "rest_avg_next_points": 2.425,
+            "top_quartile_lift": 0.7
+          },
+          "per90_exposure_adjusted": {
+            "samples": 545,
+            "spearman_next_match_points": 0.2242,
+            "top_quartile_avg_next_points": 3.603,
+            "rest_avg_next_points": 2.267,
+            "top_quartile_lift": 1.336
+          }
+        },
+        "attack_broad": {
+          "per_team_match": {
+            "samples": 545,
+            "spearman_next_match_points": 0.4384,
+            "top_quartile_avg_next_points": 3.647,
+            "rest_avg_next_points": 2.252,
+            "top_quartile_lift": 1.395
+          },
+          "per90": {
+            "samples": 545,
+            "spearman_next_match_points": 0.2585,
+            "top_quartile_avg_next_points": 3.14,
+            "rest_avg_next_points": 2.421,
+            "top_quartile_lift": 0.719
+          },
+          "per90_exposure_adjusted": {
+            "samples": 545,
+            "spearman_next_match_points": 0.2281,
+            "top_quartile_avg_next_points": 3.618,
+            "rest_avg_next_points": 2.262,
+            "top_quartile_lift": 1.356
+          }
+        }
+      },
+      "chronological_holdout": {
+        "holdout_gws": [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "sample_count": 204,
+        "composites": {
+          "attack_core": {
+            "per_team_match": {
+              "samples": 204,
+              "spearman_next_match_points": 0.4586,
+              "top_quartile_avg_next_points": 4.431,
+              "rest_avg_next_points": 2.458,
+              "top_quartile_lift": 1.974
+            },
+            "per90": {
+              "samples": 204,
+              "spearman_next_match_points": 0.2437,
+              "top_quartile_avg_next_points": 3.216,
+              "rest_avg_next_points": 2.863,
+              "top_quartile_lift": 0.353
+            },
+            "per90_exposure_adjusted": {
+              "samples": 204,
+              "spearman_next_match_points": 0.2517,
+              "top_quartile_avg_next_points": 3.941,
+              "rest_avg_next_points": 2.621,
+              "top_quartile_lift": 1.32
+            }
+          },
+          "attack_broad": {
+            "per_team_match": {
+              "samples": 204,
+              "spearman_next_match_points": 0.4502,
+              "top_quartile_avg_next_points": 4.294,
+              "rest_avg_next_points": 2.503,
+              "top_quartile_lift": 1.791
+            },
+            "per90": {
+              "samples": 204,
+              "spearman_next_match_points": 0.2395,
+              "top_quartile_avg_next_points": 3.392,
+              "rest_avg_next_points": 2.804,
+              "top_quartile_lift": 0.588
+            },
+            "per90_exposure_adjusted": {
+              "samples": 204,
+              "spearman_next_match_points": 0.2306,
+              "top_quartile_avg_next_points": 3.922,
+              "rest_avg_next_points": 2.627,
+              "top_quartile_lift": 1.294
+            }
+          }
+        }
+      }
+    }
+  },
+  "spot_checks": {
+    "Ashley Sanchez": {
+      "name": "Ashley Sanchez",
+      "club": "NC",
+      "position": "MID",
+      "gw": "21",
+      "target_date": "2026-09-06T20:00:00+00:00",
+      "target_points": 21.0,
+      "role_appearances": 4,
+      "role_appearance_rate": 1.0,
+      "role_minutes": 360.0,
+      "role_minutes_per_team_match": 90.0,
+      "role_minute_exposure": 1.0,
+      "role_sixty_plus_rate": 1.0,
+      "role_seventyfive_plus_rate": 1.0,
+      "ptm_goals": 1.0,
+      "ptm_assists": 0.25,
+      "ptm_xg": 0.7050000000000001,
+      "ptm_npxg": 0.52,
+      "ptm_xgot": 0.8049999999999999,
+      "ptm_xa": 0.0775,
+      "ptm_shots": 6.0,
+      "ptm_sot": 2.75,
+      "ptm_box_touches": 9.25,
+      "ptm_chances": 1.0,
+      "ptm_big_chances_created": 0.25,
+      "ptm_big_chances_missed": 0.5,
+      "ptm_dribbles": 2.0,
+      "ptm_crosses": 0.0,
+      "ptm_final_third_passes": 4.5,
+      "ptm_def_actions": 1.75,
+      "ptm_tackles": 0.25,
+      "ptm_interceptions": 0.5,
+      "ptm_recoveries": 4.75,
+      "ptm_clearances": 0.75,
+      "ptm_blocks": 0.25,
+      "ptm_ground_duels": 3.5,
+      "ptm_aerial_duels": 0.5,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "p90_goals": 1.0,
+      "p90_assists": 0.25,
+      "p90_xg": 0.7050000000000001,
+      "p90_npxg": 0.52,
+      "p90_xgot": 0.8049999999999998,
+      "p90_xa": 0.0775,
+      "p90_shots": 6.0,
+      "p90_sot": 2.75,
+      "p90_box_touches": 9.25,
+      "p90_chances": 1.0,
+      "p90_big_chances_created": 0.25,
+      "p90_big_chances_missed": 0.5,
+      "p90_dribbles": 2.0,
+      "p90_crosses": 0.0,
+      "p90_final_third_passes": 4.5,
+      "p90_def_actions": 1.75,
+      "p90_tackles": 0.25,
+      "p90_interceptions": 0.5,
+      "p90_recoveries": 4.75,
+      "p90_clearances": 0.75,
+      "p90_blocks": 0.25,
+      "p90_ground_duels": 3.5,
+      "p90_aerial_duels": 0.5,
+      "p90_saves": 0.0,
+      "p90_goals_conceded": 0.0,
+      "p90_saves_inside_box": 0.0,
+      "score_attack_core_ptm": 85.092,
+      "score_attack_core_p90": 77.5,
+      "score_attack_core_p90_exposure": 77.5,
+      "score_two_way_ptm": 74.815,
+      "score_two_way_p90": 64.741,
+      "score_two_way_p90_exposure": 64.741
+    },
+    "Jordynn Dudley": {
+      "name": "Jordynn Dudley",
+      "club": "GFC",
+      "position": "FOR",
+      "gw": "21",
+      "target_date": "2026-09-06T18:00:00+00:00",
+      "target_points": 1.0,
+      "role_appearances": 4,
+      "role_appearance_rate": 1.0,
+      "role_minutes": 322.0,
+      "role_minutes_per_team_match": 80.5,
+      "role_minute_exposure": 0.8944444444444445,
+      "role_sixty_plus_rate": 1.0,
+      "role_seventyfive_plus_rate": 0.5,
+      "ptm_goals": 0.0,
+      "ptm_assists": 0.25,
+      "ptm_xg": 0.055,
+      "ptm_npxg": 0.055,
+      "ptm_xgot": 0.14,
+      "ptm_xa": 0.17,
+      "ptm_shots": 1.0,
+      "ptm_sot": 0.5,
+      "ptm_box_touches": 4.75,
+      "ptm_chances": 2.75,
+      "ptm_big_chances_created": 0.0,
+      "ptm_big_chances_missed": 0.0,
+      "ptm_dribbles": 1.75,
+      "ptm_crosses": 0.25,
+      "ptm_final_third_passes": 2.75,
+      "ptm_def_actions": 4.75,
+      "ptm_tackles": 3.25,
+      "ptm_interceptions": 0.75,
+      "ptm_recoveries": 5.0,
+      "ptm_clearances": 0.75,
+      "ptm_blocks": 0.0,
+      "ptm_ground_duels": 7.5,
+      "ptm_aerial_duels": 1.25,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "p90_goals": 0.0,
+      "p90_assists": 0.2795031055900621,
+      "p90_xg": 0.061490683229813665,
+      "p90_npxg": 0.061490683229813665,
+      "p90_xgot": 0.1565217391304348,
+      "p90_xa": 0.19006211180124225,
+      "p90_shots": 1.1180124223602483,
+      "p90_sot": 0.5590062111801242,
+      "p90_box_touches": 5.3105590062111805,
+      "p90_chances": 3.0745341614906834,
+      "p90_big_chances_created": 0.0,
+      "p90_big_chances_missed": 0.0,
+      "p90_dribbles": 1.9565217391304348,
+      "p90_crosses": 0.2795031055900621,
+      "p90_final_third_passes": 3.0745341614906834,
+      "p90_def_actions": 5.3105590062111805,
+      "p90_tackles": 3.6335403726708075,
+      "p90_interceptions": 0.8385093167701864,
+      "p90_recoveries": 5.590062111801243,
+      "p90_clearances": 0.8385093167701864,
+      "p90_blocks": 0.0,
+      "p90_ground_duels": 8.385093167701863,
+      "p90_aerial_duels": 1.3975155279503106,
+      "p90_saves": 0.0,
+      "p90_goals_conceded": 0.0,
+      "p90_saves_inside_box": 0.0,
+      "score_attack_core_ptm": 61.917,
+      "score_attack_core_p90": 52.667,
+      "score_attack_core_p90_exposure": 52.385,
+      "score_attack_broad_ptm": 67.333,
+      "score_attack_broad_p90": 58.667,
+      "score_attack_broad_p90_exposure": 57.752
+    },
+    "Jessie Fleming": {
+      "name": "Jessie Fleming",
+      "club": "POR",
+      "position": "MID",
+      "gw": "21",
+      "target_date": "2026-09-06T20:00:00+00:00",
+      "target_points": 5.0,
+      "role_appearances": 4,
+      "role_appearance_rate": 1.0,
+      "role_minutes": 360.0,
+      "role_minutes_per_team_match": 90.0,
+      "role_minute_exposure": 1.0,
+      "role_sixty_plus_rate": 1.0,
+      "role_seventyfive_plus_rate": 1.0,
+      "ptm_goals": 0.0,
+      "ptm_assists": 0.5,
+      "ptm_xg": 0.01,
+      "ptm_npxg": 0.01,
+      "ptm_xgot": 0.0,
+      "ptm_xa": 0.1575,
+      "ptm_shots": 0.25,
+      "ptm_sot": 0.0,
+      "ptm_box_touches": 0.25,
+      "ptm_chances": 1.5,
+      "ptm_big_chances_created": 0.5,
+      "ptm_big_chances_missed": 0.0,
+      "ptm_dribbles": 0.0,
+      "ptm_crosses": 0.0,
+      "ptm_final_third_passes": 7.0,
+      "ptm_def_actions": 6.75,
+      "ptm_tackles": 2.75,
+      "ptm_interceptions": 0.75,
+      "ptm_recoveries": 4.5,
+      "ptm_clearances": 3.25,
+      "ptm_blocks": 0.0,
+      "ptm_ground_duels": 3.75,
+      "ptm_aerial_duels": 0.0,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "p90_goals": 0.0,
+      "p90_assists": 0.5,
+      "p90_xg": 0.01,
+      "p90_npxg": 0.01,
+      "p90_xgot": 0.0,
+      "p90_xa": 0.1575,
+      "p90_shots": 0.25,
+      "p90_sot": 0.0,
+      "p90_box_touches": 0.25,
+      "p90_chances": 1.5,
+      "p90_big_chances_created": 0.5,
+      "p90_big_chances_missed": 0.0,
+      "p90_dribbles": 0.0,
+      "p90_crosses": 0.0,
+      "p90_final_third_passes": 7.0,
+      "p90_def_actions": 6.75,
+      "p90_tackles": 2.75,
+      "p90_interceptions": 0.75,
+      "p90_recoveries": 4.5,
+      "p90_clearances": 3.25,
+      "p90_blocks": 0.0,
+      "p90_ground_duels": 3.75,
+      "p90_aerial_duels": 0.0,
+      "p90_saves": 0.0,
+      "p90_goals_conceded": 0.0,
+      "p90_saves_inside_box": 0.0,
+      "score_attack_core_ptm": 49.028,
+      "score_attack_core_p90": 41.528,
+      "score_attack_core_p90_exposure": 41.528,
+      "score_two_way_ptm": 58.25,
+      "score_two_way_p90": 46.768,
+      "score_two_way_p90_exposure": 46.768
+    }
+  },
+  "fotmob_fetch_errors": []
+}
