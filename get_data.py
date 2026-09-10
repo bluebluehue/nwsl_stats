@@ -1840,6 +1840,362 @@ def get_next_fixture_score(
     return raw_rating, display_score, details_text
 
 
+
+# =============================================================================
+# DECISION MODEL V3 — OBSERVATIONAL / SIDE-BY-SIDE
+# =============================================================================
+
+PLAYER_SIGNAL_WEIGHTS = {
+    "GK":  {"form": 1.00, "involvement": 0.00},
+    "DEF": {"form": 0.75, "involvement": 0.25},
+    "MID": {"form": 0.65, "involvement": 0.35},
+    "FOR": {"form": 0.60, "involvement": 0.40},
+}
+
+V3_FIXTURE_SIGNAL_WEIGHTS = {
+    "projected": 0.75,
+    "schedule": 0.25,
+}
+
+SCHEDULE_ATTACK_METRIC_LOW = ATTACK_XG_FLOOR
+SCHEDULE_ATTACK_METRIC_HIGH = ATTACK_XG_CEILING
+SCHEDULE_DEFENSE_ALLOWED_LOW = DEFENSE_XG_BEST
+SCHEDULE_DEFENSE_ALLOWED_HIGH = DEFENSE_XG_WORST
+
+SCHEDULE_HOME_POINTS = 5.0
+SCHEDULE_AWAY_POINTS = -5.0
+
+
+def metric_to_unit_strength_index(value, low, high, higher_is_stronger=True):
+    try:
+        value = float(value)
+    except (TypeError, ValueError):
+        return 0.50
+
+    if high <= low:
+        return 0.50
+
+    normalized = clamp((value - low) / (high - low), 0.0, 1.0)
+
+    if higher_is_stronger:
+        return round(normalized, 4)
+
+    return round(1.0 - normalized, 4)
+
+
+def build_asa_unit_strength_indexes(team_strength):
+    unit_strength = {}
+
+    for team, stats in (team_strength or {}).items():
+        attack_index = metric_to_unit_strength_index(
+            stats.get("attack_metric"),
+            SCHEDULE_ATTACK_METRIC_LOW,
+            SCHEDULE_ATTACK_METRIC_HIGH,
+            higher_is_stronger=True,
+        )
+
+        defense_index = metric_to_unit_strength_index(
+            stats.get("defense_allowed_metric"),
+            SCHEDULE_DEFENSE_ALLOWED_LOW,
+            SCHEDULE_DEFENSE_ALLOWED_HIGH,
+            higher_is_stronger=False,
+        )
+
+        unit_strength[str(team).upper()] = {
+            "attack_strength_index": attack_index,
+            "defense_strength_index": defense_index,
+            "attack_metric": stats.get("attack_metric"),
+            "defense_allowed_metric": stats.get("defense_allowed_metric"),
+        }
+
+    return unit_strength
+
+
+def schedule_only_defensive_opportunity(opponent_team, location, unit_strength):
+    opponent = str(opponent_team or "").upper()
+    opp_info = (unit_strength or {}).get(opponent, {})
+    opp_attack = float(opp_info.get("attack_strength_index", 0.50))
+
+    venue = (
+        SCHEDULE_HOME_POINTS
+        if location == "(H)"
+        else SCHEDULE_AWAY_POINTS
+        if location == "(A)"
+        else 0.0
+    )
+
+    score = 50.0 + ((0.50 - opp_attack) * 70.0) + venue
+    score = round(clamp(score, 8.0, 92.0), 1)
+
+    return score, {
+        "opponent_attack_strength_index": round(opp_attack, 4),
+        "venue_adjustment": venue,
+    }
+
+
+def schedule_only_attacking_opportunity(opponent_team, location, unit_strength):
+    opponent = str(opponent_team or "").upper()
+    opp_info = (unit_strength or {}).get(opponent, {})
+    opp_defense = float(opp_info.get("defense_strength_index", 0.50))
+
+    venue = (
+        SCHEDULE_HOME_POINTS
+        if location == "(H)"
+        else SCHEDULE_AWAY_POINTS
+        if location == "(A)"
+        else 0.0
+    )
+
+    score = 50.0 + ((0.50 - opp_defense) * 70.0) + venue
+    score = round(clamp(score, 8.0, 92.0), 1)
+
+    return score, {
+        "opponent_defense_strength_index": round(opp_defense, 4),
+        "venue_adjustment": venue,
+    }
+
+
+def schedule_only_single_fixture_score(
+    player_position,
+    opponent_team,
+    location,
+    unit_strength,
+):
+    attack_score, attack_detail = schedule_only_attacking_opportunity(
+        opponent_team,
+        location,
+        unit_strength,
+    )
+    defense_score, defense_detail = schedule_only_defensive_opportunity(
+        opponent_team,
+        location,
+        unit_strength,
+    )
+
+    if player_position == "FOR":
+        rating = attack_score
+    elif player_position == "MID":
+        rating = (0.90 * attack_score) + (0.10 * defense_score)
+    elif player_position in ("DEF", "GK"):
+        rating = defense_score
+    else:
+        rating = 50.0
+
+    return round(clamp(rating, 0.0, 100.0), 1), {
+        "rating": round(clamp(rating, 0.0, 100.0), 1),
+        "attack_schedule_opportunity": attack_score,
+        "defense_schedule_opportunity": defense_score,
+        "opponent_team": opponent_team,
+        "location": location,
+        **attack_detail,
+        **defense_detail,
+    }
+
+
+def get_schedule_only_gameweek_score(player, unit_strength, target_gw):
+    fixtures = get_fixtures_for_specific_gameweek(player, target_gw)
+
+    if not fixtures:
+        return None, None, None, []
+
+    player_team = str(player.get("Club", "")).strip().upper()
+    position = player.get("Position")
+
+    position_scores = []
+    attack_scores = []
+    defense_scores = []
+    details = []
+
+    for fixture in fixtures:
+        home_team = str(fixture.get("home_id", "")).strip().upper()
+        away_team = str(fixture.get("away_id", "")).strip().upper()
+
+        if player_team == home_team:
+            opponent = away_team
+            location = "(H)"
+        elif player_team == away_team:
+            opponent = home_team
+            location = "(A)"
+        else:
+            continue
+
+        position_score, detail = schedule_only_single_fixture_score(
+            position,
+            opponent,
+            location,
+            unit_strength,
+        )
+
+        position_scores.append(position_score)
+        attack_scores.append(detail["attack_schedule_opportunity"])
+        defense_scores.append(detail["defense_schedule_opportunity"])
+        details.append(detail)
+
+    if not position_scores:
+        return None, None, None, []
+
+    position_rating, _ = combine_fixture_scores(position_scores)
+    attack_rating, _ = combine_fixture_scores(attack_scores)
+    defense_rating, _ = combine_fixture_scores(defense_scores)
+
+    return position_rating, attack_rating, defense_rating, details
+
+
+def calculate_player_signal(position, form_rating, involvement_rating):
+    try:
+        form = float(form_rating or 0)
+    except (TypeError, ValueError):
+        form = 0.0
+
+    weights = PLAYER_SIGNAL_WEIGHTS.get(
+        position,
+        {"form": 1.00, "involvement": 0.00},
+    )
+
+    if position == "GK":
+        return round(clamp(form, 0, 100), 1), {
+            "form": round(form, 1),
+            "involvement": None,
+            "form_weight": 1.00,
+            "involvement_weight": 0.00,
+            "fallback": False,
+        }
+
+    try:
+        involvement = float(involvement_rating) if involvement_rating is not None else None
+    except (TypeError, ValueError):
+        involvement = None
+
+    if involvement is None:
+        return round(clamp(form, 0, 100), 1), {
+            "form": round(form, 1),
+            "involvement": None,
+            "form_weight": 1.00,
+            "involvement_weight": 0.00,
+            "fallback": True,
+        }
+
+    rating = (
+        weights["form"] * form
+        + weights["involvement"] * involvement
+    )
+
+    return round(clamp(rating, 0, 100), 1), {
+        "form": round(form, 1),
+        "involvement": round(involvement, 1),
+        "form_weight": weights["form"],
+        "involvement_weight": weights["involvement"],
+        "fallback": False,
+    }
+
+
+def calculate_v3_fixture_signal(projected_fixture_rating, schedule_rating):
+    if projected_fixture_rating is None:
+        return None, {
+            "projected_fixture": None,
+            "schedule_only": schedule_rating,
+            "projected_weight": None,
+            "schedule_weight": None,
+        }
+
+    projected = float(projected_fixture_rating)
+
+    if schedule_rating is None:
+        return round(clamp(projected, 0, 100), 1), {
+            "projected_fixture": round(projected, 1),
+            "schedule_only": None,
+            "projected_weight": 1.00,
+            "schedule_weight": 0.00,
+        }
+
+    schedule_value = float(schedule_rating)
+
+    rating = (
+        V3_FIXTURE_SIGNAL_WEIGHTS["projected"] * projected
+        + V3_FIXTURE_SIGNAL_WEIGHTS["schedule"] * schedule_value
+    )
+
+    return round(clamp(rating, 0, 100), 1), {
+        "projected_fixture": round(projected, 1),
+        "schedule_only": round(schedule_value, 1),
+        "projected_weight": V3_FIXTURE_SIGNAL_WEIGHTS["projected"],
+        "schedule_weight": V3_FIXTURE_SIGNAL_WEIGHTS["schedule"],
+    }
+
+
+def calculate_decision_rating_v3(position, player_signal, fixture_signal):
+    weights = DECISION_WEIGHTS.get(
+        position,
+        {"fixture": 0.50, "form": 0.50},
+    )
+
+    try:
+        player_value = float(player_signal or 0)
+    except (TypeError, ValueError):
+        player_value = 0.0
+
+    try:
+        fixture_value = float(fixture_signal) if fixture_signal is not None else 0.0
+    except (TypeError, ValueError):
+        fixture_value = 0.0
+
+    rating = (
+        weights["fixture"] * fixture_value
+        + weights["form"] * player_value
+    )
+
+    return round(clamp(rating, 0, 100), 1)
+
+
+def get_next_three_gw_fixture_outlook(
+    player,
+    team_strength,
+    model_context,
+    unit_strength,
+    first_global_gw,
+):
+    if first_global_gw is None:
+        return None, []
+
+    gw_details = []
+    ratings = []
+
+    for offset in range(3):
+        gw = first_global_gw + offset
+
+        projected_rating, _, _ = get_next_fixture_score(
+            player,
+            team_strength,
+            model_context,
+            target_gw=gw,
+        )
+
+        schedule_rating, _, _, _ = get_schedule_only_gameweek_score(
+            player,
+            unit_strength,
+            target_gw=gw,
+        )
+
+        fixture_signal, _ = calculate_v3_fixture_signal(
+            projected_rating,
+            schedule_rating,
+        )
+
+        value_for_average = fixture_signal if fixture_signal is not None else 0.0
+        ratings.append(value_for_average)
+
+        gw_details.append({
+            "gameweek": gw,
+            "projected_fixture_rating": projected_rating,
+            "schedule_only_rating": schedule_rating,
+            "fixture_signal_v3": fixture_signal,
+            "blank": fixture_signal is None,
+        })
+
+    return round(sum(ratings) / 3.0, 1), gw_details
+
+
+
 def load_history_data(history_file="player_history.json"):
     """
     Loads historical player data from JSON file.
@@ -2771,6 +3127,9 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
             fixtures,
         )
 
+        # Decision v3 schedule-only layer from current ASA attack/defense data.
+        asa_unit_strength = build_asa_unit_strength_indexes(team_strength)
+
         # Add next and following gameweek fixture scores for each player.
         # "Rating" is now a granular 0-100 opportunity score (higher = better).
         # "Score" remains a 1-5 bucket so the existing Fixture Score filter
@@ -2806,6 +3165,143 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 player.get("Form Rating"),
                 next_fixture_rating,
             )
+
+            # Decision Model v3 — observational side-by-side.
+            player_signal, player_signal_detail = calculate_player_signal(
+                player.get("Position"),
+                player.get("Form Rating"),
+                player.get("Underlying Involvement Confidence Adjusted"),
+            )
+
+            player["Player Signal"] = player_signal
+            player["Player Signal Details"] = player_signal_detail
+
+            (
+                next_schedule_rating,
+                next_attacking_schedule,
+                next_defensive_schedule,
+                next_schedule_details,
+            ) = get_schedule_only_gameweek_score(
+                player,
+                asa_unit_strength,
+                target_gw=next_global_gw,
+            )
+
+            player["Next Schedule Opportunity"] = next_schedule_rating
+            player["Next Attacking Schedule Opportunity"] = next_attacking_schedule
+            player["Next Defensive Schedule Opportunity"] = next_defensive_schedule
+            player["Next Schedule Opportunity Details"] = next_schedule_details
+
+            fixture_signal_v3, fixture_signal_detail = calculate_v3_fixture_signal(
+                next_fixture_rating,
+                next_schedule_rating,
+            )
+
+            player["Next Fixture Signal v3"] = fixture_signal_v3
+            player["Next Fixture Signal v3 Details"] = fixture_signal_detail
+
+            (
+                following_schedule_rating,
+                following_attacking_schedule,
+                following_defensive_schedule,
+                following_schedule_details,
+            ) = get_schedule_only_gameweek_score(
+                player,
+                asa_unit_strength,
+                target_gw=following_global_gw,
+            )
+
+            player["Following Schedule Opportunity"] = following_schedule_rating
+            player["Following Attacking Schedule Opportunity"] = following_attacking_schedule
+            player["Following Defensive Schedule Opportunity"] = following_defensive_schedule
+            player["Following Schedule Opportunity Details"] = following_schedule_details
+
+            following_fixture_signal_v3, following_fixture_signal_detail = calculate_v3_fixture_signal(
+                following_fixture_rating,
+                following_schedule_rating,
+            )
+
+            player["Following Fixture Signal v3"] = following_fixture_signal_v3
+            player["Following Fixture Signal v3 Details"] = following_fixture_signal_detail
+
+            next_three_rating, next_three_details = get_next_three_gw_fixture_outlook(
+                player,
+                team_strength,
+                fixture_model_context,
+                asa_unit_strength,
+                next_global_gw,
+            )
+
+            player["Next Three Fixture Rating"] = next_three_rating
+            player["Next Three Fixture Details"] = next_three_details
+
+            player["Decision Rating v3"] = calculate_decision_rating_v3(
+                player.get("Position"),
+                player_signal,
+                fixture_signal_v3,
+            )
+
+            player["Decision Rating v3 Change"] = round(
+                player["Decision Rating v3"] - player["Decision Rating"],
+                1,
+            )
+
+        # Decision v3 comparison audit.
+        comparable_v3 = [
+            p for p in combined_data
+            if p.get("Decision Rating v3") is not None
+            and p.get("Decision Rating") is not None
+        ]
+
+        biggest_risers = sorted(
+            comparable_v3,
+            key=lambda p: p.get("Decision Rating v3 Change", 0),
+            reverse=True,
+        )[:15]
+
+        biggest_fallers = sorted(
+            comparable_v3,
+            key=lambda p: p.get("Decision Rating v3 Change", 0),
+        )[:15]
+
+        print()
+        print("=== DECISION MODEL V3 SIDE-BY-SIDE AUDIT ===")
+        print("v3 is observational only. Existing Decision Rating is unchanged.")
+
+        print()
+        print("Biggest v3 risers:")
+        for p in biggest_risers:
+            print(
+                f"  {p.get('Name')} | {p.get('Club')} | {p.get('Position')} | "
+                f"old={p.get('Decision Rating')} "
+                f"v3={p.get('Decision Rating v3')} "
+                f"change={p.get('Decision Rating v3 Change'):+.1f} | "
+                f"form={p.get('Form Rating')} "
+                f"involvement={p.get('Underlying Involvement Confidence Adjusted')} "
+                f"playerSignal={p.get('Player Signal')} | "
+                f"fixture={p.get('Next Fixture Rating')} "
+                f"schedule={p.get('Next Schedule Opportunity')} "
+                f"fixtureV3={p.get('Next Fixture Signal v3')}"
+            )
+
+        print()
+        print("Biggest v3 fallers:")
+        for p in biggest_fallers:
+            print(
+                f"  {p.get('Name')} | {p.get('Club')} | {p.get('Position')} | "
+                f"old={p.get('Decision Rating')} "
+                f"v3={p.get('Decision Rating v3')} "
+                f"change={p.get('Decision Rating v3 Change'):+.1f} | "
+                f"form={p.get('Form Rating')} "
+                f"involvement={p.get('Underlying Involvement Confidence Adjusted')} "
+                f"playerSignal={p.get('Player Signal')} | "
+                f"fixture={p.get('Next Fixture Rating')} "
+                f"schedule={p.get('Next Schedule Opportunity')} "
+                f"fixtureV3={p.get('Next Fixture Signal v3')}"
+            )
+
+        print("=== END DECISION MODEL V3 AUDIT ===")
+        print()
 
         output_payload = {
             "metadata": {
@@ -2848,6 +3344,32 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "ambiguous_players": involvement_match_counts.get("ambiguous", 0),
                     "unmatched_examples": involvement_unmatched_examples,
                     "ambiguous_examples": involvement_ambiguous_examples,
+                },
+                "decision_rating_v3": {
+                    "version": "v3-player-signal-plus-asa-schedule-context",
+                    "observational_only": True,
+                    "replaces_live_decision_rating": False,
+                    "player_signal_weights": PLAYER_SIGNAL_WEIGHTS,
+                    "fixture_signal_weights": V3_FIXTURE_SIGNAL_WEIGHTS,
+                    "outer_decision_weights": DECISION_WEIGHTS,
+                    "player_signal_uses": [
+                        "Form Rating",
+                        "Underlying Involvement Confidence Adjusted",
+                    ],
+                    "fixture_signal_uses": [
+                        "existing ASA projected-performance Next Fixture Rating",
+                        "WSL-style schedule-only opponent/venue opportunity",
+                    ],
+                    "schedule_only_formula": {
+                        "defense": "50 + (0.50 - opponent_attack_strength_index)*70 + venue",
+                        "attack": "50 + (0.50 - opponent_defense_strength_index)*70 + venue",
+                        "home_points": SCHEDULE_HOME_POINTS,
+                        "away_points": SCHEDULE_AWAY_POINTS,
+                    },
+                    "three_gw_outlook": (
+                        "Average of the next three GLOBAL fantasy-GW v3 fixture signals; "
+                        "blank GW = 0; DGW/TGW retains average*sqrt(fixture_count) boost."
+                    ),
                 },
             },
             "players": combined_data
