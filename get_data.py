@@ -1842,6 +1842,68 @@ def get_next_fixture_score(
 
 
 # =============================================================================
+# DECISION MODEL V4 — LEAGUE-COMPARISON CALIBRATION / SIDE-BY-SIDE
+
+def comparison_rating_v4(raw_rating, percentile_rating):
+    """
+    Convert a raw 0-100 model rating into a hybrid comparison rating:
+      70% league percentile + 30% raw model value.
+
+    This preserves some absolute magnitude while making unlike model scales
+    (Form vs Fixture) more directly comparable.
+    """
+    if raw_rating is None or percentile_rating is None:
+        return None
+
+    try:
+        raw = float(raw_rating)
+        pct = float(percentile_rating)
+    except (TypeError, ValueError):
+        return None
+
+    score = (
+        V4_COMPARISON_PERCENTILE_WEIGHT * pct
+        + V4_COMPARISON_RAW_WEIGHT * raw
+    )
+    return round(clamp(score, 0, 100), 1)
+
+
+def calculate_decision_rating_v4(position, comparison_form, comparison_fixture):
+    """
+    Observational Decision v4.
+
+    Uses the SAME position-specific outer weights as the current live NWSL
+    Decision Rating, but applies them to comparison-calibrated Form/Fixture
+    scores rather than unrelated raw 0-100 scales.
+
+    A blank gameweek still receives a fixture component of 0.
+    """
+    weights = DECISION_WEIGHTS.get(
+        str(position or "").upper(),
+        {"fixture": 0.50, "form": 0.50},
+    )
+
+    try:
+        form = float(comparison_form or 0)
+    except (TypeError, ValueError):
+        form = 0.0
+
+    try:
+        fixture = float(comparison_fixture or 0)
+    except (TypeError, ValueError):
+        fixture = 0.0
+
+    return round(
+        clamp(
+            weights["fixture"] * fixture
+            + weights["form"] * form,
+            0,
+            100,
+        ),
+        1,
+    )
+
+
 # DECISION MODEL V3 — OBSERVATIONAL / SIDE-BY-SIDE
 # =============================================================================
 
@@ -1858,6 +1920,12 @@ PLAYER_SIGNAL_WEIGHTS = {
 # ASA projected performance remains the fixture model.
 # Opponent-only schedule context is deliberately a SMALL adjustment.
 V3_SCHEDULE_CONTEXT_WEIGHT = 0.25
+
+# Decision v4 observational calibration.
+# Mirrors the comparison-scale idea that is working well in the newer WSL model:
+# 70% league-relative percentile + 30% raw rating.
+V4_COMPARISON_PERCENTILE_WEIGHT = 0.70
+V4_COMPARISON_RAW_WEIGHT = 0.30
 
 SCHEDULE_ATTACK_METRIC_LOW = ATTACK_XG_FLOOR
 SCHEDULE_ATTACK_METRIC_HIGH = ATTACK_XG_CEILING
@@ -3234,62 +3302,159 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 1,
             )
 
-        # Decision v3 comparison audit.
-        comparable_v3 = [
+        # ---------------------------------------------------------
+        # Decision v4 comparison-calibration experiment.
+        #
+        # IMPORTANT:
+        # - Live Decision Rating remains unchanged.
+        # - Season-wide involvement is NOT used.
+        # - The experimental v3 schedule adjustment is NOT used.
+        # - Raw Form and raw ASA Fixture are each converted to:
+        #       70% league percentile + 30% raw rating
+        #   before the existing position-specific Decision weights are applied.
+        # ---------------------------------------------------------
+
+        form_population = []
+        fixture_population = []
+
+        for p in combined_data:
+            try:
+                form_population.append(float(p.get("Form Rating") or 0))
+            except (TypeError, ValueError):
+                pass
+
+            if p.get("Next Fixture Rating") is not None:
+                try:
+                    fixture_population.append(float(p.get("Next Fixture Rating")))
+                except (TypeError, ValueError):
+                    pass
+
+        for p in combined_data:
+            raw_form = p.get("Form Rating")
+            raw_fixture = p.get("Next Fixture Rating")
+
+            form_percentile = percentile_rank_value(raw_form, form_population)
+
+            # A true blank remains a zero fixture signal rather than being
+            # percentile-ranked against teams that actually have a fixture.
+            if raw_fixture is None:
+                fixture_percentile = None
+                comparison_fixture = 0.0
+            else:
+                fixture_percentile = percentile_rank_value(
+                    raw_fixture,
+                    fixture_population,
+                )
+                comparison_fixture = comparison_rating_v4(
+                    raw_fixture,
+                    fixture_percentile,
+                )
+
+            comparison_form = comparison_rating_v4(
+                raw_form,
+                form_percentile,
+            )
+
+            p["Form Percentile v4"] = form_percentile
+            p["Fixture Percentile v4"] = fixture_percentile
+            p["Comparison Form Rating v4"] = comparison_form
+            p["Comparison Fixture Rating v4"] = comparison_fixture
+
+            p["Decision Rating v4"] = calculate_decision_rating_v4(
+                p.get("Position"),
+                comparison_form,
+                comparison_fixture,
+            )
+
+            p["Decision Rating v4 Change"] = round(
+                p["Decision Rating v4"] - p["Decision Rating"],
+                1,
+            )
+
+        comparable_v4 = [
             p for p in combined_data
-            if p.get("Decision Rating v3") is not None
+            if p.get("Decision Rating v4") is not None
             and p.get("Decision Rating") is not None
         ]
 
-        biggest_risers = sorted(
-            comparable_v3,
-            key=lambda p: p.get("Decision Rating v3 Change", 0),
+        biggest_v4_risers = sorted(
+            comparable_v4,
+            key=lambda p: p.get("Decision Rating v4 Change", 0),
             reverse=True,
-        )[:15]
+        )[:20]
 
-        biggest_fallers = sorted(
-            comparable_v3,
-            key=lambda p: p.get("Decision Rating v3 Change", 0),
-        )[:15]
+        biggest_v4_fallers = sorted(
+            comparable_v4,
+            key=lambda p: p.get("Decision Rating v4 Change", 0),
+        )[:20]
+
+        top_v4 = sorted(
+            comparable_v4,
+            key=lambda p: p.get("Decision Rating v4", 0),
+            reverse=True,
+        )[:25]
 
         print()
-        print("=== DECISION MODEL V3.2 SIDE-BY-SIDE AUDIT ===")
-        print("v3.2 is observational only. Existing Decision Rating is unchanged.")
-        print("Player Signal = Form only; season-wide involvement is informational only.")
+        print("=== DECISION MODEL V4 COMPARISON-CALIBRATION AUDIT ===")
+        print("v4 is observational only. Existing Decision Rating is unchanged.")
+        print("Season-wide Opta involvement is NOT used.")
+        print("Experimental v3 schedule context is NOT used.")
+        print(
+            "Comparison score = "
+            f"{int(V4_COMPARISON_PERCENTILE_WEIGHT * 100)}% league percentile + "
+            f"{int(V4_COMPARISON_RAW_WEIGHT * 100)}% raw rating."
+        )
+        print(
+            f"Population sizes: Form={len(form_population)} players; "
+            f"Fixture={len(fixture_population)} players with a next-GW fixture rating."
+        )
 
-        print()
-        print("Biggest v3 risers:")
-        for p in biggest_risers:
+        def print_v4_row(p):
             print(
                 f"  {p.get('Name')} | {p.get('Club')} | {p.get('Position')} | "
                 f"old={p.get('Decision Rating')} "
-                f"v3={p.get('Decision Rating v3')} "
-                f"change={p.get('Decision Rating v3 Change'):+.1f} | "
-                f"form={p.get('Form Rating')} "
-                f"involvement={p.get('Underlying Involvement Confidence Adjusted')} "
-                f"playerSignal={p.get('Player Signal')} | "
-                f"fixture={p.get('Next Fixture Rating')} "
-                f"schedule={p.get('Next Schedule Opportunity')} "
-                f"fixtureV3={p.get('Next Fixture Signal v3')}"
+                f"v4={p.get('Decision Rating v4')} "
+                f"change={p.get('Decision Rating v4 Change'):+.1f} | "
+                f"Form raw={p.get('Form Rating')} "
+                f"pct={p.get('Form Percentile v4')} "
+                f"cmp={p.get('Comparison Form Rating v4')} | "
+                f"Fix raw={p.get('Next Fixture Rating')} "
+                f"pct={p.get('Fixture Percentile v4')} "
+                f"cmp={p.get('Comparison Fixture Rating v4')}"
             )
 
         print()
-        print("Biggest v3 fallers:")
-        for p in biggest_fallers:
-            print(
-                f"  {p.get('Name')} | {p.get('Club')} | {p.get('Position')} | "
-                f"old={p.get('Decision Rating')} "
-                f"v3={p.get('Decision Rating v3')} "
-                f"change={p.get('Decision Rating v3 Change'):+.1f} | "
-                f"form={p.get('Form Rating')} "
-                f"involvement={p.get('Underlying Involvement Confidence Adjusted')} "
-                f"playerSignal={p.get('Player Signal')} | "
-                f"fixture={p.get('Next Fixture Rating')} "
-                f"schedule={p.get('Next Schedule Opportunity')} "
-                f"fixtureV3={p.get('Next Fixture Signal v3')}"
-            )
+        print("Top 25 by Decision v4:")
+        for p in top_v4:
+            print_v4_row(p)
 
-        print("=== END DECISION MODEL V3 AUDIT ===")
+        print()
+        print("Biggest v4 risers:")
+        for p in biggest_v4_risers:
+            print_v4_row(p)
+
+        print()
+        print("Biggest v4 fallers:")
+        for p in biggest_v4_fallers:
+            print_v4_row(p)
+
+        # Automatic spot checks for players we have been discussing.
+        spot_check_names = {
+            "Ashley Sanchez",
+            "Sam Kerr",
+        }
+        spot_checks = [
+            p for p in combined_data
+            if p.get("Name") in spot_check_names
+        ]
+
+        if spot_checks:
+            print()
+            print("Named spot checks:")
+            for p in spot_checks:
+                print_v4_row(p)
+
+        print("=== END DECISION MODEL V4 AUDIT ===")
         print()
 
         output_payload = {
@@ -3333,6 +3498,29 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "ambiguous_players": involvement_match_counts.get("ambiguous", 0),
                     "unmatched_examples": involvement_unmatched_examples,
                     "ambiguous_examples": involvement_ambiguous_examples,
+                },
+                "decision_rating_v4": {
+                    "version": "v4-league-comparison-calibration",
+                    "observational_only": True,
+                    "replaces_live_decision_rating": False,
+                    "uses_season_wide_involvement": False,
+                    "uses_v3_schedule_context": False,
+                    "comparison_formula": (
+                        "0.70 * league percentile + 0.30 * raw rating"
+                    ),
+                    "comparison_percentile_weight": V4_COMPARISON_PERCENTILE_WEIGHT,
+                    "comparison_raw_weight": V4_COMPARISON_RAW_WEIGHT,
+                    "outer_decision_weights": DECISION_WEIGHTS,
+                    "uses": [
+                        "Comparison Form Rating v4",
+                        "Comparison Fixture Rating v4",
+                    ],
+                    "note": (
+                        "Experimental calibration only. Raw NWSL Form Rating and raw ASA "
+                        "Next Fixture Rating are each converted to a hybrid league-comparison "
+                        "scale before applying the existing position-specific Decision weights. "
+                        "Live Decision Rating remains unchanged."
+                    ),
                 },
                 "decision_rating_v3": {
                     "version": "v3.2-form-only-plus-light-nwsl-schedule-context",
