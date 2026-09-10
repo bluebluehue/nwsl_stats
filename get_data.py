@@ -1845,25 +1845,27 @@ def get_next_fixture_score(
 # DECISION MODEL V3 — OBSERVATIONAL / SIDE-BY-SIDE
 # =============================================================================
 
+# v3.2: season-wide involvement is NOT used in Decision.
+# It remains available in transformed_data.json for inspection only.
 PLAYER_SIGNAL_WEIGHTS = {
     "GK":  {"form": 1.00, "involvement": 0.00},
-    "DEF": {"form": 0.75, "involvement": 0.25},
-    "MID": {"form": 0.65, "involvement": 0.35},
-    "FOR": {"form": 0.60, "involvement": 0.40},
+    "DEF": {"form": 1.00, "involvement": 0.00},
+    "MID": {"form": 1.00, "involvement": 0.00},
+    "FOR": {"form": 1.00, "involvement": 0.00},
 }
 
-V3_FIXTURE_SIGNAL_WEIGHTS = {
-    "projected": 0.75,
-    "schedule": 0.25,
-}
+# NWSL fixture philosophy:
+# ASA projected performance remains the fixture model.
+# Opponent-only schedule context is deliberately a SMALL adjustment.
+V3_SCHEDULE_CONTEXT_WEIGHT = 0.25
 
 SCHEDULE_ATTACK_METRIC_LOW = ATTACK_XG_FLOOR
 SCHEDULE_ATTACK_METRIC_HIGH = ATTACK_XG_CEILING
 SCHEDULE_DEFENSE_ALLOWED_LOW = DEFENSE_XG_BEST
 SCHEDULE_DEFENSE_ALLOWED_HIGH = DEFENSE_XG_WORST
 
-SCHEDULE_HOME_POINTS = 5.0
-SCHEDULE_AWAY_POINTS = -5.0
+SCHEDULE_HOME_POINTS = 2.0
+SCHEDULE_AWAY_POINTS = -2.0
 
 
 def metric_to_unit_strength_index(value, low, high, higher_is_stronger=True):
@@ -1924,8 +1926,8 @@ def schedule_only_defensive_opportunity(opponent_team, location, unit_strength):
         else 0.0
     )
 
-    score = 50.0 + ((0.50 - opp_attack) * 70.0) + venue
-    score = round(clamp(score, 8.0, 92.0), 1)
+    score = 50.0 + ((0.50 - opp_attack) * 20.0) + venue
+    score = round(clamp(score, 35.0, 65.0), 1)
 
     return score, {
         "opponent_attack_strength_index": round(opp_attack, 4),
@@ -1946,8 +1948,8 @@ def schedule_only_attacking_opportunity(opponent_team, location, unit_strength):
         else 0.0
     )
 
-    score = 50.0 + ((0.50 - opp_defense) * 70.0) + venue
-    score = round(clamp(score, 8.0, 92.0), 1)
+    score = 50.0 + ((0.50 - opp_defense) * 20.0) + venue
+    score = round(clamp(score, 35.0, 65.0), 1)
 
     return score, {
         "opponent_defense_strength_index": round(opp_defense, 4),
@@ -2034,68 +2036,58 @@ def get_schedule_only_gameweek_score(player, unit_strength, target_gw):
     if not position_scores:
         return None, None, None, []
 
-    position_rating, _ = combine_fixture_scores(position_scores)
-    attack_rating, _ = combine_fixture_scores(attack_scores)
-    defense_rating, _ = combine_fixture_scores(defense_scores)
+    # Schedule-only context measures opponent difficulty, not fixture volume.
+    # Average multiple fixtures here so DGWs are NOT boosted twice.
+    # The existing ASA projected fixture rating already applies the strong
+    # average * sqrt(number_of_fixtures) DGW/TGW treatment.
+    position_rating = round(sum(position_scores) / len(position_scores), 1)
+    attack_rating = round(sum(attack_scores) / len(attack_scores), 1)
+    defense_rating = round(sum(defense_scores) / len(defense_scores), 1)
 
     return position_rating, attack_rating, defense_rating, details
 
 
 def calculate_player_signal(position, form_rating, involvement_rating):
+    """
+    v3.2 player signal = recent fantasy Form only.
+
+    Season-wide Opta involvement remains available for reference, but it does
+    not affect Decision because it cannot tell us what a player is doing in
+    her most recent matches.
+    """
     try:
         form = float(form_rating or 0)
     except (TypeError, ValueError):
         form = 0.0
 
-    weights = PLAYER_SIGNAL_WEIGHTS.get(
-        position,
-        {"form": 1.00, "involvement": 0.00},
-    )
-
-    if position == "GK":
-        return round(clamp(form, 0, 100), 1), {
-            "form": round(form, 1),
-            "involvement": None,
-            "form_weight": 1.00,
-            "involvement_weight": 0.00,
-            "fallback": False,
-        }
-
-    try:
-        involvement = float(involvement_rating) if involvement_rating is not None else None
-    except (TypeError, ValueError):
-        involvement = None
-
-    if involvement is None:
-        return round(clamp(form, 0, 100), 1), {
-            "form": round(form, 1),
-            "involvement": None,
-            "form_weight": 1.00,
-            "involvement_weight": 0.00,
-            "fallback": True,
-        }
-
-    rating = (
-        weights["form"] * form
-        + weights["involvement"] * involvement
-    )
-
-    return round(clamp(rating, 0, 100), 1), {
+    return round(clamp(form, 0, 100), 1), {
         "form": round(form, 1),
-        "involvement": round(involvement, 1),
-        "form_weight": weights["form"],
-        "involvement_weight": weights["involvement"],
-        "fallback": False,
+        "involvement": involvement_rating,
+        "form_weight": 1.00,
+        "involvement_weight": 0.00,
+        "involvement_used_in_decision": False,
+        "reason": "season-wide involvement is informational only",
     }
 
-
 def calculate_v3_fixture_signal(projected_fixture_rating, schedule_rating):
+    """
+    NWSL v3.2 fixture signal.
+
+    ASA projected performance remains the primary fixture rating.
+    Schedule-only opponent context is centered on 50 and only nudges it:
+
+        fixture_v3 = ASA + 0.25 * (schedule_context - 50)
+
+    Because schedule context is compressed to roughly 35..65, its maximum
+    effect is only about +/-3.75 points.
+
+    DGW volume is NOT added here. It already lives in the ASA fixture rating.
+    """
     if projected_fixture_rating is None:
         return None, {
             "projected_fixture": None,
             "schedule_only": schedule_rating,
-            "projected_weight": None,
-            "schedule_weight": None,
+            "schedule_adjustment": None,
         }
 
     projected = float(projected_fixture_rating)
@@ -2104,24 +2096,19 @@ def calculate_v3_fixture_signal(projected_fixture_rating, schedule_rating):
         return round(clamp(projected, 0, 100), 1), {
             "projected_fixture": round(projected, 1),
             "schedule_only": None,
-            "projected_weight": 1.00,
-            "schedule_weight": 0.00,
+            "schedule_adjustment": 0.0,
         }
 
     schedule_value = float(schedule_rating)
-
-    rating = (
-        V3_FIXTURE_SIGNAL_WEIGHTS["projected"] * projected
-        + V3_FIXTURE_SIGNAL_WEIGHTS["schedule"] * schedule_value
-    )
+    schedule_adjustment = V3_SCHEDULE_CONTEXT_WEIGHT * (schedule_value - 50.0)
+    rating = projected + schedule_adjustment
 
     return round(clamp(rating, 0, 100), 1), {
         "projected_fixture": round(projected, 1),
         "schedule_only": round(schedule_value, 1),
-        "projected_weight": V3_FIXTURE_SIGNAL_WEIGHTS["projected"],
-        "schedule_weight": V3_FIXTURE_SIGNAL_WEIGHTS["schedule"],
+        "schedule_adjustment": round(schedule_adjustment, 2),
+        "schedule_context_weight": V3_SCHEDULE_CONTEXT_WEIGHT,
     }
-
 
 def calculate_decision_rating_v3(position, player_signal, fixture_signal):
     weights = DECISION_WEIGHTS.get(
@@ -3166,7 +3153,8 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 next_fixture_rating,
             )
 
-            # Decision Model v3 — observational side-by-side.
+            # Decision Model v3.2 — observational side-by-side.
+            # Player Signal intentionally uses recent Form only.
             player_signal, player_signal_detail = calculate_player_signal(
                 player.get("Position"),
                 player.get("Form Rating"),
@@ -3265,8 +3253,9 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         )[:15]
 
         print()
-        print("=== DECISION MODEL V3 SIDE-BY-SIDE AUDIT ===")
-        print("v3 is observational only. Existing Decision Rating is unchanged.")
+        print("=== DECISION MODEL V3.2 SIDE-BY-SIDE AUDIT ===")
+        print("v3.2 is observational only. Existing Decision Rating is unchanged.")
+        print("Player Signal = Form only; season-wide involvement is informational only.")
 
         print()
         print("Biggest v3 risers:")
@@ -3346,29 +3335,29 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "ambiguous_examples": involvement_ambiguous_examples,
                 },
                 "decision_rating_v3": {
-                    "version": "v3-player-signal-plus-asa-schedule-context",
+                    "version": "v3.2-form-only-plus-light-nwsl-schedule-context",
                     "observational_only": True,
                     "replaces_live_decision_rating": False,
                     "player_signal_weights": PLAYER_SIGNAL_WEIGHTS,
-                    "fixture_signal_weights": V3_FIXTURE_SIGNAL_WEIGHTS,
+                    "schedule_context_weight": V3_SCHEDULE_CONTEXT_WEIGHT,
                     "outer_decision_weights": DECISION_WEIGHTS,
                     "player_signal_uses": [
-                        "Form Rating",
-                        "Underlying Involvement Confidence Adjusted",
+                        "Form Rating only",
                     ],
+                    "underlying_involvement_in_decision": False,
                     "fixture_signal_uses": [
                         "existing ASA projected-performance Next Fixture Rating",
-                        "WSL-style schedule-only opponent/venue opportunity",
+                        "small centered opponent/venue context adjustment",
                     ],
                     "schedule_only_formula": {
-                        "defense": "50 + (0.50 - opponent_attack_strength_index)*70 + venue",
-                        "attack": "50 + (0.50 - opponent_defense_strength_index)*70 + venue",
+                        "defense": "50 + (0.50 - opponent_attack_strength_index)*20 + venue",
+                        "attack": "50 + (0.50 - opponent_defense_strength_index)*20 + venue",
                         "home_points": SCHEDULE_HOME_POINTS,
                         "away_points": SCHEDULE_AWAY_POINTS,
                     },
                     "three_gw_outlook": (
                         "Average of the next three GLOBAL fantasy-GW v3 fixture signals; "
-                        "blank GW = 0; DGW/TGW retains average*sqrt(fixture_count) boost."
+                        "blank GW = 0; strong DGW/TGW boost comes from the existing ASA fixture rating only."
                     ),
                 },
             },
