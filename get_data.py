@@ -407,23 +407,19 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
 # --- NWSL OPTA UNDERLYING INVOLVEMENT INTEGRATION ---
 #
-# Stage 1A:
-# Load the separately generated nwsl_involvement.json and attach its
-# season-level underlying-activity signal to Fantasy NWSL players.
+# Stage 1B:
+# - Match Fantasy NWSL players to Opta on team + first initial + surname.
+# - Position is NOT part of the hard match key because Fantasy NWSL and Opta
+#   classify many attacking players differently (MID vs FOR in particular).
+# - Position disagreements are retained as an audit field.
+# - Recalculate the involvement percentile/composite using the FANTASY position
+#   peer group and the same weights from nwsl_involvement.json.
 #
 # IMPORTANT:
-# - This does NOT change Form Rating.
-# - This does NOT change Fixture Rating.
-# - This does NOT change Decision Rating yet.
-# - Matching is deliberately conservative and auditable.
-#
-# The public NWSL Opta feed currently exposes abbreviated player names
-# (for example "A. Smith"), while Fantasy NWSL exposes first/last names.
-# We therefore match on:
-#   team + position + first initial + normalized final surname token
-#
-# If that key is ambiguous, no match is made. We would rather leave an
-# involvement value blank than silently attach the wrong player's stats.
+# - This still does NOT change Form Rating.
+# - This still does NOT change Fixture Rating.
+# - This still does NOT change Decision Rating.
+# - Ambiguous identity keys are never guessed.
 
 NWSL_INVOLVEMENT_FILE = "nwsl_involvement.json"
 
@@ -491,7 +487,7 @@ def final_surname_token(value):
 
 
 def opta_short_name_parts(name):
-    """Convert an abbreviated Opta display name into first initial + surname token."""
+    """Convert an Opta display name into first initial + final surname token."""
     normalized = normalize_match_text(name)
     parts = normalized.split()
 
@@ -516,10 +512,12 @@ def involvement_team_code(record):
 
 def build_involvement_lookup(records):
     """
-    Build a conservative lookup:
-      (team, position, first_initial, surname_token) -> [records]
+    Build a conservative identity lookup:
+      (team, first_initial, surname_token) -> [records]
 
-    Values remain lists so collisions are visible and never silently resolved.
+    Position is intentionally excluded because Opta and Fantasy NWSL disagree
+    on MID/FOR classification for many players. Values remain lists so any
+    true identity collision is visible and never silently resolved.
     """
     lookup = defaultdict(list)
 
@@ -528,13 +526,12 @@ def build_involvement_lookup(records):
             continue
 
         team_code = involvement_team_code(record)
-        position = str(record.get("position") or "").upper().strip()
         first_initial, surname_token = opta_short_name_parts(record.get("name"))
 
-        if not team_code or not position or not first_initial or not surname_token:
+        if not team_code or not first_initial or not surname_token:
             continue
 
-        key = (team_code, position, first_initial, surname_token)
+        key = (team_code, first_initial, surname_token)
         lookup[key].append(record)
 
     return dict(lookup)
@@ -545,12 +542,12 @@ def load_nwsl_involvement(path=NWSL_INVOLVEMENT_FILE):
     Load the production Opta involvement file.
 
     Missing/corrupt involvement data does NOT break the fantasy refresh because
-    Stage 1A is observational only. It prints a warning and leaves the new
+    Stage 1B remains observational. It prints a warning and leaves the new
     fields blank.
     """
     if not os.path.exists(path):
         print(f"WARNING: {path} not found. Underlying Involvement fields will be blank.")
-        return {}, {
+        return {}, {}, {
             "available": False,
             "reason": "file not found",
             "path": path,
@@ -561,21 +558,25 @@ def load_nwsl_involvement(path=NWSL_INVOLVEMENT_FILE):
             payload = json.load(f)
     except Exception as e:
         print(f"WARNING: Could not load {path}: {e}. Underlying Involvement fields will be blank.")
-        return {}, {
+        return {}, {}, {
             "available": False,
             "reason": f"load error: {e}",
             "path": path,
         }
 
     records = payload.get("players", []) if isinstance(payload, dict) else []
+    weights = payload.get("weights", {}) if isinstance(payload, dict) else {}
 
     if not isinstance(records, list):
         print(f"WARNING: {path} did not contain a players list. Underlying Involvement fields will be blank.")
-        return {}, {
+        return {}, {}, {
             "available": False,
             "reason": "players list missing",
             "path": path,
         }
+
+    if not isinstance(weights, dict):
+        weights = {}
 
     lookup = build_involvement_lookup(records)
     ambiguous_keys = {key: values for key, values in lookup.items() if len(values) > 1}
@@ -603,10 +604,10 @@ def load_nwsl_involvement(path=NWSL_INVOLVEMENT_FILE):
             names = [str(v.get("name") or "?") for v in values]
             print(f"  {key}: {names}")
 
-    return lookup, info
+    return lookup, weights, info
 
 
-def match_involvement_player(lookup, first_name, last_name, club, position):
+def match_involvement_player(lookup, first_name, last_name, club):
     """Return (record, status, key), where status is matched/unmatched/ambiguous."""
     first_normalized = normalize_match_text(first_name)
     first_initial = first_normalized[0] if first_normalized else ""
@@ -614,7 +615,6 @@ def match_involvement_player(lookup, first_name, last_name, club, position):
 
     key = (
         str(club or "").upper().strip(),
-        str(position or "").upper().strip(),
         first_initial,
         surname_token,
     )
@@ -628,18 +628,175 @@ def match_involvement_player(lookup, first_name, last_name, club, position):
     return None, "unmatched", key
 
 
-def involvement_component_summary(record):
-    """Keep useful Opta evidence available for auditing and later Player Signal work."""
+def involvement_rate_summary(record):
+    """Keep raw per-90 rates and sample evidence available for later scoring."""
     if not record:
         return {}
 
     return {
-        "percentiles": record.get("componentPercentiles", {}) or {},
+        "source_percentiles": record.get("componentPercentiles", {}) or {},
         "rates": record.get("rates", {}) or {},
         "minutes": record.get("minutes"),
         "appearances": record.get("appearances"),
         "starts": record.get("starts"),
     }
+
+
+def involvement_normalization_eligible(player):
+    """
+    Mirror the production involvement model's normalization sample rule:
+    180+ Opta minutes, or 3+ appearances when minutes are unavailable.
+    """
+    minutes = player.get("Underlying Involvement Minutes")
+    appearances = player.get("Underlying Involvement Appearances")
+
+    try:
+        minutes = float(minutes or 0)
+    except (TypeError, ValueError):
+        minutes = 0.0
+
+    try:
+        appearances = float(appearances or 0)
+    except (TypeError, ValueError):
+        appearances = 0.0
+
+    if minutes >= 180:
+        return True
+
+    if minutes <= 0 and appearances >= 3:
+        return True
+
+    return False
+
+
+def percentile_rank_value(value, population):
+    """Return a 0-100 percentile rank using the same tie treatment as the fetcher."""
+    if value is None:
+        return None
+
+    try:
+        value = float(value)
+    except (TypeError, ValueError):
+        return None
+
+    clean = []
+    for item in population:
+        try:
+            number = float(item)
+        except (TypeError, ValueError):
+            continue
+        clean.append(number)
+
+    clean.sort()
+
+    if not clean:
+        return None
+    if len(clean) == 1:
+        return 50.0
+
+    below = sum(1 for x in clean if x < value)
+    equal = sum(1 for x in clean if x == value)
+    rank = below + ((equal - 1) / 2)
+    percentile = (rank / (len(clean) - 1)) * 100.0
+    return round(max(0.0, min(100.0, percentile)), 1)
+
+
+def recalculate_involvement_by_fantasy_position(players, involvement_weights):
+    """
+    Rebuild involvement percentiles/composites using each player's FANTASY
+    position rather than Opta's position.
+
+    This matters for players such as Fantasy MIDs who Opta classifies as FORs.
+    Their raw Opta per-90 rates are preserved; only the peer group and weighting
+    used to turn those rates into a 0-100 fantasy-facing involvement score change.
+    """
+    populations = defaultdict(lambda: defaultdict(list))
+
+    for player in players:
+        if player.get("Underlying Involvement Match Status") != "matched":
+            continue
+
+        position = str(player.get("Position") or "").upper().strip()
+        if position not in {"GK", "DEF", "MID", "FOR"}:
+            continue
+
+        if not involvement_normalization_eligible(player):
+            continue
+
+        component_data = player.get("Underlying Involvement Components", {}) or {}
+        rates = component_data.get("rates", {}) or {}
+
+        for concept, value in rates.items():
+            if value is None:
+                continue
+            try:
+                populations[position][concept].append(float(value))
+            except (TypeError, ValueError):
+                continue
+
+    recalculated_count = 0
+
+    for player in players:
+        if player.get("Underlying Involvement Match Status") != "matched":
+            continue
+
+        position = str(player.get("Position") or "").upper().strip()
+        weights = involvement_weights.get(position, {}) if isinstance(involvement_weights, dict) else {}
+        component_data = player.get("Underlying Involvement Components", {}) or {}
+        rates = component_data.get("rates", {}) or {}
+
+        if not weights or not rates:
+            continue
+
+        percentiles = {}
+        weighted_total = 0.0
+        available_weight = 0.0
+
+        for concept, weight in weights.items():
+            try:
+                weight = float(weight)
+            except (TypeError, ValueError):
+                continue
+
+            percentile = percentile_rank_value(
+                rates.get(concept),
+                populations.get(position, {}).get(concept, []),
+            )
+            percentiles[concept] = percentile
+
+            if percentile is not None and weight > 0:
+                weighted_total += percentile * weight
+                available_weight += weight
+
+        fantasy_rating = (
+            round(weighted_total / available_weight, 1)
+            if available_weight > 0 else None
+        )
+
+        confidence = player.get("Underlying Involvement Confidence")
+        try:
+            confidence = float(confidence or 0)
+        except (TypeError, ValueError):
+            confidence = 0.0
+
+        confidence = max(0.0, min(100.0, confidence))
+        confidence_adjusted = None
+        if fantasy_rating is not None:
+            confidence_adjusted = round(
+                50.0 + ((fantasy_rating - 50.0) * (confidence / 100.0)),
+                1,
+            )
+
+        player["Underlying Involvement Rating"] = fantasy_rating
+        player["Underlying Involvement Confidence Adjusted"] = confidence_adjusted
+        player["Underlying Involvement Fantasy Position Percentiles"] = percentiles
+        player["Underlying Involvement Rating Basis"] = "fantasy-position recalculated"
+
+        component_data["fantasy_position_percentiles"] = percentiles
+        player["Underlying Involvement Components"] = component_data
+        recalculated_count += 1
+
+    return recalculated_count, populations
 
 
 # --- FIXTURE MODEL V2: ASA xG + RECENT FORM ---
@@ -2036,9 +2193,9 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
     history_data = load_history_data(history_file)
     last_global_price_change_date = get_last_global_price_change_date(history_data, min_changes=4)
 
-    # Stage 1A: load season-level Opta underlying involvement.
-    # This is attached for auditing only and does not affect Decision Rating yet.
-    involvement_lookup, involvement_source_info = load_nwsl_involvement()
+    # Stage 1B: load season-level Opta underlying involvement.
+    # This remains observational and does not affect Decision Rating yet.
+    involvement_lookup, involvement_weights, involvement_source_info = load_nwsl_involvement()
     involvement_match_counts = defaultdict(int)
     involvement_unmatched_examples = []
     involvement_ambiguous_examples = []
@@ -2096,14 +2253,13 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         visionary = player.get("visionaryNextStage", "")
         position = get_position_code(player.get("position", ""))
 
-        # Stage 1A: conservatively match this Fantasy NWSL player to the
-        # season-level Opta involvement record.
+        # Stage 1B: conservatively match this Fantasy NWSL player to the
+        # season-level Opta involvement record without requiring position agreement.
         involvement_record, involvement_match_status, involvement_match_key = match_involvement_player(
             involvement_lookup,
             player.get("firstName", ""),
             player.get("lastName", ""),
             club,
-            position,
         )
 
         involvement_match_counts[involvement_match_status] += 1
@@ -2467,8 +2623,13 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 latest_gw
             ),
 
-            # Stage 1A Opta underlying involvement.
-            # These fields are observational only for now.
+            # Stage 1B Opta underlying involvement.
+            # Source rating is preserved for audit; the main rating is recalculated
+            # below using the player's Fantasy NWSL position peer group.
+            "Underlying Involvement Source Rating": (
+                involvement_record.get("involvementRating")
+                if involvement_record else None
+            ),
             "Underlying Involvement Rating": (
                 involvement_record.get("involvementRating")
                 if involvement_record else None
@@ -2485,12 +2646,28 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 involvement_record.get("minutes")
                 if involvement_record else None
             ),
+            "Underlying Involvement Appearances": (
+                involvement_record.get("appearances")
+                if involvement_record else None
+            ),
             "Underlying Involvement Match Status": involvement_match_status,
             "Underlying Involvement Opta Name": (
                 involvement_record.get("name")
                 if involvement_record else None
             ),
-            "Underlying Involvement Components": involvement_component_summary(
+            "Underlying Involvement Opta Position": (
+                involvement_record.get("position")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Position Match": (
+                str(involvement_record.get("position") or "").upper() == position
+                if involvement_record else None
+            ),
+            "Underlying Involvement Rating Basis": (
+                "source-opta-position pending fantasy-position recalculation"
+                if involvement_record else None
+            ),
+            "Underlying Involvement Components": involvement_rate_summary(
                 involvement_record
             ),
 
@@ -2523,11 +2700,28 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
 
     print(f"{len(final_output)} players processed.")
 
+    # Recalculate the involvement score using Fantasy NWSL position peer groups.
+    involvement_recalculated_count, involvement_fantasy_populations = (
+        recalculate_involvement_by_fantasy_position(
+            final_output,
+            involvement_weights,
+        )
+    )
+
+    position_disagreement_count = sum(
+        1
+        for player in final_output
+        if player.get("Underlying Involvement Match Status") == "matched"
+        and player.get("Underlying Involvement Position Match") is False
+    )
+
     print()
     print("=== NWSL OPTA INVOLVEMENT MATCH AUDIT ===")
     print(f"Matched:   {involvement_match_counts.get('matched', 0)}")
     print(f"Unmatched: {involvement_match_counts.get('unmatched', 0)}")
     print(f"Ambiguous: {involvement_match_counts.get('ambiguous', 0)}")
+    print(f"Position disagreements among matched: {position_disagreement_count}")
+    print(f"Fantasy-position ratings recalculated: {involvement_recalculated_count}")
 
     if involvement_unmatched_examples:
         print("Unmatched examples:")
@@ -2634,18 +2828,21 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "weights": DECISION_WEIGHTS,
                     "uses": ["Form Rating", "Next Fixture Rating"],
                     "note": (
-                        "Stage 1A leaves the live Decision Rating unchanged. "
+                        "Stage 1B leaves the live Decision Rating unchanged. "
                         "Underlying Involvement is attached separately for validation."
                     ),
                 },
                 "underlying_involvement": {
                     **involvement_source_info,
-                    "integration_version": "stage-1a-observational",
+                    "integration_version": "stage-1b-fantasy-position-recalculated",
                     "affects_decision_rating": False,
                     "match_rule": (
-                        "team + position + first initial + final surname token; "
-                        "ambiguous keys are never auto-matched"
+                        "team + first initial + final surname token; "
+                        "position is audited but not required; ambiguous keys are never auto-matched"
                     ),
+                    "fantasy_position_recalculation": True,
+                    "fantasy_position_ratings_recalculated": involvement_recalculated_count,
+                    "position_disagreements": position_disagreement_count,
                     "matched_players": involvement_match_counts.get("matched", 0),
                     "unmatched_players": involvement_match_counts.get("unmatched", 0),
                     "ambiguous_players": involvement_match_counts.get("ambiguous", 0),
