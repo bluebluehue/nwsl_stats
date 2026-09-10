@@ -403,7 +403,7 @@ def parse_match(details: dict[str, Any]) -> dict[str, Any]:
     general = details.get("general", {})
     home = general.get("homeTeam", {}) or {}
     away = general.get("awayTeam", {}) or {}
-    player_stats = details.get("playerStats", {}) or {}
+    player_stats = details.get("content", {}).get("playerStats", {}) or {}
 
     appearances = []
     bench_or_unused = []
@@ -736,15 +736,20 @@ def run(max_matches: int | None, last_n: int) -> dict[str, Any]:
             "Known seed match did not return the expected 2026 NWSL payload."
         )
 
-    seed_player_count = len(seed.get("playerStats", {}) or {})
+    seed_player_stats = seed.get("content", {}).get("playerStats", {}) or {}
+    seed_player_count = len(seed_player_stats)
     seed_active_count = sum(
         1
-        for p in (seed.get("playerStats", {}) or {}).values()
+        for p in seed_player_stats.values()
         if p.get("stats")
     )
     print(
         f"Seed payload OK: {seed_player_count} listed players; "
         f"{seed_active_count} players with match stats."
+    )
+    print(
+        "Seed content keys: "
+        + ", ".join(sorted((seed.get("content", {}) or {}).keys()))
     )
 
     match_ids, discovery, preloaded = discover_match_ids(
