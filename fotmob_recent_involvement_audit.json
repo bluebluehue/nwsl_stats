@@ -1,0 +1,412 @@
+{
+  "metadata": {
+    "generated_at_utc": "2026-09-10T16:14:34.973014+00:00",
+    "version": "fotmob-nwsl-recent-involvement-audit-v1",
+    "purpose": "Validate match-by-match recent player involvement from FotMob before any production fantasy-model integration.",
+    "changes_production_model": false,
+    "season": "2026",
+    "parent_league_id": 9134,
+    "seed_match_id": 5161617,
+    "last_appearances_window": 4,
+    "requests_made": 26,
+    "max_matches_argument": 25,
+    "discovery": {
+      "league_endpoint_success": true,
+      "league_ids_found": 240,
+      "fallback_crawl_used": false
+    },
+    "candidate_match_ids": 25,
+    "completed_nwsl_matches_parsed": 25,
+    "rejected_candidate_ids": 0,
+    "fetch_error_count": 0,
+    "unique_appearing_players": 0,
+    "players_with_opta_id": 0,
+    "players_without_opta_id": 0
+  },
+  "stat_inventory": {
+    "player_appearances": 0,
+    "distinct_stat_keys": 0,
+    "stats": []
+  },
+  "spot_checks": {},
+  "players": {},
+  "matches": [
+    {
+      "match_id": 5161451,
+      "date_utc": "2026-03-14T00:00:00.000Z",
+      "match_name": "Washington Spirit-vs-Portland Thorns_Sat, Mar 14, 2026, 00:00 UTC",
+      "home_team": {
+        "id": 433030,
+        "name": "Washington Spirit"
+      },
+      "away_team": {
+        "id": 433029,
+        "name": "Portland Thorns"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161452,
+      "date_utc": "2026-03-14T16:30:00.000Z",
+      "match_name": "Boston Legacy FC-vs-Gotham FC_Sat, Mar 14, 2026, 16:30 UTC",
+      "home_team": {
+        "id": 1795723,
+        "name": "Boston Legacy FC"
+      },
+      "away_team": {
+        "id": 189397,
+        "name": "Gotham FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161453,
+      "date_utc": "2026-03-14T20:00:00.000Z",
+      "match_name": "Kansas City Current-vs-Utah Royals_Sat, Mar 14, 2026, 20:00 UTC",
+      "home_team": {
+        "id": 1237561,
+        "name": "Kansas City Current"
+      },
+      "away_team": {
+        "id": 923654,
+        "name": "Utah Royals"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161454,
+      "date_utc": "2026-03-14T22:30:00.000Z",
+      "match_name": "Bay FC-vs-Denver Summit FC_Sat, Mar 14, 2026, 22:30 UTC",
+      "home_team": {
+        "id": 1607273,
+        "name": "Bay FC"
+      },
+      "away_team": {
+        "id": 1795705,
+        "name": "Denver Summit FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161455,
+      "date_utc": "2026-03-14T23:00:00.000Z",
+      "match_name": "North Carolina Courage-vs-Racing Louisville_Sat, Mar 14, 2026, 23:00 UTC",
+      "home_team": {
+        "id": 243295,
+        "name": "North Carolina Courage"
+      },
+      "away_team": {
+        "id": 1237244,
+        "name": "Racing Louisville"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161456,
+      "date_utc": "2026-03-15T00:45:00.000Z",
+      "match_name": "San Diego Wave FC-vs-Houston Dash_Sun, Mar 15, 2026, 00:45 UTC",
+      "home_team": {
+        "id": 1335917,
+        "name": "San Diego Wave FC"
+      },
+      "away_team": {
+        "id": 521233,
+        "name": "Houston Dash"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161457,
+      "date_utc": "2026-03-15T20:00:00.000Z",
+      "match_name": "Orlando Pride-vs-Seattle Reign FC_Sun, Mar 15, 2026, 20:00 UTC",
+      "home_team": {
+        "id": 728922,
+        "name": "Orlando Pride"
+      },
+      "away_team": {
+        "id": 433031,
+        "name": "Seattle Reign FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161458,
+      "date_utc": "2026-03-15T23:00:00.000Z",
+      "match_name": "Angel City FC-vs-Chicago Stars_Sun, Mar 15, 2026, 23:00 UTC",
+      "home_team": {
+        "id": 1335914,
+        "name": "Angel City FC"
+      },
+      "away_team": {
+        "id": 189393,
+        "name": "Chicago Stars"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161459,
+      "date_utc": "2026-03-21T00:00:00.000Z",
+      "match_name": "Orlando Pride-vs-Denver Summit FC_Sat, Mar 21, 2026, 00:00 UTC",
+      "home_team": {
+        "id": 728922,
+        "name": "Orlando Pride"
+      },
+      "away_team": {
+        "id": 1795705,
+        "name": "Denver Summit FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161460,
+      "date_utc": "2026-03-21T00:00:00.000Z",
+      "match_name": "Racing Louisville-vs-Washington Spirit_Sat, Mar 21, 2026, 00:00 UTC",
+      "home_team": {
+        "id": 1237244,
+        "name": "Racing Louisville"
+      },
+      "away_team": {
+        "id": 433030,
+        "name": "Washington Spirit"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161461,
+      "date_utc": "2026-03-21T02:00:00.000Z",
+      "match_name": "Portland Thorns-vs-Seattle Reign FC_Sat, Mar 21, 2026, 02:00 UTC",
+      "home_team": {
+        "id": 433029,
+        "name": "Portland Thorns"
+      },
+      "away_team": {
+        "id": 433031,
+        "name": "Seattle Reign FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161462,
+      "date_utc": "2026-03-21T20:00:00.000Z",
+      "match_name": "Houston Dash-vs-Boston Legacy FC_Sat, Mar 21, 2026, 20:00 UTC",
+      "home_team": {
+        "id": 521233,
+        "name": "Houston Dash"
+      },
+      "away_team": {
+        "id": 1795723,
+        "name": "Boston Legacy FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161463,
+      "date_utc": "2026-03-21T22:30:00.000Z",
+      "match_name": "Gotham FC-vs-North Carolina Courage_Sat, Mar 21, 2026, 22:30 UTC",
+      "home_team": {
+        "id": 189397,
+        "name": "Gotham FC"
+      },
+      "away_team": {
+        "id": 243295,
+        "name": "North Carolina Courage"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161464,
+      "date_utc": "2026-03-22T00:45:00.000Z",
+      "match_name": "Bay FC-vs-Angel City FC_Sun, Mar 22, 2026, 00:45 UTC",
+      "home_team": {
+        "id": 1607273,
+        "name": "Bay FC"
+      },
+      "away_team": {
+        "id": 1335914,
+        "name": "Angel City FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161465,
+      "date_utc": "2026-03-22T18:00:00.000Z",
+      "match_name": "Chicago Stars-vs-Kansas City Current_Sun, Mar 22, 2026, 18:00 UTC",
+      "home_team": {
+        "id": 189393,
+        "name": "Chicago Stars"
+      },
+      "away_team": {
+        "id": 1237561,
+        "name": "Kansas City Current"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161466,
+      "date_utc": "2026-03-22T23:00:00.000Z",
+      "match_name": "Utah Royals-vs-San Diego Wave FC_Sun, Mar 22, 2026, 23:00 UTC",
+      "home_team": {
+        "id": 923654,
+        "name": "Utah Royals"
+      },
+      "away_team": {
+        "id": 1335917,
+        "name": "San Diego Wave FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161467,
+      "date_utc": "2026-03-25T23:00:00.000Z",
+      "match_name": "Washington Spirit-vs-Utah Royals_Wed, Mar 25, 2026, 23:00 UTC",
+      "home_team": {
+        "id": 433030,
+        "name": "Washington Spirit"
+      },
+      "away_team": {
+        "id": 923654,
+        "name": "Utah Royals"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161468,
+      "date_utc": "2026-03-25T23:00:00.000Z",
+      "match_name": "Gotham FC-vs-Denver Summit FC_Wed, Mar 25, 2026, 23:00 UTC",
+      "home_team": {
+        "id": 189397,
+        "name": "Gotham FC"
+      },
+      "away_team": {
+        "id": 1795705,
+        "name": "Denver Summit FC"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161469,
+      "date_utc": "2026-03-26T00:00:00.000Z",
+      "match_name": "Chicago Stars-vs-Orlando Pride_Thu, Mar 26, 2026, 00:00 UTC",
+      "home_team": {
+        "id": 189393,
+        "name": "Chicago Stars"
+      },
+      "away_team": {
+        "id": 728922,
+        "name": "Orlando Pride"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161470,
+      "date_utc": "2026-03-26T01:00:00.000Z",
+      "match_name": "Seattle Reign FC-vs-Kansas City Current_Thu, Mar 26, 2026, 01:00 UTC",
+      "home_team": {
+        "id": 433031,
+        "name": "Seattle Reign FC"
+      },
+      "away_team": {
+        "id": 1237561,
+        "name": "Kansas City Current"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161471,
+      "date_utc": "2026-03-26T02:00:00.000Z",
+      "match_name": "San Diego Wave FC-vs-Portland Thorns_Thu, Mar 26, 2026, 02:00 UTC",
+      "home_team": {
+        "id": 1335917,
+        "name": "San Diego Wave FC"
+      },
+      "away_team": {
+        "id": 433029,
+        "name": "Portland Thorns"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161472,
+      "date_utc": "2026-03-28T02:00:00.000Z",
+      "match_name": "Angel City FC-vs-Houston Dash_Sat, Mar 28, 2026, 02:00 UTC",
+      "home_team": {
+        "id": 1335914,
+        "name": "Angel City FC"
+      },
+      "away_team": {
+        "id": 521233,
+        "name": "Houston Dash"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161473,
+      "date_utc": "2026-03-28T16:00:00.000Z",
+      "match_name": "Boston Legacy FC-vs-Utah Royals_Sat, Mar 28, 2026, 16:00 UTC",
+      "home_team": {
+        "id": 1795723,
+        "name": "Boston Legacy FC"
+      },
+      "away_team": {
+        "id": 923654,
+        "name": "Utah Royals"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161474,
+      "date_utc": "2026-03-28T18:00:00.000Z",
+      "match_name": "Denver Summit FC-vs-Washington Spirit_Sat, Mar 28, 2026, 18:00 UTC",
+      "home_team": {
+        "id": 1795705,
+        "name": "Denver Summit FC"
+      },
+      "away_team": {
+        "id": 433030,
+        "name": "Washington Spirit"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    },
+    {
+      "match_id": 5161617,
+      "date_utc": "2026-08-29T00:00:00.000Z",
+      "match_name": "Gotham FC-vs-Portland Thorns_Sat, Aug 29, 2026, 00:00 UTC",
+      "home_team": {
+        "id": 189397,
+        "name": "Gotham FC"
+      },
+      "away_team": {
+        "id": 433029,
+        "name": "Portland Thorns"
+      },
+      "player_appearances": 0,
+      "bench_or_unused": 0
+    }
+  ],
+  "fetch_errors": [],
+  "rejected_candidate_match_ids": []
+}
