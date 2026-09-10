@@ -1,0 +1,49 @@
+name: Audit FotMob recent involvement
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_matches:
+        description: "Optional match cap for a quick test (leave blank for all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run FotMob audit
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.max_matches }}" ]; then
+            python audit_fotmob_recent_involvement.py --max-matches "${{ github.event.inputs.max_matches }}"
+          else
+            python audit_fotmob_recent_involvement.py
+          fi
+
+      - name: Commit audit output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotmob_recent_involvement_audit.json
+          if git diff --cached --quiet; then
+            echo "No audit changes to commit."
+          else
+            git commit -m "Refresh FotMob recent involvement audit"
+            git push
+          fi
