@@ -106,6 +106,40 @@ KEY_STATS = (
     "saves_inside_box",
 )
 
+ZERO_IF_MISSING_FOR_APPEARANCE = {
+    "goals",
+    "assists",
+    "expected_goals",
+    "expected_goals_non_penalty",
+    "expected_goals_on_target_variant",
+    "expected_assists",
+    "xg_and_xa",
+    "total_shots",
+    "ShotsOnTarget",
+    "ShotsOffTarget",
+    "blocked_shots",
+    "chances_created",
+    "big_chance_created_team_title",
+    "big_chance_missed_title",
+    "touches_opp_box",
+    "dribbles_succeeded",
+    "accurate_crosses",
+    "passes_into_final_third",
+    "defensive_actions",
+    "matchstats.headers.tackles",
+    "interceptions",
+    "recoveries",
+    "clearances",
+    "shot_blocks",
+    "ground_duels_won",
+    "aerials_won",
+    "duel_won",
+    "duel_lost",
+    "saves",
+    "goals_conceded",
+    "saves_inside_box",
+}
+
 DISPLAY_NAMES = {
     "rating_title": "FotMob rating",
     "minutes_played": "Minutes",
@@ -503,8 +537,20 @@ def appearance_with_match_context(
 def summarize_recent_appearances(
     appearances: list[dict[str, Any]],
 ) -> dict[str, Any]:
+    """
+    Summarize the recent appearance window.
+
+    Important FotMob schema rule:
+    many event/counting stats are omitted entirely when the player recorded zero.
+    For a player who DID appear, omission of those known counting/activity stats
+    therefore means 0, not "unknown". We zero-fill those fields here.
+
+    Metrics where absence can genuinely mean unavailable (for example FotMob
+    rating or xGOT-faced) remain nullable.
+    """
     totals: dict[str, float] = defaultdict(float)
     available_counts: Counter[str] = Counter()
+    explicit_counts: Counter[str] = Counter()
     total_minutes = 0.0
 
     for app in appearances:
@@ -515,10 +561,19 @@ def summarize_recent_appearances(
         for key in KEY_STATS:
             if key == "minutes_played":
                 continue
-            value = safe_float(stats.get(key))
+
+            raw = stats.get(key)
+            value = safe_float(raw)
+
+            if value is None and key in ZERO_IF_MISSING_FOR_APPEARANCE:
+                value = 0.0
+                available_counts[key] += 1
+            elif value is not None:
+                available_counts[key] += 1
+                explicit_counts[key] += 1
+
             if value is not None:
                 totals[key] += value
-                available_counts[key] += 1
 
     per90: dict[str, float] = {}
     if total_minutes > 0:
@@ -544,8 +599,12 @@ def summarize_recent_appearances(
         "averages_when_available": averages,
         "per90_over_minutes": per90,
         "stat_availability_counts": dict(available_counts),
+        "stat_explicit_presence_counts": dict(explicit_counts),
+        "zero_fill_rule": (
+            "For known event/counting stats, a missing FotMob key for a player "
+            "who appeared is treated as zero activity."
+        ),
     }
-
 
 def build_player_histories(
     matches: list[dict[str, Any]],
@@ -827,7 +886,11 @@ def run(max_matches: int | None, last_n: int) -> dict[str, Any]:
     print(f"Fetch errors: {len(fetch_errors)}")
     print()
 
-    print("High-value stat coverage:")
+    print("High-value raw-key presence:")
+    print(
+        "  NOTE: for known counting/activity stats, a missing key for an "
+        "appearing player is interpreted as ZERO in recent summaries."
+    )
     inventory_by_key = {
         row["key"]: row for row in inventory["stats"]
     }
@@ -859,7 +922,7 @@ def run(max_matches: int | None, last_n: int) -> dict[str, Any]:
     payload = {
         "metadata": {
             "generated_at_utc": iso_now(),
-            "version": "fotmob-nwsl-recent-involvement-audit-v1",
+            "version": "fotmob-nwsl-recent-involvement-audit-v1.1-zero-aware",
             "purpose": (
                 "Validate match-by-match recent player involvement from FotMob "
                 "before any production fantasy-model integration."
