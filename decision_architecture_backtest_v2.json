@@ -1,0 +1,1383 @@
+{
+  "metadata": {
+    "version": "nwsl-decision-architecture-backtest-v2",
+    "generated_at_utc": "2026-09-10T16:59:02.443566+00:00",
+    "production_changed": false,
+    "target": "next fantasy gameweek points",
+    "recent_window": "previous 4 team matches",
+    "super_sub_rule": "Activity is per team match. Missed matches and cameo minutes therefore reduce the signal. A separate recent-role percentile is also blended into Recent Opportunity.",
+    "dgw_rule": "average fixture rating * sqrt(fixture count), capped 100",
+    "comparison_calibration": "WSL-style test: 70% same-GW position percentile + 30% raw score",
+    "role_blend": {
+      "GK": 0.0,
+      "DEF": 0.4,
+      "MID": 0.25,
+      "FOR": 0.4
+    },
+    "fotmob_completed_matches": 182,
+    "fotmob_fetch_errors": 0,
+    "fotmob_requests": 241,
+    "asa_2026_records": 183,
+    "asa_regular_season_records": 182,
+    "player_gw_samples": 3027
+  },
+  "mapping": {
+    "completed_fantasy_games": 182,
+    "mapped": 182,
+    "methods": {
+      "exact_teams_date": 182
+    },
+    "unresolved": []
+  },
+  "sample_diagnostics": {
+    "status_counts": {
+      "not_four_prior_team_matches": 948,
+      "sample": 3027,
+      "recent_name_unmatched": 1117,
+      "no_target_team_fixture": 4
+    },
+    "unmatched_recent_names": [
+      [
+        "Sam Staab|CHI",
+        17
+      ],
+      [
+        "Nádia Filipa Gomes Coelho|CHI",
+        17
+      ],
+      [
+        "Izzy Rodriguez|KC",
+        17
+      ],
+      [
+        "Lo'eau LaBonta|KC",
+        17
+      ],
+      [
+        "Haley Hopkins|KC",
+        17
+      ],
+      [
+        "Phoebe McClernon|SEA",
+        17
+      ],
+      [
+        "Maddie Mercado|SEA",
+        17
+      ],
+      [
+        "Croix Bethune|KC",
+        17
+      ],
+      [
+        "Sally Menti|SEA",
+        17
+      ],
+      [
+        "Jenna Bike|CHI",
+        16
+      ],
+      [
+        "Cece Kizer|UTA",
+        16
+      ],
+      [
+        "Maddie Dahlien|SEA",
+        16
+      ],
+      [
+        "Tara Rudd|WAS",
+        16
+      ],
+      [
+        "Sofia Huerta|SEA",
+        16
+      ],
+      [
+        "Mia Fishel|SEA",
+        16
+      ],
+      [
+        "Amanda Gutierres dos Santos|BOS",
+        16
+      ],
+      [
+        "Aaliyah Farmer|CHI",
+        16
+      ],
+      [
+        "Manaka Hayashi|CHI",
+        15
+      ],
+      [
+        "Kayla Sharples|KC",
+        15
+      ],
+      [
+        "Angelina Alonso Costantino|ORL",
+        15
+      ],
+      [
+        "Angharad James-Turner|SEA",
+        15
+      ],
+      [
+        "Nérilia Mondésir|SEA",
+        15
+      ],
+      [
+        "Brittany Ratcliffe|SEA",
+        15
+      ],
+      [
+        "Jameese Joseph|CHI",
+        14
+      ],
+      [
+        "Gabrielle Robinson|KC",
+        14
+      ],
+      [
+        "Claudia Dickey|SEA",
+        14
+      ],
+      [
+        "Madison Curry|SEA",
+        14
+      ],
+      [
+        "Sam Meza|SEA",
+        14
+      ],
+      [
+        "Ainsley McCammon|SEA",
+        14
+      ],
+      [
+        "Amelia White|KC",
+        14
+      ],
+      [
+        "Maitane López|CHI",
+        13
+      ],
+      [
+        "Rocky Rodríguez|KC",
+        13
+      ],
+      [
+        "Bayley Feist|KC",
+        13
+      ],
+      [
+        "Brianna Pinto|CHI",
+        13
+      ],
+      [
+        "Rafaelle Leone Carvalho Souza|ORL",
+        13
+      ],
+      [
+        "Luana Bertolucci Paixão|ORL",
+        13
+      ],
+      [
+        "Katie Lund|CHI",
+        13
+      ],
+      [
+        "Jordyn Bugg|SEA",
+        13
+      ],
+      [
+        "Laney Rouse|KC",
+        13
+      ],
+      [
+        "Julia Grosso|CHI",
+        12
+      ],
+      [
+        "Micayla Johnson|CHI",
+        12
+      ],
+      [
+        "Sarah Schupansky|BOS",
+        12
+      ],
+      [
+        "Elizabeth Ball|KC",
+        12
+      ],
+      [
+        "Débora Cristiane de Oliveira|KC",
+        12
+      ],
+      [
+        "Michelle Cooper|KC",
+        12
+      ],
+      [
+        "Holly Ward|SEA",
+        12
+      ],
+      [
+        "Michelle Alozie|CHI",
+        11
+      ],
+      [
+        "Temwa Chawinga|KC",
+        11
+      ],
+      [
+        "Emeri Adames|SEA",
+        11
+      ],
+      [
+        "Emily Mason|SEA",
+        10
+      ]
+    ],
+    "asa_strength_gws": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "candidate_recent_composites": {
+    "DEF": {
+      "fantasy_two_way": {
+        "xg": 0.08,
+        "xa": 0.08,
+        "box_touches": 0.08,
+        "chances": 0.08,
+        "tackles": 0.14,
+        "interceptions": 0.14,
+        "recoveries": 0.14,
+        "clearances": 0.13,
+        "blocks": 0.13
+      }
+    },
+    "MID": {
+      "two_way": {
+        "xg": 0.15,
+        "xa": 0.15,
+        "sot": 0.1,
+        "box_touches": 0.1,
+        "chances": 0.15,
+        "tackles": 0.08,
+        "interceptions": 0.07,
+        "recoveries": 0.1,
+        "dribbles": 0.05,
+        "crosses": 0.05
+      }
+    },
+    "FOR": {
+      "attack_core": {
+        "xg": 0.3,
+        "xa": 0.15,
+        "sot": 0.2,
+        "box_touches": 0.2,
+        "chances": 0.15
+      }
+    },
+    "GK": {
+      "keeper_activity": {
+        "saves": 0.35,
+        "xgot_faced": 0.25,
+        "goals_prevented": 0.25,
+        "saves_inside_box": 0.15
+      }
+    }
+  },
+  "results": {
+    "GK": {
+      "samples": 207,
+      "gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "holdout_gws": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_n": 133,
+      "holdout_n": 74,
+      "single_signals": {
+        "form_raw": {
+          "n": 207,
+          "rho": -0.0508,
+          "top_quartile_avg_points": 4.765,
+          "rest_avg_points": 4.115,
+          "top_quartile_lift": 0.649
+        },
+        "form_cmp": {
+          "n": 207,
+          "rho": -0.0498,
+          "top_quartile_avg_points": 4.451,
+          "rest_avg_points": 4.218,
+          "top_quartile_lift": 0.233
+        },
+        "fixture_raw": {
+          "n": 207,
+          "rho": 0.1748,
+          "top_quartile_avg_points": 5.725,
+          "rest_avg_points": 3.801,
+          "top_quartile_lift": 1.924
+        },
+        "fixture_cmp": {
+          "n": 207,
+          "rho": 0.1626,
+          "top_quartile_avg_points": 5.784,
+          "rest_avg_points": 3.782,
+          "top_quartile_lift": 2.002
+        },
+        "recent_activity": {
+          "n": 207,
+          "rho": 0.0765,
+          "top_quartile_avg_points": 4.51,
+          "rest_avg_points": 4.199,
+          "top_quartile_lift": 0.311
+        },
+        "recent_role": {
+          "n": 207,
+          "rho": -0.0345,
+          "top_quartile_avg_points": 4.235,
+          "rest_avg_points": 4.288,
+          "top_quartile_lift": -0.053
+        },
+        "recent_opportunity": {
+          "n": 207,
+          "rho": 0.0765,
+          "top_quartile_avg_points": 4.51,
+          "rest_avg_points": 4.199,
+          "top_quartile_lift": 0.311
+        },
+        "live_formula_recreated": {
+          "n": 207,
+          "rho": 0.1445,
+          "top_quartile_avg_points": 5.941,
+          "rest_avg_points": 3.731,
+          "top_quartile_lift": 2.21
+        }
+      },
+      "optimized_blends": [
+        {
+          "label": "Form + Recent Opportunity (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_raw": 0.0,
+            "recent_opportunity": 1.0
+          },
+          "train_rho": 0.0734,
+          "holdout_rho": 0.0709,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Form + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.0,
+            "fixture_raw": 1.0
+          },
+          "train_rho": 0.1509,
+          "holdout_rho": 0.2335,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "recent_opportunity": 0.1,
+            "fixture_raw": 0.9
+          },
+          "train_rho": 0.1656,
+          "holdout_rho": 0.254,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.0,
+            "recent_opportunity": 0.1,
+            "fixture_raw": 0.9
+          },
+          "train_rho": 0.1656,
+          "holdout_rho": 0.254,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Form + Recent Opportunity (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_cmp": 0.0,
+            "recent_opportunity": 1.0
+          },
+          "train_rho": 0.0734,
+          "holdout_rho": 0.0709,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Form + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.0,
+            "fixture_cmp": 1.0
+          },
+          "train_rho": 0.1244,
+          "holdout_rho": 0.2408,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "recent_opportunity": 0.4,
+            "fixture_cmp": 0.6
+          },
+          "train_rho": 0.1509,
+          "holdout_rho": 0.2725,
+          "train_n": 133,
+          "holdout_n": 74
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.0,
+            "recent_opportunity": 0.4,
+            "fixture_cmp": 0.6
+          },
+          "train_rho": 0.1509,
+          "holdout_rho": 0.2725,
+          "train_n": 133,
+          "holdout_n": 74
+        }
+      ]
+    },
+    "DEF": {
+      "samples": 966,
+      "gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "holdout_gws": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_n": 610,
+      "holdout_n": 356,
+      "single_signals": {
+        "form_raw": {
+          "n": 966,
+          "rho": 0.1095,
+          "top_quartile_avg_points": 3.315,
+          "rest_avg_points": 2.89,
+          "top_quartile_lift": 0.426
+        },
+        "form_cmp": {
+          "n": 966,
+          "rho": 0.0988,
+          "top_quartile_avg_points": 3.303,
+          "rest_avg_points": 2.894,
+          "top_quartile_lift": 0.409
+        },
+        "fixture_raw": {
+          "n": 966,
+          "rho": 0.2033,
+          "top_quartile_avg_points": 3.842,
+          "rest_avg_points": 2.714,
+          "top_quartile_lift": 1.128
+        },
+        "fixture_cmp": {
+          "n": 966,
+          "rho": 0.1978,
+          "top_quartile_avg_points": 4.174,
+          "rest_avg_points": 2.604,
+          "top_quartile_lift": 1.57
+        },
+        "recent_activity": {
+          "n": 966,
+          "rho": 0.1643,
+          "top_quartile_avg_points": 3.519,
+          "rest_avg_points": 2.822,
+          "top_quartile_lift": 0.697
+        },
+        "recent_role": {
+          "n": 966,
+          "rho": 0.1767,
+          "top_quartile_avg_points": 3.461,
+          "rest_avg_points": 2.841,
+          "top_quartile_lift": 0.619
+        },
+        "recent_opportunity": {
+          "n": 966,
+          "rho": 0.1789,
+          "top_quartile_avg_points": 3.531,
+          "rest_avg_points": 2.818,
+          "top_quartile_lift": 0.713
+        },
+        "live_formula_recreated": {
+          "n": 966,
+          "rho": 0.2085,
+          "top_quartile_avg_points": 3.963,
+          "rest_avg_points": 2.674,
+          "top_quartile_lift": 1.288
+        }
+      },
+      "optimized_blends": [
+        {
+          "label": "Form + Recent Opportunity (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_raw": 0.0,
+            "recent_opportunity": 1.0
+          },
+          "train_rho": 0.2048,
+          "holdout_rho": 0.1337,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Form + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.2,
+            "fixture_raw": 0.8
+          },
+          "train_rho": 0.1997,
+          "holdout_rho": 0.2708,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "recent_opportunity": 0.5,
+            "fixture_raw": 0.5
+          },
+          "train_rho": 0.284,
+          "holdout_rho": 0.2309,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.0,
+            "recent_opportunity": 0.5,
+            "fixture_raw": 0.5
+          },
+          "train_rho": 0.284,
+          "holdout_rho": 0.2309,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Form + Recent Opportunity (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_cmp": 0.0,
+            "recent_opportunity": 1.0
+          },
+          "train_rho": 0.2048,
+          "holdout_rho": 0.1337,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Form + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.2,
+            "fixture_cmp": 0.8
+          },
+          "train_rho": 0.1974,
+          "holdout_rho": 0.2365,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "recent_opportunity": 0.5,
+            "fixture_cmp": 0.5
+          },
+          "train_rho": 0.273,
+          "holdout_rho": 0.2395,
+          "train_n": 610,
+          "holdout_n": 356
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.0,
+            "recent_opportunity": 0.5,
+            "fixture_cmp": 0.5
+          },
+          "train_rho": 0.273,
+          "holdout_rho": 0.2395,
+          "train_n": 610,
+          "holdout_n": 356
+        }
+      ]
+    },
+    "MID": {
+      "samples": 1170,
+      "gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "holdout_gws": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_n": 737,
+      "holdout_n": 433,
+      "single_signals": {
+        "form_raw": {
+          "n": 1170,
+          "rho": 0.4191,
+          "top_quartile_avg_points": 5.161,
+          "rest_avg_points": 2.67,
+          "top_quartile_lift": 2.491
+        },
+        "form_cmp": {
+          "n": 1170,
+          "rho": 0.4205,
+          "top_quartile_avg_points": 5.202,
+          "rest_avg_points": 2.656,
+          "top_quartile_lift": 2.546
+        },
+        "fixture_raw": {
+          "n": 1170,
+          "rho": 0.2214,
+          "top_quartile_avg_points": 4.668,
+          "rest_avg_points": 2.834,
+          "top_quartile_lift": 1.834
+        },
+        "fixture_cmp": {
+          "n": 1170,
+          "rho": 0.2017,
+          "top_quartile_avg_points": 4.298,
+          "rest_avg_points": 2.957,
+          "top_quartile_lift": 1.341
+        },
+        "recent_activity": {
+          "n": 1170,
+          "rho": 0.473,
+          "top_quartile_avg_points": 5.086,
+          "rest_avg_points": 2.695,
+          "top_quartile_lift": 2.391
+        },
+        "recent_role": {
+          "n": 1170,
+          "rho": 0.4336,
+          "top_quartile_avg_points": 4.336,
+          "rest_avg_points": 2.944,
+          "top_quartile_lift": 1.391
+        },
+        "recent_opportunity": {
+          "n": 1170,
+          "rho": 0.4798,
+          "top_quartile_avg_points": 5.065,
+          "rest_avg_points": 2.702,
+          "top_quartile_lift": 2.363
+        },
+        "live_formula_recreated": {
+          "n": 1170,
+          "rho": 0.4512,
+          "top_quartile_avg_points": 5.247,
+          "rest_avg_points": 2.641,
+          "top_quartile_lift": 2.605
+        }
+      },
+      "optimized_blends": [
+        {
+          "label": "Form + Recent Opportunity (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_raw": 0.3,
+            "recent_opportunity": 0.7
+          },
+          "train_rho": 0.5133,
+          "holdout_rho": 0.45,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Form + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.7,
+            "fixture_raw": 0.3
+          },
+          "train_rho": 0.4568,
+          "holdout_rho": 0.4326,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "recent_opportunity": 0.7,
+            "fixture_raw": 0.3
+          },
+          "train_rho": 0.5324,
+          "holdout_rho": 0.5039,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.2,
+            "recent_opportunity": 0.5,
+            "fixture_raw": 0.3
+          },
+          "train_rho": 0.5409,
+          "holdout_rho": 0.5105,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Form + Recent Opportunity (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_cmp": 0.3,
+            "recent_opportunity": 0.7
+          },
+          "train_rho": 0.5116,
+          "holdout_rho": 0.4466,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Form + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.8,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.4624,
+          "holdout_rho": 0.4232,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "recent_opportunity": 0.8,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.5235,
+          "holdout_rho": 0.5013,
+          "train_n": 737,
+          "holdout_n": 433
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.2,
+            "recent_opportunity": 0.6,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.5325,
+          "holdout_rho": 0.5019,
+          "train_n": 737,
+          "holdout_n": 433
+        }
+      ]
+    },
+    "FOR": {
+      "samples": 684,
+      "gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_gws": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "holdout_gws": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_n": 441,
+      "holdout_n": 243,
+      "single_signals": {
+        "form_raw": {
+          "n": 684,
+          "rho": 0.4194,
+          "top_quartile_avg_points": 4.351,
+          "rest_avg_points": 2.542,
+          "top_quartile_lift": 1.809
+        },
+        "form_cmp": {
+          "n": 684,
+          "rho": 0.4247,
+          "top_quartile_avg_points": 4.38,
+          "rest_avg_points": 2.532,
+          "top_quartile_lift": 1.848
+        },
+        "fixture_raw": {
+          "n": 684,
+          "rho": 0.1813,
+          "top_quartile_avg_points": 4.023,
+          "rest_avg_points": 2.651,
+          "top_quartile_lift": 1.372
+        },
+        "fixture_cmp": {
+          "n": 684,
+          "rho": 0.1527,
+          "top_quartile_avg_points": 3.801,
+          "rest_avg_points": 2.725,
+          "top_quartile_lift": 1.076
+        },
+        "recent_activity": {
+          "n": 684,
+          "rho": 0.4638,
+          "top_quartile_avg_points": 4.24,
+          "rest_avg_points": 2.579,
+          "top_quartile_lift": 1.661
+        },
+        "recent_role": {
+          "n": 684,
+          "rho": 0.468,
+          "top_quartile_avg_points": 4.211,
+          "rest_avg_points": 2.589,
+          "top_quartile_lift": 1.622
+        },
+        "recent_opportunity": {
+          "n": 684,
+          "rho": 0.4855,
+          "top_quartile_avg_points": 4.187,
+          "rest_avg_points": 2.596,
+          "top_quartile_lift": 1.591
+        },
+        "live_formula_recreated": {
+          "n": 684,
+          "rho": 0.4351,
+          "top_quartile_avg_points": 4.304,
+          "rest_avg_points": 2.558,
+          "top_quartile_lift": 1.747
+        }
+      },
+      "optimized_blends": [
+        {
+          "label": "Form + Recent Opportunity (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_raw": 0.3,
+            "recent_opportunity": 0.7
+          },
+          "train_rho": 0.5216,
+          "holdout_rho": 0.429,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Form + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.9,
+            "fixture_raw": 0.1
+          },
+          "train_rho": 0.4668,
+          "holdout_rho": 0.374,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "recent_opportunity": 0.7,
+            "fixture_raw": 0.3
+          },
+          "train_rho": 0.537,
+          "holdout_rho": 0.486,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (raw)",
+          "fields": [
+            "form_raw",
+            "recent_opportunity",
+            "fixture_raw"
+          ],
+          "weights": {
+            "form_raw": 0.3,
+            "recent_opportunity": 0.4,
+            "fixture_raw": 0.3
+          },
+          "train_rho": 0.5456,
+          "holdout_rho": 0.4757,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Form + Recent Opportunity (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity"
+          ],
+          "weights": {
+            "form_cmp": 0.3,
+            "recent_opportunity": 0.7
+          },
+          "train_rho": 0.5243,
+          "holdout_rho": 0.4317,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Form + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.8,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.4784,
+          "holdout_rho": 0.406,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "recent_opportunity": 0.8,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.5314,
+          "holdout_rho": 0.4788,
+          "train_n": 441,
+          "holdout_n": 243
+        },
+        {
+          "label": "Form + Recent Opportunity + Fixture (comparison)",
+          "fields": [
+            "form_cmp",
+            "recent_opportunity",
+            "fixture_cmp"
+          ],
+          "weights": {
+            "form_cmp": 0.3,
+            "recent_opportunity": 0.5,
+            "fixture_cmp": 0.2
+          },
+          "train_rho": 0.5423,
+          "holdout_rho": 0.4687,
+          "train_n": 441,
+          "holdout_n": 243
+        }
+      ]
+    }
+  },
+  "spot_checks": {
+    "Ashley Sanchez": {
+      "name": "Ashley Sanchez",
+      "club": "NC",
+      "position": "MID",
+      "gw": 21,
+      "target_points": 21.0,
+      "fixture_count": 1,
+      "form_raw": 84.0,
+      "fixture_raw": 76.4,
+      "recent_minutes": 360.0,
+      "minutes_per_team_match": 90.0,
+      "ptm_goals": 1.0,
+      "ptm_assists": 0.25,
+      "ptm_xg": 0.7050000000000001,
+      "ptm_npxg": 0.52,
+      "ptm_xgot": 0.8049999999999999,
+      "ptm_xa": 0.0775,
+      "ptm_shots": 6.0,
+      "ptm_sot": 2.75,
+      "ptm_box_touches": 9.25,
+      "ptm_chances": 1.0,
+      "ptm_dribbles": 2.0,
+      "ptm_crosses": 0.0,
+      "ptm_final_third_passes": 4.5,
+      "ptm_tackles": 0.25,
+      "ptm_interceptions": 0.5,
+      "ptm_recoveries": 4.75,
+      "ptm_clearances": 0.75,
+      "ptm_blocks": 0.25,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "form_cmp": 93.8,
+      "fixture_cmp": 90.11999999999999,
+      "recent_activity": 75.16666666666667,
+      "recent_role": 92.0,
+      "recent_opportunity": 79.375
+    },
+    "Sam Kerr": {
+      "name": "Sam Kerr",
+      "club": "GFC",
+      "position": "FOR",
+      "gw": 21,
+      "target_points": 2.0,
+      "fixture_count": 1,
+      "form_raw": 28.0,
+      "fixture_raw": 43.9,
+      "recent_minutes": 360.0,
+      "minutes_per_team_match": 90.0,
+      "ptm_goals": 0.25,
+      "ptm_assists": 0.0,
+      "ptm_xg": 0.6224999999999999,
+      "ptm_npxg": 0.6224999999999999,
+      "ptm_xgot": 0.5175000000000001,
+      "ptm_xa": 0.23,
+      "ptm_shots": 3.5,
+      "ptm_sot": 1.5,
+      "ptm_box_touches": 7.25,
+      "ptm_chances": 1.75,
+      "ptm_dribbles": 0.25,
+      "ptm_crosses": 0.25,
+      "ptm_final_third_passes": 0.5,
+      "ptm_tackles": 0.5,
+      "ptm_interceptions": 0.25,
+      "ptm_recoveries": 2.25,
+      "ptm_clearances": 0.25,
+      "ptm_blocks": 0.0,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "form_cmp": 41.65,
+      "fixture_cmp": 27.17,
+      "recent_activity": 95.68750000000001,
+      "recent_role": 96.25,
+      "recent_opportunity": 95.91250000000001
+    },
+    "Jordynn Dudley": {
+      "name": "Jordynn Dudley",
+      "club": "GFC",
+      "position": "FOR",
+      "gw": 21,
+      "target_points": 1.0,
+      "fixture_count": 1,
+      "form_raw": 47.0,
+      "fixture_raw": 43.9,
+      "recent_minutes": 322.0,
+      "minutes_per_team_match": 80.5,
+      "ptm_goals": 0.0,
+      "ptm_assists": 0.25,
+      "ptm_xg": 0.055,
+      "ptm_npxg": 0.055,
+      "ptm_xgot": 0.14,
+      "ptm_xa": 0.17,
+      "ptm_shots": 1.0,
+      "ptm_sot": 0.5,
+      "ptm_box_touches": 4.75,
+      "ptm_chances": 2.75,
+      "ptm_dribbles": 1.75,
+      "ptm_crosses": 0.25,
+      "ptm_final_third_passes": 2.75,
+      "ptm_tackles": 3.25,
+      "ptm_interceptions": 0.75,
+      "ptm_recoveries": 5.0,
+      "ptm_clearances": 0.75,
+      "ptm_blocks": 0.0,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "form_cmp": 65.725,
+      "fixture_cmp": 27.17,
+      "recent_activity": 58.43750000000001,
+      "recent_role": 80.0,
+      "recent_opportunity": 67.0625
+    },
+    "Jessie Fleming": {
+      "name": "Jessie Fleming",
+      "club": "POR",
+      "position": "MID",
+      "gw": 21,
+      "target_points": 5.0,
+      "fixture_count": 1,
+      "form_raw": 49.0,
+      "fixture_raw": 51.5,
+      "recent_minutes": 360.0,
+      "minutes_per_team_match": 90.0,
+      "ptm_goals": 0.0,
+      "ptm_assists": 0.5,
+      "ptm_xg": 0.01,
+      "ptm_npxg": 0.01,
+      "ptm_xgot": 0.0,
+      "ptm_xa": 0.1575,
+      "ptm_shots": 0.25,
+      "ptm_sot": 0.0,
+      "ptm_box_touches": 0.25,
+      "ptm_chances": 1.5,
+      "ptm_dribbles": 0.0,
+      "ptm_crosses": 0.0,
+      "ptm_final_third_passes": 7.0,
+      "ptm_tackles": 2.75,
+      "ptm_interceptions": 0.75,
+      "ptm_recoveries": 4.5,
+      "ptm_clearances": 3.25,
+      "ptm_blocks": 0.0,
+      "ptm_saves": 0.0,
+      "ptm_goals_conceded": 0.0,
+      "ptm_saves_inside_box": 0.0,
+      "form_cmp": 72.56666666666666,
+      "fixture_cmp": 60.71666666666667,
+      "recent_activity": 56.94666666666666,
+      "recent_role": 92.0,
+      "recent_opportunity": 65.71
+    }
+  },
+  "fotmob_fetch_errors": []
+}
