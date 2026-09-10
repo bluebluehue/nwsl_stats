@@ -1,0 +1,38 @@
+name: Backtest recent involvement
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run historical involvement backtest
+        run: python backtest_recent_involvement.py
+
+      - name: Commit backtest outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recent_involvement_backtest.json recent_involvement_backtest_samples.csv
+          if git diff --cached --quiet; then
+            echo "No backtest changes to commit."
+          else
+            git commit -m "Refresh recent involvement backtest"
+            git push
+          fi
