@@ -404,6 +404,244 @@ def combine_player_and_fixture_data(final_player_list, fixtures_map):
 
     return all_players_with_fixtures
 
+
+# --- NWSL OPTA UNDERLYING INVOLVEMENT INTEGRATION ---
+#
+# Stage 1A:
+# Load the separately generated nwsl_involvement.json and attach its
+# season-level underlying-activity signal to Fantasy NWSL players.
+#
+# IMPORTANT:
+# - This does NOT change Form Rating.
+# - This does NOT change Fixture Rating.
+# - This does NOT change Decision Rating yet.
+# - Matching is deliberately conservative and auditable.
+#
+# The public NWSL Opta feed currently exposes abbreviated player names
+# (for example "A. Smith"), while Fantasy NWSL exposes first/last names.
+# We therefore match on:
+#   team + position + first initial + normalized final surname token
+#
+# If that key is ambiguous, no match is made. We would rather leave an
+# involvement value blank than silently attach the wrong player's stats.
+
+NWSL_INVOLVEMENT_FILE = "nwsl_involvement.json"
+
+OPTA_TEAM_TO_FANTASY_CODE = {
+    "DENVER": "DEN",
+    "DENVER SUMMIT": "DEN",
+    "DENVER SUMMIT FC": "DEN",
+    "BAY": "BAY",
+    "BAY FC": "BAY",
+    "HOUSTON": "HOU",
+    "HOUSTON DASH": "HOU",
+    "BOSTON": "BOS",
+    "BOSTON LEGACY": "BOS",
+    "BOSTON LEGACY FC": "BOS",
+    "KANSAS CITY": "KC",
+    "KANSAS CITY CURRENT": "KC",
+    "SAN DIEGO": "SD",
+    "SAN DIEGO WAVE": "SD",
+    "SAN DIEGO WAVE FC": "SD",
+    "SEATTLE": "SEA",
+    "SEATTLE REIGN": "SEA",
+    "SEATTLE REIGN FC": "SEA",
+    "CHICAGO": "CHI",
+    "CHICAGO STARS": "CHI",
+    "CHICAGO STARS FC": "CHI",
+    "PORTLAND": "POR",
+    "PORTLAND THORNS": "POR",
+    "PORTLAND THORNS FC": "POR",
+    "ORLANDO": "ORL",
+    "ORLANDO PRIDE": "ORL",
+    "WASHINGTON": "WAS",
+    "WASHINGTON SPIRIT": "WAS",
+    "UTAH": "UTA",
+    "UTAH ROYALS": "UTA",
+    "UTAH ROYALS FC": "UTA",
+    "RACING LOUISVILLE": "LOU",
+    "RACING LOUISVILLE FC": "LOU",
+    "LOUISVILLE": "LOU",
+    "ANGEL CITY": "LA",
+    "ANGEL CITY FC": "LA",
+    "GOTHAM": "GFC",
+    "GOTHAM FC": "GFC",
+    "NJ NY GOTHAM": "GFC",
+    "NJ NY GOTHAM FC": "GFC",
+    "NORTH CAROLINA": "NC",
+    "NORTH CAROLINA COURAGE": "NC",
+}
+
+
+def normalize_match_text(value):
+    """Normalize a name/team fragment for conservative cross-provider matching."""
+    import unicodedata
+
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    text = "".join(ch for ch in text if not unicodedata.combining(ch))
+    text = "".join(ch if ch.isalnum() else " " for ch in text)
+    return " ".join(text.upper().split())
+
+
+def final_surname_token(value):
+    """Return the final normalized surname token."""
+    normalized = normalize_match_text(value)
+    parts = normalized.split()
+    return parts[-1] if parts else ""
+
+
+def opta_short_name_parts(name):
+    """Convert an abbreviated Opta display name into first initial + surname token."""
+    normalized = normalize_match_text(name)
+    parts = normalized.split()
+
+    if len(parts) < 2:
+        return "", ""
+
+    first_initial = parts[0][0] if parts[0] else ""
+    surname_token = parts[-1]
+    return first_initial, surname_token
+
+
+def involvement_team_code(record):
+    team = record.get("team", {}) or {}
+
+    for candidate in (team.get("shortName"), team.get("name")):
+        normalized = normalize_match_text(candidate)
+        if normalized in OPTA_TEAM_TO_FANTASY_CODE:
+            return OPTA_TEAM_TO_FANTASY_CODE[normalized]
+
+    return ""
+
+
+def build_involvement_lookup(records):
+    """
+    Build a conservative lookup:
+      (team, position, first_initial, surname_token) -> [records]
+
+    Values remain lists so collisions are visible and never silently resolved.
+    """
+    lookup = defaultdict(list)
+
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+
+        team_code = involvement_team_code(record)
+        position = str(record.get("position") or "").upper().strip()
+        first_initial, surname_token = opta_short_name_parts(record.get("name"))
+
+        if not team_code or not position or not first_initial or not surname_token:
+            continue
+
+        key = (team_code, position, first_initial, surname_token)
+        lookup[key].append(record)
+
+    return dict(lookup)
+
+
+def load_nwsl_involvement(path=NWSL_INVOLVEMENT_FILE):
+    """
+    Load the production Opta involvement file.
+
+    Missing/corrupt involvement data does NOT break the fantasy refresh because
+    Stage 1A is observational only. It prints a warning and leaves the new
+    fields blank.
+    """
+    if not os.path.exists(path):
+        print(f"WARNING: {path} not found. Underlying Involvement fields will be blank.")
+        return {}, {
+            "available": False,
+            "reason": "file not found",
+            "path": path,
+        }
+
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+    except Exception as e:
+        print(f"WARNING: Could not load {path}: {e}. Underlying Involvement fields will be blank.")
+        return {}, {
+            "available": False,
+            "reason": f"load error: {e}",
+            "path": path,
+        }
+
+    records = payload.get("players", []) if isinstance(payload, dict) else []
+
+    if not isinstance(records, list):
+        print(f"WARNING: {path} did not contain a players list. Underlying Involvement fields will be blank.")
+        return {}, {
+            "available": False,
+            "reason": "players list missing",
+            "path": path,
+        }
+
+    lookup = build_involvement_lookup(records)
+    ambiguous_keys = {key: values for key, values in lookup.items() if len(values) > 1}
+    metadata = payload.get("metadata", {}) if isinstance(payload, dict) else {}
+
+    info = {
+        "available": True,
+        "path": path,
+        "model_version": metadata.get("modelVersion"),
+        "generated_at_utc": metadata.get("generatedAtUtc"),
+        "source_player_count": len(records),
+        "lookup_key_count": len(lookup),
+        "ambiguous_lookup_key_count": len(ambiguous_keys),
+    }
+
+    print(
+        "Loaded NWSL Opta involvement data: "
+        f"{len(records)} players, {len(lookup)} match keys, "
+        f"{len(ambiguous_keys)} ambiguous keys."
+    )
+
+    if ambiguous_keys:
+        print("Ambiguous involvement keys (these will NOT be auto-matched):")
+        for key, values in sorted(ambiguous_keys.items()):
+            names = [str(v.get("name") or "?") for v in values]
+            print(f"  {key}: {names}")
+
+    return lookup, info
+
+
+def match_involvement_player(lookup, first_name, last_name, club, position):
+    """Return (record, status, key), where status is matched/unmatched/ambiguous."""
+    first_normalized = normalize_match_text(first_name)
+    first_initial = first_normalized[0] if first_normalized else ""
+    surname_token = final_surname_token(last_name)
+
+    key = (
+        str(club or "").upper().strip(),
+        str(position or "").upper().strip(),
+        first_initial,
+        surname_token,
+    )
+
+    candidates = lookup.get(key, [])
+
+    if len(candidates) == 1:
+        return candidates[0], "matched", key
+    if len(candidates) > 1:
+        return None, "ambiguous", key
+    return None, "unmatched", key
+
+
+def involvement_component_summary(record):
+    """Keep useful Opta evidence available for auditing and later Player Signal work."""
+    if not record:
+        return {}
+
+    return {
+        "percentiles": record.get("componentPercentiles", {}) or {},
+        "rates": record.get("rates", {}) or {},
+        "minutes": record.get("minutes"),
+        "appearances": record.get("appearances"),
+        "starts": record.get("starts"),
+    }
+
+
 # --- FIXTURE MODEL V2: ASA xG + RECENT FORM ---
 ASA_BASE_URL = "https://app.americansocceranalysis.com/api/v1"
 
@@ -1798,6 +2036,13 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
     history_data = load_history_data(history_file)
     last_global_price_change_date = get_last_global_price_change_date(history_data, min_changes=4)
 
+    # Stage 1A: load season-level Opta underlying involvement.
+    # This is attached for auditing only and does not affect Decision Rating yet.
+    involvement_lookup, involvement_source_info = load_nwsl_involvement()
+    involvement_match_counts = defaultdict(int)
+    involvement_unmatched_examples = []
+    involvement_ambiguous_examples = []
+
     # 2. Determine max gameweeks from all players
     all_gameweek_numbers = set()
     for player in api_players:
@@ -1850,6 +2095,35 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         news = player.get("news", "")
         visionary = player.get("visionaryNextStage", "")
         position = get_position_code(player.get("position", ""))
+
+        # Stage 1A: conservatively match this Fantasy NWSL player to the
+        # season-level Opta involvement record.
+        involvement_record, involvement_match_status, involvement_match_key = match_involvement_player(
+            involvement_lookup,
+            player.get("firstName", ""),
+            player.get("lastName", ""),
+            club,
+            position,
+        )
+
+        involvement_match_counts[involvement_match_status] += 1
+
+        if involvement_match_status == "unmatched" and len(involvement_unmatched_examples) < 30:
+            involvement_unmatched_examples.append({
+                "name": name,
+                "club": club,
+                "position": position,
+                "key": list(involvement_match_key),
+            })
+
+        if involvement_match_status == "ambiguous" and len(involvement_ambiguous_examples) < 30:
+            involvement_ambiguous_examples.append({
+                "name": name,
+                "club": club,
+                "position": position,
+                "key": list(involvement_match_key),
+            })
+
         value = player.get("price", 0) / 10.0  # API returns in tenths
         selected_percentage = player.get("selected", 0) * 100  # Convert to percentage
         ownership_delta_1w = get_selected_percentage_delta_1w(
@@ -2192,6 +2466,34 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                 last_played_gw,
                 latest_gw
             ),
+
+            # Stage 1A Opta underlying involvement.
+            # These fields are observational only for now.
+            "Underlying Involvement Rating": (
+                involvement_record.get("involvementRating")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Confidence": (
+                involvement_record.get("sampleConfidence")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Confidence Adjusted": (
+                involvement_record.get("confidenceAdjustedRating")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Minutes": (
+                involvement_record.get("minutes")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Match Status": involvement_match_status,
+            "Underlying Involvement Opta Name": (
+                involvement_record.get("name")
+                if involvement_record else None
+            ),
+            "Underlying Involvement Components": involvement_component_summary(
+                involvement_record
+            ),
+
             "Games Played Over 4 Gameweeks": gw_games_played_4gw,
             "Points Per Game Over 4 Gameweeks": round(ppg_4gw, 1),
             "Points Per Million": round(ppm_total, 1),
@@ -2220,6 +2522,31 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
         final_output.append(final_player)
 
     print(f"{len(final_output)} players processed.")
+
+    print()
+    print("=== NWSL OPTA INVOLVEMENT MATCH AUDIT ===")
+    print(f"Matched:   {involvement_match_counts.get('matched', 0)}")
+    print(f"Unmatched: {involvement_match_counts.get('unmatched', 0)}")
+    print(f"Ambiguous: {involvement_match_counts.get('ambiguous', 0)}")
+
+    if involvement_unmatched_examples:
+        print("Unmatched examples:")
+        for item in involvement_unmatched_examples:
+            print(
+                f"  {item['name']} | {item['club']} | {item['position']} | "
+                f"key={tuple(item['key'])}"
+            )
+
+    if involvement_ambiguous_examples:
+        print("Ambiguous examples:")
+        for item in involvement_ambiguous_examples:
+            print(
+                f"  {item['name']} | {item['club']} | {item['position']} | "
+                f"key={tuple(item['key'])}"
+            )
+
+    print("=== END NWSL OPTA INVOLVEMENT MATCH AUDIT ===")
+    print()
 
     # 5. Update the player history file
     update_player_history(final_output, history_file)
@@ -2306,6 +2633,24 @@ def transform_data(output_file="transformed_data.json", history_file="player_his
                     "version": "v1-position-specific",
                     "weights": DECISION_WEIGHTS,
                     "uses": ["Form Rating", "Next Fixture Rating"],
+                    "note": (
+                        "Stage 1A leaves the live Decision Rating unchanged. "
+                        "Underlying Involvement is attached separately for validation."
+                    ),
+                },
+                "underlying_involvement": {
+                    **involvement_source_info,
+                    "integration_version": "stage-1a-observational",
+                    "affects_decision_rating": False,
+                    "match_rule": (
+                        "team + position + first initial + final surname token; "
+                        "ambiguous keys are never auto-matched"
+                    ),
+                    "matched_players": involvement_match_counts.get("matched", 0),
+                    "unmatched_players": involvement_match_counts.get("unmatched", 0),
+                    "ambiguous_players": involvement_match_counts.get("ambiguous", 0),
+                    "unmatched_examples": involvement_unmatched_examples,
+                    "ambiguous_examples": involvement_ambiguous_examples,
                 },
             },
             "players": combined_data
