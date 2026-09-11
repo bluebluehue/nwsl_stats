@@ -374,20 +374,9 @@ def find_player(
             if len(hits) == 1:
                 return hits[0], f"{scope}_name_key"
 
-    # 3) Unique first-name bridge for long legal names vs single-name FotMob.
-    for scope, pool in pools:
-        for raw_name in names:
-            hit = _first_name_unique_match(pool, raw_name)
-            if hit is not None:
-                return hit, f"{scope}_first_name"
-
-    # 4) Conservative compound-name fallback.
-    for scope, pool in pools:
-        for raw_name in names:
-            hit = _shared_name_unique_match(pool, raw_name)
-            if hit is not None:
-                return hit, f"{scope}_shared_name"
-
+    # IMPORTANT: stop here. Do NOT guess by first name or partial token overlap.
+    # A false positive is worse than an unmatched player because it can silently
+    # copy another player's minutes/activity into the wrong Fantasy player.
     return None, "unmatched"
 
 
@@ -519,6 +508,40 @@ def main() -> None:
         if len(established) >= 5 and len(matched) == 0:
             hard_fail_teams.append(club)
 
+    # Goalkeeper identity sanity check:
+    # In four standard NWSL matches a club should have about 360 total GK minutes.
+    # A little tolerance is allowed for stoppage/provider quirks, but anything
+    # materially above that strongly suggests two Fantasy keepers matched to
+    # the same real FotMob goalkeeper.
+    gk_identity_failures = []
+    for club in sorted({str(p.get("Club") or "") for p in players if p.get("Club")}):
+        club_gks = [
+            p for p in players
+            if str(p.get("Club") or "") == club
+            and str(p.get("Position") or "").upper() == "GK"
+        ]
+        total_recent_gk_minutes = sum(
+            safe_float(p.get("Recent 4 Team Matches Minutes")) or 0.0
+            for p in club_gks
+        )
+        if total_recent_gk_minutes > 390:
+            gk_identity_failures.append((club, total_recent_gk_minutes, club_gks))
+
+    if gk_identity_failures:
+        for club, mins, club_gks in gk_identity_failures:
+            print(f"GK IDENTITY FAILURE {club}: summed recent GK minutes={mins:.1f}")
+            for p in club_gks:
+                print(
+                    f"  {p.get('Name')}: "
+                    f"apps={p.get('Recent 4 Team Matches Apps')} | "
+                    f"minutes={p.get('Recent 4 Team Matches Minutes')} | "
+                    f"methods={p.get('Recent Match Methods')}"
+                )
+        raise RuntimeError(
+            "Goalkeeper identity sanity check failed. "
+            "Refusing to overwrite Decision Rating."
+        )
+
     suspicious = []
     for p in players:
         recent_fantasy = safe_float(p.get("Total Over 4 Gameweeks")) or 0.0
@@ -568,6 +591,19 @@ def main() -> None:
                 "Refusing to overwrite Decision Rating."
             )
 
+    wood = next(
+        (p for p in players if norm_text(p.get("Name")) == "MACKENZIE WOOD"),
+        None,
+    )
+    if wood:
+        print(
+            "MACKENZIE WOOD CHECK: "
+            f"apps={wood.get('Recent 4 Team Matches Apps')} | "
+            f"minutes={wood.get('Recent 4 Team Matches Minutes')} | "
+            f"mins/team-match={wood.get('Recent Minutes Per Team Match')} | "
+            f"methods={wood.get('Recent Match Methods')}"
+        )
+
     for p in players:
         pos = str(p.get("Position") or "").upper()
         w = DECISION_WEIGHTS_V5.get(pos, {"form": .25, "recent": .25, "fixture": .50})
@@ -578,7 +614,7 @@ def main() -> None:
 
     meta = data.setdefault("metadata", {})
     meta["decision_rating"] = {
-        "version": "v5.1-rolling-validated-recent-opportunity-matching-fix",
+        "version": "v5.2-rolling-validated-strict-player-matching",
         "weights": DECISION_WEIGHTS_V5,
         "uses": ["Form Rating", "Recent Opportunity Rating", "Next Fixture Rating"],
         "recent_window": "previous 4 team matches",
@@ -588,7 +624,7 @@ def main() -> None:
     }
     DATA_PATH.write_text(json.dumps(data, indent=4, ensure_ascii=False), encoding="utf-8")
 
-    print("\n=== DECISION V5.1 APPLIED ===")
+    print("\n=== DECISION V5.2 APPLIED ===")
     print(f"Players: {len(players)} | recent rows: {len(rows)}")
     for pos in ("GK", "DEF", "MID", "FOR"):
         eligible = [p for p in players if str(p.get("Position") or "").upper() == pos]
