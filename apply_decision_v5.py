@@ -13,7 +13,7 @@ import json
 import re
 import time
 import unicodedata
-from collections import defaultdict
+from collections import defaultdict, Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
