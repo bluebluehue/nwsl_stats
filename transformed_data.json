@@ -588,7 +588,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n21 May (H) KC W 2-1\nSavedPenalty (+5pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "21 May (H) KC W 2-1\nSavedPenalty (+5pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "11": {
                 "points": 1,
@@ -805,9 +805,9 @@
             ],
             "Decision Rating v3": 6.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 10.7,
             "Decision Rating v4 Change": 4.6
@@ -1719,9 +1719,9 @@
             ],
             "Decision Rating v3": 13.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 82.6,
+            "Form Percentile v4": 82.4,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 69.5,
+            "Comparison Form Rating v4": 69.4,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 24.3,
             "Decision Rating v4 Change": 10.7
@@ -2249,7 +2249,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (A) UTA W 0-3\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (H) SEA W 3-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "17 Sep (H) SEA W 3-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (A) UTA W 0-3\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "24": {
                 "points": 7,
@@ -2895,7 +2895,7 @@
                 "points": 15,
                 "base_points": 15,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) KC W 2-1\nGoal (+6pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n21 May (H) KC W 2-1\nGoal (+6pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 1,
@@ -3594,7 +3594,7 @@
                 "points": 14,
                 "base_points": 14,
                 "visionary_bonus": 0,
-                "tooltip": "21 May  Unknown W 2-1\nGoal (+5pts)\n1 min (+1pt)\n\n---\n\n24 May  Unknown W 2-1\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May  Unknown W 2-1\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May  Unknown W 2-1\nGoal (+5pts)\n1 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -3630,7 +3630,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 3,
@@ -5715,7 +5715,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) GFC L 0-1\nSaves x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n30 Jul (H) GFC L 0-1\nSaves x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 6,
@@ -5757,7 +5757,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (H) LOU W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (A) DEN D 2-2\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "17 Sep (A) DEN D 2-2\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n20 Sep (H) LOU W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "24": "-",
             "Underlying Involvement Fantasy Position Percentiles": {
@@ -5914,9 +5914,9 @@
             ],
             "Decision Rating v3": 50.3,
             "Decision Rating v3 Change": 0.6,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": 59.9,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 57.6,
             "Decision Rating v4": 59.0,
             "Decision Rating v4 Change": 9.3
@@ -7155,7 +7155,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) GFC L 0-1\n1 min (+1pt)\n\n---\n\n2 Aug (H) SEA L 2-3\n1 min (+1pt)"
+                "tooltip": "2 Aug (H) SEA L 2-3\n1 min (+1pt)\n\n---\n\n30 Jul (H) GFC L 0-1\n1 min (+1pt)"
             },
             "17": "-",
             "18": "-",
@@ -8004,7 +8004,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
             },
             "17": {
                 "points": 7,
@@ -8041,7 +8041,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (H) LOU W 2-0\n1 min (+1pt)\n\n---\n\n17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n20 Sep (H) LOU W 2-0\n1 min (+1pt)"
             },
             "24": "-",
             "Underlying Involvement Fantasy Position Percentiles": {
@@ -8933,7 +8933,7 @@
             ],
             "Decision Rating v3": 59.8,
             "Decision Rating v3 Change": 0.5,
-            "Form Percentile v4": 93.5,
+            "Form Percentile v4": 93.4,
             "Fixture Percentile v4": 91.4,
             "Comparison Form Rating v4": 82.8,
             "Comparison Fixture Rating v4": 82.5,
@@ -9379,7 +9379,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (H) SEA L 2-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) GFC L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 6,
@@ -9578,12 +9578,12 @@
             ],
             "Decision Rating v3": 44.8,
             "Decision Rating v3 Change": 0.5,
-            "Form Percentile v4": 79.3,
+            "Form Percentile v4": 79.1,
             "Fixture Percentile v4": 91.4,
-            "Comparison Form Rating v4": 66.0,
+            "Comparison Form Rating v4": 65.9,
             "Comparison Fixture Rating v4": 82.5,
-            "Decision Rating v4": 71.8,
-            "Decision Rating v4 Change": 27.5
+            "Decision Rating v4": 71.7,
+            "Decision Rating v4 Change": 27.4
         },
         {
             "Name": "Dorian Bailey",
@@ -9943,10 +9943,10 @@
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.0,
             "Recommendation": "Differential",
-            "Hot Pick": true,
+            "Hot Pick": false,
             "Total Games Played": 25,
             "Total Over 4 Gameweeks": 20,
-            "Form Rating": 58,
+            "Form Rating": 49,
             "Underlying Involvement Source Rating": 42.6,
             "Underlying Involvement Rating": 43.5,
             "Underlying Involvement Confidence": 100.0,
@@ -10146,7 +10146,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (H) LOU W 2-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "20 Sep (H) LOU W 2-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "24": "-",
             "Underlying Involvement Fantasy Position Percentiles": {
@@ -10223,10 +10223,10 @@
             "Following Fixture Rating": 36.5,
             "Following Fixture Score": 4,
             "Following Fixture Details": "Next GW fixtures:\nvs KC (A): 36.5/100\n  Attack opportunity: 36.5/100\n  Defense opportunity: 18.4/100\n  Projected team xG: 1.17\n  Projected opponent xG: 1.94\n  Est. clean-sheet chance: 14.4%\n  KC attack strength: 100.0/100\n  KC defense strength: 79.1/100\n  KC xG/game: 1.89 season, 2.22 weighted recent\n  KC xGA/game: 1.29 season, 1.24 weighted recent\n\nAverage fixture opportunity: 36.5/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 36.5/100\n\nOwn team attack strength: 43.0/100\nOwn team defense strength: 52.4/100\nOwn xG/game: 1.25 season, 1.47 weighted recent\nOwn xGA/game: 1.67 season, 1.86 weighted recent",
-            "Decision Rating": 59.2,
-            "Player Signal": 58.0,
+            "Decision Rating": 52.5,
+            "Player Signal": 49.0,
             "Player Signal Details": {
-                "form": 58.0,
+                "form": 49.0,
                 "involvement": 43.5,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -10301,14 +10301,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 59.6,
-            "Decision Rating v3 Change": 0.4,
-            "Form Percentile v4": 93.5,
+            "Decision Rating v3": 52.8,
+            "Decision Rating v3 Change": 0.3,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": 97.8,
-            "Comparison Form Rating v4": 82.8,
+            "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 87.3,
-            "Decision Rating v4": 83.9,
-            "Decision Rating v4 Change": 24.7
+            "Decision Rating v4": 79.8,
+            "Decision Rating v4 Change": 27.3
         },
         {
             "Name": "Racheal Kundananji",
@@ -11376,7 +11376,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\n1 min (+1pt)"
+                "tooltip": "15 Aug (H) BOS W 4-1\n1 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -16300,7 +16300,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)"
+                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)"
             },
             "19": {
                 "points": 2,
@@ -16751,12 +16751,12 @@
             ],
             "Decision Rating v3": 24.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 44.5,
-            "Decision Rating v4 Change": 19.8
+            "Decision Rating v4": 44.3,
+            "Decision Rating v4 Change": 19.6
         },
         {
             "Name": "Ludmila da Silva",
@@ -16864,7 +16864,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -18728,7 +18728,7 @@
                 "points": 18,
                 "base_points": 18,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) UTA W 1-3\nBonus x3 (+3pts)\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nClean Sheet (+4pts)\nSaves x3 (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (H) WAS W 1-0\nClean Sheet (+4pts)\nSaves x3 (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\nBonus x3 (+3pts)\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 6,
@@ -19049,7 +19049,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "3 May  Unknown W 1-0\n1 min (+1pt)\n\n---\n\n30 Apr  Unknown L 0-2\n1 min (+1pt)"
+                "tooltip": "30 Apr  Unknown L 0-2\n1 min (+1pt)\n\n---\n\n3 May  Unknown W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -20005,7 +20005,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n27 Aug (A) NC L 2-0\n1 min (+1pt)"
+                "tooltip": "27 Aug (A) NC L 2-0\n1 min (+1pt)\n\n---\n\n1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)"
             },
             "21": {
                 "points": 3,
@@ -20289,7 +20289,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -20948,7 +20948,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -21617,7 +21617,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) LOU W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 5,
@@ -21847,12 +21847,12 @@
             ],
             "Decision Rating v3": 29.2,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 86.4,
+            "Form Percentile v4": 86.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.0,
+            "Comparison Form Rating v4": 74.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 48.1,
-            "Decision Rating v4 Change": 18.9
+            "Decision Rating v4": 48.2,
+            "Decision Rating v4 Change": 19.0
         },
         {
             "Name": "Taryn Torres",
@@ -21958,7 +21958,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) BAY W 0-1\n1 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\n1 min (+1pt)"
+                "tooltip": "2 Aug (A) HOU W 0-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\n1 min (+1pt)"
             },
             "17": {
                 "points": 1,
@@ -23640,7 +23640,7 @@
                 "points": 13,
                 "base_points": 13,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) UTA W 1-3\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\n1 min (+1pt)"
+                "tooltip": "15 Jul (H) WAS W 1-0\n1 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 10,
@@ -23932,7 +23932,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (H) CHI W 2-0\n1 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (A) ORL W 0-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\n1 min (+1pt)"
             },
             "14": {
                 "points": 1,
@@ -24254,7 +24254,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "15 Jul (H) WAS W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) UTA W 1-3\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "11 Jul (A) UTA W 1-3\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n15 Jul (H) WAS W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -24272,7 +24272,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) BAY W 0-1\nGoal (+5pts)\nBonus (+1pt)\n1 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (A) HOU W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\nGoal (+5pts)\nBonus (+1pt)\n1 min (+1pt)"
             },
             "17": {
                 "points": 1,
@@ -25250,7 +25250,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "17 Sep (H) BAY D 2-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n20 Sep (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "20 Sep (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nYellow Card (-1pt)\n\n---\n\n17 Sep (H) BAY D 2-2\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "24": {
                 "points": 8,
@@ -25389,9 +25389,9 @@
             ],
             "Decision Rating v3": 5.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 9.7,
             "Decision Rating v4 Change": 4.6
@@ -25522,7 +25522,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": -1,
@@ -25751,9 +25751,9 @@
             ],
             "Decision Rating v3": 9.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 95.4,
+            "Form Percentile v4": 95.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 86.0,
+            "Comparison Form Rating v4": 85.8,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 12.9,
             "Decision Rating v4 Change": 3.3
@@ -27017,7 +27017,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) SD D 2-2\n1 min (+1pt)\n\n---\n\n24 May (H) LA W 2-1\n1 min (+1pt)"
+                "tooltip": "24 May (H) LA W 2-1\n1 min (+1pt)\n\n---\n\n21 May (H) SD D 2-2\n1 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -27417,7 +27417,7 @@
                 "points": 6,
                 "base_points": 3,
                 "visionary_bonus": 3,
-                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "20 Aug (H) CHI W 5-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 2,
@@ -27938,12 +27938,12 @@
             ],
             "Decision Rating v3": 45.5,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 96.2,
+            "Form Percentile v4": 96.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 88.3,
+            "Comparison Form Rating v4": 88.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 57.4,
-            "Decision Rating v4 Change": 11.9
+            "Decision Rating v4": 57.3,
+            "Decision Rating v4 Change": 11.8
         },
         {
             "Name": "Maggie Graham",
@@ -29121,7 +29121,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (H) UTA W 2-1\nGoal (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\nGoal (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "18": {
                 "points": 9,
@@ -29157,7 +29157,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (H) BAY D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "17 Sep (H) BAY D 2-2\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "24": {
                 "points": 2,
@@ -30267,12 +30267,12 @@
             ],
             "Decision Rating v3": 22.8,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 79.3,
+            "Form Percentile v4": 79.1,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 66.0,
+            "Comparison Form Rating v4": 65.9,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.9,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.8,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Amanda West",
@@ -33453,12 +33453,12 @@
             ],
             "Decision Rating v3": 15.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 86.4,
+            "Form Percentile v4": 86.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.0,
+            "Comparison Form Rating v4": 74.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 25.9,
-            "Decision Rating v4 Change": 10.2
+            "Decision Rating v4": 26.0,
+            "Decision Rating v4 Change": 10.3
         },
         {
             "Name": "Gabrielle Robinson",
@@ -34479,12 +34479,12 @@
             ],
             "Decision Rating v3": 22.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.2,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.1,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Hailie Mace",
@@ -35004,7 +35004,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nMissed Pen (-2pts)\n\n---\n\n24 May (H) POR W 3-1\nGoal (+5pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) POR W 3-1\nGoal (+5pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\nMissed Pen (-2pts)"
             },
             "11": {
                 "points": 3,
@@ -35366,7 +35366,7 @@
                 "points": 5,
                 "base_points": 5,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) CHI L 0-1\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "24 May (H) CHI L 0-1\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 4,
@@ -35601,9 +35601,9 @@
             ],
             "Decision Rating v3": 47.4,
             "Decision Rating v3 Change": 0.5,
-            "Form Percentile v4": 82.6,
+            "Form Percentile v4": 82.4,
             "Fixture Percentile v4": 91.4,
-            "Comparison Form Rating v4": 69.5,
+            "Comparison Form Rating v4": 69.4,
             "Comparison Fixture Rating v4": 82.5,
             "Decision Rating v4": 74.0,
             "Decision Rating v4 Change": 27.1
@@ -35908,7 +35908,7 @@
             ],
             "Decision Rating v3": 31.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": null,
             "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 0.0,
@@ -36074,7 +36074,7 @@
                 "points": 9,
                 "base_points": 6,
                 "visionary_bonus": 3,
-                "tooltip": "1 Aug (H) LA D 1-1\n1 min (+1pt)\n\n---\n\n30 Jul (H) LOU W 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Jul (H) LOU W 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Aug (H) LA D 1-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "17": {
                 "points": 2,
@@ -36896,7 +36896,7 @@
             ],
             "Decision Rating v3": 37.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 93.5,
+            "Form Percentile v4": 93.4,
             "Fixture Percentile v4": null,
             "Comparison Form Rating v4": 82.8,
             "Comparison Fixture Rating v4": 0.0,
@@ -37159,9 +37159,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 89,
-            "Selected Percentage": 16.3,
-            "Selected Percentage Change 1W": 0.4,
-            "Selected Percentage Change Since Last Global Price Change": 1.5,
+            "Selected Percentage": 16.4,
+            "Selected Percentage Change 1W": 0.5,
+            "Selected Percentage Change Since Last Global Price Change": 1.6,
             "Recommendation": "Steady",
             "Hot Pick": false,
             "Total Games Played": 15,
@@ -37587,13 +37587,13 @@
                 "points": 15,
                 "base_points": 15,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\nGoal (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nAssist x2 (+6pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -37812,12 +37812,12 @@
             ],
             "Decision Rating v3": 28.5,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 51.4,
-            "Decision Rating v4 Change": 22.9
+            "Decision Rating v4": 51.2,
+            "Decision Rating v4 Change": 22.7
         },
         {
             "Name": "Michelle Cooper",
@@ -37962,7 +37962,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) POR W 3-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 3,
@@ -38154,12 +38154,12 @@
             ],
             "Decision Rating v3": 25.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 82.6,
+            "Form Percentile v4": 82.4,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 69.5,
+            "Comparison Form Rating v4": 69.4,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 45.2,
-            "Decision Rating v4 Change": 19.8
+            "Decision Rating v4": 45.1,
+            "Decision Rating v4 Change": 19.7
         },
         {
             "Name": "Alex Pfeiffer",
@@ -38504,12 +38504,12 @@
             ],
             "Decision Rating v3": 46.8,
             "Decision Rating v3 Change": 0.5,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": 91.4,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 82.5,
-            "Decision Rating v4": 73.4,
-            "Decision Rating v4 Change": 27.1
+            "Decision Rating v4": 73.2,
+            "Decision Rating v4 Change": 26.9
         },
         {
             "Name": "Casey Murphy",
@@ -38637,7 +38637,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "9 May (A) GFC D 1-1\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\nSaves x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 6,
@@ -38667,7 +38667,7 @@
                 "points": 13,
                 "base_points": 13,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "14": {
                 "points": 1,
@@ -38856,12 +38856,12 @@
             ],
             "Decision Rating v3": 7.2,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 88.4,
+            "Form Percentile v4": 88.6,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 76.3,
+            "Comparison Form Rating v4": 76.4,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 11.4,
-            "Decision Rating v4 Change": 4.2
+            "Decision Rating v4": 11.5,
+            "Decision Rating v4 Change": 4.3
         },
         {
             "Name": "Marisa Jordan",
@@ -39667,7 +39667,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "18": {
                 "points": 2,
@@ -40906,8 +40906,8 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 25,
-            "Total Over 4 Gameweeks": 21,
-            "Form Rating": 49,
+            "Total Over 4 Gameweeks": 27,
+            "Form Rating": 71,
             "Underlying Involvement Source Rating": 66.6,
             "Underlying Involvement Rating": 66.4,
             "Underlying Involvement Confidence": 100.0,
@@ -40958,9 +40958,9 @@
                 }
             },
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 5.2,
+            "Points Per Game Over 4 Gameweeks": 6.8,
             "Points Per Million": 17.6,
-            "Points Per Million Over 4 Gameweeks": 3.8,
+            "Points Per Million Over 4 Gameweeks": 4.9,
             "Total Goals": 1,
             "Total Assists": 4,
             "Total Goals + Assists": 5,
@@ -41089,7 +41089,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "29 Aug (A) KC L 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n27 Aug (H) LA W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "27 Aug (H) LA W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Aug (A) KC L 3-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "21": {
                 "points": 17,
@@ -41184,10 +41184,10 @@
             "Following Fixture Rating": 50.2,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs SEA (A): 50.2/100\n  Attack opportunity: 52.6/100\n  Defense opportunity: 50.2/100\n  Projected team xG: 1.45\n  Projected opponent xG: 1.40\n  Est. clean-sheet chance: 24.8%\n  SEA attack strength: 43.8/100\n  SEA defense strength: 78.6/100\n  SEA xG/game: 1.35 season, 1.16 weighted recent\n  SEA xGA/game: 1.43 season, 1.12 weighted recent\n\nAverage fixture opportunity: 50.2/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 50.2/100\n\nOwn team attack strength: 98.8/100\nOwn team defense strength: 78.0/100\nOwn xG/game: 1.89 season, 1.87 weighted recent\nOwn xGA/game: 1.31 season, 1.17 weighted recent",
-            "Decision Rating": 48.0,
-            "Player Signal": 49.0,
+            "Decision Rating": 55.7,
+            "Player Signal": 71.0,
             "Player Signal Details": {
-                "form": 49.0,
+                "form": 71.0,
                 "involvement": 66.4,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -41262,14 +41262,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 47.7,
+            "Decision Rating v3": 55.4,
             "Decision Rating v3 Change": -0.3,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 96.3,
             "Fixture Percentile v4": 32.3,
-            "Comparison Form Rating v4": 77.3,
+            "Comparison Form Rating v4": 88.7,
             "Comparison Fixture Rating v4": 36.8,
-            "Decision Rating v4": 51.0,
-            "Decision Rating v4 Change": 3.0
+            "Decision Rating v4": 55.0,
+            "Decision Rating v4 Change": -0.7
         },
         {
             "Name": "Sydney Collins",
@@ -41639,9 +41639,9 @@
             ],
             "Decision Rating v3": 53.2,
             "Decision Rating v3 Change": 0.4,
-            "Form Percentile v4": 92.4,
+            "Form Percentile v4": 92.5,
             "Fixture Percentile v4": 59.9,
-            "Comparison Form Rating v4": 80.9,
+            "Comparison Form Rating v4": 81.0,
             "Comparison Fixture Rating v4": 57.6,
             "Decision Rating v4": 65.8,
             "Decision Rating v4 Change": 13.0
@@ -42863,7 +42863,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "29 Aug (A) KC L 3-2\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n\n---\n\n27 Aug (H) LA W 2-0\n1 min (+1pt)"
+                "tooltip": "27 Aug (H) LA W 2-0\n1 min (+1pt)\n\n---\n\n29 Aug (A) KC L 3-2\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)"
             },
             "21": "-",
             "22": "-",
@@ -43818,7 +43818,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "6 Aug (A) DEN W 0-2\n1 min (+1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\n1 min (+1pt)"
+                "tooltip": "8 Aug (A) WAS W 3-4\n1 min (+1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\n1 min (+1pt)"
             },
             "18": "-",
             "19": "-",
@@ -44001,9 +44001,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 139,
-            "Selected Percentage": 15.6,
-            "Selected Percentage Change 1W": 2.0,
-            "Selected Percentage Change Since Last Global Price Change": 3.0,
+            "Selected Percentage": 15.7,
+            "Selected Percentage Change 1W": 2.1,
+            "Selected Percentage Change Since Last Global Price Change": 3.1,
             "Recommendation": "Hot Pick",
             "Hot Pick": false,
             "Total Games Played": 23,
@@ -44102,7 +44102,7 @@
                 "points": 16,
                 "base_points": 16,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) LOU W 1-0\nGoal (+5pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Apr (A) CHI W 0-2\nAssist (+3pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) LOU W 1-0\nGoal (+5pts)\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 9,
@@ -44519,7 +44519,7 @@
                 "points": 15,
                 "base_points": 15,
                 "visionary_bonus": 0,
-                "tooltip": "6 Aug (A) DEN W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)"
+                "tooltip": "8 Aug (A) WAS W 3-4\nGoal (+5pts)\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "18": {
                 "points": 2,
@@ -46022,7 +46022,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "9": {
                 "points": 2,
@@ -46052,7 +46052,7 @@
                 "points": 14,
                 "base_points": 14,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (H) KC W 3-0\nClean Sheet (+4pts)\nBonus x3 (+3pts)\nSaves x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (H) BOS L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Jul (H) BOS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) KC W 3-0\nClean Sheet (+4pts)\nBonus x3 (+3pts)\nSaves x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -48041,7 +48041,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
+                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)\n\n---\n\n21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -48101,7 +48101,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "21": {
                 "points": 6,
@@ -48258,12 +48258,12 @@
             ],
             "Decision Rating v3": 14.3,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 24.9,
-            "Decision Rating v4 Change": 10.6
+            "Decision Rating v4": 24.8,
+            "Decision Rating v4 Change": 10.5
         },
         {
             "Name": "Carson Pickett",
@@ -48890,7 +48890,7 @@
             ],
             "Decision Rating v3": 41.3,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": 6.0,
             "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 15.4,
@@ -49563,7 +49563,7 @@
                 "points": 7,
                 "base_points": 4,
                 "visionary_bonus": 3,
-                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "9 May (H) NC W 1-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": -2,
@@ -51132,7 +51132,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (A) UTA W 0-3\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n17 Sep (H) SEA W 3-1\n1 min (+1pt)"
+                "tooltip": "17 Sep (H) SEA W 3-1\n1 min (+1pt)\n\n---\n\n20 Sep (A) UTA W 0-3\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "24": {
                 "points": 2,
@@ -52018,7 +52018,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "9 May (H) NC W 1-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (A) BOS L 2-1\n1 min (+1pt)"
+                "tooltip": "13 May (A) BOS L 2-1\n1 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 5,
@@ -52043,7 +52043,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "15 Jul (H) BOS L 0-1\n1 min (+1pt)\n\n---\n\n11 Jul (H) KC W 3-0\nGoal (+4pts)\n1 min (+1pt)"
+                "tooltip": "11 Jul (H) KC W 3-0\nGoal (+4pts)\n1 min (+1pt)\n\n---\n\n15 Jul (H) BOS L 0-1\n1 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -52378,7 +52378,7 @@
                 "points": 6,
                 "base_points": 3,
                 "visionary_bonus": 3,
-                "tooltip": "13 May (A) BOS L 2-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (H) NC W 1-0\n1 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "9 May (H) NC W 1-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n13 May (A) BOS L 2-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 1,
@@ -52605,12 +52605,12 @@
             ],
             "Decision Rating v3": 47.0,
             "Decision Rating v3 Change": 0.1,
-            "Form Percentile v4": 88.0,
+            "Form Percentile v4": 88.2,
             "Fixture Percentile v4": 24.1,
-            "Comparison Form Rating v4": 75.7,
+            "Comparison Form Rating v4": 75.8,
             "Comparison Fixture Rating v4": 30.9,
-            "Decision Rating v4": 60.0,
-            "Decision Rating v4 Change": 13.1
+            "Decision Rating v4": 60.1,
+            "Decision Rating v4 Change": 13.2
         },
         {
             "Name": "Amanda Allen",
@@ -53304,7 +53304,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)\n\n---\n\n21 May (H) BAY W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) BAY W 2-0\nClean Sheet (+4pts)\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\nConceded (-1pt)"
             },
             "11": {
                 "points": 3,
@@ -53521,12 +53521,12 @@
             ],
             "Decision Rating v3": 5.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 10.3,
-            "Decision Rating v4 Change": 4.6
+            "Decision Rating v4": 10.2,
+            "Decision Rating v4 Change": 4.5
         },
         {
             "Name": "Jayden Perry",
@@ -54562,9 +54562,9 @@
             ],
             "Decision Rating v3": 11.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 22.7,
             "Decision Rating v4 Change": 10.8
@@ -54679,7 +54679,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": "-",
             "9": {
@@ -55885,7 +55885,7 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -55903,7 +55903,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (H) BAY W 2-0\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) BAY W 2-0\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 3,
@@ -56120,12 +56120,12 @@
             ],
             "Decision Rating v3": 42.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 95.9,
+            "Form Percentile v4": 95.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 86.9,
+            "Comparison Form Rating v4": 86.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 56.5,
-            "Decision Rating v4 Change": 13.6
+            "Decision Rating v4": 56.4,
+            "Decision Rating v4 Change": 13.5
         },
         {
             "Name": "Morgan Weaver",
@@ -56412,12 +56412,12 @@
             ],
             "Decision Rating v3": 22.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.2,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.1,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Marie Müller",
@@ -56759,12 +56759,12 @@
             ],
             "Decision Rating v3": 22.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.2,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.1,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Mallie McKenzie",
@@ -59180,7 +59180,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)"
+                "tooltip": "20 Aug (A) HOU L 5-0\n1 min (+1pt)\n60 min (+1pt)\nConceded x2 (-2pts)\n\n---\n\n15 Aug (A) SEA L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "19": {
                 "points": 2,
@@ -59445,7 +59445,7 @@
                 "points": 6,
                 "base_points": 6,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -60991,9 +60991,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 71,
-            "Selected Percentage": 2.5,
-            "Selected Percentage Change 1W": -0.3,
-            "Selected Percentage Change Since Last Global Price Change": -0.6,
+            "Selected Percentage": 2.4,
+            "Selected Percentage Change 1W": -0.4,
+            "Selected Percentage Change Since Last Global Price Change": -0.7,
             "Recommendation": "Cold",
             "Hot Pick": false,
             "Total Games Played": 26,
@@ -61156,7 +61156,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "1 Aug (H) CHI W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)"
+                "tooltip": "30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)\nYellow Card (-1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 8,
@@ -61941,12 +61941,12 @@
             ],
             "Decision Rating v3": 39.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 94.5,
+            "Form Percentile v4": 94.3,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 84.1,
+            "Comparison Form Rating v4": 84.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 54.7,
-            "Decision Rating v4 Change": 15.7
+            "Decision Rating v4": 54.6,
+            "Decision Rating v4 Change": 15.6
         },
         {
             "Name": "Kayla Fischer",
@@ -63550,7 +63550,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 18,
@@ -63961,7 +63961,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) KC L 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "1 Aug (H) CHI W 2-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 12,
@@ -64365,7 +64365,7 @@
                 "points": 18,
                 "base_points": 18,
                 "visionary_bonus": 0,
-                "tooltip": "17 Sep (H) BAY D 2-2\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (H) SEA W 2-1\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "20 Sep (H) SEA W 2-1\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (H) BAY D 2-2\nGoal (+5pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "24": {
                 "points": 2,
@@ -65161,9 +65161,9 @@
             ],
             "Decision Rating v3": 45.3,
             "Decision Rating v3 Change": -0.4,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": 32.3,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 36.8,
             "Decision Rating v4": 41.3,
             "Decision Rating v4 Change": -4.4
@@ -65581,7 +65581,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "15 Aug (H) BOS W 4-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 1,
@@ -66157,7 +66157,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 6,
@@ -66374,9 +66374,9 @@
             ],
             "Decision Rating v3": 21.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 94.5,
+            "Form Percentile v4": 94.3,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 84.1,
+            "Comparison Form Rating v4": 84.0,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 29.4,
             "Decision Rating v4 Change": 8.4
@@ -66741,12 +66741,12 @@
             ],
             "Decision Rating v3": 14.3,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 24.9,
-            "Decision Rating v4 Change": 10.6
+            "Decision Rating v4": 24.8,
+            "Decision Rating v4 Change": 10.5
         },
         {
             "Name": "Perle Morroni",
@@ -67108,9 +67108,9 @@
             ],
             "Decision Rating v3": 16.8,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 88.4,
+            "Form Percentile v4": 88.6,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 76.3,
+            "Comparison Form Rating v4": 76.4,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 26.7,
             "Decision Rating v4 Change": 9.9
@@ -67587,7 +67587,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nMissed Pen (-2pts)"
+                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\nMissed Pen (-2pts)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 3,
@@ -68164,12 +68164,12 @@
             ],
             "Decision Rating v3": 29.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 87.3,
+            "Form Percentile v4": 87.5,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.9,
+            "Comparison Form Rating v4": 75.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 48.7,
-            "Decision Rating v4 Change": 18.8
+            "Decision Rating v4": 48.8,
+            "Decision Rating v4 Change": 18.9
         },
         {
             "Name": "Savannah McCaskill",
@@ -68345,7 +68345,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "2 Aug (A) HOU W 0-1\nBonus (+1pt)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -69487,12 +69487,12 @@
             ],
             "Decision Rating v3": 39.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 94.5,
+            "Form Percentile v4": 94.3,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 84.1,
+            "Comparison Form Rating v4": 84.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 54.7,
-            "Decision Rating v4 Change": 15.7
+            "Decision Rating v4": 54.6,
+            "Decision Rating v4 Change": 15.6
         },
         {
             "Name": "Cassie Miller",
@@ -69759,12 +69759,12 @@
             ],
             "Decision Rating v3": 5.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 10.3,
-            "Decision Rating v4 Change": 4.6
+            "Decision Rating v4": 10.2,
+            "Decision Rating v4 Change": 4.5
         },
         {
             "Name": "Claudia Dickey",
@@ -70106,9 +70106,9 @@
             ],
             "Decision Rating v3": 9.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 94.5,
+            "Form Percentile v4": 94.3,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 84.1,
+            "Comparison Form Rating v4": 84.0,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 12.6,
             "Decision Rating v4 Change": 3.6
@@ -71147,12 +71147,12 @@
             ],
             "Decision Rating v3": 15.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 86.4,
+            "Form Percentile v4": 86.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.0,
+            "Comparison Form Rating v4": 74.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 25.9,
-            "Decision Rating v4 Change": 10.2
+            "Decision Rating v4": 26.0,
+            "Decision Rating v4 Change": 10.3
         },
         {
             "Name": "Ryanne Brown",
@@ -71474,9 +71474,9 @@
             ],
             "Decision Rating v3": 24.5,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 96.2,
+            "Form Percentile v4": 96.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 88.3,
+            "Comparison Form Rating v4": 88.2,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 30.9,
             "Decision Rating v4 Change": 6.4
@@ -72053,12 +72053,12 @@
             ],
             "Decision Rating v3": 15.7,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 86.4,
+            "Form Percentile v4": 86.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.0,
+            "Comparison Form Rating v4": 74.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 25.9,
-            "Decision Rating v4 Change": 10.2
+            "Decision Rating v4": 26.0,
+            "Decision Rating v4 Change": 10.3
         },
         {
             "Name": "Angharad James-Turner",
@@ -72578,7 +72578,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "20 Sep (A) DEN L 2-1\n1 min (+1pt)\n\n---\n\n17 Sep (A) LA L 3-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "17 Sep (A) LA L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (A) DEN L 2-1\n1 min (+1pt)"
             },
             "24": {
                 "points": 15,
@@ -73069,12 +73069,12 @@
             ],
             "Decision Rating v3": 23.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 43.5,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 43.4,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Maddie Mercado",
@@ -74382,12 +74382,12 @@
             ],
             "Decision Rating v3": 29.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 87.3,
+            "Form Percentile v4": 87.5,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.9,
+            "Comparison Form Rating v4": 75.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 48.7,
-            "Decision Rating v4 Change": 18.8
+            "Decision Rating v4": 48.8,
+            "Decision Rating v4 Change": 18.9
         },
         {
             "Name": "Jordyn Huitema",
@@ -74877,7 +74877,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "15 Aug (H) CHI W 1-0\n1 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -75224,7 +75224,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\n1 min (+1pt)"
+                "tooltip": "15 Aug (H) CHI W 1-0\n1 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)"
             },
             "19": "-",
             "20": "-",
@@ -75829,7 +75829,7 @@
                 "points": 5,
                 "base_points": 5,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)"
+                "tooltip": "2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\nSaves (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 2,
@@ -76023,9 +76023,9 @@
             ],
             "Decision Rating v3": 41.9,
             "Decision Rating v3 Change": -0.8,
-            "Form Percentile v4": 83.3,
+            "Form Percentile v4": 83.1,
             "Fixture Percentile v4": 16.8,
-            "Comparison Form Rating v4": 70.3,
+            "Comparison Form Rating v4": 70.2,
             "Comparison Fixture Rating v4": 24.7,
             "Decision Rating v4": 31.5,
             "Decision Rating v4 Change": -11.2
@@ -76146,7 +76146,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "7 May (H) HOU W 2-0\n1 min (+1pt)\n\n---\n\n10 May (A) BAY D 0-0\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "10 May (A) BAY D 0-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n7 May (H) HOU W 2-0\n1 min (+1pt)"
             },
             "9": {
                 "points": 1,
@@ -77314,7 +77314,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (H) POR W 5-1\n1 min (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (H) WAS L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\n1 min (+1pt)"
             },
             "17": {
                 "points": 1,
@@ -77674,7 +77674,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (H) WAS L 0-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Jul (H) WAS L 0-1\nClearance (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) POR W 5-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "17": {
                 "points": 2,
@@ -78903,7 +78903,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "24 May  Unknown W 3-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) KC W 2-1\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) KC W 2-1\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May  Unknown W 3-1\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 3,
@@ -80205,12 +80205,12 @@
             ],
             "Decision Rating v3": 41.5,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": 49.1,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 49.9,
-            "Decision Rating v4": 61.0,
-            "Decision Rating v4 Change": 19.5
+            "Decision Rating v4": 60.8,
+            "Decision Rating v4 Change": 19.3
         },
         {
             "Name": "Sandy MacIver",
@@ -80567,9 +80567,9 @@
             ],
             "Decision Rating v3": 6.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 87.3,
+            "Form Percentile v4": 87.5,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.9,
+            "Comparison Form Rating v4": 75.0,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 11.2,
             "Decision Rating v4 Change": 4.3
@@ -81762,7 +81762,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "8": {
                 "points": 6,
@@ -81992,7 +81992,7 @@
             ],
             "Decision Rating v3": 17.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": null,
             "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 0.0,
@@ -83191,7 +83191,7 @@
                 "points": 9,
                 "base_points": 9,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) POR W 3-1\nAssist (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (A) LA L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) POR W 3-1\nAssist (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 3,
@@ -83832,7 +83832,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "29 Apr (H) LOU W 1-0\n1 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\n1 min (+1pt)"
+                "tooltip": "2 May (A) ORL W 2-4\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -83863,7 +83863,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "15 Jul (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) NC W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "11 Jul (A) NC W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 0,
@@ -84052,9 +84052,9 @@
             ],
             "Decision Rating v3": 28.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 85.7,
+            "Form Percentile v4": 85.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 73.2,
+            "Comparison Form Rating v4": 73.3,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 47.6,
             "Decision Rating v4 Change": 19.0
@@ -85967,9 +85967,9 @@
             ],
             "Decision Rating v3": 37.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 92.8,
+            "Form Percentile v4": 93.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 82.1,
+            "Comparison Form Rating v4": 82.2,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 53.4,
             "Decision Rating v4 Change": 16.3
@@ -86037,7 +86037,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
+                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -86444,7 +86444,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\n1 min (+1pt)"
+                "tooltip": "15 Aug (H) CHI W 1-0\n1 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -86613,12 +86613,12 @@
             ],
             "Decision Rating v3": 41.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 95.1,
+            "Form Percentile v4": 94.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 85.5,
+            "Comparison Form Rating v4": 85.3,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 55.6,
-            "Decision Rating v4 Change": 14.6
+            "Decision Rating v4": 55.4,
+            "Decision Rating v4 Change": 14.4
         },
         {
             "Name": "Rosemonde Kouassi",
@@ -86776,7 +86776,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "15 Jul (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (A) NC W 0-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "11 Jul (A) NC W 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) GFC L 1-0\n1 min (+1pt)\n60 min (+1pt)"
             },
             "14": {
                 "points": 1,
@@ -87677,7 +87677,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "11 Jul (A) NC W 0-2\n1 min (+1pt)\n\n---\n\n15 Jul (A) GFC L 1-0\n1 min (+1pt)"
+                "tooltip": "15 Jul (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n11 Jul (A) NC W 0-2\n1 min (+1pt)"
             },
             "14": {
                 "points": 2,
@@ -90642,9 +90642,9 @@
             "News": null,
             "Visionary": false,
             "Total Points": 83,
-            "Selected Percentage": 3.6,
-            "Selected Percentage Change 1W": -0.5,
-            "Selected Percentage Change Since Last Global Price Change": 0.3,
+            "Selected Percentage": 3.5,
+            "Selected Percentage Change 1W": -0.6,
+            "Selected Percentage Change Since Last Global Price Change": 0.2,
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 19,
@@ -90958,12 +90958,12 @@
             ],
             "Decision Rating v3": 25.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 82.6,
+            "Form Percentile v4": 82.4,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 69.5,
+            "Comparison Form Rating v4": 69.4,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 45.2,
-            "Decision Rating v4 Change": 19.8
+            "Decision Rating v4": 45.1,
+            "Decision Rating v4 Change": 19.7
         },
         {
             "Name": "Mimi Alidou",
@@ -91090,7 +91090,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) SD W 2-0\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (A) CHI W 0-2\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) SD W 2-0\nAssist (+3pts)\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -91964,7 +91964,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "1 Sep (A) BOS W 2-5\nAssist (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Sep (A) BOS W 2-5\nAssist (+3pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "21": {
                 "points": 21,
@@ -92453,12 +92453,12 @@
             ],
             "Decision Rating v3": 30.8,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 53.4,
-            "Decision Rating v4 Change": 22.6
+            "Decision Rating v4": 53.2,
+            "Decision Rating v4 Change": 22.4
         },
         {
             "Name": "Onyeka Gamero",
@@ -93638,7 +93638,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 4,
@@ -94800,7 +94800,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (A) LOU L 2-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Aug (H) CHI W 1-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\nBonus (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
             },
             "19": {
                 "points": 1,
@@ -95157,7 +95157,7 @@
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\n---\n\n15 Aug (H) CHI W 1-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Aug (H) CHI W 1-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (A) LOU L 2-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 1,
@@ -95805,7 +95805,7 @@
                 "points": 14,
                 "base_points": 14,
                 "visionary_bonus": 0,
-                "tooltip": "2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)\n\n---\n\n29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Apr (H) LOU W 1-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 May (A) ORL W 2-4\nGoal x2 (+8pts)\n1 min (+1pt)"
             },
             "8": {
                 "points": 2,
@@ -95854,7 +95854,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) UTA W 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (A) UTA W 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (H) SD L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 5,
@@ -98391,7 +98391,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "21 May (H) KC W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) HOU L 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -98451,7 +98451,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "27 Aug (A) NC L 2-0\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n1 Sep (A) BOS W 2-5\n1 min (+1pt)\n60 min (+1pt)"
             },
             "21": {
                 "points": 6,
@@ -98608,12 +98608,12 @@
             ],
             "Decision Rating v3": 41.0,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 95.1,
+            "Form Percentile v4": 94.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 85.5,
+            "Comparison Form Rating v4": 85.3,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 55.6,
-            "Decision Rating v4 Change": 14.6
+            "Decision Rating v4": 55.4,
+            "Decision Rating v4 Change": 14.4
         },
         {
             "Name": "Taylor Suarez",
@@ -98821,7 +98821,7 @@
                 "points": 15,
                 "base_points": 12,
                 "visionary_bonus": 3,
-                "tooltip": "17 Sep (H) SEA W 3-1\nGoal (+5pts)\n1 min (+1pt)\n\n---\n\n20 Sep (A) UTA W 0-3\nGoal (+5pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "20 Sep (A) UTA W 0-3\nGoal (+5pts)\n1 min (+1pt)\n\n---\n\n17 Sep (H) SEA W 3-1\nGoal (+5pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "24": {
                 "points": 1,
@@ -98960,9 +98960,9 @@
             ],
             "Decision Rating v3": 28.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 85.7,
+            "Form Percentile v4": 85.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 73.2,
+            "Comparison Form Rating v4": 73.3,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 47.6,
             "Decision Rating v4 Change": 19.0
@@ -100247,7 +100247,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -100277,7 +100277,7 @@
                 "points": 15,
                 "base_points": 12,
                 "visionary_bonus": 3,
-                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 10,
@@ -100614,7 +100614,7 @@
                 "points": 17,
                 "base_points": 14,
                 "visionary_bonus": 3,
-                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 1,
@@ -101539,7 +101539,7 @@
                 "points": 8,
                 "base_points": 5,
                 "visionary_bonus": 3,
-                "tooltip": "3 May (H) DEN W 3-2\nAssist (+3pts)\n1 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nAssist (+3pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "8": "-",
             "9": "-",
@@ -101826,13 +101826,13 @@
                 "points": 9,
                 "base_points": 6,
                 "visionary_bonus": 3,
-                "tooltip": "30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "3 May (H) DEN W 3-2\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "8": {
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "13 May (H) ORL W 2-1\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "9 May (A) GFC D 1-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n13 May (H) ORL W 2-1\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "9": {
                 "points": 1,
@@ -102440,7 +102440,7 @@
                 "points": 12,
                 "base_points": 9,
                 "visionary_bonus": 3,
-                "tooltip": "30 Apr (H) NC D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "3 May (H) DEN W 3-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) NC D 2-2\nGoal (+5pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "8": {
                 "points": 11,
@@ -102476,7 +102476,7 @@
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (H) CHI W 2-0\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (A) ORL W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nBonus x2 (+2pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 2,
@@ -103158,7 +103158,7 @@
                 "points": 10,
                 "base_points": 7,
                 "visionary_bonus": 3,
-                "tooltip": "11 Jul (H) CHI W 2-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "15 Jul (A) ORL W 0-1\n1 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 1,
@@ -103970,12 +103970,12 @@
             ],
             "Decision Rating v3": 48.8,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 95.7,
+            "Form Percentile v4": 95.4,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 86.5,
+            "Comparison Form Rating v4": 86.3,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 64.9,
-            "Decision Rating v4 Change": 16.1
+            "Decision Rating v4": 64.7,
+            "Decision Rating v4 Change": 15.9
         },
         {
             "Name": "Aleigh Gambone",
@@ -104317,12 +104317,12 @@
             ],
             "Decision Rating v3": 22.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.2,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.1,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Aaliyah Farmer",
@@ -104407,7 +104407,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (H) GFC L 0-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) POR L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -106365,12 +106365,12 @@
             ],
             "Decision Rating v3": 14.3,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 24.9,
-            "Decision Rating v4 Change": 10.6
+            "Decision Rating v4": 24.8,
+            "Decision Rating v4 Change": 10.5
         },
         {
             "Name": "Ayo Oke",
@@ -107261,7 +107261,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "8 Aug (H) UTA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "18": {
                 "points": 1,
@@ -109199,7 +109199,7 @@
                 "points": 8,
                 "base_points": 8,
                 "visionary_bonus": 0,
-                "tooltip": "17 Sep (H) BAY D 2-2\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Sep (H) SEA W 2-1\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "20 Sep (H) SEA W 2-1\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (H) BAY D 2-2\n1 min (+1pt)\n60 min (+1pt)"
             },
             "24": {
                 "points": 2,
@@ -109515,7 +109515,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (H) UTA W 2-1\n1 min (+1pt)\n\n---\n\n6 Aug (H) NC L 0-2\n1 min (+1pt)"
+                "tooltip": "6 Aug (H) NC L 0-2\n1 min (+1pt)\n\n---\n\n8 Aug (H) UTA W 2-1\n1 min (+1pt)"
             },
             "18": "-",
             "19": {
@@ -110592,7 +110592,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "30 Jul (A) BAY W 0-1\n1 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\n1 min (+1pt)"
+                "tooltip": "2 Aug (A) HOU W 0-1\n1 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\n1 min (+1pt)"
             },
             "17": "-",
             "18": "-",
@@ -111100,12 +111100,12 @@
             ],
             "Decision Rating v3": 30.8,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 84.1,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 71.2,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 53.4,
-            "Decision Rating v4 Change": 22.6
+            "Decision Rating v4": 53.2,
+            "Decision Rating v4 Change": 22.4
         },
         {
             "Name": "Caroline DeLisle",
@@ -112070,11 +112070,11 @@
             "Selected Percentage": 0.8,
             "Selected Percentage Change 1W": -0.1,
             "Selected Percentage Change Since Last Global Price Change": -0.2,
-            "Recommendation": "Differential",
+            "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 23,
-            "Total Over 4 Gameweeks": 20,
-            "Form Rating": 49,
+            "Total Over 4 Gameweeks": 14,
+            "Form Rating": 39,
             "Underlying Involvement Source Rating": 53.8,
             "Underlying Involvement Rating": 52.1,
             "Underlying Involvement Confidence": 100.0,
@@ -112125,9 +112125,9 @@
                 }
             },
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 5.0,
+            "Points Per Game Over 4 Gameweeks": 3.5,
             "Points Per Million": 23.2,
-            "Points Per Million Over 4 Gameweeks": 5.0,
+            "Points Per Million Over 4 Gameweeks": 3.5,
             "Total Goals": 3,
             "Total Assists": 3,
             "Total Goals + Assists": 6,
@@ -112244,7 +112244,7 @@
                 "points": 13,
                 "base_points": 10,
                 "visionary_bonus": 3,
-                "tooltip": "20 Aug (H) CHI W 5-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nGoal (+5pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 6,
@@ -112330,10 +112330,10 @@
             "Following Fixture Rating": 40.5,
             "Following Fixture Score": 4,
             "Following Fixture Details": "Next GW fixtures:\nvs WAS (H): 40.5/100\n  Attack opportunity: 39.6/100\n  Defense opportunity: 48.3/100\n  Projected team xG: 1.22\n  Projected opponent xG: 1.43\n  Est. clean-sheet chance: 24.0%\n  WAS attack strength: 59.4/100\n  WAS defense strength: 81.9/100\n  WAS xG/game: 1.54 season, 1.51 weighted recent\n  WAS xGA/game: 1.22 season, 1.49 weighted recent\n\nAverage fixture opportunity: 40.5/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 40.5/100\n\nOwn team attack strength: 22.2/100\nOwn team defense strength: 51.5/100\nOwn xG/game: 1.18 season, 0.67 weighted recent\nOwn xGA/game: 1.81 season, 1.62 weighted recent",
-            "Decision Rating": 31.9,
-            "Player Signal": 49.0,
+            "Decision Rating": 25.4,
+            "Player Signal": 39.0,
             "Player Signal Details": {
-                "form": 49.0,
+                "form": 39.0,
                 "involvement": 52.1,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -112396,14 +112396,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 31.9,
+            "Decision Rating v3": 25.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 82.4,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 77.3,
+            "Comparison Form Rating v4": 69.4,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 50.2,
-            "Decision Rating v4 Change": 18.3
+            "Decision Rating v4": 45.1,
+            "Decision Rating v4 Change": 19.7
         },
         {
             "Name": "Kat Rader",
@@ -112494,7 +112494,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)"
+                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)\n60 min (+1pt)"
             },
             "9": {
                 "points": 2,
@@ -112712,12 +112712,12 @@
             ],
             "Decision Rating v3": 23.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 43.5,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 43.4,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Kate Faasse",
@@ -112853,7 +112853,7 @@
                 "points": 14,
                 "base_points": 11,
                 "visionary_bonus": 3,
-                "tooltip": "20 Aug (H) CHI W 5-0\nGoal (+4pts)\n1 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "16 Aug (A) NC W 2-3\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nGoal (+4pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 2,
@@ -113194,7 +113194,7 @@
                 "points": 19,
                 "base_points": 16,
                 "visionary_bonus": 3,
-                "tooltip": "16 Aug (A) NC W 2-3\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "20 Aug (H) CHI W 5-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\nGoal x2 (+8pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "19": {
                 "points": 1,
@@ -116612,8 +116612,8 @@
             "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 24,
-            "Total Over 4 Gameweeks": 14,
-            "Form Rating": 39,
+            "Total Over 4 Gameweeks": 15,
+            "Form Rating": 41,
             "Underlying Involvement Source Rating": 36.0,
             "Underlying Involvement Rating": 36.0,
             "Underlying Involvement Confidence": 100.0,
@@ -116664,9 +116664,9 @@
                 }
             },
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 3.5,
+            "Points Per Game Over 4 Gameweeks": 3.8,
             "Points Per Million": 22.0,
-            "Points Per Million Over 4 Gameweeks": 2.5,
+            "Points Per Million Over 4 Gameweeks": 2.7,
             "Total Goals": 11,
             "Total Assists": 4,
             "Total Goals + Assists": 15,
@@ -116790,7 +116790,7 @@
                 "points": 11,
                 "base_points": 11,
                 "visionary_bonus": 0,
-                "tooltip": "27 Aug (H) LA W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Aug (A) KC L 3-2\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "29 Aug (A) KC L 3-2\nGoal (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n27 Aug (H) LA W 2-0\nAssist (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "21": {
                 "points": 5,
@@ -116885,10 +116885,10 @@
             "Following Fixture Rating": 52.6,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs SEA (A): 52.6/100\n  Attack opportunity: 52.6/100\n  Defense opportunity: 50.2/100\n  Projected team xG: 1.45\n  Projected opponent xG: 1.40\n  Est. clean-sheet chance: 24.8%\n  SEA attack strength: 43.8/100\n  SEA defense strength: 78.6/100\n  SEA xG/game: 1.35 season, 1.16 weighted recent\n  SEA xGA/game: 1.43 season, 1.12 weighted recent\n\nAverage fixture opportunity: 52.6/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 52.6/100\n\nOwn team attack strength: 98.8/100\nOwn team defense strength: 78.0/100\nOwn xG/game: 1.89 season, 1.87 weighted recent\nOwn xGA/game: 1.31 season, 1.17 weighted recent",
-            "Decision Rating": 43.5,
-            "Player Signal": 39.0,
+            "Decision Rating": 45.0,
+            "Player Signal": 41.0,
             "Player Signal Details": {
-                "form": 39.0,
+                "form": 41.0,
                 "involvement": 36.0,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -116963,14 +116963,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 43.3,
+            "Decision Rating v3": 44.8,
             "Decision Rating v3 Change": -0.2,
-            "Form Percentile v4": 82.6,
+            "Form Percentile v4": 83.9,
             "Fixture Percentile v4": 84.9,
-            "Comparison Form Rating v4": 69.5,
+            "Comparison Form Rating v4": 71.0,
             "Comparison Fixture Rating v4": 76.5,
-            "Decision Rating v4": 71.2,
-            "Decision Rating v4 Change": 27.7
+            "Decision Rating v4": 72.4,
+            "Decision Rating v4 Change": 27.4
         },
         {
             "Name": "Lauryn Thompson",
@@ -119332,7 +119332,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (H) BAY W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "21 May (H) BAY W 2-0\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (A) KC L 3-1\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "11": {
                 "points": 1,
@@ -120177,7 +120177,7 @@
                 "points": 11,
                 "base_points": 8,
                 "visionary_bonus": 3,
-                "tooltip": "1 Aug (H) CHI W 2-1\nGoal (+6pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "30 Jul (A) KC L 5-1\n1 min (+1pt)\nConceded (-1pt)\n\n---\n\n1 Aug (H) CHI W 2-1\nGoal (+6pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "17": {
                 "points": 2,
@@ -120189,7 +120189,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Aug (H) BOS W 4-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "15 Aug (H) BOS W 4-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n19 Aug (H) SEA W 2-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "19": {
                 "points": 1,
@@ -120566,9 +120566,9 @@
             ],
             "Decision Rating v3": 11.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 22.7,
             "Decision Rating v4 Change": 10.8
@@ -121264,7 +121264,7 @@
                 "points": 2,
                 "base_points": 2,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (A) GFC L 1-0\n1 min (+1pt)\n\n---\n\n29 Apr (A) WAS L 1-0\n1 min (+1pt)"
+                "tooltip": "29 Apr (A) WAS L 1-0\n1 min (+1pt)\n\n---\n\n3 May (A) GFC L 1-0\n1 min (+1pt)"
             },
             "8": {
                 "points": 1,
@@ -122017,7 +122017,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)"
+                "tooltip": "30 Apr (A) POR L 2-0\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n3 May (H) BAY L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "8": {
                 "points": 8,
@@ -122035,7 +122035,7 @@
                 "points": 4,
                 "base_points": 4,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nBonus x2 (+2pts)\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "21 May (A) HOU D 2-2\nBonus x2 (+2pts)\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 6,
@@ -122236,12 +122236,12 @@
             ],
             "Decision Rating v3": 19.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 92.8,
+            "Form Percentile v4": 93.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 82.1,
+            "Comparison Form Rating v4": 82.2,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 28.7,
-            "Decision Rating v4 Change": 8.8
+            "Decision Rating v4": 28.8,
+            "Decision Rating v4 Change": 8.9
         },
         {
             "Name": "Laurina Fazer",
@@ -122376,7 +122376,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "11": {
                 "points": 1,
@@ -122728,7 +122728,7 @@
                 "points": 10,
                 "base_points": 10,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) HOU D 2-2\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) ORL L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) HOU D 2-2\nAssist (+3pts)\nBonus x3 (+3pts)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "11": {
                 "points": 6,
@@ -122945,12 +122945,12 @@
             ],
             "Decision Rating v3": 23.4,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 80.2,
+            "Form Percentile v4": 79.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 66.9,
+            "Comparison Form Rating v4": 66.7,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 43.5,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 43.4,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Evan O'Steen",
@@ -126283,7 +126283,7 @@
                 "points": 3,
                 "base_points": 3,
                 "visionary_bonus": 0,
-                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\n\n---\n\n24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "24 May (H) CHI L 0-1\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)"
             },
             "11": {
                 "points": 2,
@@ -126676,7 +126676,7 @@
                 "points": 17,
                 "base_points": 14,
                 "visionary_bonus": 3,
-                "tooltip": "15 Jul (A) ORL W 0-1\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n11 Jul (H) CHI W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "11 Jul (H) CHI W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n15 Jul (A) ORL W 0-1\nGoal (+5pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "14": {
                 "points": 2,
@@ -126875,12 +126875,12 @@
             ],
             "Decision Rating v3": 22.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 78.1,
+            "Form Percentile v4": 78.0,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 64.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 42.2,
-            "Decision Rating v4 Change": 20.1
+            "Decision Rating v4": 42.1,
+            "Decision Rating v4 Change": 20.0
         },
         {
             "Name": "Pauline Peyraud-Magnin",
@@ -127988,7 +127988,7 @@
             ],
             "Decision Rating v3": 50.0,
             "Decision Rating v3 Change": 0.1,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": 69.0,
             "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 64.1,
@@ -128123,7 +128123,7 @@
                 "points": -2,
                 "base_points": -2,
                 "visionary_bonus": 0,
-                "tooltip": "24 May (H) CHI L 0-1\n1 min (+1pt)\nRed Card (-3pts)\n\n---\n\n21 May (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)"
+                "tooltip": "21 May (A) POR L 2-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n24 May (H) CHI L 0-1\n1 min (+1pt)\nRed Card (-3pts)"
             },
             "11": "-",
             "12": {
@@ -128338,12 +128338,12 @@
             ],
             "Decision Rating v3": 47.6,
             "Decision Rating v3 Change": 0.4,
-            "Form Percentile v4": 81.5,
+            "Form Percentile v4": 81.2,
             "Fixture Percentile v4": 59.9,
-            "Comparison Form Rating v4": 68.5,
+            "Comparison Form Rating v4": 68.2,
             "Comparison Fixture Rating v4": 57.6,
-            "Decision Rating v4": 61.4,
-            "Decision Rating v4 Change": 14.2
+            "Decision Rating v4": 61.3,
+            "Decision Rating v4 Change": 14.1
         },
         {
             "Name": "Cate Hardin",
@@ -131314,7 +131314,7 @@
                 "points": 12,
                 "base_points": 12,
                 "visionary_bonus": 0,
-                "tooltip": "2 Aug (A) HOU W 0-1\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "30 Jul (A) BAY W 0-1\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n2 Aug (A) HOU W 0-1\nAssist (+3pts)\nBonus x3 (+3pts)\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)"
             },
             "17": {
                 "points": 3,
@@ -131484,7 +131484,7 @@
             ],
             "Decision Rating v3": 31.9,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 89.4,
+            "Form Percentile v4": 89.5,
             "Fixture Percentile v4": null,
             "Comparison Form Rating v4": 77.3,
             "Comparison Fixture Rating v4": 0.0,
@@ -131937,9 +131937,9 @@
             ],
             "Decision Rating v3": 28.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 85.7,
+            "Form Percentile v4": 85.9,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 73.2,
+            "Comparison Form Rating v4": 73.3,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 47.6,
             "Decision Rating v4 Change": 19.0
@@ -134363,10 +134363,10 @@
             "Selected Percentage": 0.0,
             "Selected Percentage Change 1W": 0.0,
             "Selected Percentage Change Since Last Global Price Change": 0.0,
-            "Recommendation": "Cold",
+            "Recommendation": "Value Pick",
             "Hot Pick": false,
             "Total Games Played": 5,
-            "Total Over 4 Gameweeks": 3,
+            "Total Over 4 Gameweeks": 4,
             "Form Rating": 0,
             "Underlying Involvement Source Rating": null,
             "Underlying Involvement Rating": null,
@@ -134381,9 +134381,9 @@
             "Underlying Involvement Rating Basis": null,
             "Underlying Involvement Components": {},
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 0.8,
+            "Points Per Game Over 4 Gameweeks": 1.0,
             "Points Per Million": 0.9,
-            "Points Per Million Over 4 Gameweeks": 0.7,
+            "Points Per Million Over 4 Gameweeks": 0.9,
             "Total Goals": 0,
             "Total Assists": 0,
             "Total Goals + Assists": 0,
@@ -134410,7 +134410,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "7 May (A) UTA L 2-0\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n10 May (H) DEN L 1-4\n1 min (+1pt)"
+                "tooltip": "10 May (H) DEN L 1-4\n1 min (+1pt)\n\n---\n\n7 May (A) UTA L 2-0\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "9": {
                 "points": 1,
@@ -134822,12 +134822,12 @@
             ],
             "Decision Rating v3": 44.2,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 93.9,
+            "Form Percentile v4": 93.7,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 83.4,
+            "Comparison Form Rating v4": 83.3,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 62.6,
-            "Decision Rating v4 Change": 18.4
+            "Decision Rating v4": 62.5,
+            "Decision Rating v4 Change": 18.3
         },
         {
             "Name": "Deja Davis",
@@ -135061,9 +135061,9 @@
             ],
             "Decision Rating v3": 16.1,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 87.3,
+            "Form Percentile v4": 87.5,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 74.9,
+            "Comparison Form Rating v4": 75.0,
             "Comparison Fixture Rating v4": 0.0,
             "Decision Rating v4": 26.2,
             "Decision Rating v4 Change": 10.1
@@ -135544,8 +135544,8 @@
             "Recommendation": "Differential",
             "Hot Pick": false,
             "Total Games Played": 12,
-            "Total Over 4 Gameweeks": 23,
-            "Form Rating": 57,
+            "Total Over 4 Gameweeks": 21,
+            "Form Rating": 54,
             "Underlying Involvement Source Rating": null,
             "Underlying Involvement Rating": null,
             "Underlying Involvement Confidence": null,
@@ -135559,9 +135559,9 @@
             "Underlying Involvement Rating Basis": null,
             "Underlying Involvement Components": {},
             "Games Played Over 4 Gameweeks": 4,
-            "Points Per Game Over 4 Gameweeks": 5.8,
+            "Points Per Game Over 4 Gameweeks": 5.2,
             "Points Per Million": 8.3,
-            "Points Per Million Over 4 Gameweeks": 3.8,
+            "Points Per Million Over 4 Gameweeks": 3.5,
             "Total Goals": 0,
             "Total Assists": 4,
             "Total Goals + Assists": 4,
@@ -135630,7 +135630,7 @@
                 "points": 7,
                 "base_points": 4,
                 "visionary_bonus": 3,
-                "tooltip": "27 Aug (H) LA W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n29 Aug (A) KC L 3-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "29 Aug (A) KC L 3-2\n1 min (+1pt)\n60 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n27 Aug (H) LA W 2-0\nClean Sheet (+1pt)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "21": {
                 "points": 13,
@@ -135714,10 +135714,10 @@
             "Following Fixture Rating": 52.4,
             "Following Fixture Score": 3,
             "Following Fixture Details": "Next GW fixtures:\nvs SEA (A): 52.4/100\n  Attack opportunity: 52.6/100\n  Defense opportunity: 50.2/100\n  Projected team xG: 1.45\n  Projected opponent xG: 1.40\n  Est. clean-sheet chance: 24.8%\n  SEA attack strength: 43.8/100\n  SEA defense strength: 78.6/100\n  SEA xG/game: 1.35 season, 1.16 weighted recent\n  SEA xGA/game: 1.43 season, 1.12 weighted recent\n\nAverage fixture opportunity: 52.4/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 52.4/100\n\nOwn team attack strength: 98.8/100\nOwn team defense strength: 78.0/100\nOwn xG/game: 1.89 season, 1.87 weighted recent\nOwn xGA/game: 1.31 season, 1.17 weighted recent",
-            "Decision Rating": 56.6,
-            "Player Signal": 57.0,
+            "Decision Rating": 54.7,
+            "Player Signal": 54.0,
             "Player Signal Details": {
-                "form": 57.0,
+                "form": 54.0,
                 "involvement": null,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -135792,14 +135792,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 56.4,
+            "Decision Rating v3": 54.5,
             "Decision Rating v3 Change": -0.2,
-            "Form Percentile v4": 92.8,
+            "Form Percentile v4": 92.5,
             "Fixture Percentile v4": 77.2,
-            "Comparison Form Rating v4": 82.1,
+            "Comparison Form Rating v4": 81.0,
             "Comparison Fixture Rating v4": 70.8,
-            "Decision Rating v4": 78.1,
-            "Decision Rating v4 Change": 21.5
+            "Decision Rating v4": 77.4,
+            "Decision Rating v4 Change": 22.7
         },
         {
             "Name": "Cristina Roque",
@@ -136522,7 +136522,7 @@
                 "points": 7,
                 "base_points": 7,
                 "visionary_bonus": 0,
-                "tooltip": "16 Aug (A) NC W 2-3\n1 min (+1pt)\n\n---\n\n20 Aug (H) CHI W 5-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)"
+                "tooltip": "20 Aug (H) CHI W 5-0\nClean Sheet (+4pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n16 Aug (A) NC W 2-3\n1 min (+1pt)"
             },
             "19": {
                 "points": 2,
@@ -138108,12 +138108,12 @@
             ],
             "Decision Rating v3": 30.6,
             "Decision Rating v3 Change": 0.0,
-            "Form Percentile v4": 88.0,
+            "Form Percentile v4": 88.2,
             "Fixture Percentile v4": null,
-            "Comparison Form Rating v4": 75.7,
+            "Comparison Form Rating v4": 75.8,
             "Comparison Fixture Rating v4": 0.0,
-            "Decision Rating v4": 49.2,
-            "Decision Rating v4 Change": 18.6
+            "Decision Rating v4": 49.3,
+            "Decision Rating v4 Change": 18.7
         },
         {
             "Name": "Vilde Bøe Risa",
@@ -138183,7 +138183,7 @@
                 "points": 1,
                 "base_points": 1,
                 "visionary_bonus": 0,
-                "tooltip": "8 Aug (A) WAS W 3-4\n1 min (+1pt)\nYellow Card (-1pt)\n\n---\n\n6 Aug (A) DEN W 0-2\n1 min (+1pt)"
+                "tooltip": "6 Aug (A) DEN W 0-2\n1 min (+1pt)\n\n---\n\n8 Aug (A) WAS W 3-4\n1 min (+1pt)\nYellow Card (-1pt)"
             },
             "18": {
                 "points": 1,
@@ -139264,7 +139264,7 @@
             "Hot Pick": false,
             "Total Games Played": 7,
             "Total Over 4 Gameweeks": 14,
-            "Form Rating": 34,
+            "Form Rating": 43,
             "Underlying Involvement Source Rating": null,
             "Underlying Involvement Rating": null,
             "Underlying Involvement Confidence": null,
@@ -139347,7 +139347,7 @@
                 "points": 12,
                 "base_points": 9,
                 "visionary_bonus": 3,
-                "tooltip": "20 Sep (H) LOU W 2-0\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\n---\n\n17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\nVisionary bonus: +3 pts"
+                "tooltip": "17 Sep (A) DEN D 2-2\n1 min (+1pt)\n60 min (+1pt)\nConceded (-1pt)\n\n---\n\n20 Sep (H) LOU W 2-0\nClean Sheet (+4pts)\nBonus x2 (+2pts)\n1 min (+1pt)\n60 min (+1pt)\n\nVisionary bonus: +3 pts"
             },
             "24": "-",
             "upcoming_fixtures": [
@@ -139413,10 +139413,10 @@
             "Following Fixture Rating": 18.4,
             "Following Fixture Score": 5,
             "Following Fixture Details": "Next GW fixtures:\nvs KC (A): 18.4/100\n  Attack opportunity: 36.5/100\n  Defense opportunity: 18.4/100\n  Projected team xG: 1.17\n  Projected opponent xG: 1.94\n  Est. clean-sheet chance: 14.4%\n  KC attack strength: 100.0/100\n  KC defense strength: 79.1/100\n  KC xG/game: 1.89 season, 2.22 weighted recent\n  KC xGA/game: 1.29 season, 1.24 weighted recent\n\nAverage fixture opportunity: 18.4/100\nFixture volume bonus: +0.0\nFinal GW fixture score: 18.4/100\n\nOwn team attack strength: 43.0/100\nOwn team defense strength: 52.4/100\nOwn xG/game: 1.25 season, 1.47 weighted recent\nOwn xGA/game: 1.67 season, 1.86 weighted recent",
-            "Decision Rating": 45.8,
-            "Player Signal": 34.0,
+            "Decision Rating": 48.9,
+            "Player Signal": 43.0,
             "Player Signal Details": {
-                "form": 34.0,
+                "form": 43.0,
                 "involvement": null,
                 "form_weight": 1.0,
                 "involvement_weight": 0.0,
@@ -139491,14 +139491,14 @@
                     "blank": false
                 }
             ],
-            "Decision Rating v3": 46.2,
-            "Decision Rating v3 Change": 0.4,
-            "Form Percentile v4": 78.1,
+            "Decision Rating v3": 49.4,
+            "Decision Rating v3 Change": 0.5,
+            "Form Percentile v4": 85.5,
             "Fixture Percentile v4": 59.9,
-            "Comparison Form Rating v4": 64.9,
+            "Comparison Form Rating v4": 72.8,
             "Comparison Fixture Rating v4": 57.6,
-            "Decision Rating v4": 60.2,
-            "Decision Rating v4 Change": 14.4
+            "Decision Rating v4": 62.9,
+            "Decision Rating v4 Change": 14.0
         },
         {
             "Name": "Agostina Holzheier",
